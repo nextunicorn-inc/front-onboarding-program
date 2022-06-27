@@ -9,10 +9,10 @@
    - Next.js
    - React-Query
    - Emotion
-   - Storybook
 
 3. 개발 프로세스는 **CDD**를 기반으로 합니다.
-   - 공통 컴포넌트를 설계하고 `Storybook`으로 확인해주세요.
+   - 컴포넌트를 분리하고 파일 구조를 고민해주세요.
+   - 공통 UI 컴포넌트와 공용 컴포넌트는 별개의 항목으로 다뤄야 합니다.
 
 4. 개발 중 최소한의 테스트로 품질을 높여요.
    - jest, vitest, react-testing-library 등 취사 선택해주세요.
