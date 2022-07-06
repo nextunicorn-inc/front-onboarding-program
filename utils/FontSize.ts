@@ -41,12 +41,12 @@ const size10 = css`
 `;
 
 export const FontSize = {
-    size42,
-    size30,
-    size24,
-    size18,
-    size16,
-    size14,
-    size12,
-    size10
+  size42,
+  size30,
+  size24,
+  size18,
+  size16,
+  size14,
+  size12,
+  size10,
 };
