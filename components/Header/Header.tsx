@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import Logo from '../../commonUi/Icons/nextunicorn.svg';
+import Logo from '../../commonUi/Icons/Logo/nextunicorn.svg';
 
 import {
   Wrapper,
@@ -17,7 +16,7 @@ function Header() {
     <Wrapper>
       <LeftButtonWrapper>
         <LogoWrapper>
-          <Image src={Logo} width={134} height={20} />
+          <Logo fill="var(--color-unicornblue6)" />
         </LogoWrapper>
         <li>
           <Button>파인터</Button>

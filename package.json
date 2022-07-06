@@ -22,6 +22,7 @@
     "@babel/eslint-parser": "^7.18.2",
     "@emotion/eslint-plugin": "^11.7.0",
     "@next/eslint-plugin-next": "^12.1.6",
+    "@svgr/webpack": "^6.2.1",
     "@types/babel__core": "^7",
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
