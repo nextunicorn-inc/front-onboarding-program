@@ -13,11 +13,20 @@ const Wrapper = styled.div`
 `;
 
 const LeftButtonWrapper = styled.ul`
+  height: 20px;
   display: flex;
+  align-items: center;
 `;
 
 const RightButtonWrapper = styled.ul`
   display: flex;
+  align-items: center;
+`;
+
+const LogoWrapper = styled.li`
+  display: flex;
+  align-items: center;
+  margin-right: 28px;
 `;
 
 const SearchButtonWrapper = styled.div`
@@ -58,4 +67,5 @@ export {
   RightButtonWrapper,
   SearchButtonWrapper,
   SignInAndUpWrapper,
+  LogoWrapper,
 };

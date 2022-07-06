@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import Logo from '../../commonUi/Icons/nextunicorn.svg';
+
 import {
   Wrapper,
   Button,
@@ -6,12 +9,16 @@ import {
   RightButtonWrapper,
   SearchButtonWrapper,
   SignInAndUpWrapper,
+  LogoWrapper,
 } from './Header.styled';
 
 function Header() {
   return (
     <Wrapper>
       <LeftButtonWrapper>
+        <LogoWrapper>
+          <Image src={Logo} width={134} height={20} />
+        </LogoWrapper>
         <li>
           <Button>파인터</Button>
         </li>
