@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a589dc9e-e082-451a-aac1-e8f1deb0cc21" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/MediaQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/MediaQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,7 @@
       <updated>1656333629373</updated>
       <workItem from="1656333630577" duration="394000" />
       <workItem from="1657004279482" duration="6021000" />
-      <workItem from="1657070353466" duration="616000" />
+      <workItem from="1657070353466" duration="841000" />
     </task>
     <servers />
   </component>
