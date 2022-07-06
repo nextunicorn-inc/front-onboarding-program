@@ -1,4 +1,5 @@
 import { FontSize } from './FontSize'
 import { FontWeight } from './FontWeight'
+import { MediaQuery } from "./MediaQuery";
 
-export default { FontSize, FontWeight };
+export { FontSize, FontWeight, MediaQuery };
