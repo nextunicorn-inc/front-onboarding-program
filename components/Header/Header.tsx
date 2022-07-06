@@ -37,7 +37,7 @@ function Header() {
 
       <RightButtonWrapper>
         <li>
-          <Button>제휴/서비스</Button>
+          <Button>제휴/이벤트</Button>
         </li>
         <li>
           <Button>서비스 안내</Button>
