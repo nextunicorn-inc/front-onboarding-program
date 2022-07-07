@@ -97,6 +97,7 @@ export const ServiceMenuTitle = styled.h5`
 `;
 
 export const ServiceDetailMenu = styled.div`
+  z-index: 9;
   display: block;
   position: absolute;
   top: 42px;
