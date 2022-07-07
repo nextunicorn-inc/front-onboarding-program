@@ -82,12 +82,12 @@ function Header() {
                     <Styled.SearchInputBoxWrapper>
                       <Styled.SearchInputBox>
                         <Styled.SearchInput placeholder="스타트업, 전문투자자, 스타트업 뉴스 검색하기" />
-                        <Styled.SearchIcon />
+                        <Icons.Search />
                       </Styled.SearchInputBox>
                     </Styled.SearchInputBoxWrapper>
                   </Styled.SearchInputLayout>
 
-                  <Styled.SearchInputOuter></Styled.SearchInputOuter>
+                  <Styled.SearchInputOuter />
                 </Styled.SearchLayout>
               )}
 
@@ -104,6 +104,31 @@ function Header() {
               </Styled.SignMenu>
             </Styled.MenuList>
           </Styled.MenuWrapper>
+
+          <Styled.ResponsiveMenuList>
+            <Styled.ResponsiveSearchIcon onClick={handleClickSearch}>
+              <Icons.Search24 />
+            </Styled.ResponsiveSearchIcon>
+
+            <Styled.ResponsiveMenuIcon>
+              <Icons.Menu24 />
+            </Styled.ResponsiveMenuIcon>
+
+            {isClickSearch && (
+              <Styled.SearchLayout>
+                <Styled.SearchInputLayout>
+                  <Styled.SearchInputBoxWrapper>
+                    <Styled.SearchInputBox>
+                      <Styled.SearchInput placeholder="스타트업, 전문투자자, 스타트업 뉴스 검색하기" />
+                      <Icons.Search24 />
+                    </Styled.SearchInputBox>
+                  </Styled.SearchInputBoxWrapper>
+                </Styled.SearchInputLayout>
+
+                <Styled.SearchInputOuter />
+              </Styled.SearchLayout>
+            )}
+          </Styled.ResponsiveMenuList>
         </Styled.Navigation>
       </Styled.ResponsiveSection>
     </Styled.Layout>

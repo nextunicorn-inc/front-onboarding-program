@@ -69,6 +69,30 @@ const LogoIcon = ({ color }: { color: string }) => (
   </svg>
 );
 
+const MenuIcon24 = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect opacity="0.01" width="24" height="24" fill="#D8D8D8" />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M2.5 4C2.22386 4 2 4.22386 2 4.5C2 4.77614 2.22386 5 2.5 5H21.5C21.7761 5 22 4.77614 22 4.5C22 4.22386 21.7761 4 21.5 4H2.5ZM2 12C2 11.7239 2.22386 11.5 2.5 11.5H21.5C21.7761 11.5 22 11.7239 22 12C22 12.2761 21.7761 12.5 21.5 12.5H2.5C2.22386 12.5 2 12.2761 2 12ZM2 19.5C2 19.2239 2.22386 19 2.5 19H21.5C21.7761 19 22 19.2239 22 19.5C22 19.7761 21.7761 20 21.5 20H2.5C2.22386 20 2 19.7761 2 19.5Z"
+      fill="#555555"
+    />
+    <mask id="mask0_104_8697" maskUnits="userSpaceOnUse" x="2" y="4" width="20" height="16">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M2.5 4C2.22386 4 2 4.22386 2 4.5C2 4.77614 2.22386 5 2.5 5H21.5C21.7761 5 22 4.77614 22 4.5C22 4.22386 21.7761 4 21.5 4H2.5ZM2 12C2 11.7239 2.22386 11.5 2.5 11.5H21.5C21.7761 11.5 22 11.7239 22 12C22 12.2761 21.7761 12.5 21.5 12.5H2.5C2.22386 12.5 2 12.2761 2 12ZM2 19.5C2 19.2239 2.22386 19 2.5 19H21.5C21.7761 19 22 19.2239 22 19.5C22 19.7761 21.7761 20 21.5 20H2.5C2.22386 20 2 19.7761 2 19.5Z"
+        fill="white"
+      />
+    </mask>
+    <g mask="url(#mask0_104_8697)">
+      <rect width="24" height="24" fill="#656565" />
+      <rect width="24" height="24" fill="#595959" />
+    </g>
+  </svg>
+);
+
 const SearchIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect opacity="0.01" width="20" height="20" fill="#D8D8D8" />
@@ -93,7 +117,33 @@ const SearchIcon = () => (
   </svg>
 );
 
+const SearchIcon24 = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect opacity="0.01" width="24" height="24" fill="#D8D8D8" />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M10.5 3C14.6421 3 18 6.35786 18 10.5C18 12.3911 17.3001 14.1188 16.1451 15.438L20.9749 20.2678C21.1701 20.463 21.1701 20.7796 20.9749 20.9749C20.7796 21.1701 20.463 21.1701 20.2678 20.9749L15.438 16.1451C14.1188 17.3001 12.3911 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3ZM10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C14.0899 17 17 14.0899 17 10.5C17 6.91015 14.0899 4 10.5 4Z"
+      fill="#979797"
+    />
+    <mask id="mask0_104_8714" maskUnits="userSpaceOnUse" x="3" y="3" width="19" height="19">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M10.5 3C14.6421 3 18 6.35786 18 10.5C18 12.3911 17.3001 14.1188 16.1451 15.438L20.9749 20.2678C21.1701 20.463 21.1701 20.7796 20.9749 20.9749C20.7796 21.1701 20.463 21.1701 20.2678 20.9749L15.438 16.1451C14.1188 17.3001 12.3911 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3ZM10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C14.0899 17 17 14.0899 17 10.5C17 6.91015 14.0899 4 10.5 4Z"
+        fill="white"
+      />
+    </mask>
+    <g mask="url(#mask0_104_8714)">
+      <rect width="24" height="24" fill="#656565" />
+      <rect width="24" height="24" fill="#595959" />
+    </g>
+  </svg>
+);
+
 export default {
   Logo: LogoIcon,
   Search: SearchIcon,
+  Search24: SearchIcon24,
+  Menu24: MenuIcon24,
 };

@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { FontSize, FontWeight, MediaQuery } from '../../utils';
-import Icons from '../../commonUi/Icons';
 
 export const Layout = styled.header`
   width: 100%;
@@ -8,7 +7,8 @@ export const Layout = styled.header`
 `;
 
 export const ResponsiveSection = styled.div`
-  //max-width: 1920px;
+  //max-width: 1240px;
+  //margin: 0 auto;
 `;
 
 export const Navigation = styled.nav`
@@ -32,6 +32,40 @@ export const MenuWrapper = styled.div`
 export const MenuList = styled.ul`
   display: flex;
   align-items: center;
+
+  ${MediaQuery.mobile} {
+    display: none;
+  }
+
+  ${MediaQuery.tablet} {
+    display: none;
+  }
+`;
+
+export const ResponsiveMenuList = styled.ul`
+  display: none;
+
+  ${MediaQuery.mobile} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  ${MediaQuery.tablet} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+`;
+
+export const ResponsiveSearchIcon = styled.span`
+  cursor: pointer;
+`;
+
+export const ResponsiveMenuIcon = styled.span`
+  cursor: pointer;
 `;
 
 export const Menu = styled.li`
@@ -68,7 +102,7 @@ export const ServiceDetailMenu = styled.div`
   top: 42px;
   right: -80%;
   background-color: rgb(254, 254, 254);
-  box-shadow: rgb(0 0 0 / 30%) 0px 4px 9px 0px;
+  box-shadow: rgb(0 0 0 / 30%) 0 4px 9px 0;
   border-radius: 3px;
   padding: 2px 16px;
   text-align: center;
@@ -96,6 +130,7 @@ export const SearchMenu = styled.li`
 `;
 
 export const SearchLayout = styled.div`
+  z-index: 10;
   width: 100%;
   height: 100%;
   display: flex;
@@ -153,12 +188,6 @@ export const SearchInput = styled.input`
     color: #656565;
     opacity: 0.2;
   }
-`;
-
-export const SearchIcon = styled(Icons.Search)`
-  width: 32px;
-  height: 32px;
-  margin-left: 24px;
 `;
 
 export const SearchInputOuter = styled.div`
