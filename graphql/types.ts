@@ -450,5 +450,29 @@ export type UpdateCollectionInput = {
 export type SupportProgramBannersQueryVariables = Exact<{ [key: string]: never }>;
 
 export type SupportProgramBannersQuery = {
-  supportProgramBanners: Array<{ link: string | null } | null> | null;
+  supportProgramBanners: Array<{
+    amplitudeEvent: string | null;
+    backgroundColor: string | null;
+    desktopImageUrl: string | null;
+    link: string | null;
+    mobileImageUrl: string | null;
+    subTitle: string | null;
+    subTitleColor: string | null;
+    title: string | null;
+    titleColor: string | null;
+  } | null> | null;
+};
+
+export type TechnologiesQueryVariables = Exact<{ [key: string]: never }>;
+
+export type TechnologiesQuery = {
+  technologies: Array<{
+    createdAt: any | null;
+    depth: number | null;
+    id: number | null;
+    name: string | null;
+    parentId: number | null;
+    priority: number | null;
+    count: number | null;
+  } | null> | null;
 };
