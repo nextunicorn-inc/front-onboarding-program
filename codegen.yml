@@ -1,0 +1,19 @@
+overwrite: true
+schema: ${SCHEMA_PATH}
+documents: "graphql/**/*.ts"
+generates:
+  graphql/types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+    config:
+      avoidOptionals: true
+      skipTypename: true
+      onlyOperationTypes: true
+      dedupeOperationSuffix: true
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

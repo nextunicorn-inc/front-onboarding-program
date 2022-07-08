@@ -146,3 +146,6 @@ package.tgz
 /vscode-case-study
 
 .idea
+
+.env.dev
+.env.prod
