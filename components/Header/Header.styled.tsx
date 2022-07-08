@@ -233,3 +233,128 @@ export const SignSeparator = styled.div`
   margin-right: 10px;
   background-color: var(--color-naturalgray4);
 `;
+
+export const SideNavigation = styled.div`
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.3);
+`;
+
+export const SideMenuWrapper = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(254, 254, 254);
+  width: 280px;
+  height: 100%;
+  padding-bottom: 26px;
+  overflow-y: scroll;
+  transition: all 300ms cubic-bezier(0.82, 0.085, 0.395, 0.895) 0s;
+`;
+
+export const CloseMenuIcons = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 10px;
+`;
+
+export const SideSignButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 48px;
+  margin: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 5px;
+  background-color: var(--color-unicornblue6);
+`;
+
+export const SideLoginInTitle = styled.h5`
+  ${FontSize.size14}
+  ${FontWeight.regular}
+  color: white;
+  cursor: pointer;
+`;
+
+export const SideSignUpTitle = styled.h5`
+  ${FontSize.size14}
+  ${FontWeight.bold}
+  color: white;
+  cursor: pointer;
+`;
+
+export const SideSignSeparator = styled.div`
+  width: 1px;
+  height: 12px;
+  margin: 0 10px;
+  background-color: white;
+`;
+
+export const SideMenuList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const SideMenu = styled.li`
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  :hover {
+    background-color: #b3d4fc;
+    color: var(--color-naturalgray8);
+    text-shadow: none;
+  }
+`;
+
+export const SideMenuTitle = styled.h5`
+  ${FontSize.size14};
+  ${FontWeight.regular};
+  color: #595959;
+  margin-left: 8px;
+`;
+
+export const SideDetailMenu = styled.div`
+  padding-left: 34px;
+`;
+
+export const SideDetailMenuTitle = styled.h5`
+  margin-top: 14px;
+  ${FontSize.size14};
+  ${FontWeight.regular};
+  color: #595959;
+  cursor: pointer;
+`;
+
+export const SideServiceIntroduceWrapper = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  cursor: pointer;
+
+  :hover {
+    background-color: #b3d4fc;
+    color: var(--color-naturalgray8);
+    text-shadow: none;
+  }
+`;
+
+export const SideServiceIntroduceTitleBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

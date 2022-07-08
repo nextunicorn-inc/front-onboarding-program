@@ -1,23 +1,30 @@
+import Icons from '../../commonUi/Icons';
+
 export const NAVIGATIONS = [
   {
     title: '파인더',
     href: 'https://www.nextunicorn.kr/finder',
+    Icon: Icons.Search24,
   },
   {
     title: '유니콘LIVE',
     href: 'https://www.nextunicorn.kr/unicornlive',
+    Icon: Icons.OnlineIR,
   },
   {
     title: '지원프로그램',
     href: 'https://www.nextunicorn.kr/program',
+    Icon: Icons.DeSelected,
   },
   {
     title: '뉴스룸',
     href: 'https://www.nextunicorn.kr/finder',
+    Icon: Icons.MegaPhone,
   },
   {
     title: '유니콘CLASS',
     href: 'https://www.unicornclass.kr/',
+    Icon: Icons.Edit,
   },
 ];
 
@@ -28,6 +35,7 @@ export const ALLIANCE_AND_EVENT = {
 
 export const INTRODUCE_OF_SERVICES = {
   title: '서비스 안내',
+  Icon: Icons.ServiceIntroduce,
   routes: [
     {
       title: '스타트업 서비스',
