@@ -241,7 +241,6 @@ export const SideNavigation = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-
   background-color: rgba(0, 0, 0, 0.3);
 `;
 
@@ -258,6 +257,14 @@ export const SideMenuWrapper = styled.div`
   padding-bottom: 26px;
   overflow-y: scroll;
   transition: all 300ms cubic-bezier(0.82, 0.085, 0.395, 0.895) 0s;
+  z-index: 1000000;
+
+  &.open {
+    right: 0;
+  }
+  &.close {
+    right: -300px;
+  }
 `;
 
 export const CloseMenuIcons = styled.div`

@@ -15,7 +15,7 @@ import * as Styled from './Header.styled';
 function Header() {
   const [isClickIntroduceService, setIsClickIntroduceService] = useState(false);
   const [isClickSearch, setIsClickSearch] = useState(false);
-  const [isClickSidMenu, setIsClickSideMenu] = useState(false);
+  const [isClickSideMenu, setIsClickSideMenu] = useState(false);
   const [isClickSideDetailMenu, setIsClickSideDetailMenu] = useState(false);
 
   const handleClickIntroduceService = () => {
@@ -27,7 +27,7 @@ function Header() {
   };
 
   const handleClickSideMenu = () => {
-    setIsClickSideMenu(!isClickSidMenu);
+    setIsClickSideMenu(!isClickSideMenu);
     setIsClickSearch(false);
     setIsClickSideDetailMenu(false);
   };
@@ -94,7 +94,7 @@ function Header() {
                     <Styled.SearchInputBoxWrapper>
                       <Styled.SearchInputBox>
                         <Styled.SearchInput placeholder="스타트업, 전문투자자, 스타트업 뉴스 검색하기" />
-                        <Icons.Search />
+                        <Icons.Search40 />
                       </Styled.SearchInputBox>
                     </Styled.SearchInputBoxWrapper>
                   </Styled.SearchInputLayout>
@@ -132,7 +132,7 @@ function Header() {
                   <Styled.SearchInputBoxWrapper>
                     <Styled.SearchInputBox>
                       <Styled.SearchInput placeholder="스타트업, 전문투자자, 스타트업 뉴스 검색하기" />
-                      <Icons.Search24 />
+                      <Icons.Search40 />
                     </Styled.SearchInputBox>
                   </Styled.SearchInputBoxWrapper>
                 </Styled.SearchInputLayout>
@@ -143,57 +143,54 @@ function Header() {
           </Styled.ResponsiveMenuList>
         </Styled.Navigation>
 
-        {isClickSidMenu && (
-          <Styled.SideNavigation>
-            <Styled.SideMenuWrapper>
-              <Styled.CloseMenuIcons onClick={handleClickSideMenu}>
-                <Icons.CloseMenu />
-              </Styled.CloseMenuIcons>
+        {isClickSideMenu && <Styled.SideNavigation />}
+        <Styled.SideMenuWrapper className={isClickSideMenu ? 'open' : 'close'}>
+          <Styled.CloseMenuIcons onClick={handleClickSideMenu}>
+            <Icons.CloseMenu />
+          </Styled.CloseMenuIcons>
 
-              <Styled.SideSignButtonsWrapper>
-                <Link href={LOGIN.href} passHref>
-                  <Styled.SideLoginInTitle>{LOGIN.title}</Styled.SideLoginInTitle>
+          <Styled.SideSignButtonsWrapper>
+            <Link href={LOGIN.href} passHref>
+              <Styled.SideLoginInTitle>{LOGIN.title}</Styled.SideLoginInTitle>
+            </Link>
+
+            <Styled.SideSignSeparator />
+
+            <Link href={SIGNUP.href} passHref>
+              <Styled.SideSignUpTitle>{SIGNUP.title}</Styled.SideSignUpTitle>
+            </Link>
+          </Styled.SideSignButtonsWrapper>
+
+          <Styled.SideMenuList>
+            {NAVIGATIONS.map(({ title, href, Icon }) => (
+              <Styled.SideMenu>
+                <Icon />
+                <Link key={title} href={href} passHref>
+                  <Styled.SideMenuTitle>{title}</Styled.SideMenuTitle>
                 </Link>
+              </Styled.SideMenu>
+            ))}
 
-                <Styled.SideSignSeparator />
+            <Styled.SideServiceIntroduceWrapper onClick={handleClickSideDetailMenu}>
+              <Styled.SideServiceIntroduceTitleBox>
+                <INTRODUCE_OF_SERVICES.Icon />
+                <Styled.SideMenuTitle>{INTRODUCE_OF_SERVICES.title}</Styled.SideMenuTitle>
+              </Styled.SideServiceIntroduceTitleBox>
 
-                <Link href={SIGNUP.href} passHref>
-                  <Styled.SideSignUpTitle>{SIGNUP.title}</Styled.SideSignUpTitle>
-                </Link>
-              </Styled.SideSignButtonsWrapper>
+              {isClickSideDetailMenu ? <Icons.TopArrow /> : <Icons.BottomArrow />}
+            </Styled.SideServiceIntroduceWrapper>
 
-              <Styled.SideMenuList>
-                {NAVIGATIONS.map(({ title, href, Icon }) => (
-                  <Styled.SideMenu>
-                    <Icon />
-                    <Link key={title} href={href} passHref>
-                      <Styled.SideMenuTitle>{title}</Styled.SideMenuTitle>
-                    </Link>
-                  </Styled.SideMenu>
+            {isClickSideDetailMenu && (
+              <Styled.SideDetailMenu>
+                {INTRODUCE_OF_SERVICES.routes.map(({ title, href }) => (
+                  <Link key={title} href={href} passHref>
+                    <Styled.SideDetailMenuTitle>{title}</Styled.SideDetailMenuTitle>
+                  </Link>
                 ))}
-
-                <Styled.SideServiceIntroduceWrapper onClick={handleClickSideDetailMenu}>
-                  <Styled.SideServiceIntroduceTitleBox>
-                    <INTRODUCE_OF_SERVICES.Icon />
-                    <Styled.SideMenuTitle>{INTRODUCE_OF_SERVICES.title}</Styled.SideMenuTitle>
-                  </Styled.SideServiceIntroduceTitleBox>
-
-                  {isClickSideDetailMenu ? <Icons.TopArrow /> : <Icons.BottomArrow />}
-                </Styled.SideServiceIntroduceWrapper>
-
-                {isClickSideDetailMenu && (
-                  <Styled.SideDetailMenu>
-                    {INTRODUCE_OF_SERVICES.routes.map(({ title, href }) => (
-                      <Link key={title} href={href} passHref>
-                        <Styled.SideDetailMenuTitle>{title}</Styled.SideDetailMenuTitle>
-                      </Link>
-                    ))}
-                  </Styled.SideDetailMenu>
-                )}
-              </Styled.SideMenuList>
-            </Styled.SideMenuWrapper>
-          </Styled.SideNavigation>
-        )}
+              </Styled.SideDetailMenu>
+            )}
+          </Styled.SideMenuList>
+        </Styled.SideMenuWrapper>
       </Styled.ResponsiveSection>
     </Styled.Layout>
   );
