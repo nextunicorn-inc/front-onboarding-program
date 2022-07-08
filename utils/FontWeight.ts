@@ -13,9 +13,7 @@ const regular = css`
 `;
 
 export const FontWeight = {
-    bold,
-    medium,
-    regular
+  bold,
+  medium,
+  regular,
 };
-
-

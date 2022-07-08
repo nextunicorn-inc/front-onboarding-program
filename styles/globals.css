@@ -55,6 +55,14 @@ a:visited {
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:visited {
+  color:inherit;
+}
+
 /* colors */
 :root {
   --base-naturalgray: 0, 0%;
