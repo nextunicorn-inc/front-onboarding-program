@@ -147,5 +147,5 @@ package.tgz
 
 .idea
 
-.env.dev
+.env
 .env.prod
