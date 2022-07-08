@@ -140,7 +140,6 @@ export const SearchLayout = styled.div`
   position: fixed;
   top: 60px;
   left: 0;
-  background-color: white;
 `;
 
 export const SearchInputLayout = styled.div`
@@ -153,6 +152,7 @@ export const SearchInputLayout = styled.div`
   align-items: center;
   box-shadow: rgb(0 0 0 / 8%) 0 12px 28px 0;
   transition: width 0.2s ease-in-out 0s;
+  background-color: white;
 `;
 
 export const SearchInputBoxWrapper = styled.div`
