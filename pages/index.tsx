@@ -27,7 +27,7 @@ export async function getStaticProps() {
 function Home() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <SupportProgramBanners />
       <CTASection />
       <Footer />
