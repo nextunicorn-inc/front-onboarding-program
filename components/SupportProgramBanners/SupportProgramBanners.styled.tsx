@@ -15,7 +15,7 @@ export const InnerContainerLink = styled.a<{ $backgroundColor?: string }>`
   background-color: ${({ $backgroundColor }) => $backgroundColor ?? 'transparent'};
 `;
 
-export const ResponsiveSection = styled.div<{ $backgroundImageUrl: string }>`
+export const ResponsiveSection = styled.div`
   max-width: 1240px;
   height: 306px;
   margin: 0 auto;
@@ -30,12 +30,6 @@ export const ResponsiveSection = styled.div<{ $backgroundImageUrl: string }>`
   ${MediaQuery.mobile} {
     padding: 0 20px;
   }
-  /* ${MediaQuery.mobile} {
-    background-image: url(${({ $backgroundImageUrl }) => $backgroundImageUrl});
-    background-size: cover;
-    background-position: bottom 0px right 0px;
-    padding: 0 20px;
-  } */
 `;
 
 export const Description = styled.div`
@@ -96,9 +90,54 @@ export const BannerImage = styled.img`
   }
 `;
 
-// ${MediaQuery.mobile} {
-//   background-image: url(${({ $backgroundImageUrl }) => $backgroundImageUrl});
-//   background-size: cover;
-//   background-position: bottom 0px right 0px;
-//   padding: 0 20px;
-// }
+export const IndicatorOuter = styled.div`
+  position: relative;
+  bottom: 72px;
+  max-width: 1240px;
+  margin: 0 auto;
+`;
+
+export const IndicatorInner = styled.div`
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  & > span {
+    ${FontSize.size12};
+    ${FontWeight.regular};
+
+    & > b {
+      ${FontWeight.medium}
+    }
+  }
+`;
+
+export const ProgressbarWrapper = styled.div`
+  width: 100%;
+  height: 2px;
+  position: relative;
+  background-color: var(--color-bluegray1);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  overflow: hidden;
+`;
+
+export const ProgressBar = styled.div<{ progress: number }>`
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-bluegray7);
+  border-bottom-left-radius: 2px;
+  transition: all 250ms linear;
+  transform: translateX(${({ progress }) => -100 + progress}%);
+  will-change: transform;
+`;

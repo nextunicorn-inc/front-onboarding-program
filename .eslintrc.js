@@ -26,5 +26,8 @@ module.exports = {
     'import/no-unresolved': ['off'],
     'no-use-before-define': 'off',
     'no-shadow': 'off',
+    'func-names': 'off',
+    'consistent-return': ['off'],
+    'operator-linebreak': ['off'],
   },
 };

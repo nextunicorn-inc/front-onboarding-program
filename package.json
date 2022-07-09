@@ -19,7 +19,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-query": "^3.39.1",
-    "react-responsive-carousel": "^3.2.23"
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
@@ -36,6 +37,8 @@
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
     "@types/react-query": "^1.2.9",
+    "@types/react-slick": "^0.23.10",
+    "@types/slick-carousel": "^1",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "@yarnpkg/pnpify": "^4.0.0-rc.11",

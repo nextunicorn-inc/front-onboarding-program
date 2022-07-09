@@ -3,7 +3,7 @@ import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
 import '../styles/globals.css';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import 'slick-carousel/slick/slick.css';
 
 import type { AppProps } from 'next/app';
 
