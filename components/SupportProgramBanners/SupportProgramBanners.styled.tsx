@@ -2,10 +2,6 @@ import styled from '@emotion/styled';
 import { MediaQuery, FontSize, FontWeight } from '../../utils';
 
 export const Contatiner = styled.section`
-  height: 306px;
-  ${MediaQuery.tablet} {
-    height: 202px;
-  }
   margin-bottom: 60px;
 `;
 
@@ -35,13 +31,14 @@ export const ResponsiveSection = styled.div`
 export const Description = styled.div`
   flex-basis: 100%;
   padding-top: 56px;
-  padding-bottom: 36px;
   height: 100%;
   text-align: left;
+
   ${MediaQuery.tablet} {
     padding-top: 60px;
     padding-bottom: 20px;
   }
+
   ${MediaQuery.mobile} {
     z-index: 2;
     padding-bottom: 24px;
@@ -75,18 +72,14 @@ export const BannerImage = styled.img`
   max-width: 610px;
   height: 306px;
   object-fit: cover;
+
   ${MediaQuery.tablet} {
     max-width: 402px;
     height: 202px;
   }
 
   @media screen and (max-width: 625px) {
-    z-index: 1;
-    max-width: 75%;
-    height: auto;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    display: none !important;
   }
 `;
 
@@ -95,6 +88,15 @@ export const IndicatorOuter = styled.div`
   bottom: 72px;
   max-width: 1240px;
   margin: 0 auto;
+
+  ${MediaQuery.tablet} {
+    padding-left: 32px;
+  }
+
+  ${MediaQuery.mobile} {
+    padding: 0 20px;
+    bottom: 40px;
+  }
 `;
 
 export const IndicatorInner = styled.div`
@@ -112,12 +114,32 @@ export const ButtonWrapper = styled.div`
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
+  & > svg {
+    cursor: pointer;
+  }
+
   & > span {
     ${FontSize.size12};
     ${FontWeight.regular};
 
     & > b {
       ${FontWeight.medium}
+    }
+  }
+
+  ${MediaQuery.mobile} {
+    gap: 0;
+    padding: 3px 8px;
+    background-color: hsla(var(--base-naturalgray9), 0.5);
+    color: #fefefe;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    & > svg {
+      display: none;
+    }
+    & > span {
+      font-size: 8px;
+      line-height: 14px;
     }
   }
 `;
@@ -130,6 +152,10 @@ export const ProgressbarWrapper = styled.div`
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   overflow: hidden;
+
+  ${MediaQuery.mobile} {
+    background-color: hsla(var(--base-naturalgray9), 0.7);
+  }
 `;
 
 export const ProgressBar = styled.div<{ progress: number }>`
@@ -139,5 +165,8 @@ export const ProgressBar = styled.div<{ progress: number }>`
   border-bottom-left-radius: 2px;
   transition: all 250ms linear;
   transform: translateX(${({ progress }) => -100 + progress}%);
-  will-change: transform;
+
+  ${MediaQuery.mobile} {
+    background-color: white;
+  }
 `;

@@ -10,7 +10,6 @@ import Indicator from './Indicator';
 function SupportProgramBanners() {
   const query = useSupportProgramBanners();
   const sliderRef = useRef<Slider | null>(null);
-  const leftSectionRef = useRef<HTMLDivElement>(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const onSlide = (nextIndex: number) => {
@@ -38,7 +37,7 @@ function SupportProgramBanners() {
             $backgroundColor={supportProgramBanner.backgroundColor}
             href={supportProgramBanner.link ?? '#'}
           >
-            <Styled.ResponsiveSection ref={leftSectionRef}>
+            <Styled.ResponsiveSection>
               <Styled.Description>
                 <Styled.SubTitle $color={supportProgramBanner.subTitleColor}>
                   {supportProgramBanner.subTitle}
