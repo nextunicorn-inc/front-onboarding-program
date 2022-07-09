@@ -57,7 +57,7 @@ function SupportProgramBanners() {
       <Indicator
         currentIndex={currentIndex}
         onClick={onClick}
-        sliderLength={query.data?.length ?? 0}
+        totalSlides={query.data?.length ?? 0}
       />
     </Styled.Contatiner>
   );

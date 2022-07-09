@@ -7,15 +7,15 @@ import { useInterval } from './SupportProgramBanners.hooks';
 
 type Props = {
   currentIndex: number;
-  sliderLength: number;
+  totalSlides: number;
   onClick: (type: 'next' | 'prev') => void;
 };
 
-function Indicator({ currentIndex, onClick, sliderLength }: Props) {
+function Indicator({ currentIndex, onClick, totalSlides }: Props) {
   const previousIndexRef = useRef(currentIndex);
   const [progress, setProgress] = useState(0);
   const [start, setStart] = useState(true);
-  const stop = sliderLength === 0 || !start;
+  const stop = totalSlides === 0 || !start;
 
   const resetProgress = () => {
     setStart(false);
@@ -50,7 +50,7 @@ function Indicator({ currentIndex, onClick, sliderLength }: Props) {
     }
   }, [progress, currentIndex]);
 
-  if (!sliderLength) {
+  if (totalSlides === 0) {
     return null;
   }
 
@@ -60,7 +60,7 @@ function Indicator({ currentIndex, onClick, sliderLength }: Props) {
         <Styled.ButtonWrapper>
           <Icons.CharbonLeft20 onClick={() => move('prev', 0)} />
           <span>
-            <b>{currentIndex + 1}</b> / {sliderLength}
+            <b>{currentIndex + 1}</b> / {totalSlides}
           </span>
           <Icons.CharbonRight20 onClick={() => move('next', 0)} />
         </Styled.ButtonWrapper>
