@@ -41,17 +41,10 @@ function Indicator({ currentIndex, onClick, sliderLength }: Props) {
   );
 
   useEffect(() => {
-    let id: NodeJS.Timeout;
     if (progress === 0 && previousIndexRef.current !== currentIndex) {
       previousIndexRef.current = currentIndex;
       setStart(true);
     }
-
-    return () => {
-      if (id) {
-        clearTimeout(id);
-      }
-    };
   }, [progress, currentIndex]);
 
   if (!sliderLength) {
