@@ -38,6 +38,7 @@
     "@types/react-query": "^1.2.9",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
+    "@yarnpkg/pnpify": "^4.0.0-rc.11",
     "dotenv": "^16.0.1",
     "emotion": "^11.0.0",
     "eslint": "8.18.0",

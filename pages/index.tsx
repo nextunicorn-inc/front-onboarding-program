@@ -1,5 +1,5 @@
-import { Header } from '../components/Header';
 import { QueryClient, dehydrate } from 'react-query';
+import { Header } from '../components/Header';
 import Footer from '../components/Footer';
 import CTASection from '../components/CTASection/CTASection';
 
