@@ -96,7 +96,7 @@ export const ServiceMenuTitle = styled.h5`
   color: var(--color-naturalgray8);
 `;
 
-export const ServiceDetailMenu = styled.div`
+export const ServiceDetailMenuList = styled.ul`
   z-index: 9;
   display: block;
   position: absolute;
@@ -109,7 +109,7 @@ export const ServiceDetailMenu = styled.div`
   text-align: center;
 `;
 
-export const ServiceDetailMenuTitle = styled.a`
+export const ServiceDetailMenu = styled.li`
   display: block;
   min-width: 148px;
   flex: 0 0 auto;
@@ -210,20 +210,15 @@ export const SignMenu = styled.li`
   display: flex;
   align-items: center;
   margin-left: 28px;
-`;
-
-export const LoginTitle = styled.h5`
   ${FontSize.size14};
   ${FontWeight.regular};
   color: var(--color-naturalgray8);
-  cursor: pointer;
 `;
 
 export const SignUpTitle = styled.h5`
   ${FontSize.size14};
   ${FontWeight.regular};
   color: var(--color-unicornblue6);
-  cursor: pointer;
 `;
 
 export const SignSeparator = styled.div`
@@ -268,7 +263,6 @@ export const SideMenuWrapper = styled.div`
   flex-direction: column;
   position: absolute;
   top: 0;
-  right: 0;
   background-color: rgb(254, 254, 254);
   width: 280px;
   height: 100%;
@@ -352,11 +346,12 @@ export const SideMenuTitle = styled.h5`
   margin-left: 8px;
 `;
 
-export const SideDetailMenu = styled.div`
+export const SideDetailMenu = styled.ul`
   padding-left: 34px;
 `;
 
 export const SideDetailMenuTitle = styled.h5`
+  display: block;
   margin-top: 14px;
   ${FontSize.size14};
   ${FontWeight.regular};
