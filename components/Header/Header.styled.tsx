@@ -247,7 +247,7 @@ export const SideMenuWrapper = styled.div`
   padding-bottom: 26px;
   overflow-y: scroll;
   transition: all 300ms cubic-bezier(0.82, 0.085, 0.395, 0.895) 0s;
-  z-index: 1000000;
+  z-index: 100;
 
   &.open {
     right: 0;
