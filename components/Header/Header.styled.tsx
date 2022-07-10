@@ -239,7 +239,7 @@ export const SideNavigation = styled.div`
 export const SideMenuWrapper = styled.div`
   flex: 1 0 auto;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 0;
   background-color: rgb(254, 254, 254);
   width: 280px;
@@ -254,6 +254,25 @@ export const SideMenuWrapper = styled.div`
   }
   &.close {
     right: -300px;
+  }
+
+  ${MediaQuery.mobile} {
+    &.open {
+      width: 220px;
+      right: 0;
+    }
+    &.close {
+      right: -300px;
+    }
+  }
+
+  ${MediaQuery.tablet} {
+    &.open {
+      right: 0;
+    }
+    &.close {
+      right: -300px;
+    }
   }
 `;
 
@@ -271,8 +290,7 @@ export const SideSignButtonsWrapper = styled.div`
   align-items: center;
   height: 48px;
   margin: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 16px;
   border-radius: 5px;
   background-color: var(--color-unicornblue6);
 `;
