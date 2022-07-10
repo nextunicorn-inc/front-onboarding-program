@@ -235,6 +235,7 @@ export const SignSeparator = styled.div`
 `;
 
 export const SideNavigation = styled.div`
+  display: none;
   z-index: 1;
   position: fixed;
   width: 100%;
@@ -242,10 +243,27 @@ export const SideNavigation = styled.div`
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.3);
+
+  ${MediaQuery.mobile} {
+    display: flex;
+  }
+
+  ${MediaQuery.tablet} {
+    display: flex;
+  }
 `;
 
 export const SideMenuWrapper = styled.div`
-  display: flex;
+  display: none;
+
+  ${MediaQuery.mobile} {
+    display: flex;
+  }
+
+  ${MediaQuery.tablet} {
+    display: flex;
+  }
+
   flex: 1 0 auto;
   flex-direction: column;
   position: absolute;
