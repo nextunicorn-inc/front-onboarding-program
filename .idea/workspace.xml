@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a589dc9e-e082-451a-aac1-e8f1deb0cc21" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonUi/Icons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Header/Header.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header/Header.styled.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header/Header.tsx" afterDir="false" />
     </list>
@@ -76,7 +75,7 @@
       <workItem from="1657073574081" duration="607000" />
       <workItem from="1657242687360" duration="6070000" />
       <workItem from="1657259847242" duration="1669000" />
-      <workItem from="1657433529331" duration="11270000" />
+      <workItem from="1657433529331" duration="12127000" />
     </task>
     <servers />
   </component>
@@ -99,7 +98,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/Header/Header.styled.tsx</url>
-          <line>252</line>
+          <line>248</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -108,6 +107,12 @@
           <line>106</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/Header/Header.tsx</url>
+          <line>128</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

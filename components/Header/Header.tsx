@@ -117,13 +117,13 @@ function Header() {
           </Styled.MenuWrapper>
 
           <Styled.ResponsiveMenuList>
-            <Styled.ResponsiveSearchIcon onClick={handleClickSearch}>
+            <span role="button" onClick={handleClickSearch}>
               <Icons.Search24 />
-            </Styled.ResponsiveSearchIcon>
+            </span>
 
-            <Styled.ResponsiveMenuIcon onClick={handleClickSideMenu}>
+            <span role="button" onClick={handleClickSideMenu}>
               <Icons.Menu24 />
-            </Styled.ResponsiveMenuIcon>
+            </span>
 
             {isClickSearch && (
               <Styled.SearchLayout>

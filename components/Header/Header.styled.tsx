@@ -45,6 +45,10 @@ export const MenuList = styled.ul`
 export const ResponsiveMenuList = styled.ul`
   display: none;
 
+  svg {
+    cursor: pointer;
+  }
+
   ${MediaQuery.mobile} {
     display: flex;
     justify-content: center;
@@ -58,14 +62,6 @@ export const ResponsiveMenuList = styled.ul`
     align-items: center;
     gap: 16px;
   }
-`;
-
-export const ResponsiveSearchIcon = styled.span`
-  cursor: pointer;
-`;
-
-export const ResponsiveMenuIcon = styled.span`
-  cursor: pointer;
 `;
 
 export const Menu = styled.li`
