@@ -46,18 +46,14 @@ function Header() {
               {NAVIGATIONS.map(({ title, href }) => {
                 if (title === '지원프로그램') {
                   return (
-                    <Styled.ActiveMenu>
-                      <a key={title} href={href}>
-                        {title}
-                      </a>
+                    <Styled.ActiveMenu key={title}>
+                      <a href={href}>{title}</a>
                     </Styled.ActiveMenu>
                   );
                 }
                 return (
-                  <Styled.Menu>
-                    <a key={title} href={href}>
-                      {title}
-                    </a>
+                  <Styled.Menu key={title}>
+                    <a href={href}>{title}</a>
                   </Styled.Menu>
                 );
               })}
@@ -166,7 +162,7 @@ function Header() {
 
           <Styled.SideMenuList>
             {NAVIGATIONS.map(({ title, href, Icon }) => (
-              <Styled.SideMenu>
+              <Styled.SideMenu key={title}>
                 <Icon />
                 <a key={title} href={href}>
                   <Styled.SideMenuTitle>{title}</Styled.SideMenuTitle>
@@ -186,7 +182,7 @@ function Header() {
             {isClickSideDetailMenu && (
               <Styled.SideDetailMenu>
                 {INTRODUCE_OF_SERVICES.routes.map(({ title, href }) => (
-                  <li>
+                  <li key={title}>
                     <Styled.SideDetailMenuTitle>
                       <a key={title} href={href}>
                         {title}
