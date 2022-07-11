@@ -1659,6 +1659,18 @@
             "deprecationReason": null
           },
           {
+            "name": "lastInvestmentHistory",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "LastInvestmentHistoryField",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "logoObjectId",
             "description": null,
             "args": [],
@@ -2057,9 +2069,13 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -3657,9 +3673,13 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -3679,6 +3699,41 @@
         ],
         "inputFields": null,
         "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "InvestmentDataFilterType",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "month",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringRangeFilterType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "type",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
         "enumValues": null,
         "possibleTypes": null
       },
@@ -3708,9 +3763,13 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -3839,6 +3898,18 @@
             "deprecationReason": null
           },
           {
+            "name": "nameEng",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "priority",
             "description": null,
             "args": [],
@@ -3851,12 +3922,123 @@
             "deprecationReason": null
           },
           {
+            "name": "subtitle",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "visible",
             "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
               "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "LastInvestmentHistoryField",
+        "description": null,
+        "fields": [
+          {
+            "name": "companyId",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "companyValuation",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "id",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lastInvestmentAmount",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Long",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lastInvestmentDate",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lastInvestmentPhase",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "totalInvestmentAmount",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Long",
               "ofType": null
             },
             "isDeprecated": false,
@@ -3961,18 +4143,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "Int",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "createdAt",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "LocalDateTime",
               "ofType": null
             },
             "isDeprecated": false,
@@ -4655,8 +4825,8 @@
             "deprecationReason": null
           },
           {
-            "name": "biz",
-            "description": "활용기술",
+            "name": "businesses",
+            "description": "비즈니스분야",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -4671,7 +4841,23 @@
             "deprecationReason": null
           },
           {
-            "name": "ceoGender",
+            "name": "ceoEducations",
+            "description": "대표자의 학력: 최종학력 -> 최대 다섯, ex - `G000101` 7자",
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ceoGenders",
             "description": "대표자의 성별",
             "type": {
               "kind": "LIST",
@@ -4687,23 +4873,7 @@
             "deprecationReason": null
           },
           {
-            "name": "ceoGraduateSchool",
-            "description": "대표자의 학력: 최종학력 -> 최대 다섯",
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "companyCertification",
+            "name": "certifications",
             "description": "스타트업 인증",
             "type": {
               "kind": "LIST",
@@ -4735,8 +4905,20 @@
             "deprecationReason": null
           },
           {
-            "name": "companySize",
-            "description": "팀원수",
+            "name": "companyValuation",
+            "description": "기업가치 : 지정된 범위",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "NumberRangeFilterType",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "corporations",
+            "description": "법인구분 : 범위",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -4751,24 +4933,16 @@
             "deprecationReason": null
           },
           {
-            "name": "companyValuation",
-            "description": "기업가치 : 지정된 범위",
+            "name": "employees",
+            "description": "팀원수",
             "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "NumberRangeFilterType",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "corporationType",
-            "description": "법인구분 : 범위",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -4787,7 +4961,23 @@
             "deprecationReason": null
           },
           {
-            "name": "lastInvestingAmount",
+            "name": "joinedInvestmentCompanies",
+            "description": "참여투자기관 : 불러온 값 선택 => 최대 다섯, ex - `18c59625edd08173` 16자",
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lastInvestmentAmount",
             "description": "최근투자유치금액 : 지정된 범위(gte, lte)",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -4799,11 +4989,11 @@
             "deprecationReason": null
           },
           {
-            "name": "lastInvestingDateRange",
-            "description": "최근투자유치일자 : 직접입력",
+            "name": "lastInvestmentDate",
+            "description": "최근투자유치일자 : 지정된 범위 / 직접입력",
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "StringRangeFilterType",
+              "name": "InvestmentDataFilterType",
               "ofType": null
             },
             "defaultValue": null,
@@ -4811,55 +5001,39 @@
             "deprecationReason": null
           },
           {
-            "name": "lastInvestingDateType",
-            "description": "최근투자유치일자 : 지정된 범위",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "lastInvestmentPhase",
+            "name": "lastInvestmentPhases",
             "description": "최근투자단계 : 범위",
             "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
             },
             "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "location",
+            "name": "locations",
             "description": "지역: 범위",
             "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
             },
             "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "name",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "operatingIncome",
+            "name": "operatingProfit",
             "description": "영업이익 : 지정된 범위",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -4871,8 +5045,8 @@
             "deprecationReason": null
           },
           {
-            "name": "pageable",
-            "description": null,
+            "name": "paging",
+            "description": " pageable",
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "PageableFilterType",
@@ -4883,16 +5057,12 @@
             "deprecationReason": null
           },
           {
-            "name": "participateInvestmentCompany",
-            "description": "참여투자기관 : 불러온 값 선택 => 최대 다섯",
+            "name": "q",
+            "description": " queryString -> 기업이름/기업요약소개/서비스명/서비스요약소개/서비스소개",
             "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -4911,11 +5081,11 @@
             "deprecationReason": null
           },
           {
-            "name": "sort",
-            "description": " sort 받아올 형태 수정 필요",
+            "name": "sorting",
+            "description": " sort",
             "type": {
-              "kind": "SCALAR",
-              "name": "Int",
+              "kind": "INPUT_OBJECT",
+              "name": "SortingType",
               "ofType": null
             },
             "defaultValue": null,
@@ -4923,8 +5093,8 @@
             "deprecationReason": null
           },
           {
-            "name": "tech",
-            "description": "비즈니스분야: depth 2까지",
+            "name": "technologies",
+            "description": "활용기술",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -4939,7 +5109,7 @@
             "deprecationReason": null
           },
           {
-            "name": "totalInvestingAmount",
+            "name": "totalInvestmentAmount",
             "description": "총투자유치금액 : 지정된 범위(gte, lte)",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -4988,6 +5158,29 @@
         ],
         "interfaces": null,
         "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "OrderEnum",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "asc",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "desc",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
         "possibleTypes": null
       },
       {
@@ -6201,6 +6394,49 @@
         "possibleTypes": null
       },
       {
+        "kind": "INPUT_OBJECT",
+        "name": "SortingType",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "order",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "OrderEnum",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "target",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "TargetEnum",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
         "kind": "OBJECT",
         "name": "StockField",
         "description": null,
@@ -6387,7 +6623,7 @@
         "fields": null,
         "inputFields": [
           {
-            "name": "max",
+            "name": "end",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -6399,7 +6635,7 @@
             "deprecationReason": null
           },
           {
-            "name": "min",
+            "name": "start",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -6966,6 +7202,65 @@
           },
           {
             "name": "U7",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "TargetEnum",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "benchMarkScore",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lastInvestmentAmount",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lastInvestmentDate",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "lastInvestmentPhases",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "memberCount",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "profitAmount",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "salesAmount",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "totalInvestmentAmount",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null

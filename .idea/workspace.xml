@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a589dc9e-e082-451a-aac1-e8f1deb0cc21" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/supportPrograms.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/supportPrograms.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql.schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/graphql.schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/queries/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/queries/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
