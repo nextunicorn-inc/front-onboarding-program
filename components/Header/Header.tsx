@@ -163,9 +163,9 @@ function Header() {
 
           <Styled.SideMenuList>
             {NAVIGATIONS.map(({ title, href, Icon }) => (
-              <Styled.SideMenu>
+              <Styled.SideMenu key={title}>
                 <Icon />
-                <Link key={title} href={href} passHref>
+                <Link href={href} passHref>
                   <Styled.SideMenuTitle>{title}</Styled.SideMenuTitle>
                 </Link>
               </Styled.SideMenu>
