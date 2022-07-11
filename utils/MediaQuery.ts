@@ -1,5 +1,3 @@
-import { css } from '@emotion/react';
-
 const sizes = {
   mobile: 767,
   tablet: 1239,

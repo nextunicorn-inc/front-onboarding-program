@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen:dev": "DOTENV_CONFIG_PATH=.env.dev graphql-codegen --config codegen.yml -r dotenv/config"
+    "codegen:dev": "DOTENV_CONFIG_PATH=.env graphql-codegen --config codegen.yml -r dotenv/config"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -18,7 +18,9 @@
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-query": "^3.39.1"
+    "react-query": "^3.39.1",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
@@ -35,8 +37,11 @@
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
     "@types/react-query": "^1.2.9",
+    "@types/react-slick": "^0.23.10",
+    "@types/slick-carousel": "^1",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
+    "@yarnpkg/pnpify": "^4.0.0-rc.11",
     "dotenv": "^16.0.1",
     "emotion": "^11.0.0",
     "eslint": "8.18.0",
