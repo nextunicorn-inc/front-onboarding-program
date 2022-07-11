@@ -45,6 +45,10 @@ export const MenuList = styled.ul`
 export const ResponsiveMenuList = styled.ul`
   display: none;
 
+  svg {
+    cursor: pointer;
+  }
+
   ${MediaQuery.mobile} {
     display: flex;
     justify-content: center;
@@ -58,14 +62,6 @@ export const ResponsiveMenuList = styled.ul`
     align-items: center;
     gap: 16px;
   }
-`;
-
-export const ResponsiveSearchIcon = styled.span`
-  cursor: pointer;
-`;
-
-export const ResponsiveMenuIcon = styled.span`
-  cursor: pointer;
 `;
 
 export const Menu = styled.li`
@@ -96,7 +92,7 @@ export const ServiceMenuTitle = styled.h5`
   color: var(--color-naturalgray8);
 `;
 
-export const ServiceDetailMenu = styled.div`
+export const ServiceDetailMenuList = styled.ul`
   z-index: 9;
   display: block;
   position: absolute;
@@ -109,7 +105,7 @@ export const ServiceDetailMenu = styled.div`
   text-align: center;
 `;
 
-export const ServiceDetailMenuTitle = styled.a`
+export const ServiceDetailMenu = styled.li`
   display: block;
   min-width: 148px;
   flex: 0 0 auto;
@@ -210,20 +206,15 @@ export const SignMenu = styled.li`
   display: flex;
   align-items: center;
   margin-left: 28px;
-`;
-
-export const LoginTitle = styled.h5`
   ${FontSize.size14};
   ${FontWeight.regular};
   color: var(--color-naturalgray8);
-  cursor: pointer;
 `;
 
 export const SignUpTitle = styled.h5`
   ${FontSize.size14};
   ${FontWeight.regular};
   color: var(--color-unicornblue6);
-  cursor: pointer;
 `;
 
 export const SignSeparator = styled.div`
@@ -235,6 +226,7 @@ export const SignSeparator = styled.div`
 `;
 
 export const SideNavigation = styled.div`
+  display: flex;
   z-index: 1;
   position: fixed;
   width: 100%;
@@ -245,25 +237,42 @@ export const SideNavigation = styled.div`
 `;
 
 export const SideMenuWrapper = styled.div`
-  display: flex;
   flex: 1 0 auto;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
   background-color: rgb(254, 254, 254);
   width: 280px;
   height: 100%;
   padding-bottom: 26px;
   overflow-y: scroll;
   transition: all 300ms cubic-bezier(0.82, 0.085, 0.395, 0.895) 0s;
-  z-index: 1000000;
+  z-index: 100;
 
   &.open {
     right: 0;
   }
   &.close {
     right: -300px;
+  }
+
+  ${MediaQuery.mobile} {
+    &.open {
+      width: 220px;
+      right: 0;
+    }
+    &.close {
+      right: -300px;
+    }
+  }
+
+  ${MediaQuery.tablet} {
+    &.open {
+      right: 0;
+    }
+    &.close {
+      right: -300px;
+    }
   }
 `;
 
@@ -281,8 +290,7 @@ export const SideSignButtonsWrapper = styled.div`
   align-items: center;
   height: 48px;
   margin: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 16px;
   border-radius: 5px;
   background-color: var(--color-unicornblue6);
 `;
@@ -334,11 +342,12 @@ export const SideMenuTitle = styled.h5`
   margin-left: 8px;
 `;
 
-export const SideDetailMenu = styled.div`
+export const SideDetailMenu = styled.ul`
   padding-left: 34px;
 `;
 
 export const SideDetailMenuTitle = styled.h5`
+  display: block;
   margin-top: 14px;
   ${FontSize.size14};
   ${FontWeight.regular};
