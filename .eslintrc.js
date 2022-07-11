@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   env: {
     browser: true,
+    node: true,
   },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'import', 'prettier'],
@@ -25,5 +26,8 @@ module.exports = {
     'import/no-unresolved': ['off'],
     'no-use-before-define': 'off',
     'no-shadow': 'off',
+    'func-names': 'off',
+    'consistent-return': ['off'],
+    'operator-linebreak': ['off'],
   },
 };
