@@ -8,6 +8,8 @@ import {
   useSupportProgramBanners,
 } from '../components/SupportProgramBanners';
 
+import { FeaturedSupportPrograms } from '../components/FeaturedSupportPrograms';
+
 export async function getStaticProps() {
   const queryClient = new QueryClient();
 
@@ -29,6 +31,7 @@ function Home() {
     <>
       <Header />
       <SupportProgramBanners />
+      <FeaturedSupportPrograms />
       <CTASection />
       <Footer />
     </>

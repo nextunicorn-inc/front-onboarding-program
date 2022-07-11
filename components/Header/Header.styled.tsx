@@ -248,7 +248,7 @@ export const SideMenuWrapper = styled.div`
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   background-color: rgb(254, 254, 254);
