@@ -18,6 +18,7 @@ export const TARGET_COMPANY_AGE_TEXTS = {
 
 export const AREA_TEXTS = {
   all: '전체',
+  [AreaEnum.Mc]: '멘토링·컨설팅',
   [AreaEnum.Co]: '협업',
   [AreaEnum.Cz]: '사업화',
   [AreaEnum.Fs]: '시설·공간·보육',
