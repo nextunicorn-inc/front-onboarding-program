@@ -19,6 +19,7 @@ function FeaturedSupportPrograms() {
 
   return (
     <Styled.Container>
+      {/*PC형과 태블릿, 모바일형 나눠서 진행*/}
       <Styled.Wrapper>
         <Styled.NoticeHeaderTitle>👀지금 주목해야할</Styled.NoticeHeaderTitle>
         <Styled.SupportProgramsTitle>지원프로그램 추천</Styled.SupportProgramsTitle>
@@ -33,6 +34,7 @@ function FeaturedSupportPrograms() {
           </Styled.ButtonWrapper>
 
           <Slider ref={sliderRef} {...SLIDER_SETTINGS}>
+            {/*여기에 데이터를 받아와서 랜더링 해야 함(map 사용)*/}
             <Styled.ContentsArticle>
               <Styled.ContentsImgLink>
                 <Styled.ContentsImg></Styled.ContentsImg>

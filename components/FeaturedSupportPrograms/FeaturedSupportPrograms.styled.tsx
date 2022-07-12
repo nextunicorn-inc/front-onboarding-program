@@ -41,11 +41,6 @@ export const SupportProgramsTitle = styled.h2`
 export const SlideWrapper = styled.div`
   position: relative;
 
-  .slick-prev:before,
-  .slick-next:before {
-    display: none;
-  }
-
   .slick-slider {
     max-width: 1240px;
     overflow: hidden;

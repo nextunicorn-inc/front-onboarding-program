@@ -60,11 +60,7 @@ export const ResponsiveMenuList = styled.ul`
   }
 `;
 
-export const ResponsiveSearchIcon = styled.span`
-  cursor: pointer;
-`;
-
-export const ResponsiveMenuIcon = styled.span`
+export const ResponsiveIcon = styled.span`
   cursor: pointer;
 `;
 
@@ -112,7 +108,6 @@ export const ServiceDetailMenu = styled.div`
 export const ServiceDetailMenuTitle = styled.a`
   display: block;
   min-width: 148px;
-  flex: 0 0 auto;
   flex-direction: row;
   justify-content: center;
   align-items: center;

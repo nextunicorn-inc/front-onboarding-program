@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Icons from '../../commonUi/Icons';
+import { IconBox } from './IconBox';
 
 import {
   NAVIGATIONS,
@@ -118,13 +119,8 @@ function Header() {
           </Styled.MenuWrapper>
 
           <Styled.ResponsiveMenuList>
-            <Styled.ResponsiveSearchIcon onClick={handleClickSearch}>
-              <Icons.Search24 />
-            </Styled.ResponsiveSearchIcon>
-
-            <Styled.ResponsiveMenuIcon onClick={handleClickSideMenu}>
-              <Icons.Menu24 />
-            </Styled.ResponsiveMenuIcon>
+            <IconBox IconElement={Icons.Search24} onClick={handleClickSearch} />
+            <IconBox IconElement={Icons.Menu24} onClick={handleClickSideMenu} />
 
             {isClickSearch && (
               <Styled.SearchLayout>
