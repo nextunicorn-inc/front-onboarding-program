@@ -3,6 +3,8 @@ import { DEFAULT } from './SupportProgramFilters.constants';
 import { SUPPORT_PROGRAM_TYPE_TEXTS } from '../../../constants/supportPrograms';
 
 import { SupportProgramTypes } from './SupportProgramFilters.types';
+import { SupportProgramTypeEnum } from '../../../graphql';
+import Icons from '../../../commonUi/Icons';
 
 type Props = {
   allTypes: SupportProgramTypes;
@@ -14,12 +16,11 @@ function TypeFilters({ onClick, activeTypes, allTypes }: Props) {
   return (
     <Styled.TypeFilterList role="list">
       {[...DEFAULT, ...allTypes].map((type, index) => (
-        <Styled.TypeFilterItem
-          onClick={onClick(type)}
-          $active={activeTypes.includes(type)}
-          key={type}
-        >
-          {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
+        <Styled.TypeFilterItem $active={activeTypes.includes(type)} key={type}>
+          <button type="button" onClick={onClick(type)}>
+            {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
+            {type === SupportProgramTypeEnum.Snl && <Icons.Fast32 />}
+          </button>
           <Styled.TypeFilterNoticeLine $active={activeTypes.includes(type)} />
         </Styled.TypeFilterItem>
       ))}

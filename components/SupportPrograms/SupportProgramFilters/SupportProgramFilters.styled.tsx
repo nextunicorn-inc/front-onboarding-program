@@ -16,18 +16,26 @@ export const TypeFilterList = styled.ul`
 export const TypeFilterItem = styled.li<{ $active: boolean }>`
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   position: relative;
   align-items: center;
   overflow-x: hidden;
 
-  color: hsla(var(--base-naturalgray9), ${({ $active }) => ($active ? 1 : 0.4)});
-  ${FontWeight.bold};
-  ${FontSize.size24};
-  letter-spacing: 0.2px;
+  & > button {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: hsla(var(--base-naturalgray9), ${({ $active }) => ($active ? 1 : 0.4)});
+    ${FontWeight.bold};
+    ${FontSize.size24};
+    letter-spacing: 0.2px;
+  }
 
   &:hover {
-    color: var(--color-naturalgray9);
+    & > button {
+      color: var(--color-naturalgray9);
+    }
     & > div {
       transform: translateX(0%);
     }
