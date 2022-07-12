@@ -7,10 +7,11 @@ import Icons from '../../../commonUi/Icons';
 type Props<T> = {
   title: string;
   renderItem: (item: T, index?: number) => ReactNode;
-  resetFilter: () => void;
+  resetFilter: () => void | null;
   notSelected: boolean;
   keyExtractor: (item: T) => string;
   data: T[];
+  MoreButton: ReactNode | null;
 };
 
 function MultipleSelectionFilters<T>({
@@ -20,6 +21,7 @@ function MultipleSelectionFilters<T>({
   data,
   resetFilter = () => undefined,
   notSelected = false,
+  MoreButton,
 }: Props<T>) {
   const showAllButton = typeof resetFilter === 'function';
   return (
@@ -38,9 +40,7 @@ function MultipleSelectionFilters<T>({
         {data.map((item) => (
           <li key={keyExtractor(item)}>{renderItem(item)}</li>
         ))}
-        <Styled.MoreButtonWrapper>
-          <Styled.MoreButton role="button" />
-        </Styled.MoreButtonWrapper>
+        {MoreButton}
       </Styled.FilterList>
     </Styled.MultipleFiltersRow>
   );

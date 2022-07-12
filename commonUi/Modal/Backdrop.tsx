@@ -11,7 +11,10 @@ type Props = {
 function Backdrop({ closable, onClick = () => undefined, children }: Props) {
   const handleClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
-    if (closable) {
+    if (!closable) {
+      return;
+    }
+    if (e.target === e.currentTarget) {
       onClick();
     }
   };

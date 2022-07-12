@@ -26,13 +26,10 @@ function ModalProvider({ children }: Props) {
   const [open, setOpen] = useState(false);
   const [Component, setComponent] = useState<ReactElement | null>(null);
 
-  const show = useCallback(
-    (Comp: ReactElement) => () => {
-      setOpen(true);
-      setComponent(Comp);
-    },
-    [],
-  );
+  const show = useCallback((Comp: ReactElement) => {
+    setOpen(true);
+    setComponent(Comp);
+  }, []);
 
   const hide = useCallback(() => {
     setOpen(false);

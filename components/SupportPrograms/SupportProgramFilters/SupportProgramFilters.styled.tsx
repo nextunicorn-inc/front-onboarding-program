@@ -88,8 +88,9 @@ export const Separator = styled.div`
   margin-right: 20px;
 `;
 
-export const FilterList = styled.ul`
+export const FilterList = styled.ul<{ $wrap?: boolean }>`
   display: flex;
+  flex-wrap: ${({ $wrap }) => ($wrap ? 'wrap' : 'nowrap')};
   gap: 12px;
   overflow-x: hidden;
 

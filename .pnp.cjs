@@ -1156,6 +1156,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:0.11.0"\
       ],\
       [\
+        "dequal",\
+        "npm:2.0.3"\
+      ],\
+      [\
         "detect-indent",\
         "npm:6.1.0"\
       ],\
@@ -3042,6 +3046,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:5.29.0"],\
             ["@typescript-eslint/parser", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:5.29.0"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.11"],\
+            ["dequal", "npm:2.0.3"],\
             ["dotenv", "npm:16.0.1"],\
             ["emotion", "npm:11.0.0"],\
             ["eslint", "npm:8.18.0"],\
@@ -9898,6 +9903,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["dequal", [\
+        ["npm:2.0.3", {\
+          "packageLocation": "./.yarn/cache/dequal-npm-2.0.3-53a630c60e-8679b850e1.zip/node_modules/dequal/",\
+          "packageDependencies": [\
+            ["dequal", "npm:2.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["detect-indent", [\
         ["npm:6.1.0", {\
           "packageLocation": "./.yarn/cache/detect-indent-npm-6.1.0-d8c441ff7a-ab953a73c7.zip/node_modules/detect-indent/",\
@@ -11131,6 +11145,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:5.29.0"],\
             ["@typescript-eslint/parser", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:5.29.0"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.11"],\
+            ["dequal", "npm:2.0.3"],\
             ["dotenv", "npm:16.0.1"],\
             ["emotion", "npm:11.0.0"],\
             ["eslint", "npm:8.18.0"],\
