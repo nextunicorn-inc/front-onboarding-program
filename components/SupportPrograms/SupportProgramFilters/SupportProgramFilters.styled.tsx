@@ -63,9 +63,11 @@ export const MultipleFiltersWrapper = styled.section`
 `;
 
 export const MultipleFiltersRow = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  width: 100%;
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -75,6 +77,7 @@ export const MultipleFilterTitle = styled.p`
   ${FontSize.size16};
   ${FontWeight.bold};
   color: var(--color-naturalgray8);
+  flex-shrink: 0;
 `;
 
 export const Separator = styled.div`
@@ -88,8 +91,14 @@ export const Separator = styled.div`
 export const FilterList = styled.ul`
   display: flex;
   gap: 12px;
+  overflow-x: hidden;
 
-  & button {
+  & > li {
+    flex-shrink: 0;
+  }
+
+  & > button {
+    flex-shrink: 0;
     border: none;
   }
 `;
@@ -120,5 +129,46 @@ export const FilterItem = styled.button<{ selected: boolean }>`
   &:hover {
     color: var(--color-unicornblue6);
     background-color: var(--color-unicornblue1);
+  }
+`;
+
+export const MoreButtonWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  display: flex;
+
+  align-items: center;
+  width: 89px;
+  height: 100%;
+  padding-right: 18px;
+
+  background: linear-gradient(285.55deg, #fefefe 65.85%, rgba(254, 254, 254, 0) 89.11%);
+`;
+
+export const MoreButton = styled.div`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  background-color: transparent;
+  border: 1px solid var(--color-unicornblue6);
+  border-radius: 9999px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 1px;
+    background-color: var(--color-unicornblue6);
+  }
+
+  &::after {
+    transform: rotate(90deg);
   }
 `;

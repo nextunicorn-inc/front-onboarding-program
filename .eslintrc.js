@@ -21,6 +21,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'react/require-default-props': 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': ['off'],
     'import/no-unresolved': ['off'],

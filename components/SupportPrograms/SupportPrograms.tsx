@@ -1,7 +1,7 @@
-import { useSupportProgramFilters, SupportProgramFilters } from './SupportProgramFilters';
 import * as FilterStyled from './SupportProgramFilters/SupportProgramFilters.styled';
 
 import TypeFilters from './SupportProgramFilters/TypeFilters';
+import { useSupportProgramFilters, SupportProgramFilters } from './SupportProgramFilters';
 import MultipleSelectionFilters from './SupportProgramFilters/MultipleSelectionFilters';
 
 import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from '../../constants/supportPrograms';
@@ -67,7 +67,7 @@ function SupportPrograms() {
               resetFilter={toggleAreas('all')}
               notSelected={areActiveAreasNotSelected}
               keyExtractor={(data) => data}
-              data={filterQuery.data.areas}
+              data={[...filterQuery.data.areas, ...filterQuery.data.areas]}
               renderItem={(data) => (
                 <FilterStyled.FilterItem
                   selected={activeAreas.includes(data)}
@@ -85,7 +85,12 @@ function SupportPrograms() {
               resetFilter={toggleHosts('all')}
               notSelected={areActiveHostsNotSelected}
               keyExtractor={(data) => data.id}
-              data={filterQuery.data.hosts}
+              // data={filterQuery.data.hosts}
+              data={[
+                ...filterQuery.data.hosts,
+                ...filterQuery.data.hosts,
+                ...filterQuery.data.hosts,
+              ]}
               renderItem={(data) => (
                 <FilterStyled.FilterItem
                   selected={activeHosts.includes(data.id)}

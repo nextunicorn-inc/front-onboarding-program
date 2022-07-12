@@ -38,6 +38,9 @@ function MultipleSelectionFilters<T>({
         {data.map((item) => (
           <li key={keyExtractor(item)}>{renderItem(item)}</li>
         ))}
+        <Styled.MoreButtonWrapper>
+          <Styled.MoreButton role="button" />
+        </Styled.MoreButtonWrapper>
       </Styled.FilterList>
     </Styled.MultipleFiltersRow>
   );
