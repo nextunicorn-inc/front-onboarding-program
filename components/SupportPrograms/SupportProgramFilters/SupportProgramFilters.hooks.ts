@@ -76,5 +76,7 @@ export function useClientFilter<T>({ multiple = false, showNullWhenEmpty = true 
     filteredValue = internalFilteredState;
   }
 
-  return [state, toggle, filteredValue] as const;
+  const notSelected = state.length === 1 && state[0] === 'all';
+
+  return [state, toggle, filteredValue, notSelected] as const;
 }

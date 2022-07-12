@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FontSize, FontWeight } from '../../../utils';
 
@@ -79,22 +80,35 @@ export const Separator = styled.div`
 export const FilterList = styled.ul`
   display: flex;
   gap: 12px;
+
+  & button {
+    border: none;
+  }
 `;
 
 export const FilterItem = styled.button<{ selected: boolean }>`
-  border: none;
-  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 16px;
   ${FontSize.size16};
   ${FontWeight.medium};
-  padding: 10px 16px;
-  cursor: pointer;
 
   color: var(${({ selected }) => (selected ? '--color-unicornblue6' : '--color-naturalgray7')});
   background-color: var(
     ${({ selected }) => (selected ? '--color-unicornblue1' : '--color-bluegray0')}
   );
+  border: none;
+  border-radius: 25px;
 
   transition: all 150ms linear;
+
+  & > svg {
+    transition: all 150ms linear;
+    opacity: ${({ selected }) => (selected ? 1 : 0)};
+    position: absolute;
+    top: 0;
+    right: -5px;
+  }
   &:hover {
     color: var(--color-unicornblue6);
     background-color: var(--color-unicornblue1);
