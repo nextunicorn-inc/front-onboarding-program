@@ -7,7 +7,7 @@ export const IconBox = ({
   onClick,
 }: {
   IconElement: React.FunctionComponent;
-  onClick: void;
+  onClick: () => void;
 }) => {
   return (
     <Styled.ResponsiveIcon onClick={onClick}>
