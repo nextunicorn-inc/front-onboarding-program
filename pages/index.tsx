@@ -10,13 +10,15 @@ import {
 
 import { FeaturedSupportPrograms } from '../components/FeaturedSupportPrograms';
 
+import { SupportPrograms, useSupportProgramFilters } from '../components/SupportPrograms';
+
 export async function getStaticProps() {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery(
-    useSupportProgramBanners.getKeys(),
-    useSupportProgramBanners.fetcher,
-  );
+  await Promise.all([
+    queryClient.prefetchQuery(useSupportProgramBanners.getKeys(), useSupportProgramBanners.fetcher),
+    queryClient.prefetchQuery(useSupportProgramFilters.getKeys(), useSupportProgramFilters.fetcher),
+  ]);
 
   return {
     props: {
@@ -32,6 +34,7 @@ function Home() {
       <Header />
       <SupportProgramBanners />
       <FeaturedSupportPrograms />
+      <SupportPrograms />
       <CTASection />
       <Footer />
     </>

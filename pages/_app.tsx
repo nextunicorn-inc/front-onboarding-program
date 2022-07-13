@@ -6,6 +6,7 @@ import '../styles/globals.css';
 import 'slick-carousel/slick/slick.css';
 
 import type { AppProps } from 'next/app';
+import { ModalProvider } from '../commonUi/Modal';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [client] = useState(() => new QueryClient());
@@ -13,7 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={client}>
       <Hydrate state={pageProps.reactQueryData}>
         <ReactQueryDevtools initialIsOpen />
-        <Component {...pageProps} />
+        <ModalProvider>
+          <Component {...pageProps} />
+        </ModalProvider>
       </Hydrate>
     </QueryClientProvider>
   );

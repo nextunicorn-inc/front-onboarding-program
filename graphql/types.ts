@@ -348,6 +348,11 @@ export type InquiryInput = {
   title: InputMaybe<Scalars['String']>;
 };
 
+export type InvestmentDataFilterType = {
+  month: InputMaybe<StringRangeFilterType>;
+  type: InputMaybe<Scalars['String']>;
+};
+
 export type NuProStartupCompanyFilterType = {
   /** 벤치마크점수 : 지정된 범위 */
   benchmarkScore: InputMaybe<NumberRangeFilterType>;
@@ -374,7 +379,7 @@ export type NuProStartupCompanyFilterType = {
   /** 최근투자유치금액 : 지정된 범위(gte, lte) */
   lastInvestmentAmount: InputMaybe<NumberRangeFilterType>;
   /** 최근투자유치일자 : 지정된 범위 / 직접입력 */
-  lastInvestmentDate: InputMaybe<DateFilterType>;
+  lastInvestmentDate: InputMaybe<InvestmentDataFilterType>;
   /** 최근투자단계 : 범위 */
   lastInvestmentPhases: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 지역: 범위 */
@@ -420,8 +425,8 @@ export type RegisterUserInput = {
 };
 
 export type SortingType = {
-  order: InputMaybe<OrderEnum>;
-  target: InputMaybe<TargetEnum>;
+  order: OrderEnum;
+  target: TargetEnum;
 };
 
 export type StringRangeFilterType = {
@@ -471,6 +476,17 @@ export type UpdateCollectionInput = {
   collectionId: Scalars['String'];
   name: Scalars['String'];
   type: CollectionType;
+};
+
+export type FilterOptionsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type FilterOptionsQuery = {
+  filterOptions: {
+    areas: Array<AreaEnum | null> | null;
+    targetCompanyAges: Array<TargetCompanyAgeEnum | null> | null;
+    types: Array<SupportProgramTypeEnum | null> | null;
+    hosts: Array<{ id: string | null; meta: { name: string | null } | null } | null> | null;
+  } | null;
 };
 
 export type FeaturedSupportProgramsQueryVariables = Exact<{ [key: string]: never }>;

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useState } from 'react';
 import Icons from '../../commonUi/Icons';
 import { IconBox } from './IconBox';
@@ -48,15 +47,15 @@ function Header() {
               {NAVIGATIONS.map(({ title, href }) => {
                 if (title === '지원프로그램') {
                   return (
-                    <Link key={title} href={href} passHref>
-                      <Styled.ActiveMenu>{title}</Styled.ActiveMenu>
-                    </Link>
+                    <Styled.ActiveMenu key={title}>
+                      <a href={href}>{title}</a>
+                    </Styled.ActiveMenu>
                   );
                 }
                 return (
-                  <Link key={title} href={href} passHref>
-                    <Styled.Menu>{title}</Styled.Menu>
-                  </Link>
+                  <Styled.Menu key={title}>
+                    <a href={href}>{title}</a>
+                  </Styled.Menu>
                 );
               })}
             </Styled.MenuList>
@@ -64,9 +63,9 @@ function Header() {
 
           <Styled.MenuWrapper>
             <Styled.MenuList>
-              <Link href={ALLIANCE_AND_EVENT.href} passHref>
-                <Styled.Menu>{ALLIANCE_AND_EVENT.title}</Styled.Menu>
-              </Link>
+              <Styled.Menu>
+                <a href={ALLIANCE_AND_EVENT.href}>{ALLIANCE_AND_EVENT.title}</a>
+              </Styled.Menu>
 
               <Styled.ServiceMenu>
                 <Styled.ServiceMenuTitle onClick={handleClickIntroduceService}>
@@ -74,13 +73,15 @@ function Header() {
                 </Styled.ServiceMenuTitle>
 
                 {isClickIntroduceService && (
-                  <Styled.ServiceDetailMenu>
+                  <Styled.ServiceDetailMenuList>
                     {INTRODUCE_OF_SERVICES.routes.map(({ title, href }) => (
-                      <Link key={title} href={href} passHref>
-                        <Styled.ServiceDetailMenuTitle>{title}</Styled.ServiceDetailMenuTitle>
-                      </Link>
+                      <Styled.ServiceDetailMenu>
+                        <a key={title} href={href}>
+                          {title}
+                        </a>
+                      </Styled.ServiceDetailMenu>
                     ))}
-                  </Styled.ServiceDetailMenu>
+                  </Styled.ServiceDetailMenuList>
                 )}
               </Styled.ServiceMenu>
 
@@ -105,15 +106,13 @@ function Header() {
               )}
 
               <Styled.SignMenu>
-                <Link href={LOGIN.href} passHref>
-                  <Styled.LoginTitle>{LOGIN.title}</Styled.LoginTitle>
-                </Link>
+                <a href={LOGIN.href}>{LOGIN.title}</a>
 
                 <Styled.SignSeparator />
 
-                <Link href={SIGNUP.href} passHref>
-                  <Styled.SignUpTitle>{SIGNUP.title}</Styled.SignUpTitle>
-                </Link>
+                <Styled.SignUpTitle>
+                  <a href={SIGNUP.href}>{SIGNUP.title}</a>
+                </Styled.SignUpTitle>
               </Styled.SignMenu>
             </Styled.MenuList>
           </Styled.MenuWrapper>
@@ -146,24 +145,24 @@ function Header() {
           </Styled.CloseMenuIcons>
 
           <Styled.SideSignButtonsWrapper>
-            <Link href={LOGIN.href} passHref>
-              <Styled.SideLoginInTitle>{LOGIN.title}</Styled.SideLoginInTitle>
-            </Link>
+            <Styled.SideLoginInTitle>
+              <a href={LOGIN.href}>{LOGIN.title}</a>
+            </Styled.SideLoginInTitle>
 
             <Styled.SideSignSeparator />
 
-            <Link href={SIGNUP.href} passHref>
-              <Styled.SideSignUpTitle>{SIGNUP.title}</Styled.SideSignUpTitle>
-            </Link>
+            <Styled.SideSignUpTitle>
+              <a href={SIGNUP.href}>{SIGNUP.title}</a>
+            </Styled.SideSignUpTitle>
           </Styled.SideSignButtonsWrapper>
 
           <Styled.SideMenuList>
             {NAVIGATIONS.map(({ title, href, Icon }) => (
               <Styled.SideMenu key={title}>
                 <Icon />
-                <Link href={href} passHref>
+                <a key={title} href={href}>
                   <Styled.SideMenuTitle>{title}</Styled.SideMenuTitle>
-                </Link>
+                </a>
               </Styled.SideMenu>
             ))}
 
@@ -179,9 +178,13 @@ function Header() {
             {isClickSideDetailMenu && (
               <Styled.SideDetailMenu>
                 {INTRODUCE_OF_SERVICES.routes.map(({ title, href }) => (
-                  <Link key={title} href={href} passHref>
-                    <Styled.SideDetailMenuTitle>{title}</Styled.SideDetailMenuTitle>
-                  </Link>
+                  <li key={title}>
+                    <Styled.SideDetailMenuTitle>
+                      <a key={title} href={href}>
+                        {title}
+                      </a>
+                    </Styled.SideDetailMenuTitle>
+                  </li>
                 ))}
               </Styled.SideDetailMenu>
             )}
