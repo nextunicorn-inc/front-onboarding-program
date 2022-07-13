@@ -58,7 +58,7 @@ export const MultipleFiltersWrapper = styled.section`
   background-color: var(--color-naturalgray0);
   border: 1px solid var(--color-bluegray1);
   border-radius: 5px;
-  padding: 20px 0px 20px 24px;
+  padding: 20px 0 20px 24px;
   margin-bottom: 20px;
 `;
 
@@ -92,6 +92,7 @@ export const FilterList = styled.ul<{ $wrap?: boolean }>`
   display: flex;
   flex-wrap: ${({ $wrap }) => ($wrap ? 'wrap' : 'nowrap')};
   gap: 12px;
+  width: 100%;
   overflow-x: hidden;
 
   & > li {

@@ -88,7 +88,5 @@ export function useClientFilter<T>({
     filteredValue = internalFilteredState;
   }
 
-  const notSelected = state.length === 1 && state[0] === 'all';
-
-  return [state, toggle, filteredValue, notSelected, setState] as const;
+  return [state, toggle, filteredValue] as const;
 }

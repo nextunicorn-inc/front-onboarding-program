@@ -45,6 +45,7 @@ export const SearchResults = styled.ul`
   width: 100%;
   height: 158px;
   padding: 12px 20px;
+
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -93,4 +94,20 @@ export const SearchResultTitle = styled.p`
 export const MatchedKeyword = styled.span`
   color: var(--color-unicornblue6);
   ${FontWeight.medium};
+`;
+
+export const NotFoundWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-unicorngray7);
+  ${FontSize.size14}
+
+  & > h3 {
+    ${FontWeight.bold};
+    margin-bottom: 4px;
+  }
 `;
