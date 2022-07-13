@@ -6,7 +6,7 @@ export const IconBox = ({
   IconElement,
   onClick,
 }: {
-  IconElement: React.Component;
+  IconElement: React.FunctionComponent;
   onClick: void;
 }) => {
   return (

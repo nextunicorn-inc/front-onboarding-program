@@ -89,6 +89,11 @@ export type CreateCompanyInput = {
   visible: Scalars['Boolean'];
 };
 
+export type DateFilterType = {
+  month: InputMaybe<StringRangeFilterType>;
+  type: InputMaybe<Scalars['String']>;
+};
+
 export type DeleteCompanyFromCollectionInput = {
   collectionId: Scalars['String'];
   companyIds: Array<Scalars['String']>;
@@ -346,54 +351,59 @@ export type InquiryInput = {
 export type NuProStartupCompanyFilterType = {
   /** 벤치마크점수 : 지정된 범위 */
   benchmarkScore: InputMaybe<NumberRangeFilterType>;
-  /** 활용기술 */
-  biz: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** 비즈니스분야 */
+  businesses: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** 대표자의 학력: 최종학력 -> 최대 다섯, ex - `G000101` 7자 */
+  ceoEducations: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** 대표자의 성별 */
-  ceoGender: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  /** 대표자의 학력: 최종학력 -> 최대 다섯 */
-  ceoGraduateSchool: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  ceoGenders: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 스타트업 인증 */
-  companyCertification: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  certifications: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 업력: 범위 */
   companyHistory: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  /** 팀원수 */
-  companySize: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 기업가치 : 지정된 범위 */
   companyValuation: InputMaybe<NumberRangeFilterType>;
   /** 법인구분 : 범위 */
-  corporationType: InputMaybe<Scalars['Int']>;
+  corporations: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /** 팀원수 */
+  employees: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 휴폐업여부 */
   isClosing: InputMaybe<Scalars['Boolean']>;
+  /** 참여투자기관 : 불러온 값 선택 => 최대 다섯, ex - `18c59625edd08173` 16자 */
+  joinedInvestmentCompanies: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** 최근투자유치금액 : 지정된 범위(gte, lte) */
-  lastInvestingAmount: InputMaybe<NumberRangeFilterType>;
-  /** 최근투자유치일자 : 직접입력 */
-  lastInvestingDateRange: InputMaybe<StringRangeFilterType>;
-  /** 최근투자유치일자 : 지정된 범위 */
-  lastInvestingDateType: InputMaybe<Scalars['String']>;
+  lastInvestmentAmount: InputMaybe<NumberRangeFilterType>;
+  /** 최근투자유치일자 : 지정된 범위 / 직접입력 */
+  lastInvestmentDate: InputMaybe<DateFilterType>;
   /** 최근투자단계 : 범위 */
-  lastInvestmentPhase: InputMaybe<Scalars['Int']>;
+  lastInvestmentPhases: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 지역: 범위 */
-  location: InputMaybe<Scalars['Int']>;
-  name: InputMaybe<Scalars['String']>;
+  locations: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 영업이익 : 지정된 범위 */
-  operatingIncome: InputMaybe<NumberRangeFilterType>;
-  pageable: InputMaybe<PageableFilterType>;
-  /** 참여투자기관 : 불러온 값 선택 => 최대 다섯 */
-  participateInvestmentCompany: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  operatingProfit: InputMaybe<NumberRangeFilterType>;
+  /**  pageable */
+  paging: InputMaybe<PageableFilterType>;
+  /**  queryString -> 기업이름/기업요약소개/서비스명/서비스요약소개/서비스소개 */
+  q: InputMaybe<Scalars['String']>;
   /** 매출액 : 지정된 범위 */
   salesRevenue: InputMaybe<NumberRangeFilterType>;
-  /**  sort 받아올 형태 수정 필요 */
-  sort: InputMaybe<Scalars['Int']>;
-  /** 비즈니스분야: depth 2까지 */
-  tech: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  /**  sort */
+  sorting: InputMaybe<SortingType>;
+  /** 활용기술 */
+  technologies: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 총투자유치금액 : 지정된 범위(gte, lte) */
-  totalInvestingAmount: InputMaybe<NumberRangeFilterType>;
+  totalInvestmentAmount: InputMaybe<NumberRangeFilterType>;
 };
 
 export type NumberRangeFilterType = {
-  max: InputMaybe<Scalars['Long']>;
-  min: InputMaybe<Scalars['Long']>;
+  high: InputMaybe<Scalars['Long']>;
+  low: InputMaybe<Scalars['Long']>;
 };
+
+export enum OrderEnum {
+  Asc = 'asc',
+  Desc = 'desc',
+}
 
 export type PageableFilterType = {
   page: InputMaybe<Scalars['Int']>;
@@ -409,9 +419,14 @@ export type RegisterUserInput = {
   phoneVerified: Scalars['Boolean'];
 };
 
+export type SortingType = {
+  order: InputMaybe<OrderEnum>;
+  target: InputMaybe<TargetEnum>;
+};
+
 export type StringRangeFilterType = {
-  max: InputMaybe<Scalars['String']>;
-  min: InputMaybe<Scalars['String']>;
+  end: InputMaybe<Scalars['String']>;
+  start: InputMaybe<Scalars['String']>;
 };
 
 /**  지원프로그램 타입 */
@@ -441,10 +456,38 @@ export enum TargetCompanyAgeEnum {
   U7 = 'U7',
 }
 
+export enum TargetEnum {
+  BenchMarkScore = 'benchMarkScore',
+  LastInvestmentAmount = 'lastInvestmentAmount',
+  LastInvestmentDate = 'lastInvestmentDate',
+  LastInvestmentPhases = 'lastInvestmentPhases',
+  MemberCount = 'memberCount',
+  ProfitAmount = 'profitAmount',
+  SalesAmount = 'salesAmount',
+  TotalInvestmentAmount = 'totalInvestmentAmount',
+}
+
 export type UpdateCollectionInput = {
   collectionId: Scalars['String'];
   name: Scalars['String'];
   type: CollectionType;
+};
+
+export type FeaturedSupportProgramsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type FeaturedSupportProgramsQuery = {
+  featuredSupportPrograms: {
+    supportPrograms: Array<{
+      type: SupportProgramTypeEnum | null;
+      id: string | null;
+      bannerImgUrl: string | null;
+      outerApplyLink: string | null;
+      targetCompanyAges: Array<TargetCompanyAgeEnum | null> | null;
+      name: string | null;
+      endAt: any | null;
+      supportProgramCompany: { name: string | null } | null;
+    } | null> | null;
+  } | null;
 };
 
 export type SupportProgramBannersQueryVariables = Exact<{ [key: string]: never }>;
@@ -460,19 +503,5 @@ export type SupportProgramBannersQuery = {
     subTitleColor: string | null;
     title: string | null;
     titleColor: string | null;
-  } | null> | null;
-};
-
-export type TechnologiesQueryVariables = Exact<{ [key: string]: never }>;
-
-export type TechnologiesQuery = {
-  technologies: Array<{
-    createdAt: any | null;
-    depth: number | null;
-    id: number | null;
-    name: string | null;
-    parentId: number | null;
-    priority: number | null;
-    count: number | null;
   } | null> | null;
 };

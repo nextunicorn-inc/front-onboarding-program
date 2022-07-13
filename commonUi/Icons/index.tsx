@@ -1,5 +1,6 @@
 import { CharbonLeft20 } from './CharbonLeft20';
 import { CharbonRight20 } from './CharbonRight20';
+import { Thunder } from './Thunder';
 
 const LogoIcon = ({ color }: { color: string }) => (
   <svg width="134" height="20" viewBox="0 0 134 20" fill={color} xmlns="http://www.w3.org/2000/svg">
@@ -260,4 +261,5 @@ export default {
   ServiceIntroduce: ServiceIntroduceIcon,
   CharbonLeft20,
   CharbonRight20,
+  Thunder,
 };
