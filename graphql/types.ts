@@ -89,6 +89,11 @@ export type CreateCompanyInput = {
   visible: Scalars['Boolean'];
 };
 
+export type DateFilterType = {
+  month: InputMaybe<StringRangeFilterType>;
+  type: InputMaybe<Scalars['String']>;
+};
+
 export type DeleteCompanyFromCollectionInput = {
   collectionId: Scalars['String'];
   companyIds: Array<Scalars['String']>;
@@ -396,8 +401,8 @@ export type NuProStartupCompanyFilterType = {
 };
 
 export type NumberRangeFilterType = {
-  max: InputMaybe<Scalars['Long']>;
-  min: InputMaybe<Scalars['Long']>;
+  high: InputMaybe<Scalars['Long']>;
+  low: InputMaybe<Scalars['Long']>;
 };
 
 export enum OrderEnum {
@@ -481,6 +486,23 @@ export type FilterOptionsQuery = {
     targetCompanyAges: Array<TargetCompanyAgeEnum | null> | null;
     types: Array<SupportProgramTypeEnum | null> | null;
     hosts: Array<{ id: string | null; meta: { name: string | null } | null } | null> | null;
+  } | null;
+};
+
+export type FeaturedSupportProgramsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type FeaturedSupportProgramsQuery = {
+  featuredSupportPrograms: {
+    supportPrograms: Array<{
+      type: SupportProgramTypeEnum | null;
+      id: string | null;
+      bannerImgUrl: string | null;
+      outerApplyLink: string | null;
+      targetCompanyAges: Array<TargetCompanyAgeEnum | null> | null;
+      name: string | null;
+      endAt: any | null;
+      supportProgramCompany: { name: string | null } | null;
+    } | null> | null;
   } | null;
 };
 

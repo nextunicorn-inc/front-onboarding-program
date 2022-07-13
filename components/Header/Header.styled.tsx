@@ -64,6 +64,10 @@ export const ResponsiveMenuList = styled.ul`
   }
 `;
 
+export const ResponsiveIcon = styled.span`
+  cursor: pointer;
+`;
+
 export const Menu = styled.li`
   ${FontSize.size14};
   ${FontWeight.regular};
@@ -108,7 +112,6 @@ export const ServiceDetailMenuList = styled.ul`
 export const ServiceDetailMenu = styled.li`
   display: block;
   min-width: 148px;
-  flex: 0 0 auto;
   flex-direction: row;
   justify-content: center;
   align-items: center;

@@ -8,6 +8,8 @@ import {
   useSupportProgramBanners,
 } from '../components/SupportProgramBanners';
 
+import { FeaturedSupportPrograms } from '../components/FeaturedSupportPrograms';
+
 import { SupportPrograms, useSupportProgramFilters } from '../components/SupportPrograms';
 
 export async function getStaticProps() {
@@ -31,6 +33,7 @@ function Home() {
     <>
       <Header />
       <SupportProgramBanners />
+      <FeaturedSupportPrograms />
       <SupportPrograms />
       <CTASection />
       <Footer />

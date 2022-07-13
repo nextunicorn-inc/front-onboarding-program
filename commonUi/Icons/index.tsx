@@ -1,5 +1,6 @@
 import { CharbonLeft20 } from './CharbonLeft20';
 import { CharbonRight20 } from './CharbonRight20';
+import { Thunder } from './Thunder';
 import * as Checks from './Check20';
 import * as Fasts from './Fast';
 
@@ -262,6 +263,7 @@ export default {
   ServiceIntroduce: ServiceIntroduceIcon,
   CharbonLeft20,
   CharbonRight20,
+  Thunder,
   Check20Selected: Checks.Selected,
   Check20DeSelected: Checks.Deselected,
   ...Fasts,
