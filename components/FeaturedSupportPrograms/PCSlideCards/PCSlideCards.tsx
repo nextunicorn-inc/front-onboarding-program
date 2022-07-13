@@ -52,31 +52,6 @@ function PCSlideCards() {
             <EndDate endDate={featuredSupportProgram.endAt} />
           </Styled.SlideCard>
         ))}
-
-        {/*<Styled.SlideCard>*/}
-        {/*  <Styled.SlideCardImg />*/}
-        {/*  <h5>타이틀1</h5>*/}
-        {/*</Styled.SlideCard>*/}
-
-        {/*<Styled.SlideCard>*/}
-        {/*  <Styled.SlideCardImg />*/}
-        {/*  <h5>타이틀1</h5>*/}
-        {/*</Styled.SlideCard>*/}
-
-        {/*<Styled.SlideCard>*/}
-        {/*  <Styled.SlideCardImg />*/}
-        {/*  <h5>타이틀1</h5>*/}
-        {/*</Styled.SlideCard>*/}
-
-        {/*<Styled.SlideCard>*/}
-        {/*  <Styled.SlideCardImg />*/}
-        {/*  <h5>타이틀1</h5>*/}
-        {/*</Styled.SlideCard>*/}
-
-        {/*<Styled.SlideCard>*/}
-        {/*  <Styled.SlideCardImg />*/}
-        {/*  <h5>타이틀1</h5>*/}
-        {/*</Styled.SlideCard>*/}
       </Slider>
     </Styled.SlideCardWrapper>
   );

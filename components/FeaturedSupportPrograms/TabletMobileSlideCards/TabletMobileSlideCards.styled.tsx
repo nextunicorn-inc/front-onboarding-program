@@ -48,7 +48,7 @@ export const SlideCard = styled.article`
     width: 208px;
     margin-right: 20px;
 
-    :nth-last-child(1) {
+    :nth-last-of-type(1) {
       margin-right: 0;
     }
   }
