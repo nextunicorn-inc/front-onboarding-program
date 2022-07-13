@@ -17,15 +17,15 @@ import {
 } from './SupportProgramFilters/SupportProgramFilters.hooks';
 import { AreaEnum, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '../../graphql';
 import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from '../../constants/supportPrograms';
+import HostSearch from './SupportProgramFilters/HostSearch/HostSearch';
 
 function SupportPrograms() {
   const filterQuery = useSupportProgramFilters();
   const { show, hide } = useModal();
 
-  const [activeTypes, toggleTypes, filteredActiveTypes, setActiveTypes] =
-    useClientFilter<SupportProgramTypeEnum>({
-      multiple: false,
-    });
+  const [activeTypes, toggleTypes, filteredActiveTypes] = useClientFilter<SupportProgramTypeEnum>({
+    multiple: false,
+  });
 
   const [activeAges, toggleAges, filteredActiveAges, areActiveAgesNotSelected, setActiveAges] =
     useClientFilter<TargetCompanyAgeEnum>({
@@ -160,14 +160,24 @@ function SupportPrograms() {
                     role="button"
                     onClick={showWithBackdrop(
                       <FilterDetail
+                        searchable
                         idExtractor={(data) => data.id}
-                        title="test"
-                        data={filterQuery.data.hosts}
+                        title="주관 기관 선택"
+                        // data={filterQuery.data.hosts}
+                        data={[
+                          ...filterQuery.data.hosts,
+                          ...filterQuery.data.hosts,
+                          ...filterQuery.data.hosts,
+                          ...filterQuery.data.hosts,
+                          ...filterQuery.data.hosts,
+                        ]}
                         renderItemTitle={(item) => item.meta.name}
                         onClose={hide}
                         onApply={(state) => setActiveHosts(state)}
                         defaultValue={activeHosts}
-                      />,
+                      >
+                        <HostSearch selectedData={activeHosts} data={filterQuery.data.hosts} />
+                      </FilterDetail>,
                     )}
                   />
                 </FilterStyled.MoreButtonWrapper>

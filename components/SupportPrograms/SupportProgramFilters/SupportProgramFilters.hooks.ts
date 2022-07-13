@@ -40,11 +40,13 @@ type Options<T> = {
   defaultValue?: WithAll<T>[];
 };
 
-export function useClientFilter<T>(
-  { multiple = false, showNullWhenEmpty = true, defaultValue }: Options<T> = {},
-  // defaultValue?: WithAll<T>[],
-) {
+export function useClientFilter<T>({
+  multiple = false,
+  showNullWhenEmpty = true,
+  defaultValue,
+}: Options<T> = {}) {
   type State = WithAll<T>[];
+
   const [state, setState] = useState<State>(() => {
     if (defaultValue !== undefined) {
       return defaultValue;

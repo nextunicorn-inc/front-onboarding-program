@@ -19,7 +19,7 @@ function MultipleSelectionFilters<T>({
   renderItem,
   keyExtractor,
   data,
-  resetFilter = () => undefined,
+  resetFilter,
   notSelected = false,
   MoreButton,
 }: Props<T>) {

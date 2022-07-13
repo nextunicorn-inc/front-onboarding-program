@@ -1,3 +1,4 @@
+import { ReactNode, Children, cloneElement, isValidElement } from 'react';
 import { dequal } from 'dequal';
 
 import { useClientFilter } from '../SupportProgramFilters.hooks';
@@ -5,6 +6,7 @@ import { useClientFilter } from '../SupportProgramFilters.hooks';
 import Icons from '../../../../commonUi/Icons';
 import * as Styled from './FilterDetail.styled';
 import { FilterList, FilterItem } from '../SupportProgramFilters.styled';
+
 import CloseMenu from '../../../../commonUi/Icons/CloseMenu/closeMenu.svg';
 
 import { WithAll } from '../SupportProgramFilters.types';
@@ -18,6 +20,7 @@ type Props<T> = {
   onClose: () => void;
   onApply: (args: WithAll<T>[]) => void;
   defaultValue?: WithAll<T>[];
+  children?: ReactNode;
 };
 
 function FilterDetail<T>({
@@ -29,13 +32,23 @@ function FilterDetail<T>({
   onClose,
   onApply,
   defaultValue,
+  children,
 }: Props<T>) {
-  const [state, toggle] = useClientFilter<T>({ multiple: true, defaultValue });
+  const [state, toggle, filteredState] = useClientFilter<T>({ multiple: true, defaultValue });
 
   const handleClose = () => {
     onApply(state);
     onClose();
   };
+
+  const childrenWithOnclick = Children.map<ReactNode, ReactNode>(children, (child) => {
+    if (isValidElement(child)) {
+      return cloneElement(child, {
+        onItemClick: (val: T) => toggle(val)(),
+      });
+    }
+    return child;
+  });
 
   return (
     <Styled.Wrapper>
@@ -43,7 +56,7 @@ function FilterDetail<T>({
         <Styled.HeadingSection>
           <Styled.Heading>{title}</Styled.Heading>
         </Styled.HeadingSection>
-
+        {childrenWithOnclick}
         <FilterList $wrap>
           <li>
             <FilterItem
