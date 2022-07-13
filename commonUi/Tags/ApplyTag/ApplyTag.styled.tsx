@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../utils';
+import { FontSize, FontWeight, MediaQuery } from '../../../utils';
 
 export const TagWrapper = styled.div`
   display: flex;
@@ -19,6 +19,10 @@ export const SimpleApplyTag = styled.span`
   border-radius: 5px;
   color: #ff5859;
   background-color: var(--color-bluegray0);
+
+  ${MediaQuery.tablet || MediaQuery.mobile} {
+    ${FontSize.size12}
+  }
 `;
 
 export const TagText = styled.span`
@@ -28,4 +32,8 @@ export const TagText = styled.span`
   border-radius: 5px;
   color: ${(props) => props.color};
   background-color: var(--color-bluegray0);
+
+  ${MediaQuery.tablet || MediaQuery.mobile} {
+    ${FontSize.size12}
+  }
 `;

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { MediaQuery, FontSize, FontWeight } from '../../../utils';
 import { css } from '@emotion/react';
+import { MediaQuery, FontSize, FontWeight } from '../../../utils';
 
 export const SlideCardWrapper = styled.div`
   margin-top: 16px;
@@ -46,7 +46,7 @@ export const SlideCardImg = styled.img`
   display: block;
   object-fit: cover;
   cursor: pointer;
-  background-color: bisque;
+  background-color: aliceblue;
 `;
 
 export const SlideTagWrapper = styled.div`
@@ -71,7 +71,7 @@ export const SlideCardCompanyName = styled.h5`
   margin-top: 4px;
   ${FontSize.size14};
   ${FontWeight.regular};
-  color: var(--color-naturalgray6);
+  color: rgb(115, 115, 115);
 `;
 
 export const SlideButtonWrapper = styled.div<{ $direction: string }>`

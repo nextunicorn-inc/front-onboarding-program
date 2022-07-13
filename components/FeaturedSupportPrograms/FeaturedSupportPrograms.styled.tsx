@@ -17,6 +17,14 @@ export const Wrapper = styled.div`
   padding: 0 32px;
   margin: 0 auto;
   position: relative;
+
+  ${MediaQuery.tablet || MediaQuery.mobile} {
+    padding: 0 0 0 32px;
+  }
+
+  ${MediaQuery.mobile} {
+    padding: 0 0 0 20px;
+  }
 `;
 
 export const NoticeHeaderTitle = styled.h3`
