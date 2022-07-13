@@ -1,9 +1,3 @@
-import { ReactNode } from 'react';
-import { dequal } from 'dequal';
-import Icons from '../../commonUi/Icons';
-
-import { useModal, Backdrop } from '../../commonUi/Modal';
-
 import TypeFilters from './SupportProgramFilters/TypeFilters';
 
 import { useSupportProgramFilters, SupportProgramFilters } from './SupportProgramFilters';
@@ -18,7 +12,6 @@ import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from '../../constants/supportPro
 
 function SupportPrograms() {
   const filterQuery = useSupportProgramFilters();
-  const { show, hide } = useModal();
 
   const [activeTypes, toggleTypes, filteredActiveTypes] = useClientFilter<SupportProgramTypeEnum>({
     multiple: false,

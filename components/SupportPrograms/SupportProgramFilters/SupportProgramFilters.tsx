@@ -12,7 +12,7 @@ function SupportProgramFilters({ top, ages, areas, hosts }: Props) {
   return (
     <Styled.Responsive>
       {top}
-      <Styled.MultipleFiltersWrapper>
+      <Styled.MultipleFiltersWrapper className="main-filter">
         {ages}
         {areas}
         {hosts}

@@ -134,7 +134,7 @@ export const FilterItem = styled.button<{ selected: boolean }>`
   }
 `;
 
-export const MoreButtonWrapper = styled.div`
+export const MoreButtonWrapper = styled.li`
   position: absolute;
   right: 0;
   z-index: 2;
