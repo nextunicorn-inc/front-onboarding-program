@@ -53,6 +53,7 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+
 # Microbundle cache
 .rpt2_cache/
 .rts2_cache_cjs/
@@ -145,6 +146,7 @@ package.tgz
 
 /vscode-case-study
 
-.idea
+
 
 .env
+.idea/
