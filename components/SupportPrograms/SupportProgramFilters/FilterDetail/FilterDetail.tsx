@@ -1,40 +1,45 @@
-import { dequal } from 'dequal';
+import * as Styled from './FilterDetail.styled';
+import { FilterList, FilterItem } from '../SupportProgramFilters.styled';
 
 import { useClientFilter } from '../SupportProgramFilters.hooks';
 
+import HostPredicateWrapper from './PredicateWrapper';
 import Icons from '../../../../commonUi/Icons';
-import * as Styled from './FilterDetail.styled';
-import { FilterList, FilterItem } from '../SupportProgramFilters.styled';
 import CloseMenu from '../../../../commonUi/Icons/CloseMenu/closeMenu.svg';
+
+import { contain, isNotSelected } from '../../SupportPrograms.utils';
 
 import { WithAll } from '../SupportProgramFilters.types';
 
 type Props<T> = {
   title: string;
-  searchable?: boolean;
   data: T[];
-  idExtractor: (item: T) => string;
-  renderItemTitle: (item: T) => string;
+  keyExtractor: (item: T) => string;
+  renderItemText: (item: T) => string;
+  toggle: (next: WithAll<T>) => () => void;
   onClose: () => void;
-  onApply: (args: WithAll<T>[]) => void;
-  defaultValue?: WithAll<T>[];
+  activeData: WithAll<T>[];
 };
 
 function FilterDetail<T>({
   title,
-  searchable = false,
   data,
-  renderItemTitle,
-  idExtractor,
+  renderItemText,
+  keyExtractor,
   onClose,
-  onApply,
-  defaultValue,
+  activeData,
+  toggle,
 }: Props<T>) {
-  const [state, toggle] = useClientFilter<T>({ multiple: true, defaultValue });
+  const [state, toggleState] = useClientFilter<T>({ multiple: true, defaultValue: activeData });
 
-  const handleClose = () => {
-    onApply(state);
-    onClose();
+  const reset = () => {
+    toggleState('all')();
+    toggle('all')();
+  };
+
+  const handleClick = (item: WithAll<T>) => () => {
+    toggle(item)();
+    toggleState(item)();
   };
 
   return (
@@ -43,30 +48,30 @@ function FilterDetail<T>({
         <Styled.HeadingSection>
           <Styled.Heading>{title}</Styled.Heading>
         </Styled.HeadingSection>
-
-        <FilterList $wrap>
-          <li>
-            <FilterItem
-              onClick={toggle('all')}
-              selected={state.find((value) => dequal(value, 'all')) !== undefined}
-            >
-              <Icons.Check20Selected />
-              전체
-            </FilterItem>
-          </li>
-          {data.map((item, index) => (
-            <li key={idExtractor(item) + String(index)}>
-              <FilterItem
-                selected={state.find((value) => dequal(value, item)) !== undefined}
-                onClick={toggle(item)}
-              >
+        <Styled.Xpadding>
+          <HostPredicateWrapper data={data} activeData={state} onItemClick={handleClick} />
+        </Styled.Xpadding>
+        <Styled.FilterListWrapper>
+          <FilterList $wrap>
+            <li>
+              <FilterItem onClick={reset} selected={isNotSelected(state)}>
                 <Icons.Check20Selected />
-                {renderItemTitle(item)}
+                전체
               </FilterItem>
             </li>
-          ))}
-        </FilterList>
-        <Styled.ApplyButton onClick={handleClose}>필터 적용</Styled.ApplyButton>
+            {data.map((item) => (
+              <li key={keyExtractor(item)}>
+                <FilterItem selected={contain(state, item)} onClick={handleClick(item)}>
+                  <Icons.Check20Selected />
+                  {renderItemText(item)}
+                </FilterItem>
+              </li>
+            ))}
+          </FilterList>
+        </Styled.FilterListWrapper>
+        <Styled.Xpadding>
+          <Styled.ApplyButton onClick={onClose}>필터 적용</Styled.ApplyButton>
+        </Styled.Xpadding>
       </Styled.ContentsWrapper>
       <Styled.CloseButton onClick={onClose}>
         <CloseMenu />
