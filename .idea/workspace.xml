@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a589dc9e-e082-451a-aac1-e8f1deb0cc21" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonUi/Icons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.styled.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/FilterTable.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/FilterTable.styled.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/FilterTableRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/FilterTableRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +80,7 @@
       <workItem from="1657675828847" duration="29199000" />
       <workItem from="1657760670168" duration="6425000" />
       <workItem from="1657773043882" duration="8315000" />
+      <workItem from="1657787536324" duration="215000" />
     </task>
     <servers />
   </component>
