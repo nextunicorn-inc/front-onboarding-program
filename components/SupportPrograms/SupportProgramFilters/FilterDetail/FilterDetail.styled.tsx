@@ -23,7 +23,7 @@ export const ContentsWrapper = styled.article`
   width: 654px;
   min-height: 420px;
   max-height: 480px;
-  padding: 32px 28px 0 28px;
+  padding-top: 32px;
 
   background-color: var(--color-naturalgray0);
   border-radius: 5px;
@@ -37,6 +37,7 @@ export const ContentsWrapper = styled.article`
 export const HeadingSection = styled.section`
   display: flex;
   justify-content: center;
+  padding: 0 28px;
 
   margin-bottom: 20px;
 
@@ -55,12 +56,24 @@ export const Heading = styled.h2`
   letter-spacing: -0.002em;
 `;
 
+export const Xpadding = styled.div`
+  padding: 0 28px;
+`;
+
+export const FilterListWrapper = styled.div`
+  flex-grow: 1;
+  overflow-y: scroll;
+
+  padding: 0 28px 72px 28px;
+`;
+
 export const ApplyButton = styled.button`
   cursor: pointer;
   margin-top: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   min-height: 48px;
   margin-bottom: 20px;
   ${FontSize.size14};

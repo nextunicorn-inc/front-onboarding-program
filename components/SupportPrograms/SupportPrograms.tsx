@@ -1,180 +1,113 @@
-import { ReactNode } from 'react';
-import { dequal } from 'dequal';
-import Icons from '../../commonUi/Icons';
-
-import { useModal, Backdrop } from '../../commonUi/Modal';
-
-import TypeFilters from './SupportProgramFilters/TypeFilters';
-import FilterDetail from './SupportProgramFilters/FilterDetail/FilterDetail';
-import * as FilterStyled from './SupportProgramFilters/SupportProgramFilters.styled';
-
-import { useSupportProgramFilters, SupportProgramFilters } from './SupportProgramFilters';
-import MultipleSelectionFilters from './SupportProgramFilters/MultipleSelectionFilters';
-
 import {
+  useSupportProgramFilters,
+  TypeFilters,
   useClientFilter,
-  FilterOptionsQuery,
-} from './SupportProgramFilters/SupportProgramFilters.hooks';
-import { AreaEnum, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '../../graphql';
+  FilterTable,
+  FilterTableRow,
+  FilterDetail,
+} from './SupportProgramFilters';
+
+import { useModal } from '../../commonUi/Modal';
+
 import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from '../../constants/supportPrograms';
+
+import type { Area, TargetCompanyAge, Host, Type } from './SupportProgramFilters';
 
 function SupportPrograms() {
   const filterQuery = useSupportProgramFilters();
-  const { show, hide } = useModal();
 
-  const [activeTypes, toggleTypes, filteredActiveTypes, setActiveTypes] =
-    useClientFilter<SupportProgramTypeEnum>({
-      multiple: false,
-    });
+  const [activeTypes, toggleTypes, filteredActiveTypes] = useClientFilter<Type>({
+    multiple: false,
+  });
 
-  const [activeAges, toggleAges, filteredActiveAges, areActiveAgesNotSelected, setActiveAges] =
-    useClientFilter<TargetCompanyAgeEnum>({
-      multiple: true,
-    });
+  const [activeAges, toggleAges, filteredActiveAges] = useClientFilter<TargetCompanyAge>({
+    multiple: true,
+  });
 
-  const [activeAreas, toggleAreas, filteredActiveAreas, areActiveAreasNotSelected, setActiveAreas] =
-    useClientFilter<AreaEnum>({
-      multiple: true,
-    });
+  const [activeAreas, toggleAreas, filteredActiveAreas] = useClientFilter<Area>({
+    multiple: true,
+  });
 
-  const [activeHosts, toggleHosts, filteredActiveHosts, areActiveHostsNotSelected, setActiveHosts] =
-    useClientFilter<FilterOptionsQuery['filterOptions']['hosts'][number]>({
-      multiple: true,
-    });
-
-  const showWithBackdrop = (Comp: ReactNode) => () => {
-    show(
-      <Backdrop closable onClick={hide}>
-        {Comp}
-      </Backdrop>,
-    );
-  };
+  const [activeHosts, toggleHosts, filteredActiveHosts] = useClientFilter<Host>({
+    multiple: true,
+  });
+  const { hide } = useModal();
 
   return (
     <div>
       {filterQuery.isSuccess && (
-        <SupportProgramFilters
-          top={
-            <TypeFilters
-              allTypes={filterQuery.data.types}
-              activeTypes={activeTypes}
-              onClick={toggleTypes}
-            />
-          }
-          ages={
-            <MultipleSelectionFilters
-              title="창업 기간"
-              resetFilter={toggleAges('all')}
-              notSelected={areActiveAgesNotSelected}
-              keyExtractor={(data) => data}
-              data={filterQuery.data.targetCompanyAges}
-              renderItem={(data) => (
-                <FilterStyled.FilterItem
-                  selected={activeAges.find((age) => dequal(age, data)) !== undefined}
-                  onClick={toggleAges(data)}
-                >
-                  <Icons.Check20Selected />
-                  {TARGET_COMPANY_AGE_TEXTS[data]}
-                </FilterStyled.FilterItem>
-              )}
-              MoreButton={
-                <FilterStyled.MoreButtonWrapper>
-                  <FilterStyled.MoreButton
-                    role="button"
-                    onClick={showWithBackdrop(
-                      <FilterDetail
-                        title="test"
-                        idExtractor={(item) => item}
-                        data={filterQuery.data.targetCompanyAges}
-                        renderItemTitle={(item) => TARGET_COMPANY_AGE_TEXTS[item]}
-                        onClose={hide}
-                        onApply={(state) => setActiveAges(state)}
-                        defaultValue={activeAges}
-                      />,
-                    )}
+        <>
+          <TypeFilters
+            allTypes={filterQuery.data.types}
+            activeTypes={activeTypes}
+            onClick={toggleTypes}
+          />
+          <FilterTable
+            ages={
+              <FilterTableRow
+                title="창업 기간"
+                toggle={toggleAges}
+                keyExtractor={(data) => data}
+                data={filterQuery.data.targetCompanyAges}
+                activeData={activeAges}
+                renderItemText={(data) => TARGET_COMPANY_AGE_TEXTS[data]}
+                Detail={
+                  <FilterDetail
+                    title="창업 기간"
+                    toggle={toggleAges}
+                    keyExtractor={(data) => data}
+                    data={filterQuery.data.targetCompanyAges}
+                    activeData={activeAges}
+                    renderItemText={(data) => TARGET_COMPANY_AGE_TEXTS[data]}
+                    onClose={hide}
                   />
-                </FilterStyled.MoreButtonWrapper>
-              }
-            />
-          }
-          areas={
-            <MultipleSelectionFilters
-              title="지원 분야"
-              resetFilter={toggleAreas('all')}
-              notSelected={areActiveAreasNotSelected}
-              keyExtractor={(data) => data}
-              data={[...filterQuery.data.areas, ...filterQuery.data.areas]}
-              renderItem={(data) => (
-                <FilterStyled.FilterItem
-                  selected={activeAreas.find((area) => dequal(area, data)) !== undefined}
-                  onClick={toggleAreas(data)}
-                >
-                  <Icons.Check20Selected />
-                  {AREA_TEXTS[data]}
-                </FilterStyled.FilterItem>
-              )}
-              MoreButton={
-                <FilterStyled.MoreButtonWrapper>
-                  <FilterStyled.MoreButton
-                    role="button"
-                    onClick={showWithBackdrop(
-                      <FilterDetail
-                        title="test"
-                        data={filterQuery.data.areas}
-                        idExtractor={(item) => item}
-                        renderItemTitle={(item) => AREA_TEXTS[item]}
-                        onClose={hide}
-                        onApply={(state) => setActiveAreas(state)}
-                        defaultValue={activeAreas}
-                      />,
-                    )}
+                }
+              />
+            }
+            areas={
+              <FilterTableRow
+                title="지원 분야"
+                toggle={toggleAreas}
+                keyExtractor={(data) => data}
+                data={filterQuery.data.areas}
+                activeData={activeAreas}
+                renderItemText={(data) => AREA_TEXTS[data]}
+                Detail={
+                  <FilterDetail
+                    title="지원 분야"
+                    toggle={toggleAreas}
+                    keyExtractor={(data) => data}
+                    data={filterQuery.data.areas}
+                    activeData={activeAreas}
+                    renderItemText={(data) => AREA_TEXTS[data]}
+                    onClose={hide}
                   />
-                </FilterStyled.MoreButtonWrapper>
-              }
-            />
-          }
-          hosts={
-            <MultipleSelectionFilters
-              title="주관 기관"
-              resetFilter={toggleHosts('all')}
-              notSelected={areActiveHostsNotSelected}
-              keyExtractor={(data) => data.id}
-              // data={filterQuery.data.hosts}
-              data={[
-                ...filterQuery.data.hosts,
-                ...filterQuery.data.hosts,
-                ...filterQuery.data.hosts,
-              ]}
-              renderItem={(data) => (
-                <FilterStyled.FilterItem
-                  selected={activeHosts.find((host) => dequal(host, data)) !== undefined}
-                  onClick={toggleHosts(data)}
-                >
-                  <Icons.Check20Selected />
-                  {data.meta.name}
-                </FilterStyled.FilterItem>
-              )}
-              MoreButton={
-                <FilterStyled.MoreButtonWrapper>
-                  <FilterStyled.MoreButton
-                    role="button"
-                    onClick={showWithBackdrop(
-                      <FilterDetail
-                        idExtractor={(data) => data.id}
-                        title="test"
-                        data={filterQuery.data.hosts}
-                        renderItemTitle={(item) => item.meta.name}
-                        onClose={hide}
-                        onApply={(state) => setActiveHosts(state)}
-                        defaultValue={activeHosts}
-                      />,
-                    )}
+                }
+              />
+            }
+            hosts={
+              <FilterTableRow
+                title="주관 기관"
+                toggle={toggleHosts}
+                keyExtractor={(data) => data.id}
+                data={filterQuery.data.hosts}
+                activeData={activeHosts}
+                renderItemText={(data) => data.meta.name}
+                Detail={
+                  <FilterDetail
+                    title="주관 기관"
+                    toggle={toggleHosts}
+                    keyExtractor={(data) => data.id}
+                    data={filterQuery.data.hosts}
+                    activeData={activeHosts}
+                    renderItemText={(data) => data.meta.name}
+                    onClose={hide}
                   />
-                </FilterStyled.MoreButtonWrapper>
-              }
-            />
-          }
-        />
+                }
+              />
+            }
+          />
+        </>
       )}
     </div>
   );

@@ -4,20 +4,10 @@ import { dequal } from 'dequal';
 
 import client from '../../../graphql/client';
 import { FILTER_OPTIONS } from '../../../graphql/queries';
-import { AreaEnum, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '../../../graphql';
 
-import type { WithAll } from './SupportProgramFilters.types';
+import type { WithAll, FilterOptionsQuery } from './SupportProgramFilters.types';
 
-export type FilterOptionsQuery = {
-  filterOptions: {
-    areas: Array<AreaEnum>;
-    targetCompanyAges: Array<TargetCompanyAgeEnum>;
-    types: Array<SupportProgramTypeEnum>;
-    hosts: Array<{ id: string; meta: { name: string } }>;
-  };
-};
-
-export default function useSupportProgramFilters() {
+export function useSupportProgramFilters() {
   return useQuery<FilterOptionsQuery, Error, FilterOptionsQuery['filterOptions']>(
     useSupportProgramFilters.getKeys(),
     useSupportProgramFilters.fetcher,
@@ -40,11 +30,13 @@ type Options<T> = {
   defaultValue?: WithAll<T>[];
 };
 
-export function useClientFilter<T>(
-  { multiple = false, showNullWhenEmpty = true, defaultValue }: Options<T> = {},
-  // defaultValue?: WithAll<T>[],
-) {
+export function useClientFilter<T>({
+  multiple = false,
+  showNullWhenEmpty = true,
+  defaultValue,
+}: Options<T> = {}) {
   type State = WithAll<T>[];
+
   const [state, setState] = useState<State>(() => {
     if (defaultValue !== undefined) {
       return defaultValue;
@@ -86,7 +78,5 @@ export function useClientFilter<T>(
     filteredValue = internalFilteredState;
   }
 
-  const notSelected = state.length === 1 && state[0] === 'all';
-
-  return [state, toggle, filteredValue, notSelected, setState] as const;
+  return [state, toggle, filteredValue] as const;
 }
