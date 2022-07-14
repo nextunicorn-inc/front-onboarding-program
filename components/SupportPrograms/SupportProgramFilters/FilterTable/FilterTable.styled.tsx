@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../../utils';
+import { FontSize, FontWeight, MediaQuery } from '../../../../utils';
 
 export const TableWrapper = styled.section`
   background-color: var(--color-naturalgray0);
@@ -7,6 +7,14 @@ export const TableWrapper = styled.section`
   border-radius: 5px;
   padding: 20px 0 20px 24px;
   margin-bottom: 20px;
+
+  ${MediaQuery.mobile} {
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    display: flex;
+    gap: 8px;
+  }
 `;
 
 export const RowWrapper = styled.div`
@@ -74,4 +82,34 @@ export const MoreButton = styled.div`
   &::after {
     transform: rotate(90deg);
   }
+`;
+
+export const MobileToggleButton = styled.button`
+  border: none;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  justify-content: center;
+  border-radius: 20px;
+
+  color: var(--color-naturalgray7);
+  background-color: var(--color-bluegray0);
+  ${FontSize.size14};
+  ${FontWeight.medium};
+`;
+
+export const CurrentTotalActiveItems = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  padding: 1px 5px 0;
+  margin-left: 6px;
+  border-radius: 5px;
+  color: var(--color-naturalgray0);
+  background-color: var(--color-unicornblue6);
+  ${FontSize.size10};
+  ${FontWeight.bold};
 `;

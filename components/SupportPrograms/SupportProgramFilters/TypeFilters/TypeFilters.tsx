@@ -8,6 +8,8 @@ import { SUPPORT_PROGRAM_TYPE_TEXTS } from '../../../../constants/supportProgram
 import { SupportProgramTypes } from '../SupportProgramFilters.types';
 import { SupportProgramTypeEnum } from '../../../../graphql';
 
+import { useMediaQuery } from '../../../../hooks';
+
 type Props = {
   allTypes: SupportProgramTypes;
   activeTypes: SupportProgramTypes;
@@ -15,6 +17,8 @@ type Props = {
 };
 
 function TypeFilters({ onClick, activeTypes, allTypes }: Props) {
+  const isMobile = useMediaQuery('(max-width: 767px)');
+
   return (
     <Responsive>
       <Styled.TypeFilterList role="list">
@@ -22,7 +26,8 @@ function TypeFilters({ onClick, activeTypes, allTypes }: Props) {
           <Styled.TypeFilterItem $active={activeTypes.includes(type)} key={type}>
             <button type="button" onClick={onClick(type)}>
               {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
-              {type === SupportProgramTypeEnum.Snl && <Icons.Fast32 />}
+              {type === SupportProgramTypeEnum.Snl &&
+                (isMobile ? <Icons.Fast16 /> : <Icons.Fast32 />)}
             </button>
             <Styled.TypeFilterNoticeLine $active={activeTypes.includes(type)} />
           </Styled.TypeFilterItem>

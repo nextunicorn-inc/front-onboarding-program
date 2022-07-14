@@ -10,6 +10,7 @@ import CloseMenu from '../../../../commonUi/Icons/CloseMenu/closeMenu.svg';
 import { contain, isNotSelected } from '../../SupportPrograms.utils';
 
 import { WithAll } from '../SupportProgramFilters.types';
+import { useMediaQuery } from '../../../../hooks';
 
 type Props<T> = {
   title: string;
@@ -31,6 +32,7 @@ function FilterDetail<T>({
   toggle,
 }: Props<T>) {
   const [state, toggleState] = useClientFilter<T>({ multiple: true, defaultValue: activeData });
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
 
   const reset = () => {
     toggleState('all')();
@@ -45,9 +47,17 @@ function FilterDetail<T>({
   return (
     <Styled.Wrapper>
       <Styled.ContentsWrapper>
-        <Styled.HeadingSection>
-          <Styled.Heading>{title}</Styled.Heading>
-        </Styled.HeadingSection>
+        <Styled.Xpadding>
+          <Styled.HeadingSection>
+            {!isDesktop && <Styled.ResetButton onClick={reset}>초기화</Styled.ResetButton>}
+            <Styled.Heading>{`${title} 선택`}</Styled.Heading>
+            {!isDesktop && (
+              <Styled.CloseButton onClick={onClose}>
+                <Icons.CloseMenu color="var(--color-naturalgray7)" />
+              </Styled.CloseButton>
+            )}
+          </Styled.HeadingSection>
+        </Styled.Xpadding>
         <Styled.Xpadding>
           <HostPredicateWrapper data={data} activeData={state} onItemClick={handleClick} />
         </Styled.Xpadding>
@@ -73,9 +83,11 @@ function FilterDetail<T>({
           <Styled.ApplyButton onClick={onClose}>필터 적용</Styled.ApplyButton>
         </Styled.Xpadding>
       </Styled.ContentsWrapper>
-      <Styled.CloseButton onClick={onClose}>
-        <CloseMenu />
-      </Styled.CloseButton>
+      {isDesktop && (
+        <Styled.CloseButton onClick={onClose}>
+          <CloseMenu />
+        </Styled.CloseButton>
+      )}
     </Styled.Wrapper>
   );
 }

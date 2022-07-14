@@ -1,9 +1,16 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../utils';
+import { FontSize, FontWeight, MediaQuery } from '../../../utils';
 
 export const Responsive = styled.div`
   max-width: 1240px;
   margin: 0 auto;
+  ${MediaQuery.tablet} {
+    padding: 0 32px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0 20px;
+  }
 `;
 
 export const FilterList = styled.ul<{ $wrap?: boolean }>`
@@ -20,6 +27,10 @@ export const FilterList = styled.ul<{ $wrap?: boolean }>`
   & > button {
     flex-shrink: 0;
     border: none;
+  }
+
+  ${MediaQuery.mobile} {
+    justify-content: center;
   }
 `;
 
@@ -46,8 +57,15 @@ export const FilterItem = styled.button<{ selected: boolean }>`
     top: 0;
     right: -5px;
   }
-  &:hover {
-    color: var(--color-unicornblue6);
-    background-color: var(--color-unicornblue1);
+
+  @support (hover:hover) {
+    &:hover {
+      color: var(--color-unicornblue6);
+      background-color: var(--color-unicornblue1);
+    }
+  }
+
+  ${MediaQuery.mobile} {
+    ${FontSize.size14};
   }
 `;
