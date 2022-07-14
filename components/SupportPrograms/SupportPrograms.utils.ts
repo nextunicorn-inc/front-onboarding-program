@@ -1,5 +1,5 @@
 import { dequal } from 'dequal';
-import { WithAll } from './SupportProgramFilters/SupportProgramFilters.types';
+import type { WithAll } from './SupportProgramFilters';
 
 export function identity<T>(item: T) {
   return item;

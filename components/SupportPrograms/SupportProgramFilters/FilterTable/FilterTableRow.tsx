@@ -1,12 +1,13 @@
 import { useState, useRef, ReactNode, useEffect } from 'react';
 
-import * as Styled from './SupportProgramFilters.styled';
+import * as Styled from './FilterTable.styled';
+import Icons from '../../../../commonUi/Icons';
+import { Backdrop, useModal } from '../../../../commonUi/Modal';
+import { FilterList, FilterItem } from '../SupportProgramFilters.styled';
 
-import Icons from '../../../commonUi/Icons';
-import { contain, isNotSelected } from '../SupportPrograms.utils';
-import { WithAll } from './SupportProgramFilters.types';
-import { Backdrop, useModal } from '../../../commonUi/Modal';
-import FilterDetail from './FilterDetail/FilterDetail';
+import { contain, isNotSelected } from '../../SupportPrograms.utils';
+
+import { WithAll } from '../SupportProgramFilters.types';
 
 type Props<T> = {
   title: string;
@@ -16,9 +17,10 @@ type Props<T> = {
   activeData: WithAll<T>[];
   toggle: (next: WithAll<T>) => () => void;
   showAllButton?: boolean;
+  Detail?: ReactNode;
 };
 
-function MultipleSelectionFilters<T>({
+function FilterTableRow<T>({
   title,
   renderItemText,
   keyExtractor,
@@ -26,11 +28,18 @@ function MultipleSelectionFilters<T>({
   activeData,
   toggle,
   showAllButton = true,
+  Detail,
 }: Props<T>) {
   const [showMoreButton, setShowMoreButton] = useState(false);
-  const reset = toggle('all');
+
   const { show, hide } = useModal();
-  const showWithBackdrop = (Comp: ReactNode) => () => {
+  const reset = toggle('all');
+
+  const showWithBackdrop = (Comp?: ReactNode) => () => {
+    if (!Comp) {
+      return;
+    }
+
     show(
       <Backdrop closable onClick={hide}>
         {Comp}
@@ -58,47 +67,34 @@ function MultipleSelectionFilters<T>({
   }, []);
 
   return (
-    <Styled.MultipleFiltersRow>
-      <Styled.MultipleFilterTitle>{title}</Styled.MultipleFilterTitle>
+    <Styled.RowWrapper>
+      <Styled.RowTitle>{title}</Styled.RowTitle>
       <Styled.Separator />
-      <Styled.FilterList>
+      <FilterList>
         {showAllButton && (
           <li>
-            <Styled.FilterItem onClick={reset} selected={isNotSelected(activeData)}>
+            <FilterItem onClick={reset} selected={isNotSelected(activeData)}>
               <Icons.Check20Selected />
               전체
-            </Styled.FilterItem>
+            </FilterItem>
           </li>
         )}
         {data.map((item, index, { length }) => (
           <li key={keyExtractor(item)} ref={index + 1 === length ? lastItemRef : null}>
-            <Styled.FilterItem onClick={toggle(item)} selected={contain(activeData, item)}>
+            <FilterItem onClick={toggle(item)} selected={contain(activeData, item)}>
               <Icons.Check20Selected />
               {renderItemText(item)}
-            </Styled.FilterItem>
+            </FilterItem>
           </li>
         ))}
         {showMoreButton && (
           <Styled.MoreButtonWrapper>
-            <Styled.MoreButton
-              role="button"
-              onClick={showWithBackdrop(
-                <FilterDetail
-                  toggle={toggle}
-                  title={title}
-                  data={data}
-                  keyExtractor={keyExtractor}
-                  renderItemText={renderItemText}
-                  onClose={hide}
-                  activeData={activeData}
-                />,
-              )}
-            />
+            <Styled.MoreButton role="button" onClick={showWithBackdrop(Detail)} />
           </Styled.MoreButtonWrapper>
         )}
-      </Styled.FilterList>
-    </Styled.MultipleFiltersRow>
+      </FilterList>
+    </Styled.RowWrapper>
   );
 }
 
-export default MultipleSelectionFilters;
+export default FilterTableRow;

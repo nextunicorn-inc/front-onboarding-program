@@ -4,20 +4,10 @@ import { dequal } from 'dequal';
 
 import client from '../../../graphql/client';
 import { FILTER_OPTIONS } from '../../../graphql/queries';
-import { AreaEnum, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '../../../graphql';
 
-import type { WithAll } from './SupportProgramFilters.types';
+import type { WithAll, FilterOptionsQuery } from './SupportProgramFilters.types';
 
-export type FilterOptionsQuery = {
-  filterOptions: {
-    areas: Array<AreaEnum>;
-    targetCompanyAges: Array<TargetCompanyAgeEnum>;
-    types: Array<SupportProgramTypeEnum>;
-    hosts: Array<{ id: string; meta: { name: string } }>;
-  };
-};
-
-export default function useSupportProgramFilters() {
+export function useSupportProgramFilters() {
   return useQuery<FilterOptionsQuery, Error, FilterOptionsQuery['filterOptions']>(
     useSupportProgramFilters.getKeys(),
     useSupportProgramFilters.fetcher,

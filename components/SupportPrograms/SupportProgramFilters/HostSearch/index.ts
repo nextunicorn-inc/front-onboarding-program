@@ -1,1 +1,1 @@
-export { default as FilterSearch } from './HostSearch';
+export { default as HostSearch } from './HostSearch';

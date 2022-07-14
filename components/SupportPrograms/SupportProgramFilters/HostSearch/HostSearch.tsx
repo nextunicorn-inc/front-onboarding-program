@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import * as Styled from './HostSearch.styled';
-import { FilterOptionsQuery } from '../SupportProgramFilters.hooks';
 
+import * as Styled from './HostSearch.styled';
 import Search24 from '../../../../commonUi/Icons/Search24/search24.svg';
-import { WithAll } from '../SupportProgramFilters.types';
+
+import { contain } from '../../SupportPrograms.utils';
+
+import type { Host, WithAll } from '../SupportProgramFilters.types';
 
 type Props = {
-  data: FilterOptionsQuery['filterOptions']['hosts'];
-  onItemClick: (val: FilterOptionsQuery['filterOptions']['hosts'][number]) => () => void;
-  selectedData?: WithAll<FilterOptionsQuery['filterOptions']['hosts'][number]>[];
+  data: Host[];
+  onItemClick: (val: Host) => () => void;
+  selectedData: WithAll<Host>[];
 };
 
 function HostSearch({ data, selectedData = [], onItemClick }: Props) {
@@ -43,9 +45,7 @@ function HostSearch({ data, selectedData = [], onItemClick }: Props) {
                   <Styled.CheckboxContainer>
                     <Styled.Checkbox
                       type="checkbox"
-                      checked={
-                        selectedData.find((v) => v !== 'all' && v.id === item.id) !== undefined
-                      }
+                      checked={contain(selectedData, item)}
                       readOnly
                     />
                   </Styled.CheckboxContainer>

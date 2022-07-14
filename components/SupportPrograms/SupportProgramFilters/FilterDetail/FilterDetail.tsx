@@ -3,12 +3,13 @@ import { FilterList, FilterItem } from '../SupportProgramFilters.styled';
 
 import { useClientFilter } from '../SupportProgramFilters.hooks';
 
-import HostPredicateWrapper from '../PredicateWrapper';
+import HostPredicateWrapper from './PredicateWrapper';
 import Icons from '../../../../commonUi/Icons';
 import CloseMenu from '../../../../commonUi/Icons/CloseMenu/closeMenu.svg';
 
-import { WithAll } from '../SupportProgramFilters.types';
 import { contain, isNotSelected } from '../../SupportPrograms.utils';
+
+import { WithAll } from '../SupportProgramFilters.types';
 
 type Props<T> = {
   title: string;
@@ -17,7 +18,6 @@ type Props<T> = {
   renderItemText: (item: T) => string;
   toggle: (next: WithAll<T>) => () => void;
   onClose: () => void;
-
   activeData: WithAll<T>[];
 };
 
@@ -28,7 +28,6 @@ function FilterDetail<T>({
   keyExtractor,
   onClose,
   activeData,
-
   toggle,
 }: Props<T>) {
   const [state, toggleState] = useClientFilter<T>({ multiple: true, defaultValue: activeData });
