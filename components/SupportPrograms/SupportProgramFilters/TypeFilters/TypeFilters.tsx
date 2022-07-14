@@ -1,7 +1,7 @@
 import Icons from 'commonUi/Icons';
 import { SUPPORT_PROGRAM_TYPE_TEXTS } from 'constants/supportPrograms';
 import { useMediaQuery } from 'hooks';
-import { SupportProgramTypeEnum } from '../../../../graphql';
+import { SupportProgramTypeEnum } from '@/graphql';
 
 import * as Styled from './TypeFilters.styled';
 

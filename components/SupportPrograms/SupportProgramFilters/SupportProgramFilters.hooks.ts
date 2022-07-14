@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { dequal } from 'dequal';
 
-import { client, FILTER_OPTIONS } from '../../../graphql';
+import { client, FILTER_OPTIONS } from '@/graphql';
 
 import type { WithAll, FilterOptionsQuery } from './SupportProgramFilters.types';
 

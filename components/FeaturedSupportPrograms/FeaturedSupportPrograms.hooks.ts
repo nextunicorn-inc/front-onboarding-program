@@ -5,7 +5,7 @@ import {
   FEATURED_SUPPORT_PROGRAMS,
   RecursivelyExcludeNull,
   FeaturedSupportProgramsQuery,
-} from '../../graphql';
+} from '@/graphql';
 
 type BeforeRefactoredType = RecursivelyExcludeNull<FeaturedSupportProgramsQuery, 'outerApplyLink'>;
 
