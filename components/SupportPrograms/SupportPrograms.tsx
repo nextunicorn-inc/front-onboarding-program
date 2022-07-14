@@ -1,3 +1,6 @@
+import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from 'constants/supportPrograms';
+import { useModal } from 'commonUi/Modal';
+
 import {
   useSupportProgramFilters,
   TypeFilters,
@@ -7,9 +10,7 @@ import {
   FilterDetail,
 } from './SupportProgramFilters';
 
-import { useModal } from '../../commonUi/Modal';
-
-import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from '../../constants/supportPrograms';
+import { identity } from './SupportPrograms.utils';
 
 import type { Area, TargetCompanyAge, Host, Type } from './SupportProgramFilters';
 
@@ -47,7 +48,7 @@ function SupportPrograms() {
               <FilterTableRow
                 title="창업 기간"
                 toggle={toggleAges}
-                keyExtractor={(data) => data}
+                keyExtractor={identity}
                 data={filterQuery.data.targetCompanyAges}
                 activeData={activeAges}
                 renderItemText={(data) => TARGET_COMPANY_AGE_TEXTS[data]}
@@ -55,7 +56,7 @@ function SupportPrograms() {
                   <FilterDetail
                     title="창업 기간"
                     toggle={toggleAges}
-                    keyExtractor={(data) => data}
+                    keyExtractor={identity}
                     data={filterQuery.data.targetCompanyAges}
                     activeData={activeAges}
                     renderItemText={(data) => TARGET_COMPANY_AGE_TEXTS[data]}
@@ -68,7 +69,7 @@ function SupportPrograms() {
               <FilterTableRow
                 title="지원 분야"
                 toggle={toggleAreas}
-                keyExtractor={(data) => data}
+                keyExtractor={identity}
                 data={filterQuery.data.areas}
                 activeData={activeAreas}
                 renderItemText={(data) => AREA_TEXTS[data]}
@@ -76,7 +77,7 @@ function SupportPrograms() {
                   <FilterDetail
                     title="지원 분야"
                     toggle={toggleAreas}
-                    keyExtractor={(data) => data}
+                    keyExtractor={identity}
                     data={filterQuery.data.areas}
                     activeData={activeAreas}
                     renderItemText={(data) => AREA_TEXTS[data]}

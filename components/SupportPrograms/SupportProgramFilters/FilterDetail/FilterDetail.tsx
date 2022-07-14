@@ -1,16 +1,17 @@
+import Icons from 'commonUi/Icons';
+import CloseMenu from 'commonUi/Icons/CloseMenu/closeMenu.svg';
+import { useMediaQuery } from 'hooks';
+
 import * as Styled from './FilterDetail.styled';
 import { FilterList, FilterItem } from '../SupportProgramFilters.styled';
 
 import { useClientFilter } from '../SupportProgramFilters.hooks';
 
-import HostPredicateWrapper from './PredicateWrapper';
-import Icons from '../../../../commonUi/Icons';
-import CloseMenu from '../../../../commonUi/Icons/CloseMenu/closeMenu.svg';
+import HostPredicateWrapper from './HostPredicateWrapper';
 
 import { contain, isNotSelected } from '../../SupportPrograms.utils';
 
 import { WithAll } from '../SupportProgramFilters.types';
-import { useMediaQuery } from '../../../../hooks';
 
 type Props<T> = {
   title: string;

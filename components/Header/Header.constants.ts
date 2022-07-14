@@ -1,4 +1,4 @@
-import Icons from '../../commonUi/Icons';
+import Icons from 'commonUi/Icons';
 
 export const NAVIGATIONS = [
   {

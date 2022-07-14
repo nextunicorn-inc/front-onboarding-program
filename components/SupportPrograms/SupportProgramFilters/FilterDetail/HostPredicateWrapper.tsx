@@ -1,6 +1,6 @@
-import { WithAll } from '../SupportProgramFilters.types';
-import { FilterOptionsQuery } from '../SupportProgramFilters.hooks';
-import HostSearch from '../HostSearch/HostSearch';
+import type { WithAll, FilterOptionsQuery } from '../SupportProgramFilters.types';
+
+import { HostSearch } from '../HostSearch';
 
 type Props<T> = {
   data: T[];

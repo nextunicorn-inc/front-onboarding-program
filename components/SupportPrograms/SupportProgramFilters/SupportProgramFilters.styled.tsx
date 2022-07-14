@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight, MediaQuery } from '../../../utils';
+import { FontSize, FontWeight, MediaQuery } from 'utils';
 
 export const Responsive = styled.div`
   max-width: 1240px;

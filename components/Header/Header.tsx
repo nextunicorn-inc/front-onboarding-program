@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import Icons from '../../commonUi/Icons';
+
+import Icons from 'commonUi/Icons';
+import * as Styled from './Header.styled';
 import { IconBox } from './IconBox';
 
 import {
@@ -9,8 +11,6 @@ import {
   LOGIN,
   SIGNUP,
 } from './Header.constants';
-
-import * as Styled from './Header.styled';
 
 function Header() {
   const [isClickIntroduceService, setIsClickIntroduceService] = useState(false);

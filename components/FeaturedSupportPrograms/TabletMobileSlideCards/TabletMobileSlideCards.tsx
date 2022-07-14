@@ -1,10 +1,9 @@
+import { ApplyTag, CompanyAgeTag } from 'commonUi/Tags/';
 import * as Styled from './TabletMobileSlideCards.styled';
 
-import { ApplyTag } from '../../../commonUi/Tags/ApplyTag';
-import { CompanyAgeTag } from '../../../commonUi/Tags/CompanyAgeTag';
-import { EndDate } from '../utils/EndDate';
-
 import useFeaturedSupportPrograms from '../FeaturedSupportPrograms.hooks';
+
+import { EndDate } from '../utils/EndDate';
 
 function TabletMobileSlideCards() {
   const query = useFeaturedSupportPrograms();

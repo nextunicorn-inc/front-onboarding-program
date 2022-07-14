@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import * as Styled from './Footer.styled';
 import { NAVIGATIONS, SOCIAL_NETWORKS, POLICIES_OF_SERVICES } from './Footer.constants';
-import { ContactSeparator } from './Footer.styled';
 
 function Footer() {
   return (

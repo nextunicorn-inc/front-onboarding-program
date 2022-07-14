@@ -1,16 +1,14 @@
 import { QueryClient, dehydrate } from 'react-query';
-import { Header } from '../components/Header';
-import Footer from '../components/Footer';
-import CTASection from '../components/CTASection/CTASection';
-
 import {
+  CTASection,
+  Footer,
   SupportProgramBanners,
   useSupportProgramBanners,
-} from '../components/SupportProgramBanners';
-
-import { FeaturedSupportPrograms } from '../components/FeaturedSupportPrograms';
-
-import { SupportPrograms, useSupportProgramFilters } from '../components/SupportPrograms';
+  useSupportProgramFilters,
+  FeaturedSupportPrograms,
+  SupportPrograms,
+  Header,
+} from 'components/';
 
 export async function getStaticProps() {
   const queryClient = new QueryClient();

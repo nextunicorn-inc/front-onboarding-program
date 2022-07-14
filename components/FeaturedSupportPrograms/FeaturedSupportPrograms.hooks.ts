@@ -1,7 +1,11 @@
 import { useQuery } from 'react-query';
-import client from '../../graphql/client';
-import { FEATURED_SUPPORT_PROGRAMS } from '../../graphql/queries';
-import { RecursivelyExcludeNull, FeaturedSupportProgramsQuery } from '../../graphql';
+
+import {
+  client,
+  FEATURED_SUPPORT_PROGRAMS,
+  RecursivelyExcludeNull,
+  FeaturedSupportProgramsQuery,
+} from '../../graphql';
 
 type BeforeRefactoredType = RecursivelyExcludeNull<FeaturedSupportProgramsQuery, 'outerApplyLink'>;
 

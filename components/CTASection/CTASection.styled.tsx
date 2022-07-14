@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { FontWeight, FontSize, MediaQuery } from '../../utils';
+import { FontWeight, FontSize, MediaQuery } from 'utils';
 
 export const Wrapper = styled.article`
   height: auto;

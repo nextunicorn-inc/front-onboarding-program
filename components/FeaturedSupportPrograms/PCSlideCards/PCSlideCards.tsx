@@ -1,15 +1,14 @@
 import React, { useRef } from 'react';
 import Slider from 'react-slick';
 
+import Icons from 'commonUi/Icons';
+import { ApplyTag, CompanyAgeTag } from 'commonUi/Tags/';
 import { SLIDER_SETTINGS } from '../FeaturedSupportPrograms.constants';
 
 import * as Styled from './PCSlideCards.styled';
 
-import { ApplyTag } from '../../../commonUi/Tags/ApplyTag';
-import { CompanyAgeTag } from '../../../commonUi/Tags/CompanyAgeTag';
 import { EndDate } from '../utils/EndDate';
 import useFeaturedSupportPrograms from '../FeaturedSupportPrograms.hooks';
-import Icons from '../../../commonUi/Icons';
 
 function PCSlideCards() {
   const query = useFeaturedSupportPrograms();
