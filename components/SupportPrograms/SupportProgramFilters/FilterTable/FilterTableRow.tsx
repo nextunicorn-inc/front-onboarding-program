@@ -32,7 +32,7 @@ function FilterTableRow<T>({
   Detail,
 }: Props<T>) {
   const [showMoreButton, setShowMoreButton] = useState(false);
-  const isMobile = useMediaQuery('(max-width: 500px)');
+  const isMobile = useMediaQuery('(max-width: 767px)');
 
   const { show, hide } = useModal();
   const reset = toggle('all');

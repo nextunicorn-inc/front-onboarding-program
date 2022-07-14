@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../../utils';
+import { FontSize, FontWeight, MediaQuery } from '../../../../utils';
 
 export const TableWrapper = styled.section`
   background-color: var(--color-naturalgray0);
@@ -8,16 +8,12 @@ export const TableWrapper = styled.section`
   padding: 20px 0 20px 24px;
   margin-bottom: 20px;
 
-  @media screen and (max-width: 500px) {
+  ${MediaQuery.mobile} {
     padding: 0;
     border: none;
     background-color: inherit;
     display: flex;
     gap: 8px;
-
-    & > * {
-      flex-basis: 100%;
-    }
   }
 `;
 
@@ -90,7 +86,7 @@ export const MoreButton = styled.div`
 
 export const MobileToggleButton = styled.button`
   border: none;
-  padding: 8px 0;
+  padding: 8px 12px;
   display: inline-flex;
   align-items: center;
   gap: 2px;
@@ -109,10 +105,11 @@ export const CurrentTotalActiveItems = styled.div`
   align-items: center;
   width: 16px;
   height: 15px;
+  padding: 1px 5px 0;
+  margin-left: 6px;
   border-radius: 5px;
   color: var(--color-naturalgray0);
   background-color: var(--color-unicornblue6);
   ${FontSize.size10};
   ${FontWeight.bold};
-  margin-left: 6px;
 `;

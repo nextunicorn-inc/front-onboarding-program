@@ -28,6 +28,10 @@ export const FilterList = styled.ul<{ $wrap?: boolean }>`
     flex-shrink: 0;
     border: none;
   }
+
+  ${MediaQuery.mobile} {
+    justify-content: center;
+  }
 `;
 
 export const FilterItem = styled.button<{ selected: boolean }>`
@@ -53,8 +57,15 @@ export const FilterItem = styled.button<{ selected: boolean }>`
     top: 0;
     right: -5px;
   }
-  &:hover {
-    color: var(--color-unicornblue6);
-    background-color: var(--color-unicornblue1);
+
+  @support (hover:hover) {
+    &:hover {
+      color: var(--color-unicornblue6);
+      background-color: var(--color-unicornblue1);
+    }
+  }
+
+  ${MediaQuery.mobile} {
+    ${FontSize.size14};
   }
 `;
