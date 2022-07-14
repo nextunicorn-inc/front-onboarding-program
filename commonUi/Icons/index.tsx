@@ -3,6 +3,7 @@ import { CharbonRight20 } from './CharbonRight20';
 import { Thunder } from './Thunder';
 import * as Checks from './Check20';
 import * as Fasts from './Fast';
+import { Plus20 } from './Plus20';
 
 const LogoIcon = ({ color }: { color: string }) => (
   <svg width="134" height="20" viewBox="0 0 134 20" fill={color} xmlns="http://www.w3.org/2000/svg">
@@ -267,4 +268,5 @@ export default {
   Check20Selected: Checks.Selected,
   Check20DeSelected: Checks.Deselected,
   ...Fasts,
+  Plus20,
 };

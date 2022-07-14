@@ -1,10 +1,14 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../../utils';
+import { FontSize, FontWeight, MediaQuery } from '../../../../utils';
 
 export const TypeFilterList = styled.ul`
   display: flex;
   gap: 28px;
   margin-bottom: 28px;
+  ${MediaQuery.mobile} {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
 `;
 
 export const TypeFilterItem = styled.li<{ $active: boolean }>`
@@ -24,6 +28,10 @@ export const TypeFilterItem = styled.li<{ $active: boolean }>`
     ${FontWeight.bold};
     ${FontSize.size24};
     letter-spacing: 0.2px;
+
+    ${MediaQuery.mobile} {
+      ${FontSize.size16};
+    }
   }
 
   &:hover {
@@ -46,4 +54,8 @@ export const TypeFilterNoticeLine = styled.div<{ $active: boolean }>`
 
   transition: all 250ms linear;
   transform: translateX(${({ $active }) => ($active ? 0 : -101)}%);
+
+  ${MediaQuery.mobile} {
+    margin-top: 6px;
+  }
 `;

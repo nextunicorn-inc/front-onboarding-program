@@ -7,6 +7,18 @@ export const TableWrapper = styled.section`
   border-radius: 5px;
   padding: 20px 0 20px 24px;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 500px) {
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    display: flex;
+    gap: 8px;
+
+    & > * {
+      flex-basis: 100%;
+    }
+  }
 `;
 
 export const RowWrapper = styled.div`
@@ -74,4 +86,33 @@ export const MoreButton = styled.div`
   &::after {
     transform: rotate(90deg);
   }
+`;
+
+export const MobileToggleButton = styled.button`
+  border: none;
+  padding: 8px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  justify-content: center;
+  border-radius: 20px;
+
+  color: var(--color-naturalgray7);
+  background-color: var(--color-bluegray0);
+  ${FontSize.size14};
+  ${FontWeight.medium};
+`;
+
+export const CurrentTotalActiveItems = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  border-radius: 5px;
+  color: var(--color-naturalgray0);
+  background-color: var(--color-unicornblue6);
+  ${FontSize.size10};
+  ${FontWeight.bold};
+  margin-left: 6px;
 `;

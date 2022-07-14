@@ -1,9 +1,16 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../utils';
+import { FontSize, FontWeight, MediaQuery } from '../../../utils';
 
 export const Responsive = styled.div`
   max-width: 1240px;
   margin: 0 auto;
+  ${MediaQuery.tablet} {
+    padding: 0 32px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0 20px;
+  }
 `;
 
 export const FilterList = styled.ul<{ $wrap?: boolean }>`
