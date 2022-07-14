@@ -1,14 +1,13 @@
 import { useState, useRef, ReactNode, useEffect } from 'react';
 
+import Icons from 'commonUi/Icons';
+import { Backdrop, useModal } from 'commonUi/Modal';
+import { useMediaQuery } from 'hooks';
+
 import * as Styled from './FilterTable.styled';
-import Icons from '../../../../commonUi/Icons';
-import { Backdrop, useModal } from '../../../../commonUi/Modal';
 import { FilterList, FilterItem } from '../SupportProgramFilters.styled';
-
 import { contain, isNotSelected } from '../../SupportPrograms.utils';
-
-import { WithAll } from '../SupportProgramFilters.types';
-import { useMediaQuery } from '../../../../hooks';
+import type { WithAll } from '../SupportProgramFilters.types';
 
 type Props<T> = {
   title: string;

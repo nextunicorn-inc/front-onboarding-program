@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import Slider from 'react-slick';
 
+import Indicator from './Indicator';
 import * as Styled from './SupportProgramBanners.styled';
 import useSupportProgramBanners from './SupportProgramBanners.hooks';
 
 import { SLIDER_SETTINGS } from './SupportProgramBanners.constants';
-import Indicator from './Indicator';
 
 function SupportProgramBanners() {
   const query = useSupportProgramBanners();

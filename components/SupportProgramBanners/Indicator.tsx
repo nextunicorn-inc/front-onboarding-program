@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import Icons from '../../commonUi/Icons';
+import Icons from 'commonUi/Icons';
 import * as Styled from './SupportProgramBanners.styled';
 
 import { useInterval } from './SupportProgramBanners.hooks';

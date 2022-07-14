@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { MediaQuery, FontSize, FontWeight } from '../../../utils';
+import { MediaQuery, FontSize, FontWeight } from 'utils';
 
 export const SlideCardWrapper = styled.div`
   margin-top: 16px;

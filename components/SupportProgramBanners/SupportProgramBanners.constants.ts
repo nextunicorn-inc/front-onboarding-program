@@ -7,5 +7,3 @@ export const SLIDER_SETTINGS = {
   arrows: false,
   useTransform: false,
 };
-
-export const MAXIMUM_PROGRESS = 100;

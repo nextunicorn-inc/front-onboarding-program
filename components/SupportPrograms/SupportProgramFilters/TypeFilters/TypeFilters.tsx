@@ -1,14 +1,13 @@
-import * as Styled from './TypeFilters.styled';
-import Icons from '../../../../commonUi/Icons';
-import { Responsive } from '../SupportProgramFilters.styled';
-
-import { DEFAULT } from '../SupportProgramFilters.constants';
-import { SUPPORT_PROGRAM_TYPE_TEXTS } from '../../../../constants/supportPrograms';
-
-import { SupportProgramTypes } from '../SupportProgramFilters.types';
+import Icons from 'commonUi/Icons';
+import { SUPPORT_PROGRAM_TYPE_TEXTS } from 'constants/supportPrograms';
+import { useMediaQuery } from 'hooks';
 import { SupportProgramTypeEnum } from '../../../../graphql';
 
-import { useMediaQuery } from '../../../../hooks';
+import * as Styled from './TypeFilters.styled';
+
+import { Responsive } from '../SupportProgramFilters.styled';
+import { DEFAULT } from '../SupportProgramFilters.constants';
+import { SupportProgramTypes } from '../SupportProgramFilters.types';
 
 type Props = {
   allTypes: SupportProgramTypes;
