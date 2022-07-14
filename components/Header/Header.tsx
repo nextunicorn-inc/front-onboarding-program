@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Icons from '../../commonUi/Icons';
+import { IconBox } from './IconBox';
 
 import {
   NAVIGATIONS,
@@ -117,13 +118,8 @@ function Header() {
           </Styled.MenuWrapper>
 
           <Styled.ResponsiveMenuList>
-            <span role="button" onClick={handleClickSearch}>
-              <Icons.Search24 />
-            </span>
-
-            <span role="button" onClick={handleClickSideMenu}>
-              <Icons.Menu24 />
-            </span>
+            <IconBox IconElement={Icons.Search24} onClick={handleClickSearch} />
+            <IconBox IconElement={Icons.Menu24} onClick={handleClickSideMenu} />
 
             {isClickSearch && (
               <Styled.SearchLayout>
