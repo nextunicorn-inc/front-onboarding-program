@@ -59,7 +59,7 @@ export const SlideCardImg = styled.img`
   display: block;
   object-fit: cover;
   cursor: pointer;
-  background-color: aliceblue;
+  background-color: #f8f8f8;
 `;
 
 export const SlideTagWrapper = styled.div`
