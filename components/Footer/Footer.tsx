@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { NextUnicornLogo } from 'commonUi/Icons';
 import * as Styled from './Footer.styled';
 import { NAVIGATIONS, SOCIAL_NETWORKS, POLICIES_OF_SERVICES } from './Footer.constants';
 
@@ -7,7 +8,7 @@ function Footer() {
     <Styled.Layout>
       <Styled.ResponsiveSection>
         <Styled.Navigation>
-          <Styled.MockupLogo />
+          <NextUnicornLogo color="var(--color-naturalgray7)" />
           <Styled.MenuList>
             {NAVIGATIONS.map((navigation) => (
               <li key={navigation.title}>
@@ -45,26 +46,19 @@ function Footer() {
             </div>
           </Styled.Contact>
           <Styled.SocialNetworks>
-            {
-              /* TODO: change to icon */
-              SOCIAL_NETWORKS.map((socialNetwork) => (
+            {SOCIAL_NETWORKS.map((socialNetwork) => {
+              const { Icon } = socialNetwork;
+              return (
                 <a
                   key={socialNetwork.title}
                   href={socialNetwork.href}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div
-                    style={{
-                      width: 21,
-                      height: 21,
-                      backgroundColor: 'steelblue',
-                      borderRadius: '9999px',
-                    }}
-                  />
+                  <Icon width={24} height={24} color="var(--color-naturalgray4)" />
                 </a>
-              ))
-            }
+              );
+            })}
           </Styled.SocialNetworks>
         </Styled.CompanyInformation>
         <Styled.PoliciesOfService>

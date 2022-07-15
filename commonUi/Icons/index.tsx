@@ -4,6 +4,8 @@ import { Thunder } from './Thunder';
 import * as Checks from './Check20';
 import * as Fasts from './Fast';
 import { Plus20 } from './Plus20';
+import * as SocialNetworks from './SocialNetworks';
+import { Logo as NextUnicornLogo } from './Logo';
 
 const LogoIcon = ({ color }: { color: string }) => (
   <svg width="134" height="20" viewBox="0 0 134 20" fill={color} xmlns="http://www.w3.org/2000/svg">
@@ -247,6 +249,8 @@ const ServiceIntroduceIcon = () => (
     />
   </svg>
 );
+
+export { SocialNetworks, NextUnicornLogo };
 
 export default {
   Logo: LogoIcon,
