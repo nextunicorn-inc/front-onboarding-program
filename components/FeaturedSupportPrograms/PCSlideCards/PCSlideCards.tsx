@@ -23,6 +23,16 @@ function PCSlideCards() {
     sliderRef.current?.slickPrev();
   };
 
+  if (!query.data) {
+    return (
+      <Styled.EmptySlideCards>
+        <Styled.EmptySlideCard />
+        <Styled.EmptySlideCard />
+        <Styled.EmptySlideCard />
+      </Styled.EmptySlideCards>
+    );
+  }
+
   return (
     <Styled.SlideCardWrapper>
       <Styled.SlideButtonWrapper $direction="left" role="button" onClick={prevBtn}>

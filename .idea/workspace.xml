@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="edf0bd22-fa71-43ef-97a8-f529807522c7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/FeaturedSupportPrograms/TabletMobileSlideCards/TabletMobileSlideCards.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedSupportPrograms/TabletMobileSlideCards/TabletMobileSlideCards.styled.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/FeaturedSupportPrograms/TabletMobileSlideCards/TabletMobileSlideCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedSupportPrograms/TabletMobileSlideCards/TabletMobileSlideCards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +97,7 @@
       <workItem from="1657267530266" duration="3867000" />
       <workItem from="1657589296285" duration="27185000" />
       <workItem from="1657760516505" duration="11395000" />
-      <workItem from="1657845430456" duration="2488000" />
+      <workItem from="1657845430456" duration="2970000" />
     </task>
     <servers />
   </component>
@@ -142,6 +142,12 @@
           <line>27</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.tsx</url>
+          <line>36</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -33,6 +33,19 @@ export const SlideCardWrapper = styled.div`
   }
 `;
 
+export const EmptySlideCards = styled.div`
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+`;
+
+export const EmptySlideCard = styled.div`
+  width: 295px;
+  height: 417px;
+  border-radius: 5px;
+  background-color: #f4f5f7;
+`;
+
 export const SlideCard = styled.article`
   width: 295px !important;
   height: 100%;
