@@ -35,11 +35,11 @@ function PCSlideCards() {
 
   return (
     <Styled.SlideCardWrapper>
-      <Styled.SlideButtonWrapper $direction="left" role="button" onClick={prevBtn}>
+      <Styled.SlideButtonWrapper $isLeftDirection={true} role="button" onClick={prevBtn}>
         <Icons.CharbonLeft20 />
       </Styled.SlideButtonWrapper>
 
-      <Styled.SlideButtonWrapper $direction="right" role="button" onClick={nextBtn}>
+      <Styled.SlideButtonWrapper $isLeftDirection={false} role="button" onClick={nextBtn}>
         <Icons.CharbonRight20 />
       </Styled.SlideButtonWrapper>
 

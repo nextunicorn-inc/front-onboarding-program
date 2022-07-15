@@ -87,7 +87,7 @@ export const SlideCardCompanyName = styled.h5`
   color: rgb(115, 115, 115);
 `;
 
-export const SlideButtonWrapper = styled.div<{ $direction: string }>`
+export const SlideButtonWrapper = styled.div<{ $isLeftDirection: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,10 +99,10 @@ export const SlideButtonWrapper = styled.div<{ $direction: string }>`
   height: 40px;
   cursor: pointer;
   border: 1px solid #e8ecf2;
-  background-color: #fefefe;
+  background-color: var(--color-naturalgray0);
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
-  ${({ $direction }) =>
-    $direction === 'left'
+  ${({ $isLeftDirection }) =>
+    $isLeftDirection
       ? css`
           left: -1%;
         `
