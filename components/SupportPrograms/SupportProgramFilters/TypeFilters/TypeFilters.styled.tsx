@@ -21,9 +21,11 @@ export const TypeFilterItem = styled.li<{ $active: boolean }>`
   & > button {
     display: inline-flex;
     align-items: center;
+    gap: 2px;
     cursor: pointer;
     border: none;
     background-color: transparent;
+    padding: 0;
     color: hsla(var(--base-naturalgray9), ${({ $active }) => ($active ? 1 : 0.4)});
     ${FontWeight.bold};
     ${FontSize.size24};

@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from './ApplyTag.styled';
-import Icons from '../../../commonUi/Icons';
+import { Thunder } from '../../../commonUi/Icons';
 
 function ApplyTag({ applyText }: { applyText: string }) {
   let applyResultText;
@@ -14,7 +14,8 @@ function ApplyTag({ applyText }: { applyText: string }) {
       <Styled.TagWrapper>
         <Styled.SimpleApplyTag>
           {applyResultText}
-          <Icons.Thunder />
+
+          <Thunder />
         </Styled.SimpleApplyTag>
       </Styled.TagWrapper>
     );

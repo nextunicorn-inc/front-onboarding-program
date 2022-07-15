@@ -8,7 +8,7 @@ function Footer() {
     <Styled.Layout>
       <Styled.ResponsiveSection>
         <Styled.Navigation>
-          <NextUnicornLogo color="var(--color-naturalgray7)" />
+          <NextUnicornLogo primary={false} />
           <Styled.MenuList>
             {NAVIGATIONS.map((navigation) => (
               <li key={navigation.title}>

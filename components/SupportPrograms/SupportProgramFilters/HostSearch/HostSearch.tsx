@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import Search24 from 'commonUi/Icons/Search24/search24.svg';
+
+import { Search } from 'commonUi/Icons';
 import * as Styled from './HostSearch.styled';
 
 import { contain } from '../../SupportPrograms.utils';
@@ -26,7 +27,7 @@ function HostSearch({ data, selectedData = [], onItemClick }: Props) {
           value={value}
           onChange={(e) => setValue(e.currentTarget.value)}
         />
-        <Search24 />
+        <Search />
       </Styled.InputContainer>
 
       {open && (

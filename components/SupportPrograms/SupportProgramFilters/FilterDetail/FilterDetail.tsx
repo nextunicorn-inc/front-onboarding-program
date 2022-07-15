@@ -1,5 +1,5 @@
-import Icons from 'commonUi/Icons';
-import CloseMenu from 'commonUi/Icons/CloseMenu/closeMenu.svg';
+import Icons, { Close, Check } from 'commonUi/Icons';
+
 import { useMediaQuery } from 'hooks';
 
 import * as Styled from './FilterDetail.styled';
@@ -54,7 +54,7 @@ function FilterDetail<T>({
             <Styled.Heading>{`${title} 선택`}</Styled.Heading>
             {!isDesktop && (
               <Styled.CloseButton onClick={onClose}>
-                <Icons.CloseMenu color="var(--color-naturalgray7)" />
+                <Close size={24} color="var(--color-naturalgray7)" />
               </Styled.CloseButton>
             )}
           </Styled.HeadingSection>
@@ -66,14 +66,14 @@ function FilterDetail<T>({
           <FilterList $wrap>
             <li>
               <FilterItem onClick={reset} selected={isNotSelected(state)}>
-                <Icons.Check20Selected />
+                <Check active color="var(--color-unicornblue7)" />
                 전체
               </FilterItem>
             </li>
             {data.map((item) => (
               <li key={keyExtractor(item)}>
                 <FilterItem selected={contain(state, item)} onClick={handleClick(item)}>
-                  <Icons.Check20Selected />
+                  <Check active color="var(--color-unicornblue7)" />
                   {renderItemText(item)}
                 </FilterItem>
               </li>
@@ -86,7 +86,7 @@ function FilterDetail<T>({
       </Styled.ContentsWrapper>
       {isDesktop && (
         <Styled.CloseButton onClick={onClose}>
-          <CloseMenu />
+          <Close size={24} color="var(--color-naturalgray0)" />
         </Styled.CloseButton>
       )}
     </Styled.Wrapper>

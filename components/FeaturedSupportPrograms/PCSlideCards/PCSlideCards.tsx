@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Slider from 'react-slick';
 
-import Icons from 'commonUi/Icons';
+import { Chevron } from 'commonUi/Icons';
 import { ApplyTag, CompanyAgeTag } from 'commonUi/Tags/';
 import { SLIDER_SETTINGS } from '../FeaturedSupportPrograms.constants';
 
@@ -25,11 +25,11 @@ function PCSlideCards() {
   return (
     <Styled.SlideCardWrapper>
       <Styled.SlideButtonWrapper $direction="left" role="button" onClick={prevBtn}>
-        <Icons.CharbonLeft20 />
+        <Chevron size={20} direction="Left" />
       </Styled.SlideButtonWrapper>
 
       <Styled.SlideButtonWrapper $direction="right" role="button" onClick={nextBtn}>
-        <Icons.CharbonRight20 />
+        <Chevron size={20} direction="Right" />
       </Styled.SlideButtonWrapper>
 
       <Slider ref={sliderRef} {...SLIDER_SETTINGS}>
