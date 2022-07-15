@@ -8,7 +8,7 @@ const CardEndDate = styled.h5`
   ${FontWeight.regular};
   color: var(--color-naturalgray6);
 
-  ${MediaQuery.tablet || MediaQuery.mobile} {
+  ${MediaQuery.tablet} {
     ${FontSize.size12};
     margin-top: 3px;
   }
