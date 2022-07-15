@@ -35,6 +35,22 @@ export const SlideCards = styled.div`
   }
 `;
 
+export const EmptySlideCard = styled.div`
+  border-radius: 5px;
+  background-color: #f4f5f7;
+
+  ${MediaQuery.tablet} {
+    width: 254px;
+    height: 360px;
+    margin-right: 16px;
+  }
+  ${MediaQuery.mobile} {
+    width: 208px;
+    height: 294px;
+    margin-right: 20px;
+  }
+`;
+
 export const SlideCard = styled.article`
   height: auto;
   border-radius: 5px;
@@ -63,13 +79,11 @@ export const SlideCardImg = styled.img`
   ${MediaQuery.tablet} {
     width: 254px;
     height: 360px;
-    background-color: aliceblue;
   }
 
   ${MediaQuery.mobile} {
     width: 208px;
     height: 294px;
-    background-color: aliceblue;
   }
 `;
 

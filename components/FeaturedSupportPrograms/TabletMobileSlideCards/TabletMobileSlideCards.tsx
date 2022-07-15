@@ -9,6 +9,17 @@ import useFeaturedSupportPrograms from '../FeaturedSupportPrograms.hooks';
 function TabletMobileSlideCards() {
   const query = useFeaturedSupportPrograms();
 
+  if (!query.data) {
+    return (
+      <Styled.SlideCardWrapper>
+        <Styled.SlideCards>
+          <Styled.EmptySlideCard />
+          <Styled.EmptySlideCard />
+        </Styled.SlideCards>
+      </Styled.SlideCardWrapper>
+    );
+  }
+
   return (
     <Styled.SlideCardWrapper>
       <Styled.SlideCards>
