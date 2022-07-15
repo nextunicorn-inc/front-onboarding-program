@@ -44,7 +44,7 @@ function PCSlideCards() {
       </Styled.SlideButtonWrapper>
 
       <Slider ref={sliderRef} {...SLIDER_SETTINGS}>
-        {query.data?.supportPrograms.map((featuredSupportProgram) => (
+        {query.data.supportPrograms.map((featuredSupportProgram) => (
           <Styled.SlideCard key={featuredSupportProgram.id}>
             <Styled.SlideCardImg
               src={featuredSupportProgram.bannerImgUrl}

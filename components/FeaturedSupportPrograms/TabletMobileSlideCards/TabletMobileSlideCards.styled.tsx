@@ -11,13 +11,6 @@ export const SlideCardWrapper = styled.div`
     height: auto;
     position: relative;
   }
-
-  ${MediaQuery.mobile} {
-    display: flex;
-    margin-top: 16px;
-    width: 100%;
-    position: relative;
-  }
 `;
 
 export const SlideCards = styled.div`
