@@ -12,7 +12,7 @@ import { FeaturedSupportPrograms } from '../components/FeaturedSupportPrograms';
 
 import { SupportPrograms, useSupportProgramFilters } from '../components/SupportPrograms';
 
-import { ResultSupportPrograms } from '../components/SupportPrograms/ResultSupportPrograms';
+import { ResultSupportPrograms } from '../components/SupportPrograms/SupportProgramResults';
 
 export async function getStaticProps() {
   const queryClient = new QueryClient();
@@ -37,7 +37,6 @@ function Home() {
       <SupportProgramBanners />
       <FeaturedSupportPrograms />
       <SupportPrograms />
-      <ResultSupportPrograms />
       <CTASection />
       <Footer />
     </>

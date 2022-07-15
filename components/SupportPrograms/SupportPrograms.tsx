@@ -1,3 +1,5 @@
+import * as Styled from './SupportPrograms.styled';
+
 import {
   useSupportProgramFilters,
   TypeFilters,
@@ -12,6 +14,9 @@ import { useModal } from '../../commonUi/Modal';
 import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from '../../constants/supportPrograms';
 
 import type { Area, TargetCompanyAge, Host, Type } from './SupportProgramFilters';
+import { ResultSupportPrograms } from './SupportProgramResults';
+
+import useSupportProgramResults from './SupportProgramResults/SupportProgramResults.hooks';
 
 function SupportPrograms() {
   const filterQuery = useSupportProgramFilters();
@@ -33,8 +38,22 @@ function SupportPrograms() {
   });
   const { hide } = useModal();
 
+  const testFilter = {
+    filter: {
+      type: filteredActiveTypes?.[0] ?? null,
+      targetCompanyAges: filteredActiveAges,
+      areas: filteredActiveAreas,
+      hosts: filteredActiveHosts?.map((host) => host.id) ?? null,
+      page: null,
+    },
+  };
+
+  const { data } = useSupportProgramResults(testFilter);
+
+  console.log(data);
+
   return (
-    <div>
+    <Styled.Wrapper>
       {filterQuery.isSuccess && (
         <>
           <TypeFilters
@@ -109,7 +128,9 @@ function SupportPrograms() {
           />
         </>
       )}
-    </div>
+
+      <ResultSupportPrograms />
+    </Styled.Wrapper>
   );
 }
 

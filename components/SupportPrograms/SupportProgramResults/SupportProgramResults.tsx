@@ -2,7 +2,7 @@ import React from 'react';
 import { PC } from './PC';
 import { TabletMobile } from './TabletMobile';
 
-function ResultSupportPrograms() {
+function SupportProgramResults() {
   return (
     <div>
       <PC />
@@ -11,4 +11,4 @@ function ResultSupportPrograms() {
   );
 }
 
-export default ResultSupportPrograms;
+export default SupportProgramResults;
