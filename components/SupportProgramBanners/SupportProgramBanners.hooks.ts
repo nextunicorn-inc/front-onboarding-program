@@ -6,7 +6,7 @@ import {
   client,
   RecursivelyExcludeNull,
   SupportProgramBannersQuery,
-} from '../../graphql';
+} from '@/graphql';
 
 type BeforeRefactoredType = RecursivelyExcludeNull<
   SupportProgramBannersQuery,
