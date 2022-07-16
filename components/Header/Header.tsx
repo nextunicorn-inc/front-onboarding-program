@@ -90,20 +90,18 @@ function Header() {
                 <Styled.SearchTitle>검색</Styled.SearchTitle>
               </Styled.SearchMenu>
 
-              {isClickSearch && (
-                <Styled.SearchLayout>
-                  <Styled.SearchInputLayout>
-                    <Styled.SearchInputBoxWrapper>
-                      <Styled.SearchInputBox>
-                        <Styled.SearchInput placeholder="스타트업, 전문투자자, 스타트업 뉴스 검색하기" />
-                        <Icons.Search40 />
-                      </Styled.SearchInputBox>
-                    </Styled.SearchInputBoxWrapper>
-                  </Styled.SearchInputLayout>
+              <Styled.SearchLayout>
+                <Styled.SearchInputLayout>
+                  <Styled.SearchInputBoxWrapper>
+                    <Styled.SearchInputBox>
+                      <Styled.SearchInput placeholder="스타트업, 전문투자자, 스타트업 뉴스 검색하기" />
+                      <Icons.Search40 />
+                    </Styled.SearchInputBox>
+                  </Styled.SearchInputBoxWrapper>
+                </Styled.SearchInputLayout>
 
-                  <Styled.SearchInputOuter />
-                </Styled.SearchLayout>
-              )}
+                <Styled.SearchInputOuter />
+              </Styled.SearchLayout>
 
               <Styled.SignMenu>
                 <a href={LOGIN.href}>{LOGIN.title}</a>
