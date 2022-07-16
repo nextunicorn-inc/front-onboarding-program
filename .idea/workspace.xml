@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="edf0bd22-fa71-43ef-97a8-f529807522c7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header/Header.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header/Header.styled.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ResponsiveSection/ResponsiveSection.styled.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ResponsiveSection/ResponsiveSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ResponsiveSection/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/PageNavigationWrapper/PageNavigationWrapper.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/PageNavigationWrapper/PageNavigationWrapper.styled.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +98,7 @@
       <workItem from="1657589296285" duration="27185000" />
       <workItem from="1657760516505" duration="11395000" />
       <workItem from="1657845430456" duration="28156000" />
-      <workItem from="1657948536041" duration="3304000" />
+      <workItem from="1657948536041" duration="3810000" />
     </task>
     <servers />
   </component>
@@ -153,7 +150,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/Header/Header.tsx</url>
-          <line>42</line>
+          <line>43</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
