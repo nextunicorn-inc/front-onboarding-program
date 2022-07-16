@@ -1,8 +1,8 @@
 import React from 'react';
-import * as Styled from './ApplyTag.styled';
+import * as Styled from './Apply.styled';
 import Icons from '../../../commonUi/Icons';
 
-function ApplyTag({ applyText }: { applyText: string }) {
+function Apply({ applyText }: { applyText: string }) {
   let applyResultText;
 
   if (applyText === 'SL') applyResultText = '외부 신청';
@@ -27,4 +27,4 @@ function ApplyTag({ applyText }: { applyText: string }) {
   );
 }
 
-export default ApplyTag;
+export default Apply;

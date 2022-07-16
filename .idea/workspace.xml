@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edf0bd22-fa71-43ef-97a8-f529807522c7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Tags/ApplyTag/ApplyTag.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Badges/Apply/Apply.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Tags/ApplyTag/ApplyTag.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Badges/Apply/Apply.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Tags/ApplyTag/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Badges/Apply/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Tags/CompanyAgeTag/CompanyAgeTag.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Badges/CompanyAge/CompanyAge.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Tags/CompanyAgeTag/CompanyAgeTag.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Badges/CompanyAge/CompanyAge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Tags/CompanyAgeTag/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Badges/CompanyAge/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedSupportPrograms/TabletMobileSlideCards/TabletMobileSlideCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedSupportPrograms/TabletMobileSlideCards/TabletMobileSlideCards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/PC.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/PC.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/PC.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/PC.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Result.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Result.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Result.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Result.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql.schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/graphql.schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/queries/supportPrograms.ts" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/queries/supportPrograms.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +71,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/commonUi/Badges" />
       <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults" />
       <recent name="$PROJECT_DIR$/commonUi" />
       <recent name="$PROJECT_DIR$/commonUi/Icons/Fast" />
       <recent name="$PROJECT_DIR$/commonUi/Icons/Check20" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -95,7 +112,7 @@
       <workItem from="1657267530266" duration="3867000" />
       <workItem from="1657589296285" duration="27185000" />
       <workItem from="1657760516505" duration="11395000" />
-      <workItem from="1657845430456" duration="4860000" />
+      <workItem from="1657845430456" duration="28156000" />
     </task>
     <servers />
   </component>
@@ -117,22 +134,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/PC.tsx</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/PC.tsx</url>
-          <line>12</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.tsx</url>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx</url>
-          <line>57</line>
+          <line>58</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -146,6 +153,18 @@
           <line>36</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx</url>
+          <line>56</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/commonUi/Badges/ProgressStatus/ProgressStatus.tsx</url>
+          <line>71</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

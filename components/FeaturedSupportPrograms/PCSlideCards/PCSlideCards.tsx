@@ -5,8 +5,8 @@ import { SLIDER_SETTINGS } from '../FeaturedSupportPrograms.constants';
 
 import * as Styled from './PCSlideCards.styled';
 
-import { ApplyTag } from '../../../commonUi/Tags/ApplyTag';
-import { CompanyAgeTag } from '../../../commonUi/Tags/CompanyAgeTag';
+import { Apply } from '../../../commonUi/Badges/Apply';
+import { CompanyAge } from '../../../commonUi/Badges/CompanyAge';
 import { EndDate } from '../utils/EndDate';
 import useFeaturedSupportPrograms from '../FeaturedSupportPrograms.hooks';
 import Icons from '../../../commonUi/Icons';
@@ -35,7 +35,7 @@ function PCSlideCards() {
 
   return (
     <Styled.SlideCardWrapper>
-      <Styled.SlideButtonWrapper $isLeftDirection={true} role="button" onClick={prevBtn}>
+      <Styled.SlideButtonWrapper $isLeftDirection role="button" onClick={prevBtn}>
         <Icons.CharbonLeft20 />
       </Styled.SlideButtonWrapper>
 
@@ -52,8 +52,8 @@ function PCSlideCards() {
             />
 
             <Styled.SlideTagWrapper>
-              <ApplyTag applyText={featuredSupportProgram.type} />
-              <CompanyAgeTag targetCompanyAges={featuredSupportProgram.targetCompanyAges} />
+              <Apply applyText={featuredSupportProgram.type} />
+              <CompanyAge targetCompanyAges={featuredSupportProgram.targetCompanyAges} />
             </Styled.SlideTagWrapper>
 
             <Styled.SlideCardTitle>{featuredSupportProgram.name}</Styled.SlideCardTitle>

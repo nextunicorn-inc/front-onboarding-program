@@ -1,7 +1,7 @@
 import * as Styled from './TabletMobileSlideCards.styled';
 
-import { ApplyTag } from '../../../commonUi/Tags/ApplyTag';
-import { CompanyAgeTag } from '../../../commonUi/Tags/CompanyAgeTag';
+import { Apply } from '../../../commonUi/Badges/Apply';
+import { CompanyAge } from '../../../commonUi/Badges/CompanyAge';
 import { EndDate } from '../utils/EndDate';
 
 import useFeaturedSupportPrograms from '../FeaturedSupportPrograms.hooks';
@@ -31,8 +31,8 @@ function TabletMobileSlideCards() {
             />
 
             <Styled.SlideTagWrapper>
-              <ApplyTag applyText={featuredSupportProgram.type} />
-              <CompanyAgeTag targetCompanyAges={featuredSupportProgram.targetCompanyAges} />
+              <Apply applyText={featuredSupportProgram.type} />
+              <CompanyAge targetCompanyAges={featuredSupportProgram.targetCompanyAges} />
             </Styled.SlideTagWrapper>
 
             <Styled.SlideCardTitle>{featuredSupportProgram.name}</Styled.SlideCardTitle>

@@ -1,11 +1,12 @@
 import React from 'react';
 import { PC } from './PC';
 import { TabletMobile } from './TabletMobile';
+import { SupportProgramsQuery } from '../../../graphql';
 
-function SupportProgramResults() {
+function SupportProgramResults({ data }: { data: SupportProgramsQuery['supportPrograms'] }) {
   return (
     <div>
-      <PC />
+      <PC data={data} />
       <TabletMobile />
     </div>
   );

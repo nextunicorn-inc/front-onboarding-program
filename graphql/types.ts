@@ -543,6 +543,7 @@ export type SupportProgramsQuery = {
       targetCompanyAges: Array<TargetCompanyAgeEnum | null> | null;
       type: SupportProgramTypeEnum | null;
       outerApplyLink: string | null;
+      supportProgramCompany: { name: string | null } | null;
     } | null> | null;
   } | null;
 };

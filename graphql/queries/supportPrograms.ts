@@ -11,6 +11,9 @@ export const SUPPORT_PROGRAMS = gql`
         targetCompanyAges
         type
         outerApplyLink
+        supportProgramCompany {
+          name
+        }
       }
     }
   }

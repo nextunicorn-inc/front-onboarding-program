@@ -17,6 +17,7 @@ import type { Area, TargetCompanyAge, Host, Type } from './SupportProgramFilters
 import { ResultSupportPrograms } from './SupportProgramResults';
 
 import useSupportProgramResults from './SupportProgramResults/SupportProgramResults.hooks';
+import { PageNavigationWrapper } from './PageNavigationWrapper';
 
 function SupportPrograms() {
   const filterQuery = useSupportProgramFilters();
@@ -38,7 +39,7 @@ function SupportPrograms() {
   });
   const { hide } = useModal();
 
-  const testFilter = {
+  const selectedFilter = {
     filter: {
       type: filteredActiveTypes?.[0] ?? null,
       targetCompanyAges: filteredActiveAges,
@@ -48,9 +49,9 @@ function SupportPrograms() {
     },
   };
 
-  const { data } = useSupportProgramResults(testFilter);
+  const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
 
-  console.log(data);
+  // 여기서 데이터 갯수 확인후 페이지 네이션에게 전달해서 해야함
 
   return (
     <Styled.Wrapper>
@@ -129,7 +130,8 @@ function SupportPrograms() {
         </>
       )}
 
-      <ResultSupportPrograms />
+      <ResultSupportPrograms data={selectedSupportProgramsResultData} />
+      <PageNavigationWrapper />
     </Styled.Wrapper>
   );
 }

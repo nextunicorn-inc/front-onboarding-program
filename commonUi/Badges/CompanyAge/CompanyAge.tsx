@@ -1,7 +1,7 @@
 import React from 'react';
-import * as Styled from './CompanyAgeTag.styled';
+import * as Styled from './CompanyAge.styled';
 
-function CompanyAgeTag({ targetCompanyAges }: { targetCompanyAges: string[] }) {
+function CompanyAge({ targetCompanyAges }: { targetCompanyAges: string[] }) {
   // TODO: targetCompanyAges 값이 2개 이상일 경우 처리
   let [targetCompanyAge] = targetCompanyAges;
 
@@ -15,4 +15,4 @@ function CompanyAgeTag({ targetCompanyAges }: { targetCompanyAges: string[] }) {
   );
 }
 
-export default CompanyAgeTag;
+export default CompanyAge;

@@ -1600,8 +1600,8 @@
             "deprecationReason": null
           },
           {
-            "name": "coverObjectId",
-            "description": null,
+            "name": "coverImgUrl",
+            "description": " 기업 커버 이미지",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1848,8 +1848,8 @@
             "deprecationReason": null
           },
           {
-            "name": "logoObjectId",
-            "description": null,
+            "name": "logoImgUrl",
+            "description": " 투자기관 로고 이미지",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1940,8 +1940,8 @@
             "deprecationReason": null
           },
           {
-            "name": "profileObjectId",
-            "description": null,
+            "name": "profileImgUrl",
+            "description": " 스타트업 로고 이미지",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1952,8 +1952,8 @@
             "deprecationReason": null
           },
           {
-            "name": "repObjectId",
-            "description": null,
+            "name": "repImgUrl",
+            "description": " 대표 이미지",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2513,7 +2513,7 @@
             "deprecationReason": null
           },
           {
-            "name": "profileObjectId",
+            "name": "profileImgUrl",
             "description": null,
             "args": [],
             "type": {
@@ -4582,7 +4582,7 @@
             "deprecationReason": null
           },
           {
-            "name": "fileObjectId",
+            "name": "fileUrl",
             "description": null,
             "args": [],
             "type": {
@@ -4607,18 +4607,6 @@
           },
           {
             "name": "imageUrl",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "preSignedUrl",
             "description": null,
             "args": [],
             "type": {
@@ -6595,6 +6583,18 @@
         "description": null,
         "fields": [
           {
+            "name": "code",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "graduationDate",
             "description": " 졸업년월",
             "args": [],
@@ -8113,9 +8113,13 @@
             "description": " 벤처기업 인증 확인",
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -8326,7 +8330,7 @@
             "deprecationReason": null
           },
           {
-            "name": "businessCardObjectId",
+            "name": "businessCardImgUrl",
             "description": null,
             "args": [],
             "type": {
@@ -8498,7 +8502,7 @@
             "deprecationReason": null
           },
           {
-            "name": "profileObjectId",
+            "name": "profileImgUrl",
             "description": null,
             "args": [],
             "type": {
@@ -8917,7 +8921,7 @@
             "deprecationReason": null
           },
           {
-            "name": "imageObjectKey",
+            "name": "imageUrl",
             "description": null,
             "args": [],
             "type": {

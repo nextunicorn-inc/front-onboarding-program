@@ -27,7 +27,7 @@ export const Title = styled.h1`
 
 export const ResultWrapper = styled.div`
   height: 1043px;
-  background-color: beige;
+  background-color: var(--color-naturalgray0);
 `;
 
 export const ResultContainer = styled.div`
