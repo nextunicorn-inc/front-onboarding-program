@@ -1,3 +1,5 @@
+import { SocialNetworks } from 'commonUi/Icons';
+
 export const NAVIGATIONS = [
   {
     title: '회사',
@@ -85,18 +87,22 @@ export const SOCIAL_NETWORKS = [
   {
     title: 'facebook',
     href: 'https://www.facebook.com/nextunicorn.asia/',
+    Icon: SocialNetworks.Facebook,
   },
   {
     title: 'naverBlog',
     href: 'https://blog.naver.com/nu_blog',
+    Icon: SocialNetworks.Blog,
   },
   {
     title: 'youtube',
     href: 'https://www.youtube.com/channel/UCnvAdarZqWeYvHVuHHGh7Fw',
+    Icon: SocialNetworks.Youtube,
   },
   {
     title: 'instagram',
     href: 'https://www.instagram.com/_be.the.unicorn_',
+    Icon: SocialNetworks.Instagram,
   },
 ];
 

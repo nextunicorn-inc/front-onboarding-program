@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Icons from 'commonUi/Icons';
+import { Chevron, Close, NextUnicornLogo, Search, Hamburger } from 'commonUi/Icons';
 import * as Styled from './Header.styled';
 import { IconBox } from './IconBox';
 
@@ -41,7 +41,7 @@ function Header() {
       <Styled.ResponsiveSection>
         <Styled.Navigation>
           <Styled.MenuWrapper>
-            <Icons.Logo color="#006CFF" />
+            <NextUnicornLogo />
 
             <Styled.MenuList>
               {NAVIGATIONS.map(({ title, href }) => {
@@ -86,7 +86,7 @@ function Header() {
               </Styled.ServiceMenu>
 
               <Styled.SearchMenu onClick={handleClickSearch}>
-                <Icons.Search />
+                <Search size={20} />
                 <Styled.SearchTitle>검색</Styled.SearchTitle>
               </Styled.SearchMenu>
 
@@ -96,7 +96,7 @@ function Header() {
                     <Styled.SearchInputBoxWrapper>
                       <Styled.SearchInputBox>
                         <Styled.SearchInput placeholder="스타트업, 전문투자자, 스타트업 뉴스 검색하기" />
-                        <Icons.Search40 />
+                        <Search size={40} />
                       </Styled.SearchInputBox>
                     </Styled.SearchInputBoxWrapper>
                   </Styled.SearchInputLayout>
@@ -118,16 +118,15 @@ function Header() {
           </Styled.MenuWrapper>
 
           <Styled.ResponsiveMenuList>
-            <IconBox IconElement={Icons.Search24} onClick={handleClickSearch} />
-            <IconBox IconElement={Icons.Menu24} onClick={handleClickSideMenu} />
-
+            <IconBox IconElement={Search} onClick={handleClickSearch} />
+            <IconBox IconElement={Hamburger} onClick={handleClickSideMenu} />
             {isClickSearch && (
               <Styled.SearchLayout>
                 <Styled.SearchInputLayout>
                   <Styled.SearchInputBoxWrapper>
                     <Styled.SearchInputBox>
                       <Styled.SearchInput placeholder="스타트업, 전문투자자, 스타트업 뉴스 검색하기" />
-                      <Icons.Search40 />
+                      <Search size={40} />
                     </Styled.SearchInputBox>
                   </Styled.SearchInputBoxWrapper>
                 </Styled.SearchInputLayout>
@@ -141,7 +140,7 @@ function Header() {
         {isClickSideMenu && <Styled.SideNavigation />}
         <Styled.SideMenuWrapper className={isClickSideMenu ? 'open' : 'close'}>
           <Styled.CloseMenuIcons onClick={handleClickSideMenu}>
-            <Icons.CloseMenu />
+            <Close size={24} color="var(--color-naturalgray7)" />
           </Styled.CloseMenuIcons>
 
           <Styled.SideSignButtonsWrapper>
@@ -171,8 +170,7 @@ function Header() {
                 <INTRODUCE_OF_SERVICES.Icon />
                 <Styled.SideMenuTitle>{INTRODUCE_OF_SERVICES.title}</Styled.SideMenuTitle>
               </Styled.SideServiceIntroduceTitleBox>
-
-              {isClickSideDetailMenu ? <Icons.TopArrow /> : <Icons.BottomArrow />}
+              <Chevron direction={isClickSideDetailMenu ? 'Up' : 'Down'} size={24} />
             </Styled.SideServiceIntroduceWrapper>
 
             {isClickSideDetailMenu && (

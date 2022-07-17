@@ -1,4 +1,4 @@
-import Icons from 'commonUi/Icons';
+import { Thunder } from 'commonUi/Icons';
 import { SUPPORT_PROGRAM_TYPE_TEXTS } from 'constants/supportPrograms';
 import { useMediaQuery } from 'hooks';
 import { SupportProgramTypeEnum } from '@/graphql';
@@ -26,7 +26,7 @@ function TypeFilters({ onClick, activeTypes, allTypes }: Props) {
             <button type="button" onClick={onClick(type)}>
               {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
               {type === SupportProgramTypeEnum.Snl &&
-                (isMobile ? <Icons.Fast16 /> : <Icons.Fast32 />)}
+                (isMobile ? <Thunder size={15} /> : <Thunder size={26} />)}
             </button>
             <Styled.TypeFilterNoticeLine $active={activeTypes.includes(type)} />
           </Styled.TypeFilterItem>

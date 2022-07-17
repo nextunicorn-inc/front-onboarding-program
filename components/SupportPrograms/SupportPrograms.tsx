@@ -1,6 +1,8 @@
 import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from 'constants/supportPrograms';
 import { useModal } from 'commonUi/Modal';
 
+import { Search } from 'commonUi/Icons';
+
 import {
   useSupportProgramFilters,
   TypeFilters,
