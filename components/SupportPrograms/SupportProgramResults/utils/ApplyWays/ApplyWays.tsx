@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../../../utils';
+import { FontSize, FontWeight, MediaQuery } from '../../../../../utils';
 import { SUPPORT_PROGRAM_TYPE_TEXTS } from '../../../../../constants/supportPrograms';
 
 const Text = styled.span`
@@ -8,6 +8,13 @@ const Text = styled.span`
   ${FontWeight.regular}
   line-height: 24px;
   color: var(--color-naturalgray7);
+
+  ${MediaQuery.tablet} {
+    ${FontSize.size12}
+    ${FontWeight.regular}
+    line-height: 18px;
+    color: var(--color-naturalgray7);
+  }
 `;
 
 function ApplyWays({ applyWaysData }) {

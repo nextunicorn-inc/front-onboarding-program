@@ -1,11 +1,11 @@
 import React from 'react';
 import * as Styled from './Result.styled';
 import { ProgressStatus } from '../../../../../commonUi/Badges/ProgressStatus';
-import { ApplyAreas } from '../ApplyAreas';
-import { CompanyAgeTitle } from '../CompanyAgeTitle';
-import { EndDate } from '../EndDate';
-import { ApplyWays } from '../ApplyWays';
-import { Title } from '../Title';
+import { ApplyAreas } from './ApplyAreas';
+import { CompanyAgeTitle } from './CompanyAgeTitle';
+import { EndDate } from '../../utils/EndDate';
+import { ApplyWays } from '../../utils/ApplyWays';
+import { Title } from './Title';
 
 function Result({ data }) {
   if (!data) {

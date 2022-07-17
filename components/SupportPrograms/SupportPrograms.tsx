@@ -17,7 +17,7 @@ import type { Area, TargetCompanyAge, Host, Type } from './SupportProgramFilters
 import { ResultSupportPrograms } from './SupportProgramResults';
 
 import useSupportProgramResults from './SupportProgramResults/SupportProgramResults.hooks';
-import { PageNavigationWrapper } from './PageNavigationWrapper';
+import { PageNavigation } from './PageNavigation';
 
 function SupportPrograms() {
   const filterQuery = useSupportProgramFilters();
@@ -49,7 +49,85 @@ function SupportPrograms() {
     },
   };
 
-  const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
+  // 504에 때문에 주석처리
+  // const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
+
+  const selectedSupportProgramsResultData = {
+    data: [
+      {
+        startAt: '2022-07-08TXX',
+        endAt: '2022-07-29TXX',
+        areas: ['CO', 'CZ'],
+        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-1',
+        targetCompanyAges: ['U3'],
+        type: ['SNLP'],
+        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
+        supportProgramCompany: {
+          name: '넥스트유니콘',
+        },
+      },
+      {
+        startAt: '2022-07-08TXX',
+        endAt: '2022-06-29TXX',
+        areas: ['CO', 'CZ'],
+        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-2',
+        targetCompanyAges: ['U3'],
+        type: ['SNLP'],
+        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
+        supportProgramCompany: {
+          name: '넥스트유니콘',
+        },
+      },
+      {
+        startAt: '2022-07-08TXX',
+        endAt: '2022-07-19TXX',
+        areas: ['CO', 'CZ'],
+        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-3',
+        targetCompanyAges: ['U3'],
+        type: ['SNLP'],
+        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
+        supportProgramCompany: {
+          name: '넥스트유니콘',
+        },
+      },
+      {
+        startAt: '2022-07-08TXX',
+        endAt: '2022-07-29TXX',
+        areas: ['CO', 'CZ'],
+        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-4',
+        targetCompanyAges: ['U3'],
+        type: ['SNLP'],
+        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
+        supportProgramCompany: {
+          name: '넥스트유니콘',
+        },
+      },
+      {
+        startAt: '2022-07-08TXX',
+        endAt: '2022-07-29TXX',
+        areas: ['CO', 'CZ'],
+        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-5',
+        targetCompanyAges: ['U3'],
+        type: ['SNLP'],
+        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
+        supportProgramCompany: {
+          name: '넥스트유니콘',
+        },
+      },
+      {
+        startAt: '2022-07-08TXX',
+        endAt: '2022-07-29TXX',
+        areas: ['CO', 'CZ'],
+        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-6 & 2022 NEXEED 투자 상담회 1회 참여기업 모집-6 & 2022 NEXEED 투자 상담회 1회 참여기업 모집-6',
+        targetCompanyAges: ['U3', 'M8'],
+        type: ['SNLP'],
+        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
+        supportProgramCompany: {
+          name: '넥스트유니콘',
+        },
+      },
+    ],
+  };
 
   // 여기서 데이터 갯수 확인후 페이지 네이션에게 전달해서 해야함
 
@@ -131,7 +209,7 @@ function SupportPrograms() {
       )}
 
       <ResultSupportPrograms data={selectedSupportProgramsResultData} />
-      <PageNavigationWrapper />
+      <PageNavigation />
     </Styled.Wrapper>
   );
 }

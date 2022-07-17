@@ -24,10 +24,6 @@ export const SlideCardWrapper = styled.div`
     padding: 0 10px;
   }
 
-  ${MediaQuery.mobile} {
-    display: none;
-  }
-
   ${MediaQuery.tablet} {
     display: none;
   }

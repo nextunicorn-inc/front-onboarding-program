@@ -2,9 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edf0bd22-fa71-43ef-97a8-f529807522c7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/PageNavigation/PageNavigation.styled.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/PageNavigation/PageNavigation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/PageNavigation/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/CompanyAgeTitle/CompanyAgeTitle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result/ApplyAreas/ApplyAreas.styled.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result/ApplyAreas/ApplyAreas.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result/ApplyAreas/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result/CompanyAgeTitle/CompanyAgeTitle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result/CompanyAgeTitle/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result/Result.styled.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result/Result.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/PageNavigationWrapper/PageNavigationWrapper.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/PageNavigationWrapper/PageNavigationWrapper.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedSupportPrograms/PCSlideCards/PCSlideCards.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/PageNavigationWrapper/PageNavigationWrapper.styled.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/PageNavigationWrapper/PageNavigationWrapper.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/PageNavigationWrapper/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/ApplyAreas/ApplyAreas.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/ApplyAreas/ApplyAreas.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/ApplyAreas/ApplyAreas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/ApplyAreas/ApplyAreas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/ApplyAreas/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/ApplyAreas/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/ApplyWays/ApplyWays.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/utils/ApplyWays/ApplyWays.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/ApplyWays/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/utils/ApplyWays/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/CompanyAgeTitle/CompanyAgeTitle.styled.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/CompanyAgeTitle/CompanyAgeTitle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/CompanyAgeTitle/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/CompanyAgeTitle/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/EndDate/EndDate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/utils/EndDate/EndDate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/EndDate/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/utils/EndDate/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/PC.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/PC.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Result.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Result.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Result.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Result.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Title/Title.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Title/Title.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Title/Title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Title/Title.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Title/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result/Title/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/TabletMobile.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/TabletMobile.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/TabletMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/TabletMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/supportPrograms.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/supportPrograms.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +92,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/utils" />
+      <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result" />
+      <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC" />
+      <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result" />
       <recent name="$PROJECT_DIR$/commonUi/Badges" />
-      <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults" />
-      <recent name="$PROJECT_DIR$/commonUi" />
-      <recent name="$PROJECT_DIR$/commonUi/Icons/Fast" />
-      <recent name="$PROJECT_DIR$/commonUi/Icons/Check20" />
     </key>
   </component>
   <component name="RunManager">
@@ -98,7 +134,8 @@
       <workItem from="1657589296285" duration="27185000" />
       <workItem from="1657760516505" duration="11395000" />
       <workItem from="1657845430456" duration="28156000" />
-      <workItem from="1657948536041" duration="3810000" />
+      <workItem from="1657948536041" duration="5511000" />
+      <workItem from="1658029660400" duration="17009000" />
     </task>
     <servers />
   </component>
@@ -125,7 +162,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx</url>
-          <line>58</line>
+          <line>136</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -139,11 +176,6 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx</url>
-          <line>56</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/commonUi/Badges/ProgressStatus/ProgressStatus.tsx</url>
           <line>71</line>
           <option name="timeStamp" value="10" />
@@ -151,8 +183,13 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/Header/Header.tsx</url>
           <line>43</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result/Result.tsx</url>
+          <line>15</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

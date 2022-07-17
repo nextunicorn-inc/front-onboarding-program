@@ -7,7 +7,7 @@ function SupportProgramResults({ data }: { data: SupportProgramsQuery['supportPr
   return (
     <div>
       <PC data={data} />
-      <TabletMobile />
+      <TabletMobile data={data} />
     </div>
   );
 }

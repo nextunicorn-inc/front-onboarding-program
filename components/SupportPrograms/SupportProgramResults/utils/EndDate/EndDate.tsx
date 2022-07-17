@@ -1,12 +1,23 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../../../utils';
+import { FontSize, FontWeight, MediaQuery } from '../../../../../utils';
 
-const EndDateText = styled.span`
+const EndDateText = styled.h5`
   ${FontSize.size16}
   ${FontWeight.regular}
   line-height: 24px;
   color: var(--color-naturalgray7);
+
+  ${MediaQuery.tablet} {
+    ${FontSize.size12}
+    ${FontWeight.regular}
+    line-height: 18px;
+    color: var(--color-naturalgray7);
+
+    ::after {
+      content: '|';
+    }
+  }
 `;
 
 function EndDate({ endDate }: { endDate: string }) {

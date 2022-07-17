@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './Title.styled';
 
-function Title({ titleData }) {
+function Title({ titleData }: { titleData: { title: string; companyName: string } }) {
   return (
     <Styled.TitleWrapper>
       <Styled.Title>{titleData.title}</Styled.Title>

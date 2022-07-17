@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   width: 100%;
 
-  ${MediaQuery.mobile || MediaQuery.tablet} {
+  ${MediaQuery.tablet} {
     display: none;
   }
 `;
@@ -26,7 +26,6 @@ export const Title = styled.h1`
 `;
 
 export const ResultWrapper = styled.div`
-  height: 1043px;
   background-color: var(--color-naturalgray0);
 `;
 
