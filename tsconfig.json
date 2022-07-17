@@ -15,7 +15,11 @@
     "jsx": "preserve",
     "incremental": true,
     "types": ["next"],
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/graphql": ["graphql/"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

@@ -1,12 +1,13 @@
+import { Thunder } from 'commonUi/Icons';
+import { SUPPORT_PROGRAM_TYPE_TEXTS } from 'constants/supportPrograms';
+import { useMediaQuery } from 'hooks';
+import { SupportProgramTypeEnum } from '@/graphql';
+
 import * as Styled from './TypeFilters.styled';
-import Icons from '../../../../commonUi/Icons';
+
 import { Responsive } from '../SupportProgramFilters.styled';
-
 import { DEFAULT } from '../SupportProgramFilters.constants';
-import { SUPPORT_PROGRAM_TYPE_TEXTS } from '../../../../constants/supportPrograms';
-
 import { SupportProgramTypes } from '../SupportProgramFilters.types';
-import { SupportProgramTypeEnum } from '../../../../graphql';
 
 type Props = {
   allTypes: SupportProgramTypes;
@@ -15,6 +16,8 @@ type Props = {
 };
 
 function TypeFilters({ onClick, activeTypes, allTypes }: Props) {
+  const isMobile = useMediaQuery('(max-width: 767px)');
+
   return (
     <Responsive>
       <Styled.TypeFilterList role="list">
@@ -22,7 +25,8 @@ function TypeFilters({ onClick, activeTypes, allTypes }: Props) {
           <Styled.TypeFilterItem $active={activeTypes.includes(type)} key={type}>
             <button type="button" onClick={onClick(type)}>
               {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
-              {type === SupportProgramTypeEnum.Snl && <Icons.Fast32 />}
+              {type === SupportProgramTypeEnum.Snl &&
+                (isMobile ? <Thunder size={15} /> : <Thunder size={26} />)}
             </button>
             <Styled.TypeFilterNoticeLine $active={activeTypes.includes(type)} />
           </Styled.TypeFilterItem>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import Icons from '../../commonUi/Icons';
+import { Chevron } from 'commonUi/Icons';
 import * as Styled from './SupportProgramBanners.styled';
 
 import { useInterval } from './SupportProgramBanners.hooks';
@@ -58,11 +58,15 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
     <Styled.IndicatorOuter>
       <Styled.IndicatorInner>
         <Styled.ButtonWrapper>
-          <Icons.CharbonLeft20 onClick={() => move('prev', 0)} />
+          <button type="button" onClick={() => move('prev', 0)}>
+            <Chevron direction="Left" size={20} />
+          </button>
           <span>
             <b>{currentIndex + 1}</b> / {totalSlides}
           </span>
-          <Icons.CharbonRight20 onClick={() => move('next', 0)} />
+          <button type="button" onClick={() => move('next', 0)}>
+            <Chevron direction="Right" size={20} />
+          </button>
         </Styled.ButtonWrapper>
         <Styled.ProgressbarWrapper>
           <Styled.ProgressBar progress={progress} />

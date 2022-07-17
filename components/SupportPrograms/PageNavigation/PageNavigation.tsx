@@ -6,7 +6,7 @@ function PageNavigation() {
   return (
     <Styled.Wrapper>
       {pageNumbers.map((page) => (
-        <Styled.pageButton>{page}</Styled.pageButton>
+        <Styled.pageButton key={page}>{page}</Styled.pageButton>
       ))}
     </Styled.Wrapper>
   );

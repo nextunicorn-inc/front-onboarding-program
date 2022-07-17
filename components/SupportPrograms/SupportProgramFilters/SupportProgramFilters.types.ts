@@ -1,4 +1,4 @@
-import { AreaEnum, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '../../../graphql';
+import { AreaEnum, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '@/graphql';
 
 export type WithAll<T> = T | 'all';
 

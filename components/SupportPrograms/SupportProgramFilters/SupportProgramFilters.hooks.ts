@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { dequal } from 'dequal';
 
-import client from '../../../graphql/client';
-import { FILTER_OPTIONS } from '../../../graphql/queries';
+import { client, FILTER_OPTIONS } from '@/graphql';
 
 import type { WithAll, FilterOptionsQuery } from './SupportProgramFilters.types';
 
@@ -70,12 +69,17 @@ export function useClientFilter<T>({
   };
 
   const internalFilteredState = state.filter((item) => item !== 'all') as T[];
-  let filteredValue: T[] | null;
+  let filteredValue: T[] | T | null;
 
   if (internalFilteredState.length === 0) {
     filteredValue = showNullWhenEmpty ? null : [];
   } else {
     filteredValue = internalFilteredState;
+
+    if (!multiple) {
+      const [val] = internalFilteredState;
+      filteredValue = val;
+    }
   }
 
   return [state, toggle, filteredValue] as const;

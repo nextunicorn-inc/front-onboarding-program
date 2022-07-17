@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { MediaQuery, FontSize, FontWeight } from '../../utils';
+import { MediaQuery, FontSize, FontWeight } from 'utils';
 
 export const Container = styled.section`
   width: 100%;

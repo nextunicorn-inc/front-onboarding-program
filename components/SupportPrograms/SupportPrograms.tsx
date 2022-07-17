@@ -1,3 +1,6 @@
+import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from 'constants/supportPrograms';
+import { useModal } from 'commonUi/Modal';
+
 import * as Styled from './SupportPrograms.styled';
 
 import {
@@ -9,9 +12,7 @@ import {
   FilterDetail,
 } from './SupportProgramFilters';
 
-import { useModal } from '../../commonUi/Modal';
-
-import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from '../../constants/supportPrograms';
+import { identity } from './SupportPrograms.utils';
 
 import type { Area, TargetCompanyAge, Host, Type } from './SupportProgramFilters';
 import { ResultSupportPrograms } from './SupportProgramResults';
@@ -49,87 +50,7 @@ function SupportPrograms() {
     },
   };
 
-  // 504에 때문에 주석처리
-  // const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
-
-  const selectedSupportProgramsResultData = {
-    data: [
-      {
-        startAt: '2022-07-08TXX',
-        endAt: '2022-07-29TXX',
-        areas: ['CO', 'CZ'],
-        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-1',
-        targetCompanyAges: ['U3'],
-        type: ['SNLP'],
-        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
-        supportProgramCompany: {
-          name: '넥스트유니콘',
-        },
-      },
-      {
-        startAt: '2022-07-08TXX',
-        endAt: '2022-06-29TXX',
-        areas: ['CO', 'CZ'],
-        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-2',
-        targetCompanyAges: ['U3'],
-        type: ['SNLP'],
-        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
-        supportProgramCompany: {
-          name: '넥스트유니콘',
-        },
-      },
-      {
-        startAt: '2022-07-08TXX',
-        endAt: '2022-07-19TXX',
-        areas: ['CO', 'CZ'],
-        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-3',
-        targetCompanyAges: ['U3'],
-        type: ['SNLP'],
-        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
-        supportProgramCompany: {
-          name: '넥스트유니콘',
-        },
-      },
-      {
-        startAt: '2022-07-08TXX',
-        endAt: '2022-07-29TXX',
-        areas: ['CO', 'CZ'],
-        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-4',
-        targetCompanyAges: ['U3'],
-        type: ['SNLP'],
-        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
-        supportProgramCompany: {
-          name: '넥스트유니콘',
-        },
-      },
-      {
-        startAt: '2022-07-08TXX',
-        endAt: '2022-07-29TXX',
-        areas: ['CO', 'CZ'],
-        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-5',
-        targetCompanyAges: ['U3'],
-        type: ['SNLP'],
-        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
-        supportProgramCompany: {
-          name: '넥스트유니콘',
-        },
-      },
-      {
-        startAt: '2022-07-08TXX',
-        endAt: '2022-07-29TXX',
-        areas: ['CO', 'CZ'],
-        name: '2022 NEXEED 투자 상담회 1회 참여기업 모집-6 & 2022 NEXEED 투자 상담회 1회 참여기업 모집-6 & 2022 NEXEED 투자 상담회 1회 참여기업 모집-6',
-        targetCompanyAges: ['U3', 'M8'],
-        type: ['SNLP'],
-        outerApplyLink: 'https://www.nextunicorn.kr/program/0b4507ce38f54c43',
-        supportProgramCompany: {
-          name: '넥스트유니콘',
-        },
-      },
-    ],
-  };
-
-  // 여기서 데이터 갯수 확인후 페이지 네이션에게 전달해서 해야함
+  const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
 
   return (
     <Styled.Wrapper>
@@ -145,7 +66,7 @@ function SupportPrograms() {
               <FilterTableRow
                 title="창업 기간"
                 toggle={toggleAges}
-                keyExtractor={(data) => data}
+                keyExtractor={identity}
                 data={filterQuery.data.targetCompanyAges}
                 activeData={activeAges}
                 renderItemText={(data) => TARGET_COMPANY_AGE_TEXTS[data]}
@@ -153,7 +74,7 @@ function SupportPrograms() {
                   <FilterDetail
                     title="창업 기간"
                     toggle={toggleAges}
-                    keyExtractor={(data) => data}
+                    keyExtractor={identity}
                     data={filterQuery.data.targetCompanyAges}
                     activeData={activeAges}
                     renderItemText={(data) => TARGET_COMPANY_AGE_TEXTS[data]}
@@ -166,7 +87,7 @@ function SupportPrograms() {
               <FilterTableRow
                 title="지원 분야"
                 toggle={toggleAreas}
-                keyExtractor={(data) => data}
+                keyExtractor={identity}
                 data={filterQuery.data.areas}
                 activeData={activeAreas}
                 renderItemText={(data) => AREA_TEXTS[data]}
@@ -174,7 +95,7 @@ function SupportPrograms() {
                   <FilterDetail
                     title="지원 분야"
                     toggle={toggleAreas}
-                    keyExtractor={(data) => data}
+                    keyExtractor={identity}
                     data={filterQuery.data.areas}
                     activeData={activeAreas}
                     renderItemText={(data) => AREA_TEXTS[data]}

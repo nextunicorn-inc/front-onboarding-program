@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight, MediaQuery } from '../../utils';
+import { FontSize, FontWeight, MediaQuery } from 'utils';
 
 export const Layout = styled.footer`
   padding-bottom: 60px;
@@ -43,18 +43,12 @@ export const Navigation = styled.nav`
     margin-bottom: 0;
     border-bottom: none;
   }
-`;
 
-export const MockupLogo = styled.button`
-  flex-shrink: 0;
-  display: block;
-  border: none;
-  width: 134px;
-  height: 20px;
-  background-color: steelblue;
-
-  ${MediaQuery.mobile} {
-    margin: 0 auto;
+  & > svg {
+    flex-shrink: 0;
+    ${MediaQuery.mobile} {
+      margin: 0 auto;
+    }
   }
 `;
 
@@ -132,8 +126,12 @@ export const ContactSeparator = styled.span`
 
 export const SocialNetworks = styled.nav`
   display: inline-flex;
-  gap: 16px;
+  gap: 11px;
   align-items: center;
+
+  ${MediaQuery.mobile} {
+    gap: 15px;
+  }
 `;
 
 export const PoliciesOfService = styled.nav`

@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import Slider from 'react-slick';
 
+import { Chevron } from 'commonUi/Icons';
+
 import { SLIDER_SETTINGS } from '../FeaturedSupportPrograms.constants';
 
 import * as Styled from './PCSlideCards.styled';
@@ -9,7 +11,7 @@ import { Apply } from '../../../commonUi/Badges/Apply';
 import { CompanyAge } from '../../../commonUi/Badges/CompanyAge';
 import { EndDate } from '../utils/EndDate';
 import useFeaturedSupportPrograms from '../FeaturedSupportPrograms.hooks';
-import Icons from '../../../commonUi/Icons';
+// import Icons from '../../../commonUi/Icons';
 
 function PCSlideCards() {
   const query = useFeaturedSupportPrograms();
@@ -36,11 +38,11 @@ function PCSlideCards() {
   return (
     <Styled.SlideCardWrapper>
       <Styled.SlideButtonWrapper $isLeftDirection role="button" onClick={prevBtn}>
-        <Icons.CharbonLeft20 />
+        <Chevron direction="Left" size={20} />
       </Styled.SlideButtonWrapper>
 
       <Styled.SlideButtonWrapper $isLeftDirection={false} role="button" onClick={nextBtn}>
-        <Icons.CharbonRight20 />
+        <Chevron direction="Right" size={20} />
       </Styled.SlideButtonWrapper>
 
       <Slider ref={sliderRef} {...SLIDER_SETTINGS}>

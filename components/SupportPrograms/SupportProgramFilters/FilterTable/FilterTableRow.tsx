@@ -1,13 +1,13 @@
 import { useState, useRef, ReactNode, useEffect } from 'react';
 
+import { Check, Plus } from 'commonUi/Icons';
+import { Backdrop, useModal } from 'commonUi/Modal';
+import { useMediaQuery } from 'hooks';
+
 import * as Styled from './FilterTable.styled';
-import Icons from '../../../../commonUi/Icons';
-import { Backdrop, useModal } from '../../../../commonUi/Modal';
 import { FilterList, FilterItem } from '../SupportProgramFilters.styled';
-
 import { contain, isNotSelected } from '../../SupportPrograms.utils';
-
-import { WithAll } from '../SupportProgramFilters.types';
+import type { WithAll } from '../SupportProgramFilters.types';
 
 type Props<T> = {
   title: string;
@@ -31,6 +31,7 @@ function FilterTableRow<T>({
   Detail,
 }: Props<T>) {
   const [showMoreButton, setShowMoreButton] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 767px)');
 
   const { show, hide } = useModal();
   const reset = toggle('all');
@@ -50,6 +51,9 @@ function FilterTableRow<T>({
   const lastItemRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
+    if (isMobile) {
+      return;
+    }
     const { current: lastItem } = lastItemRef;
     const wrapper = document.querySelector('.main-filter');
 
@@ -64,9 +68,18 @@ function FilterTableRow<T>({
     if (wrapperRight - OFFSET < lastItemRight) {
       setShowMoreButton(true);
     }
-  }, []);
+  }, [isMobile]);
 
-  return (
+  return isMobile ? (
+    <Styled.MobileToggleButton onClick={showWithBackdrop(Detail)}>
+      <span>{title}</span>
+      {isNotSelected(activeData) ? (
+        <Plus />
+      ) : (
+        <Styled.CurrentTotalActiveItems>{activeData.length}</Styled.CurrentTotalActiveItems>
+      )}
+    </Styled.MobileToggleButton>
+  ) : (
     <Styled.RowWrapper>
       <Styled.RowTitle>{title}</Styled.RowTitle>
       <Styled.Separator />
@@ -74,7 +87,7 @@ function FilterTableRow<T>({
         {showAllButton && (
           <li>
             <FilterItem onClick={reset} selected={isNotSelected(activeData)}>
-              <Icons.Check20Selected />
+              <Check active color="var(--color-unicornblue7)" />
               전체
             </FilterItem>
           </li>
@@ -82,7 +95,7 @@ function FilterTableRow<T>({
         {data.map((item, index, { length }) => (
           <li key={keyExtractor(item)} ref={index + 1 === length ? lastItemRef : null}>
             <FilterItem onClick={toggle(item)} selected={contain(activeData, item)}>
-              <Icons.Check20Selected />
+              <Check active color="var(--color-unicornblue7)" />
               {renderItemText(item)}
             </FilterItem>
           </li>

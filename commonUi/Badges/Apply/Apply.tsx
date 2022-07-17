@@ -1,8 +1,8 @@
 import React from 'react';
 import * as Styled from './Apply.styled';
-import Icons from '../../../commonUi/Icons';
+import { Thunder } from '../../Icons';
 
-function Apply({ applyText }: { applyText: string }) {
+function ApplyTag({ applyText }: { applyText: string }) {
   let applyResultText;
 
   if (applyText === 'SL') applyResultText = '외부 신청';
@@ -14,7 +14,8 @@ function Apply({ applyText }: { applyText: string }) {
       <Styled.TagWrapper>
         <Styled.SimpleApplyTag>
           {applyResultText}
-          <Icons.Thunder />
+
+          <Thunder />
         </Styled.SimpleApplyTag>
       </Styled.TagWrapper>
     );
@@ -27,4 +28,4 @@ function Apply({ applyText }: { applyText: string }) {
   );
 }
 
-export default Apply;
+export default ApplyTag;

@@ -23,7 +23,7 @@ function CompanyAgeTitle({
   return (
     <>
       {companyAgeTitleData.map((companyAgeTitle) => (
-        <Title>{TARGET_COMPANY_AGE_TEXTS[companyAgeTitle]}</Title>
+        <Title key={companyAgeTitle}>{TARGET_COMPANY_AGE_TEXTS[companyAgeTitle]}</Title>
       ))}
     </>
   );

@@ -1,3 +1,1 @@
-import { ReactComponent as Search } from './search.svg';
-
-export default Search;
+export { default as Search } from './Search';

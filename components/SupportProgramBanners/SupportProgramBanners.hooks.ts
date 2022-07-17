@@ -1,8 +1,12 @@
 import { useRef, useEffect } from 'react';
 import { useQuery } from 'react-query';
-import client from '../../graphql/client';
-import { SUPPORT_PROGRAM_BANNERS } from '../../graphql/queries';
-import { RecursivelyExcludeNull, SupportProgramBannersQuery } from '../../graphql';
+
+import {
+  SUPPORT_PROGRAM_BANNERS,
+  client,
+  RecursivelyExcludeNull,
+  SupportProgramBannersQuery,
+} from '@/graphql';
 
 type BeforeRefactoredType = RecursivelyExcludeNull<
   SupportProgramBannersQuery,

@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight, MediaQuery } from '../../../../utils';
+import { FontSize, FontWeight, MediaQuery } from 'utils';
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 8px;
+
+  ${MediaQuery.mobile} {
+    width: 100vw;
+    height: 100vh;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -30,22 +35,21 @@ export const ContentsWrapper = styled.article`
   box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.03);
 
   ${MediaQuery.mobile} {
-    width: calc(100vw - 114px);
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
   }
 `;
 
 export const HeadingSection = styled.section`
   display: flex;
   justify-content: center;
-  padding: 0 28px;
-
+  align-items: center;
   margin-bottom: 20px;
 
-  ${MediaQuery.tablet} {
+  @media screen and (max-width: 1024px) {
+    width: 100%;
     justify-content: space-between;
-    & > * {
-      flex-basis: 100%;
-    }
   }
 `;
 
@@ -54,10 +58,18 @@ export const Heading = styled.h2`
   ${FontWeight.bold};
   color: #3a3a3a;
   letter-spacing: -0.002em;
+
+  ${MediaQuery.mobile} {
+    ${FontSize.size16}
+  }
 `;
 
 export const Xpadding = styled.div`
   padding: 0 28px;
+
+  ${MediaQuery.mobile} {
+    padding: 0 20px;
+  }
 `;
 
 export const FilterListWrapper = styled.div`
@@ -65,6 +77,9 @@ export const FilterListWrapper = styled.div`
   overflow-y: scroll;
 
   padding: 0 28px 72px 28px;
+  ${MediaQuery.mobile} {
+    padding: 0 20px 32px 20px;
+  }
 `;
 
 export const ApplyButton = styled.button`
@@ -88,4 +103,14 @@ export const ApplyButton = styled.button`
   &:hover {
     background-color: var(--color-unicornblue7);
   }
+`;
+
+export const ResetButton = styled.button`
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: var(--color-naturalgray7);
+  background-color: var(--color-bluegray0);
+
+  ${FontSize.size14};
 `;

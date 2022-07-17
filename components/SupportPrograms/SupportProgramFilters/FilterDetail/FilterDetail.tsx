@@ -1,11 +1,13 @@
+import Icons, { Close, Check } from 'commonUi/Icons';
+
+import { useMediaQuery } from 'hooks';
+
 import * as Styled from './FilterDetail.styled';
 import { FilterList, FilterItem } from '../SupportProgramFilters.styled';
 
 import { useClientFilter } from '../SupportProgramFilters.hooks';
 
-import HostPredicateWrapper from './PredicateWrapper';
-import Icons from '../../../../commonUi/Icons';
-import CloseMenu from '../../../../commonUi/Icons/CloseMenu/closeMenu.svg';
+import HostPredicateWrapper from './HostPredicateWrapper';
 
 import { contain, isNotSelected } from '../../SupportPrograms.utils';
 
@@ -31,6 +33,7 @@ function FilterDetail<T>({
   toggle,
 }: Props<T>) {
   const [state, toggleState] = useClientFilter<T>({ multiple: true, defaultValue: activeData });
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
 
   const reset = () => {
     toggleState('all')();
@@ -45,9 +48,17 @@ function FilterDetail<T>({
   return (
     <Styled.Wrapper>
       <Styled.ContentsWrapper>
-        <Styled.HeadingSection>
-          <Styled.Heading>{title}</Styled.Heading>
-        </Styled.HeadingSection>
+        <Styled.Xpadding>
+          <Styled.HeadingSection>
+            {!isDesktop && <Styled.ResetButton onClick={reset}>초기화</Styled.ResetButton>}
+            <Styled.Heading>{`${title} 선택`}</Styled.Heading>
+            {!isDesktop && (
+              <Styled.CloseButton onClick={onClose}>
+                <Close size={24} color="var(--color-naturalgray7)" />
+              </Styled.CloseButton>
+            )}
+          </Styled.HeadingSection>
+        </Styled.Xpadding>
         <Styled.Xpadding>
           <HostPredicateWrapper data={data} activeData={state} onItemClick={handleClick} />
         </Styled.Xpadding>
@@ -55,14 +66,14 @@ function FilterDetail<T>({
           <FilterList $wrap>
             <li>
               <FilterItem onClick={reset} selected={isNotSelected(state)}>
-                <Icons.Check20Selected />
+                <Check active color="var(--color-unicornblue7)" />
                 전체
               </FilterItem>
             </li>
             {data.map((item) => (
               <li key={keyExtractor(item)}>
                 <FilterItem selected={contain(state, item)} onClick={handleClick(item)}>
-                  <Icons.Check20Selected />
+                  <Check active color="var(--color-unicornblue7)" />
                   {renderItemText(item)}
                 </FilterItem>
               </li>
@@ -73,9 +84,11 @@ function FilterDetail<T>({
           <Styled.ApplyButton onClick={onClose}>필터 적용</Styled.ApplyButton>
         </Styled.Xpadding>
       </Styled.ContentsWrapper>
-      <Styled.CloseButton onClick={onClose}>
-        <CloseMenu />
-      </Styled.CloseButton>
+      {isDesktop && (
+        <Styled.CloseButton onClick={onClose}>
+          <Close size={24} color="var(--color-naturalgray0)" />
+        </Styled.CloseButton>
+      )}
     </Styled.Wrapper>
   );
 }
