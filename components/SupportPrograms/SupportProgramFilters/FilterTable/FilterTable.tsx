@@ -4,19 +4,13 @@ import * as Styled from './FilterTable.styled';
 import { Responsive } from '../SupportProgramFilters.styled';
 
 type Props = {
-  ages: ReactNode;
-  areas?: ReactNode;
-  hosts?: ReactNode;
+  children: ReactNode;
 };
 
-function FilterTable({ ages, areas, hosts }: Props) {
+function FilterTable({ children }: Props) {
   return (
     <Responsive>
-      <Styled.TableWrapper className="main-filter">
-        {ages}
-        {areas}
-        {hosts}
-      </Styled.TableWrapper>
+      <Styled.TableWrapper className="main-filter">{children}</Styled.TableWrapper>
     </Responsive>
   );
 }

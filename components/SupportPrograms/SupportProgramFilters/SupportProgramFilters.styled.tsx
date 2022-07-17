@@ -58,7 +58,7 @@ export const FilterItem = styled.button<{ selected: boolean }>`
     right: -5px;
   }
 
-  @support (hover:hover) {
+  @media (hover: hover) {
     &:hover {
       color: var(--color-unicornblue6);
       background-color: var(--color-unicornblue1);

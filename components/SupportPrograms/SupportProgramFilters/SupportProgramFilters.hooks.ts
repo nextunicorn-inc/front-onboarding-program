@@ -22,6 +22,25 @@ export function useSupportProgramFilters() {
 useSupportProgramFilters.getKeys = () => ['supportProgramFilters'];
 useSupportProgramFilters.fetcher = () => client.request<FilterOptionsQuery>(FILTER_OPTIONS);
 
+export function useSupportProgramFiltersTest(
+  select: (
+    data: FilterOptionsQuery,
+  ) => FilterOptionsQuery['filterOptions'][keyof FilterOptionsQuery['filterOptions']],
+) {
+  return useQuery<
+    FilterOptionsQuery,
+    Error,
+    FilterOptionsQuery['filterOptions'][keyof FilterOptionsQuery['filterOptions']]
+  >(useSupportProgramFilters.getKeys(), useSupportProgramFilters.fetcher, {
+    select,
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+  });
+}
+
+useSupportProgramFiltersTest.getKeys = () => ['supportProgramFilters'];
+useSupportProgramFiltersTest.fetcher = () => client.request<FilterOptionsQuery>(FILTER_OPTIONS);
+
 type Options<T> = {
   /* 다중선택 필터 */
   multiple?: boolean;
@@ -104,7 +123,20 @@ export function useFilterByQueryString<T>(
   const router = useRouter();
   const queryValue = router.query[queryKey];
 
-  const toggle = (nextQueryValue: string) => () => {
+  const toggle = (nextQueryValue: string | string[]) => () => {
+    if (nextQueryValue === 'all') {
+      delete router.query[queryKey];
+      router.replace(
+        {
+          pathname: router.pathname,
+          query: router.query,
+        },
+        undefined,
+        { shallow: true, scroll: false },
+      );
+      return;
+    }
+
     if (!queryValue) {
       router.replace(
         {
@@ -112,9 +144,25 @@ export function useFilterByQueryString<T>(
           query: { ...router.query, [queryKey]: nextQueryValue },
         },
         undefined,
-        { shallow: true },
+        { shallow: true, scroll: false },
       );
 
+      return;
+    }
+
+    if (Array.isArray(nextQueryValue)) {
+      delete router.query[queryKey];
+      router.replace(
+        {
+          pathname: router.pathname,
+          query: { ...router.query, [queryKey]: nextQueryValue },
+        },
+        undefined,
+        {
+          shallow: true,
+          scroll: false,
+        },
+      );
       return;
     }
 
@@ -124,15 +172,19 @@ export function useFilterByQueryString<T>(
         : queryValue.includes(nextQueryValue);
     const copyOfQueryValue = typeof queryValue === 'string' ? [queryValue] : queryValue.slice();
 
-    router.replace({
-      pathname: router.pathname,
-      query: {
-        ...router.query,
-        [queryKey]: shouldDelete
-          ? copyOfQueryValue.filter((v) => v !== nextQueryValue)
-          : copyOfQueryValue.concat([nextQueryValue]),
+    router.replace(
+      {
+        pathname: router.pathname,
+        query: {
+          ...router.query,
+          [queryKey]: shouldDelete
+            ? copyOfQueryValue.filter((v) => v !== nextQueryValue)
+            : copyOfQueryValue.concat([nextQueryValue]),
+        },
       },
-    });
+      undefined,
+      { shallow: true, scroll: false },
+    );
   };
 
   let activeState: T[] | null;
