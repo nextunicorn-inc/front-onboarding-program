@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { dequal } from 'dequal';
@@ -83,4 +84,63 @@ export function useClientFilter<T>({
   }
 
   return [state, toggle, filteredValue] as const;
+}
+
+export function useFilterByQueryString<T>(
+  // The list with which you want to match for query parameters to get active items
+  list: T[],
+  // The Query key
+  queryKey: string,
+  // MatcherFunction
+  // When you just compare list to queryValue with reference equality,
+  // the filter logic is constrainted to item === string.
+  // The example is: list.filter(item => item === queryValue)
+  // But We want to react dynamic case to match with queryValue.
+  // For example, When T is { id: string, [idontknow: string]: unknown }
+  // we should filter via T.id === queryValue
+  // In this case, we should pass (item) => item.id.
+  matcher: (val: T) => string,
+) {
+  const router = useRouter();
+  const queryValue = router.query[queryKey];
+
+  const toggle = (nextQueryValue: string) => () => {
+    if (!queryValue) {
+      router.replace(
+        {
+          pathname: router.pathname,
+          query: { ...router.query, [queryKey]: nextQueryValue },
+        },
+        undefined,
+        { shallow: true },
+      );
+
+      return;
+    }
+
+    const shouldDelete = queryValue.includes(nextQueryValue);
+    const copyOfQueryValue = typeof queryValue === 'string' ? [queryValue] : queryValue.slice();
+
+    router.replace({
+      pathname: router.pathname,
+      query: {
+        ...router.query,
+        [queryKey]: shouldDelete
+          ? copyOfQueryValue.filter((v) => v !== nextQueryValue)
+          : copyOfQueryValue.concat([nextQueryValue]),
+      },
+    });
+  };
+
+  let activeState: T[] | null;
+
+  if (!queryValue) {
+    activeState = [];
+  } else if (typeof queryValue === 'string') {
+    activeState = list.filter((item) => matcher(item) === queryValue);
+  } else {
+    activeState = list.filter((item) => queryValue.includes(matcher(item)));
+  }
+
+  return [activeState, toggle] as const;
 }

@@ -5,8 +5,8 @@ import { Responsive } from '../SupportProgramFilters.styled';
 
 type Props = {
   ages: ReactNode;
-  areas: ReactNode;
-  hosts: ReactNode;
+  areas?: ReactNode;
+  hosts?: ReactNode;
 };
 
 function FilterTable({ ages, areas, hosts }: Props) {
