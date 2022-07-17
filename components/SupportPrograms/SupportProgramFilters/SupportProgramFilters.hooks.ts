@@ -118,7 +118,10 @@ export function useFilterByQueryString<T>(
       return;
     }
 
-    const shouldDelete = queryValue.includes(nextQueryValue);
+    const shouldDelete =
+      typeof queryValue === 'string'
+        ? queryValue === nextQueryValue
+        : queryValue.includes(nextQueryValue);
     const copyOfQueryValue = typeof queryValue === 'string' ? [queryValue] : queryValue.slice();
 
     router.replace({
