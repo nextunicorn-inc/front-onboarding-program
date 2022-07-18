@@ -624,6 +624,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:1.6.37"\
       ],\
       [\
+        "@types/smoothscroll-polyfill",\
+        "npm:0.3.1"\
+      ],\
+      [\
         "@types/treeify",\
         "npm:1.0.0"\
       ],\
@@ -2636,6 +2640,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:4.2.0"\
       ],\
       [\
+        "smoothscroll-polyfill",\
+        "npm:0.4.4"\
+      ],\
+      [\
         "snake-case",\
         "npm:3.0.4"\
       ],\
@@ -3043,6 +3051,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-query", "npm:1.2.9"],\
             ["@types/react-slick", "npm:0.23.10"],\
             ["@types/slick-carousel", "npm:1.6.37"],\
+            ["@types/smoothscroll-polyfill", "npm:0.3.1"],\
             ["@typescript-eslint/eslint-plugin", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:5.29.0"],\
             ["@typescript-eslint/parser", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:5.29.0"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.11"],\
@@ -3069,6 +3078,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-query", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:3.39.1"],\
             ["react-slick", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:0.29.0"],\
             ["slick-carousel", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:1.8.1"],\
+            ["smoothscroll-polyfill", "npm:0.4.4"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"]\
           ],\
           "linkType": "SOFT"\
@@ -7935,6 +7945,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/smoothscroll-polyfill", [\
+        ["npm:0.3.1", {\
+          "packageLocation": "./.yarn/cache/@types-smoothscroll-polyfill-npm-0.3.1-4930c615ad-871a5b556c.zip/node_modules/@types/smoothscroll-polyfill/",\
+          "packageDependencies": [\
+            ["@types/smoothscroll-polyfill", "npm:0.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/treeify", [\
         ["npm:1.0.0", {\
           "packageLocation": "./.yarn/cache/@types-treeify-npm-1.0.0-b5e04e9cd3-1b2397030d.zip/node_modules/@types/treeify/",\
@@ -11142,6 +11161,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-query", "npm:1.2.9"],\
             ["@types/react-slick", "npm:0.23.10"],\
             ["@types/slick-carousel", "npm:1.6.37"],\
+            ["@types/smoothscroll-polyfill", "npm:0.3.1"],\
             ["@typescript-eslint/eslint-plugin", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:5.29.0"],\
             ["@typescript-eslint/parser", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:5.29.0"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.11"],\
@@ -11168,6 +11188,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-query", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:3.39.1"],\
             ["react-slick", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:0.29.0"],\
             ["slick-carousel", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:1.8.1"],\
+            ["smoothscroll-polyfill", "npm:0.4.4"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"]\
           ],\
           "linkType": "SOFT"\
@@ -14812,6 +14833,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/smart-buffer-npm-4.2.0-5ac3f668bb-b5167a7142.zip/node_modules/smart-buffer/",\
           "packageDependencies": [\
             ["smart-buffer", "npm:4.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["smoothscroll-polyfill", [\
+        ["npm:0.4.4", {\
+          "packageLocation": "./.yarn/cache/smoothscroll-polyfill-npm-0.4.4-69b5bb4bf7-b99ff7d916.zip/node_modules/smoothscroll-polyfill/",\
+          "packageDependencies": [\
+            ["smoothscroll-polyfill", "npm:0.4.4"]\
           ],\
           "linkType": "HARD"\
         }]\
