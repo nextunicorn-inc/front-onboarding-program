@@ -6,12 +6,10 @@ export const Layout = styled.header`
   height: 60px;
 `;
 
-export const ResponsiveSection = styled.div`
-  //max-width: 1240px;
-  //margin: 0 auto;
-`;
+export const ResponsiveSection = styled.div``;
 
 export const Navigation = styled.nav`
+  position: fixed;
   width: 100%;
   height: 60px;
   display: flex;
@@ -20,7 +18,8 @@ export const Navigation = styled.nav`
   padding-left: 40px;
   padding-right: 40px;
   border-bottom: 1px solid rgb(209, 209, 209);
-  z-index: 99999;
+  z-index: 10;
+  background-color: var(--color-naturalgray0);
 `;
 
 export const MenuWrapper = styled.div`
@@ -130,7 +129,6 @@ export const SearchMenu = styled.li`
 `;
 
 export const SearchLayout = styled.div`
-  z-index: 10;
   width: 100%;
   height: 100%;
   display: flex;
@@ -146,18 +144,21 @@ export const SearchInputLayout = styled.div`
   height: 200px;
   padding-top: 56px;
   padding-bottom: 16px;
-  display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: rgb(0 0 0 / 8%) 0 12px 28px 0;
   transition: width 0.2s ease-in-out 0s;
-  background-color: white;
+  background-color: var(--color-naturalgray0);
+
+  ${MediaQuery.mobile} {
+    height: 97px;
+    padding-top: 26px;
+  }
 `;
 
 export const SearchInputBoxWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1304px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -230,7 +231,7 @@ export const SignSeparator = styled.div`
 
 export const SideNavigation = styled.div`
   display: flex;
-  z-index: 1;
+  z-index: 10;
   position: fixed;
   width: 100%;
   height: 100%;

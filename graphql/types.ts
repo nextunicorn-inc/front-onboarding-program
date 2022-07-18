@@ -348,9 +348,10 @@ export type InquiryInput = {
   title: InputMaybe<Scalars['String']>;
 };
 
-export type InvestmentDataFilterType = {
-  month: InputMaybe<StringRangeFilterType>;
-  type: InputMaybe<Scalars['String']>;
+export type NuProInvestmentCompanyFilterType = {
+  ids: InputMaybe<Array<Scalars['String']>>;
+  paging: InputMaybe<PageableFilterType>;
+  q: InputMaybe<Scalars['String']>;
 };
 
 export type NuProStartupCompanyFilterType = {
@@ -379,7 +380,7 @@ export type NuProStartupCompanyFilterType = {
   /** 최근투자유치금액 : 지정된 범위(gte, lte) */
   lastInvestmentAmount: InputMaybe<NumberRangeFilterType>;
   /** 최근투자유치일자 : 지정된 범위 / 직접입력 */
-  lastInvestmentDate: InputMaybe<InvestmentDataFilterType>;
+  lastInvestmentDate: InputMaybe<DateFilterType>;
   /** 최근투자단계 : 범위 */
   lastInvestmentPhases: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 지역: 범위 */
@@ -424,9 +425,15 @@ export type RegisterUserInput = {
   phoneVerified: Scalars['Boolean'];
 };
 
+export type SchoolFilterType = {
+  ids: InputMaybe<Array<Scalars['String']>>;
+  paging: InputMaybe<PageableFilterType>;
+  q: InputMaybe<Scalars['String']>;
+};
+
 export type SortingType = {
-  order: OrderEnum;
-  target: TargetEnum;
+  order: InputMaybe<OrderEnum>;
+  target: InputMaybe<TargetEnum>;
 };
 
 export type StringRangeFilterType = {
@@ -478,17 +485,6 @@ export type UpdateCollectionInput = {
   type: CollectionType;
 };
 
-export type FilterOptionsQueryVariables = Exact<{ [key: string]: never }>;
-
-export type FilterOptionsQuery = {
-  filterOptions: {
-    areas: Array<AreaEnum | null> | null;
-    targetCompanyAges: Array<TargetCompanyAgeEnum | null> | null;
-    types: Array<SupportProgramTypeEnum | null> | null;
-    hosts: Array<{ id: string | null; meta: { name: string | null } | null } | null> | null;
-  } | null;
-};
-
 export type FeaturedSupportProgramsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type FeaturedSupportProgramsQuery = {
@@ -506,6 +502,17 @@ export type FeaturedSupportProgramsQuery = {
   } | null;
 };
 
+export type FilterOptionsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type FilterOptionsQuery = {
+  filterOptions: {
+    areas: Array<AreaEnum | null> | null;
+    targetCompanyAges: Array<TargetCompanyAgeEnum | null> | null;
+    types: Array<SupportProgramTypeEnum | null> | null;
+    hosts: Array<{ id: string | null; meta: { name: string | null } | null } | null> | null;
+  } | null;
+};
+
 export type SupportProgramBannersQueryVariables = Exact<{ [key: string]: never }>;
 
 export type SupportProgramBannersQuery = {
@@ -520,4 +527,30 @@ export type SupportProgramBannersQuery = {
     title: string | null;
     titleColor: string | null;
   } | null> | null;
+};
+
+export type SupportProgramsQueryVariables = Exact<{
+  filter: InputMaybe<SupportProgramsFilterType>;
+}>;
+
+export type SupportProgramsQuery = {
+  supportPrograms: {
+    data: Array<{
+      startAt: any | null;
+      endAt: any | null;
+      areas: Array<AreaEnum | null> | null;
+      name: string | null;
+      targetCompanyAges: Array<TargetCompanyAgeEnum | null> | null;
+      type: SupportProgramTypeEnum | null;
+      outerApplyLink: string | null;
+      supportProgramCompany: { name: string | null } | null;
+    } | null> | null;
+    paging: {
+      limit: number | null;
+      totalPages: number | null;
+      totalElements: any | null;
+      openedElements: any | null;
+      current: number | null;
+    } | null;
+  } | null;
 };

@@ -1,7 +1,8 @@
+import React, { useState } from 'react';
 import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from 'constants/supportPrograms';
 import { useModal } from 'commonUi/Modal';
 
-import { Search } from 'commonUi/Icons';
+import * as Styled from './SupportPrograms.styled';
 
 import {
   useSupportProgramFilters,
@@ -15,8 +16,18 @@ import {
 import { identity } from './SupportPrograms.utils';
 
 import type { Area, TargetCompanyAge, Host, Type } from './SupportProgramFilters';
+import { ResultSupportPrograms } from './SupportProgramResults';
+
+import useSupportProgramResults from './SupportProgramResults/SupportProgramResults.hooks';
+import { PageNavigation } from './PageNavigation';
 
 function SupportPrograms() {
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const handleClickPageNumber = (pageNumber) => {
+    setPageNumber(pageNumber);
+  };
+
   const filterQuery = useSupportProgramFilters();
 
   const [activeTypes, toggleTypes, filteredActiveTypes] = useClientFilter<Type>({
@@ -36,8 +47,20 @@ function SupportPrograms() {
   });
   const { hide } = useModal();
 
+  const selectedFilter = {
+    filter: {
+      type: filteredActiveTypes?.[0] ?? null,
+      targetCompanyAges: filteredActiveAges,
+      areas: filteredActiveAreas,
+      hosts: filteredActiveHosts?.map((host) => host.id) ?? null,
+      page: pageNumber,
+    },
+  };
+
+  const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
+
   return (
-    <div>
+    <Styled.Wrapper>
       {filterQuery.isSuccess && (
         <>
           <TypeFilters
@@ -112,7 +135,10 @@ function SupportPrograms() {
           />
         </>
       )}
-    </div>
+
+      <ResultSupportPrograms data={selectedSupportProgramsResultData} />
+      <PageNavigation data={selectedSupportProgramsResultData} onClick={handleClickPageNumber} />
+    </Styled.Wrapper>
   );
 }
 

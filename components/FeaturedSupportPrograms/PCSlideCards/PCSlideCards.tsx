@@ -2,13 +2,16 @@ import React, { useRef } from 'react';
 import Slider from 'react-slick';
 
 import { Chevron } from 'commonUi/Icons';
-import { ApplyTag, CompanyAgeTag } from 'commonUi/Tags/';
+
 import { SLIDER_SETTINGS } from '../FeaturedSupportPrograms.constants';
 
 import * as Styled from './PCSlideCards.styled';
 
+import { Apply } from '../../../commonUi/Badges/Apply';
+import { CompanyAge } from '../../../commonUi/Badges/CompanyAge';
 import { EndDate } from '../utils/EndDate';
 import useFeaturedSupportPrograms from '../FeaturedSupportPrograms.hooks';
+// import Icons from '../../../commonUi/Icons';
 
 function PCSlideCards() {
   const query = useFeaturedSupportPrograms();
@@ -22,18 +25,28 @@ function PCSlideCards() {
     sliderRef.current?.slickPrev();
   };
 
+  if (!query.data) {
+    return (
+      <Styled.EmptySlideCards>
+        <Styled.EmptySlideCard />
+        <Styled.EmptySlideCard />
+        <Styled.EmptySlideCard />
+      </Styled.EmptySlideCards>
+    );
+  }
+
   return (
     <Styled.SlideCardWrapper>
-      <Styled.SlideButtonWrapper $direction="left" role="button" onClick={prevBtn}>
-        <Chevron size={20} direction="Left" />
+      <Styled.SlideButtonWrapper $isLeftDirection role="button" onClick={prevBtn}>
+        <Chevron direction="Left" size={20} />
       </Styled.SlideButtonWrapper>
 
-      <Styled.SlideButtonWrapper $direction="right" role="button" onClick={nextBtn}>
-        <Chevron size={20} direction="Right" />
+      <Styled.SlideButtonWrapper $isLeftDirection={false} role="button" onClick={nextBtn}>
+        <Chevron direction="Right" size={20} />
       </Styled.SlideButtonWrapper>
 
       <Slider ref={sliderRef} {...SLIDER_SETTINGS}>
-        {query.data?.supportPrograms.map((featuredSupportProgram) => (
+        {query.data.supportPrograms.map((featuredSupportProgram) => (
           <Styled.SlideCard key={featuredSupportProgram.id}>
             <Styled.SlideCardImg
               src={featuredSupportProgram.bannerImgUrl}
@@ -41,8 +54,8 @@ function PCSlideCards() {
             />
 
             <Styled.SlideTagWrapper>
-              <ApplyTag applyText={featuredSupportProgram.type} />
-              <CompanyAgeTag targetCompanyAges={featuredSupportProgram.targetCompanyAges} />
+              <Apply applyText={featuredSupportProgram.type} />
+              <CompanyAge targetCompanyAges={featuredSupportProgram.targetCompanyAges} />
             </Styled.SlideTagWrapper>
 
             <Styled.SlideCardTitle>{featuredSupportProgram.name}</Styled.SlideCardTitle>
