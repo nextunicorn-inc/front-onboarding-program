@@ -3,6 +3,7 @@ import { useClientFilter, useFilterByQueryString } from '../SupportProgramFilter
 import { contain } from '../../SupportPrograms.utils';
 import FilterDetail from './FilterDetailRefactor';
 import FilterItem from '../FilterItem';
+import { HostSearch } from '../HostSearch';
 
 type Props = {
   title: string;
@@ -26,9 +27,13 @@ function HostFilterDetail({ title, list }: Props) {
     if (state.includes('all')) {
       return toggle('all')();
     }
-    //TODO: Refactor to enforce type safety
+
+    // TODO: Refactor to enforce type safety
+
     const filteredValues = state.filter((item) => item !== 'all') as Host[];
-    return toggle(filteredValues.map((item) => item.meta.name));
+    const mappedValues = filteredValues.map((item) => item.meta.name);
+
+    return toggle(mappedValues)();
   };
 
   return (
@@ -37,6 +42,8 @@ function HostFilterDetail({ title, list }: Props) {
       title={title}
       onApply={onApply}
       totalSelectedItems={totalActiveState}
+      searchable
+      Search={<HostSearch data={list} onItemClick={toggleState} selectedData={state} />}
     >
       {list.map((item) => (
         <li key={item.id}>

@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { Close, Check } from 'commonUi/Icons';
+import { isValidElement, ReactNode } from 'react';
+import { Close } from 'commonUi/Icons';
 import { useModal } from 'commonUi/Modal';
 
 import { useMediaQuery } from 'hooks';
@@ -13,9 +13,19 @@ type Props = {
   children: ReactNode;
   resetItems: () => void;
   totalSelectedItems: number;
+  searchable?: boolean;
+  Search?: ReactNode;
 };
 
-function FilterDetailModal({ title, onApply, resetItems, totalSelectedItems, children }: Props) {
+function FilterDetailModal({
+  title,
+  onApply,
+  resetItems,
+  totalSelectedItems,
+  children,
+  searchable = false,
+  Search = null,
+}: Props) {
   const isDesktop = useMediaQuery('(min-width: 1025px)');
   const { hide } = useModal();
   const handleApplyButtonClick = () => {
@@ -37,6 +47,7 @@ function FilterDetailModal({ title, onApply, resetItems, totalSelectedItems, chi
             )}
           </Styled.HeadingSection>
         </Styled.Xpadding>
+        <Styled.Xpadding>{searchable && isValidElement(Search) && Search}</Styled.Xpadding>
         <Styled.FilterListWrapper>
           <FilterList $wrap>
             <li>

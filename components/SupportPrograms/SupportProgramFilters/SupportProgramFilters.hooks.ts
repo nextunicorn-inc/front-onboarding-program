@@ -133,10 +133,11 @@ export function useFilterByQueryString<T>(
     }
 
     if (Array.isArray(nextQueryValue)) {
+      console.log(nextQueryValue);
       router.replace(
         {
           pathname: router.pathname,
-          query: { ...router.query, [queryKey]: undefined },
+          query: { ...router.query, [queryKey]: nextQueryValue },
         },
         undefined,
         {

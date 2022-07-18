@@ -14,12 +14,11 @@ function AgeFilter() {
     'targetCompanyAges',
     identity,
   );
-  const reset = toggle('all');
 
   return (
     <Row
       RowDetail={<AgeFilterDetail title="창업 기간" list={query.data?.targetCompanyAges ?? []} />}
-      resetColumns={reset}
+      resetColumns={toggle('all')}
       totalSelectedColumns={activeAges.length}
       title="창업 기간"
     >
