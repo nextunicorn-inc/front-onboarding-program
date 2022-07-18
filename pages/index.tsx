@@ -1,4 +1,5 @@
 import { QueryClient, dehydrate } from 'react-query';
+
 import {
   CTASection,
   Footer,
@@ -8,7 +9,7 @@ import {
   FeaturedSupportPrograms,
   SupportPrograms,
   Header,
-} from 'components/';
+} from 'components';
 
 import { ResultSupportPrograms } from '../components/SupportPrograms/SupportProgramResults';
 

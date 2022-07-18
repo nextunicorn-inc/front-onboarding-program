@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const canUseDom = () => typeof window !== 'undefined' && !!window.document?.createElement;
+const canUseDom = () => typeof window?.matchMedia !== 'undefined';
 
 export function useMediaQuery(mediaQuery: string) {
   const [matches, setMatches] = useState(false);
@@ -12,7 +12,7 @@ export function useMediaQuery(mediaQuery: string) {
 
     const mediaQueryList = window.matchMedia(mediaQuery);
     setMatches(mediaQueryList.matches);
-  }, []);
+  }, [mediaQuery]);
 
   useEffect(() => {
     if (!canUseDom()) {
@@ -31,7 +31,7 @@ export function useMediaQuery(mediaQuery: string) {
       }
       mediaQueryList.removeEventListener('change', onChange);
     };
-  }, []);
+  }, [mediaQuery]);
 
   return matches;
 }

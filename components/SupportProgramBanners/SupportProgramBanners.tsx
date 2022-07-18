@@ -17,14 +17,10 @@ function SupportProgramBanners() {
   };
 
   const onClick = (type: 'next' | 'prev') => {
-    if (!sliderRef.current) {
-      return;
-    }
-
     if (type === 'next') {
-      sliderRef.current.slickNext();
+      sliderRef.current?.slickNext();
     } else {
-      sliderRef.current.slickPrev();
+      sliderRef.current?.slickPrev();
     }
   };
 
