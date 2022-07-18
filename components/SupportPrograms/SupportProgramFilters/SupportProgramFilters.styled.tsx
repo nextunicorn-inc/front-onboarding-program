@@ -33,23 +33,19 @@ export const FilterList = styled.ul<{ $wrap?: boolean }>`
     justify-content: center;
   }
 `;
-
 export const FilterItem = styled.button<{ selected: boolean }>`
   cursor: pointer;
   position: relative;
   padding: 10px 16px;
   ${FontSize.size16};
   ${FontWeight.medium};
-
   color: var(${({ selected }) => (selected ? '--color-unicornblue6' : '--color-naturalgray7')});
   background-color: var(
     ${({ selected }) => (selected ? '--color-unicornblue1' : '--color-bluegray0')}
   );
   border: none;
   border-radius: 25px;
-
   transition: all 150ms linear;
-
   & > svg {
     transition: all 150ms linear;
     opacity: ${({ selected }) => (selected ? 1 : 0)};
@@ -57,14 +53,12 @@ export const FilterItem = styled.button<{ selected: boolean }>`
     top: 0;
     right: -5px;
   }
-
   @media (hover: hover) {
     &:hover {
       color: var(--color-unicornblue6);
       background-color: var(--color-unicornblue1);
     }
   }
-
   ${MediaQuery.mobile} {
     ${FontSize.size14};
   }

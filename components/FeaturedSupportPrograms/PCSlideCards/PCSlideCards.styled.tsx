@@ -24,13 +24,22 @@ export const SlideCardWrapper = styled.div`
     padding: 0 10px;
   }
 
-  ${MediaQuery.mobile} {
-    display: none;
-  }
-
   ${MediaQuery.tablet} {
     display: none;
   }
+`;
+
+export const EmptySlideCards = styled.div`
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+`;
+
+export const EmptySlideCard = styled.div`
+  width: 295px;
+  height: 417px;
+  border-radius: 5px;
+  background-color: #f4f5f7;
 `;
 
 export const SlideCard = styled.article`
@@ -46,7 +55,7 @@ export const SlideCardImg = styled.img`
   display: block;
   object-fit: cover;
   cursor: pointer;
-  background-color: aliceblue;
+  background-color: #f8f8f8;
 `;
 
 export const SlideTagWrapper = styled.div`
@@ -74,7 +83,7 @@ export const SlideCardCompanyName = styled.h5`
   color: rgb(115, 115, 115);
 `;
 
-export const SlideButtonWrapper = styled.div<{ $direction: string }>`
+export const SlideButtonWrapper = styled.div<{ $isLeftDirection: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,10 +95,10 @@ export const SlideButtonWrapper = styled.div<{ $direction: string }>`
   height: 40px;
   cursor: pointer;
   border: 1px solid #e8ecf2;
-  background-color: #fefefe;
+  background-color: var(--color-naturalgray0);
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
-  ${({ $direction }) =>
-    $direction === 'left'
+  ${({ $isLeftDirection }) =>
+    $isLeftDirection
       ? css`
           left: -1%;
         `

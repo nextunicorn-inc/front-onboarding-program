@@ -7,30 +7,37 @@ import * as Styled from './TypeFilters.styled';
 
 import { Responsive } from '../SupportProgramFilters.styled';
 import { DEFAULT } from '../SupportProgramFilters.constants';
-import { SupportProgramTypes } from '../SupportProgramFilters.types';
+import { Type } from '../SupportProgramFilters.types';
+import { useFilterByQueryString, useSupportProgramFilters } from '../SupportProgramFilters.hooks';
+import { identity } from '../../SupportPrograms.utils';
 
-type Props = {
-  allTypes: SupportProgramTypes;
-  activeTypes: SupportProgramTypes;
-  onClick: (type: SupportProgramTypes[number]) => () => void;
-};
-
-function TypeFilters({ onClick, activeTypes, allTypes }: Props) {
+function TypeFilters() {
+  const query = useSupportProgramFilters();
+  const [activeTypes, _, chooseForce] = useFilterByQueryString<Type>(
+    query.data?.types ?? [],
+    'type',
+    identity,
+  );
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   return (
     <Responsive>
       <Styled.TypeFilterList role="list">
-        {[...DEFAULT, ...allTypes].map((type, index) => (
-          <Styled.TypeFilterItem $active={activeTypes.includes(type)} key={type}>
-            <button type="button" onClick={onClick(type)}>
-              {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
-              {type === SupportProgramTypeEnum.Snl &&
-                (isMobile ? <Thunder size={15} /> : <Thunder size={26} />)}
-            </button>
-            <Styled.TypeFilterNoticeLine $active={activeTypes.includes(type)} />
-          </Styled.TypeFilterItem>
-        ))}
+        {[...DEFAULT, ...(query.data?.types ?? [])].map((type, index) => {
+          const isAllButton = type === 'all';
+          const isActive = isAllButton ? activeTypes.length === 0 : activeTypes.includes(type);
+
+          return (
+            <Styled.TypeFilterItem $active={isActive} key={type}>
+              <button type="button" onClick={chooseForce(isAllButton ? 'all' : type)}>
+                {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
+                {type === SupportProgramTypeEnum.Snl &&
+                  (isMobile ? <Thunder size={15} /> : <Thunder size={26} />)}
+              </button>
+              <Styled.TypeFilterNoticeLine $active={isActive} />
+            </Styled.TypeFilterItem>
+          );
+        })}
       </Styled.TypeFilterList>
     </Responsive>
   );

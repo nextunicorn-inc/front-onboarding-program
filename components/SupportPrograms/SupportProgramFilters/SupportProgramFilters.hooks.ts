@@ -133,7 +133,6 @@ export function useFilterByQueryString<T>(
     }
 
     if (Array.isArray(nextQueryValue)) {
-      console.log(nextQueryValue);
       router.replace(
         {
           pathname: router.pathname,
@@ -169,6 +168,36 @@ export function useFilterByQueryString<T>(
     );
   };
 
+  const unstableChoose = (nextQueryValue: string) => () => {
+    if (nextQueryValue === 'all') {
+      router.replace(
+        {
+          pathname: router.pathname,
+          query: { ...router.query, [queryKey]: undefined },
+        },
+        undefined,
+        {
+          shallow: true,
+          scroll: false,
+        },
+      );
+      return;
+    }
+
+    delete router.query[queryKey];
+    router.replace(
+      {
+        pathname: router.pathname,
+        query: { ...router.query, [queryKey]: nextQueryValue },
+      },
+      undefined,
+      {
+        shallow: true,
+        scroll: false,
+      },
+    );
+  };
+
   let activeState: T[] | null;
 
   if (!queryValue) {
@@ -179,5 +208,5 @@ export function useFilterByQueryString<T>(
     activeState = list.filter((item) => queryValue.includes(matcher(item)));
   }
 
-  return [activeState, toggle] as const;
+  return [activeState, toggle, unstableChoose] as const;
 }

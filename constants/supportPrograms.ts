@@ -2,9 +2,9 @@ import { SupportProgramTypeEnum, AreaEnum, TargetCompanyAgeEnum } from '../graph
 
 export const SUPPORT_PROGRAM_TYPE_TEXTS = {
   all: '전체',
-  [SupportProgramTypeEnum.Snl]: '간편 신청',
-  [SupportProgramTypeEnum.Sl]: '외부 신청',
-  [SupportProgramTypeEnum.Snlp]: '일반 신청',
+  [SupportProgramTypeEnum.Snl]: '간편신청',
+  [SupportProgramTypeEnum.Sl]: '외부신청',
+  [SupportProgramTypeEnum.Snlp]: '일반신청',
 } as const;
 
 export const TARGET_COMPANY_AGE_TEXTS = {
