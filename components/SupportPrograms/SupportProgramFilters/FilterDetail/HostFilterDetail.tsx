@@ -1,7 +1,7 @@
 import { Host } from '../SupportProgramFilters.types';
 import { useClientFilter, useFilterByQueryString } from '../SupportProgramFilters.hooks';
 import { contain } from '../../SupportPrograms.utils';
-import FilterDetail from './FilterDetailRefactor';
+import FilterDetailModal from './FilterDetailModal';
 import FilterItem from '../FilterItem';
 import { HostSearch } from '../HostSearch';
 
@@ -37,7 +37,7 @@ function HostFilterDetail({ title, list }: Props) {
   };
 
   return (
-    <FilterDetail
+    <FilterDetailModal
       resetItems={toggleState('all')}
       title={title}
       onApply={onApply}
@@ -52,7 +52,7 @@ function HostFilterDetail({ title, list }: Props) {
           </FilterItem>
         </li>
       ))}
-    </FilterDetail>
+    </FilterDetailModal>
   );
 }
 

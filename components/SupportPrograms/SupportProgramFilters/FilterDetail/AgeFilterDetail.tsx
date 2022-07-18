@@ -1,7 +1,7 @@
 import { TargetCompanyAge } from '../SupportProgramFilters.types';
 import { useClientFilter, useFilterByQueryString } from '../SupportProgramFilters.hooks';
 import { identity } from '../../SupportPrograms.utils';
-import FilterDetail from './FilterDetailRefactor';
+import FilterDetailModal from './FilterDetailModal';
 import FilterItem from '../FilterItem';
 
 type Props = {
@@ -29,7 +29,7 @@ function AgeFilterDetail({ title, list }: Props) {
   };
 
   return (
-    <FilterDetail
+    <FilterDetailModal
       resetItems={toggleState('all')}
       title={title}
       onApply={onApply}
@@ -42,7 +42,7 @@ function AgeFilterDetail({ title, list }: Props) {
           </FilterItem>
         </li>
       ))}
-    </FilterDetail>
+    </FilterDetailModal>
   );
 }
 
