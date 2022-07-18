@@ -110,7 +110,8 @@ export function useFilterByQueryString<T>(
       router.replace(
         {
           pathname: router.pathname,
-          query: router.query,
+          // query: router.query,
+          query: { ...router.query, [queryKey]: undefined },
         },
         undefined,
         { shallow: true, scroll: false },
@@ -132,11 +133,10 @@ export function useFilterByQueryString<T>(
     }
 
     if (Array.isArray(nextQueryValue)) {
-      delete router.query[queryKey];
       router.replace(
         {
           pathname: router.pathname,
-          query: { ...router.query, [queryKey]: nextQueryValue },
+          query: { ...router.query, [queryKey]: undefined },
         },
         undefined,
         {

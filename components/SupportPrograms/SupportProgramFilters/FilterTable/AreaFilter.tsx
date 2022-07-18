@@ -5,6 +5,7 @@ import Row from './Row';
 import FilterItem from '../FilterItem';
 import { useFilterByQueryString, useSupportProgramFilters } from '../SupportProgramFilters.hooks';
 import { Area } from '../SupportProgramFilters.types';
+import { AreaFilterDetail } from '../FilterDetail';
 
 function AreaFilter() {
   const query = useSupportProgramFilters();
@@ -13,10 +14,14 @@ function AreaFilter() {
     'areas',
     identity,
   );
-  const reset = toggle('all');
 
   return (
-    <Row resetColumns={reset} totalSelectedColumns={activeAreas.length} title="창업 기간">
+    <Row
+      RowDetail={<AreaFilterDetail title="지원 분야" list={query.data?.areas ?? []} />}
+      resetColumns={toggle('all')}
+      totalSelectedColumns={activeAreas.length}
+      title="지원 분야"
+    >
       {query.data?.areas.map((item) => (
         <li key={item}>
           <FilterItem onClick={toggle(item)} selected={activeAreas.includes(item)}>

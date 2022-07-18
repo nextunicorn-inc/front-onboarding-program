@@ -20,9 +20,10 @@ type Props = {
   children: ReactNode;
   totalSelectedColumns: number;
   resetColumns: () => void;
+  RowDetail: ReactNode;
 };
 
-function Row({ title, children, totalSelectedColumns, resetColumns }: Props) {
+function Row({ title, children, totalSelectedColumns, resetColumns, RowDetail }: Props) {
   const [showMoreButton, setShowMoreButton] = useState(false);
   const isMobile = useMediaQuery('(max-width: 767px)');
   const lastItemRef = useRef<HTMLLIElement>(null);
@@ -73,7 +74,7 @@ function Row({ title, children, totalSelectedColumns, resetColumns }: Props) {
   }, [isMobile]);
 
   return isMobile ? (
-    <Styled.MobileToggleButton onClick={showWithBackdrop()}>
+    <Styled.MobileToggleButton onClick={showWithBackdrop(RowDetail)}>
       <span>{title}</span>
       {isAnyColumnNotSelected ? (
         <Plus />
@@ -90,11 +91,14 @@ function Row({ title, children, totalSelectedColumns, resetColumns }: Props) {
           전체
         </FilterItem>
         {childrenWithRef}
-        {showMoreButton && (
-          <Styled.MoreButtonWrapper>
-            <Styled.MoreButton role="button" onClick={showWithBackdrop()} />
-          </Styled.MoreButtonWrapper>
-        )}
+        <Styled.MoreButtonWrapper>
+          <Styled.MoreButton role="button" onClick={showWithBackdrop(RowDetail)} />
+        </Styled.MoreButtonWrapper>
+        {/*{showMoreButton && (*/}
+        {/*  <Styled.MoreButtonWrapper>*/}
+        {/*    <Styled.MoreButton role="button" onClick={showWithBackdrop(RowDetail)} />*/}
+        {/*  </Styled.MoreButtonWrapper>*/}
+        {/*)}*/}
       </FilterList>
     </Styled.RowWrapper>
   );

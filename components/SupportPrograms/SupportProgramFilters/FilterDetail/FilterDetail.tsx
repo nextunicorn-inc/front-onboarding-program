@@ -1,4 +1,4 @@
-import Icons, { Close, Check } from 'commonUi/Icons';
+import { Close, Check } from 'commonUi/Icons';
 
 import { useMediaQuery } from 'hooks';
 

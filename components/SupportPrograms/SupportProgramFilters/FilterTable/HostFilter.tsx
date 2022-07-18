@@ -2,6 +2,7 @@ import Row from './Row';
 import FilterItem from '../FilterItem';
 import { useFilterByQueryString, useSupportProgramFilters } from '../SupportProgramFilters.hooks';
 import { Host } from '../SupportProgramFilters.types';
+import { HostFilterDetail } from '../FilterDetail';
 
 function HostFilter() {
   const query = useSupportProgramFilters();
@@ -14,7 +15,12 @@ function HostFilter() {
   const activeHostNames = activeHostInfo.map((v) => v.meta.name);
   const reset = toggle('all');
   return (
-    <Row resetColumns={reset} totalSelectedColumns={activeHostNames.length} title="창업 기간">
+    <Row
+      RowDetail={<HostFilterDetail title="주관 기관" list={query.data?.hosts ?? []} />}
+      resetColumns={reset}
+      totalSelectedColumns={activeHostNames.length}
+      title="주관 기관"
+    >
       {query.data?.hosts.map(({ id, meta: { name } }) => (
         <li key={id}>
           <FilterItem onClick={toggle(name)} selected={activeHostNames.includes(name)}>
