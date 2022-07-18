@@ -1,8 +1,19 @@
 import React from 'react';
 import * as Styled from './ProgressStatus.styled';
 
-function ProgressStatus({ dateData: { endAt } }) {
-  const [endYearString, endMonthString, endDayList] = endAt.split('-');
+function ProgressStatus({ dateData }) {
+  if (!dateData.endAt) {
+    const color = '#3389FF';
+    const message = '상시 모집';
+
+    return (
+      <Styled.TextWrapper $color={color}>
+        <Styled.Text>{message}</Styled.Text>
+      </Styled.TextWrapper>
+    );
+  }
+
+  const [endYearString, endMonthString, endDayList] = dateData?.endAt.split('-');
   const [endDayString] = endDayList.split('T');
 
   const endMonth = parseInt(endMonthString, 10);
@@ -16,7 +27,7 @@ function ProgressStatus({ dateData: { endAt } }) {
   let message: string = '대기중';
 
   // 상시 모집(endAta = null)
-  if (!endAt) {
+  if (!dateData.endAt) {
     /* color/primary/blue5 */
     // color = 'var(--color-unicornblue6)';
     color = '#3389FF';

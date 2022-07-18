@@ -21,6 +21,10 @@ const EndDateText = styled.h5`
 `;
 
 function EndDate({ endDate }: { endDate: string }) {
+  if (!endDate) {
+    return <EndDateText>2022.08.08</EndDateText>;
+  }
+
   const [year, month, dayList] = endDate.split('-');
   const [day] = dayList.split('T');
 

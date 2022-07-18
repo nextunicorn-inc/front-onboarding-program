@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import client from '../../../graphql/client';
 import { SUPPORT_PROGRAMS } from '../../../graphql/queries/supportPrograms';
-import { SupportProgramsQueryVariables } from '../../../graphql';
+import { SupportProgramsQueryVariables } from '@/graphql';
 import { SupportProgramsQuery } from './SupportProgramResults.type';
 
 export default function useSupportProgramResults(filter: SupportProgramsQueryVariables) {

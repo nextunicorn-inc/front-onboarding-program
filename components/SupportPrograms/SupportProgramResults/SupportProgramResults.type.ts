@@ -1,4 +1,4 @@
-import { AreaEnum, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '../../../graphql';
+import { AreaEnum, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '@/graphql';
 
 export type SupportProgramsQuery = {
   supportPrograms: {
@@ -11,5 +11,12 @@ export type SupportProgramsQuery = {
       type: SupportProgramTypeEnum;
       outerApplyLink: string | null;
     }>;
+    paging: {
+      limit: number;
+      totalPages: number;
+      totalElements: number;
+      openedElements: number;
+      current: number;
+    };
   };
 };

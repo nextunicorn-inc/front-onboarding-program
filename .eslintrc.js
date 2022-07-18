@@ -33,6 +33,6 @@ module.exports = {
     'object-curly-newline': ['off'],
     'react/jsx-wrap-multilines': ['off'],
     'implicit-arrow-linebreak': ['off'],
-    'no-confusing-arrow': ['off']
+    'no-confusing-arrow': ['off'],
   },
 };

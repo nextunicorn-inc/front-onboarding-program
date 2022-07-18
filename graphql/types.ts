@@ -545,5 +545,12 @@ export type SupportProgramsQuery = {
       outerApplyLink: string | null;
       supportProgramCompany: { name: string | null } | null;
     } | null> | null;
+    paging: {
+      limit: number | null;
+      totalPages: number | null;
+      totalElements: any | null;
+      openedElements: any | null;
+      current: number | null;
+    } | null;
   } | null;
 };

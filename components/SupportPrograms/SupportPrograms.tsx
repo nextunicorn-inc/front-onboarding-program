@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from 'constants/supportPrograms';
 import { useModal } from 'commonUi/Modal';
 
@@ -21,6 +22,12 @@ import useSupportProgramResults from './SupportProgramResults/SupportProgramResu
 import { PageNavigation } from './PageNavigation';
 
 function SupportPrograms() {
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const handleClickPageNumber = (pageNumber) => {
+    setPageNumber(pageNumber);
+  };
+
   const filterQuery = useSupportProgramFilters();
 
   const [activeTypes, toggleTypes, filteredActiveTypes] = useClientFilter<Type>({
@@ -46,7 +53,7 @@ function SupportPrograms() {
       targetCompanyAges: filteredActiveAges,
       areas: filteredActiveAreas,
       hosts: filteredActiveHosts?.map((host) => host.id) ?? null,
-      page: null,
+      page: pageNumber,
     },
   };
 
@@ -130,7 +137,7 @@ function SupportPrograms() {
       )}
 
       <ResultSupportPrograms data={selectedSupportProgramsResultData} />
-      <PageNavigation />
+      <PageNavigation data={selectedSupportProgramsResultData} onClick={handleClickPageNumber} />
     </Styled.Wrapper>
   );
 }

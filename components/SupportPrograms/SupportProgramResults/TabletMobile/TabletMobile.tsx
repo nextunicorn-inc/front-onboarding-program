@@ -1,21 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import * as Styled from './TabletMobile.styled';
-import { SupportProgramsQuery } from '../../../../graphql';
+import { SupportProgramsQuery } from '@/graphql';
 import { Result } from './Result';
 
 function TabletMobile({ data }: { data: SupportProgramsQuery['supportPrograms'] }) {
-  const [dataCount, setDataCount] = useState(0);
-
-  useEffect(() => {
-    if (data) {
-      setDataCount(data.data.length);
-    }
-  }, [data]);
+  const possibleApplyCount = data?.paging.openedElements;
 
   return (
     <Styled.Wrapper>
       <Styled.TitleWrapper>
-        <Styled.Title>지원 가능 프로그램 {dataCount}개</Styled.Title>
+        <Styled.Title>지원 가능 프로그램 {possibleApplyCount}개</Styled.Title>
       </Styled.TitleWrapper>
 
       <Styled.ResultWrapper>

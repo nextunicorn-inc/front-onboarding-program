@@ -15,6 +15,13 @@ export const SUPPORT_PROGRAMS = gql`
           name
         }
       }
+      paging {
+        limit
+        totalPages
+        totalElements
+        openedElements
+        current
+      }
     }
   }
 `;
