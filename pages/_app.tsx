@@ -1,3 +1,5 @@
+import type { AppProps } from 'next/app';
+
 import { useState } from 'react';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -5,7 +7,6 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import '../styles/globals.css';
 import 'slick-carousel/slick/slick.css';
 
-import type { AppProps } from 'next/app';
 import { ModalProvider } from '../commonUi/Modal';
 
 function MyApp({ Component, pageProps }: AppProps) {

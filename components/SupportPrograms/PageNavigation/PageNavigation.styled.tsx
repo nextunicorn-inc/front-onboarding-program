@@ -17,7 +17,7 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
   outline: none;
   background: none;
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 8px;
   ${({ $isActive }) =>
     $isActive
       ? css`
