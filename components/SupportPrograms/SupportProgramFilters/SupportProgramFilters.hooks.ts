@@ -22,25 +22,6 @@ export function useSupportProgramFilters() {
 useSupportProgramFilters.getKeys = () => ['supportProgramFilters'];
 useSupportProgramFilters.fetcher = () => client.request<FilterOptionsQuery>(FILTER_OPTIONS);
 
-export function useSupportProgramFiltersTest(
-  select: (
-    data: FilterOptionsQuery,
-  ) => FilterOptionsQuery['filterOptions'][keyof FilterOptionsQuery['filterOptions']],
-) {
-  return useQuery<
-    FilterOptionsQuery,
-    Error,
-    FilterOptionsQuery['filterOptions'][keyof FilterOptionsQuery['filterOptions']]
-  >(useSupportProgramFilters.getKeys(), useSupportProgramFilters.fetcher, {
-    select,
-    staleTime: Infinity,
-    refetchOnWindowFocus: false,
-  });
-}
-
-useSupportProgramFiltersTest.getKeys = () => ['supportProgramFilters'];
-useSupportProgramFiltersTest.fetcher = () => client.request<FilterOptionsQuery>(FILTER_OPTIONS);
-
 type Options<T> = {
   /* 다중선택 필터 */
   multiple?: boolean;

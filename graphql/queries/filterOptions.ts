@@ -15,3 +15,19 @@ export const FILTER_OPTIONS = gql`
     }
   }
 `;
+
+export const FILTER_OPTIONS_RAW = `
+  query FilterOptions {
+    filterOptions {
+      areas
+      hosts {
+        id: companyId
+        meta: hostCompany {
+          name
+        }
+      }
+      targetCompanyAges
+      types
+    }
+  }
+`;

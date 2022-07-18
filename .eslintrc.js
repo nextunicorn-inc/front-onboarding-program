@@ -7,8 +7,8 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'import', 'prettier'],
   extends: [
+    'next',
     'airbnb',
-    'plugin:@next/next/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
   ],
