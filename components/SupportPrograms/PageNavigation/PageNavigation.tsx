@@ -16,7 +16,7 @@ function PageNavigation({ data, onClick }) {
   return (
     <Styled.Wrapper>
       {currentPageNumber !== 1 && (
-        <Styled.ArrowButtonWrapper role="button" onClick={currentPageNumber - 1}>
+        <Styled.ArrowButtonWrapper role="button" onClick={() => onClick(currentPageNumber - 1)}>
           <Chevron direction={'Left'} size={24} />
         </Styled.ArrowButtonWrapper>
       )}
@@ -32,7 +32,7 @@ function PageNavigation({ data, onClick }) {
       ))}
 
       {totalDataCount && lastPageNumber !== currentPageNumber && (
-        <Styled.ArrowButtonWrapper role="button" onClick={currentPageNumber + 1}>
+        <Styled.ArrowButtonWrapper role="button" onClick={() => onClick(currentPageNumber + 1)}>
           <Chevron direction={'Right'} size={24} />
         </Styled.ArrowButtonWrapper>
       )}

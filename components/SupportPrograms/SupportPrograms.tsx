@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 
 import { SupportProgramsQueryVariables } from '@/graphql';
@@ -22,19 +22,20 @@ import { PageNavigation } from './PageNavigation';
 import { getQueryStringValues } from '../../lib';
 
 function SupportPrograms() {
+  const wrapper = useRef<HTMLTableSectionElement | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const {
     query: { areas, targetCompanyAges, type, hosts },
   } = useRouter();
-
-  const handleClickPageNumber = (pageNumber: number) => {
-    setPageNumber(pageNumber);
-  };
-
   const gqlAreas = getQueryStringValues<Area>(areas);
   const gqlTargetCompanyAges = getQueryStringValues<TargetCompanyAge>(targetCompanyAges);
   const gqlType = getQueryStringValues<Type>(type);
   const gqlHosts = getQueryStringValues<string>(hosts);
+
+  const handleClickPageNumber = (pageNumber: number) => {
+    setPageNumber(pageNumber);
+    wrapper.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const filterQuery = useSupportProgramFilters();
 
@@ -51,7 +52,7 @@ function SupportPrograms() {
   const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
 
   return (
-    <div>
+    <Styled.Wrapper ref={wrapper}>
       {filterQuery.isSuccess && (
         <Styled.Wrapper>
           <TypeFilters />
@@ -62,9 +63,9 @@ function SupportPrograms() {
           </FilterTable>
         </Styled.Wrapper>
       )}
-      {/* <ResultSupportPrograms data={selectedSupportProgramsResultData} /> */}
+      <ResultSupportPrograms data={selectedSupportProgramsResultData} />
       <PageNavigation data={selectedSupportProgramsResultData} onClick={handleClickPageNumber} />
-    </div>
+    </Styled.Wrapper>
   );
 }
 
