@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from 'constants/supportPrograms';
 import { useModal } from 'commonUi/Modal';
-
+import smoothscroll from 'smoothscroll-polyfill';
 import * as Styled from './SupportPrograms.styled';
 
 import {
@@ -22,10 +22,12 @@ import useSupportProgramResults from './SupportProgramResults/SupportProgramResu
 import { PageNavigation } from './PageNavigation';
 
 function SupportPrograms() {
+  const wrapper = useRef<HTMLTableSectionElement | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
 
   const handleClickPageNumber = (pageNumber) => {
     setPageNumber(pageNumber);
+    wrapper.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const filterQuery = useSupportProgramFilters();
@@ -60,7 +62,7 @@ function SupportPrograms() {
   const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
 
   return (
-    <Styled.Wrapper>
+    <Styled.Wrapper ref={wrapper}>
       {filterQuery.isSuccess && (
         <>
           <TypeFilters
