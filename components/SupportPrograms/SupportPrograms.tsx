@@ -1,143 +1,68 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { TARGET_COMPANY_AGE_TEXTS, AREA_TEXTS } from 'constants/supportPrograms';
-import { useModal } from 'commonUi/Modal';
-import smoothscroll from 'smoothscroll-polyfill';
-import * as Styled from './SupportPrograms.styled';
+import { useState, useRef } from 'react';
+import { useRouter } from 'next/router';
 
+import { SupportProgramsQueryVariables } from '@/graphql';
 import {
   useSupportProgramFilters,
   TypeFilters,
-  useClientFilter,
   FilterTable,
-  FilterTableRow,
-  FilterDetail,
+  AgeFilter,
+  AreaFilter,
+  HostFilter,
 } from './SupportProgramFilters';
 
-import { identity } from './SupportPrograms.utils';
+import * as Styled from './SupportPrograms.styled';
 
-import type { Area, TargetCompanyAge, Host, Type } from './SupportProgramFilters';
-import { ResultSupportPrograms } from './SupportProgramResults';
+import type { Area, TargetCompanyAge, Type } from './SupportProgramFilters';
 
 import useSupportProgramResults from './SupportProgramResults/SupportProgramResults.hooks';
+import { ResultSupportPrograms } from './SupportProgramResults';
+
 import { PageNavigation } from './PageNavigation';
+import { getQueryStringValues } from '../../lib';
 
 function SupportPrograms() {
   const wrapper = useRef<HTMLTableSectionElement | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
+  const {
+    query: { areas, targetCompanyAges, type, hosts },
+  } = useRouter();
+  const gqlAreas = getQueryStringValues<Area>(areas);
+  const gqlTargetCompanyAges = getQueryStringValues<TargetCompanyAge>(targetCompanyAges);
+  const gqlType = getQueryStringValues<Type>(type);
+  const gqlHosts = getQueryStringValues<string>(hosts);
 
-  const handleClickPageNumber = (pageNumber) => {
+  const handleClickPageNumber = (pageNumber: number) => {
     setPageNumber(pageNumber);
     wrapper.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const filterQuery = useSupportProgramFilters();
 
-  const [activeTypes, toggleTypes, filteredActiveTypes] = useClientFilter<Type>({
-    multiple: false,
-  });
-
-  const [activeAges, toggleAges, filteredActiveAges] = useClientFilter<TargetCompanyAge>({
-    multiple: true,
-  });
-
-  const [activeAreas, toggleAreas, filteredActiveAreas] = useClientFilter<Area>({
-    multiple: true,
-  });
-
-  const [activeHosts, toggleHosts, filteredActiveHosts] = useClientFilter<Host>({
-    multiple: true,
-  });
-  const { hide } = useModal();
-
   const selectedFilter = {
     filter: {
-      type: filteredActiveTypes?.[0] ?? null,
-      targetCompanyAges: filteredActiveAges,
-      areas: filteredActiveAreas,
-      hosts: filteredActiveHosts?.map((host) => host.id) ?? null,
+      type: gqlType?.[0] ?? null,
+      targetCompanyAges: gqlTargetCompanyAges,
+      areas: gqlAreas,
+      hosts: gqlHosts,
       page: pageNumber,
     },
-  };
+  } as unknown as SupportProgramsQueryVariables;
 
   const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
 
   return (
     <Styled.Wrapper ref={wrapper}>
       {filterQuery.isSuccess && (
-        <>
-          <TypeFilters
-            allTypes={filterQuery.data.types}
-            activeTypes={activeTypes}
-            onClick={toggleTypes}
-          />
-          <FilterTable
-            ages={
-              <FilterTableRow
-                title="창업 기간"
-                toggle={toggleAges}
-                keyExtractor={identity}
-                data={filterQuery.data.targetCompanyAges}
-                activeData={activeAges}
-                renderItemText={(data) => TARGET_COMPANY_AGE_TEXTS[data]}
-                Detail={
-                  <FilterDetail
-                    title="창업 기간"
-                    toggle={toggleAges}
-                    keyExtractor={identity}
-                    data={filterQuery.data.targetCompanyAges}
-                    activeData={activeAges}
-                    renderItemText={(data) => TARGET_COMPANY_AGE_TEXTS[data]}
-                    onClose={hide}
-                  />
-                }
-              />
-            }
-            areas={
-              <FilterTableRow
-                title="지원 분야"
-                toggle={toggleAreas}
-                keyExtractor={identity}
-                data={filterQuery.data.areas}
-                activeData={activeAreas}
-                renderItemText={(data) => AREA_TEXTS[data]}
-                Detail={
-                  <FilterDetail
-                    title="지원 분야"
-                    toggle={toggleAreas}
-                    keyExtractor={identity}
-                    data={filterQuery.data.areas}
-                    activeData={activeAreas}
-                    renderItemText={(data) => AREA_TEXTS[data]}
-                    onClose={hide}
-                  />
-                }
-              />
-            }
-            hosts={
-              <FilterTableRow
-                title="주관 기관"
-                toggle={toggleHosts}
-                keyExtractor={(data) => data.id}
-                data={filterQuery.data.hosts}
-                activeData={activeHosts}
-                renderItemText={(data) => data.meta.name}
-                Detail={
-                  <FilterDetail
-                    title="주관 기관"
-                    toggle={toggleHosts}
-                    keyExtractor={(data) => data.id}
-                    data={filterQuery.data.hosts}
-                    activeData={activeHosts}
-                    renderItemText={(data) => data.meta.name}
-                    onClose={hide}
-                  />
-                }
-              />
-            }
-          />
-        </>
+        <Styled.Wrapper>
+          <TypeFilters />
+          <FilterTable>
+            <AgeFilter />
+            <AreaFilter />
+            <HostFilter />
+          </FilterTable>
+        </Styled.Wrapper>
       )}
-
       <ResultSupportPrograms data={selectedSupportProgramsResultData} />
       <PageNavigation data={selectedSupportProgramsResultData} onClick={handleClickPageNumber} />
     </Styled.Wrapper>

@@ -10,6 +10,8 @@ import {
   Header,
 } from 'components/';
 
+import { ResultSupportPrograms } from '../components/SupportPrograms/SupportProgramResults';
+
 export async function getStaticProps() {
   const queryClient = new QueryClient();
 

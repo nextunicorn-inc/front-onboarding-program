@@ -1,13 +1,13 @@
 import { useQuery } from 'react-query';
+import { SupportProgramsQueryVariables } from '@/graphql';
 import client from '../../../graphql/client';
 import { SUPPORT_PROGRAMS } from '../../../graphql/queries/supportPrograms';
-import { SupportProgramsQueryVariables } from '@/graphql';
 import { SupportProgramsQuery } from './SupportProgramResults.type';
 
-export default function useSupportProgramResults(filter: SupportProgramsQueryVariables) {
+export default function useSupportProgramResults(option: SupportProgramsQueryVariables) {
   return useQuery<SupportProgramsQuery, Error, SupportProgramsQuery['supportPrograms']>(
-    useSupportProgramResults.getKeys(filter.filter),
-    () => useSupportProgramResults.fetcher(filter),
+    useSupportProgramResults.getKeys(option.filter),
+    () => useSupportProgramResults.fetcher(option),
     {
       select: (data) => data.supportPrograms,
     },
@@ -18,5 +18,5 @@ useSupportProgramResults.getKeys = (options: SupportProgramsQueryVariables['filt
   'supportPrograms',
   options,
 ];
-useSupportProgramResults.fetcher = (filter: SupportProgramsQueryVariables) =>
-  client.request<SupportProgramsQuery, SupportProgramsQueryVariables>(SUPPORT_PROGRAMS, filter);
+useSupportProgramResults.fetcher = (option: SupportProgramsQueryVariables) =>
+  client.request<SupportProgramsQuery, SupportProgramsQueryVariables>(SUPPORT_PROGRAMS, option);
