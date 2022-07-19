@@ -11,15 +11,19 @@ type Props = {
 };
 
 function AreaFilterDetail({ title, list }: Props) {
-  const [activeAreas, toggle] = useFilterByQueryString<Area>(list, 'areas', identity);
-  const { state, toggle: toggleState } = useClientFilter<Area>(activeAreas);
+  const [activeAreas, toggle] = useFilterByQueryString<Area>({
+    list,
+    queryKey: 'areas',
+    matcher: identity,
+  });
+  const { state, toggle: toggleState } = useClientFilter<Area>(activeAreas ?? []);
   const totalSelectedAreas = state?.length || 0;
 
   return (
     <FilterDetailModal
       resetItems={toggleState(null)}
       title={title}
-      onApply={state ? toggle(state.filter(Boolean)) : toggle('all')}
+      onApply={state ? toggle(state.filter(Boolean)) : toggle(null)}
       totalSelectedItems={totalSelectedAreas}
     >
       {list.map((item) => (

@@ -1,4 +1,4 @@
-import { Host, TargetCompanyAge } from '../SupportProgramFilters.types';
+import { Host } from '../SupportProgramFilters.types';
 import { useFilterByQueryString, useClientFilter } from '../SupportProgramFilters.hooks';
 import { contain } from '../../SupportPrograms.utils';
 import FilterDetailModal from './FilterDetailModal';
@@ -11,28 +11,20 @@ type Props = {
 };
 
 function HostFilterDetail({ title, list }: Props) {
-  const [activeHosts, toggle] = useFilterByQueryString<Host>(
+  const [activeHosts, toggle] = useFilterByQueryString<Host>({
     list,
-    'hosts',
-    (data) => data.meta.name,
-  );
+    queryKey: 'hosts',
+    matcher: (data) => data.meta.name,
+  });
 
-  const { state, toggle: toggleState } = useClientFilter<Host>(activeHosts);
+  const { state, toggle: toggleState } = useClientFilter<Host>(activeHosts ?? []);
   const totalSelectedHosts = state?.length || 0;
-
-  const onApply = () => {
-    if (!state) {
-      return toggle('all')();
-    }
-
-    return toggle(state.map((item) => item.meta.name))();
-  };
 
   return (
     <FilterDetailModal
       resetItems={toggleState(null)}
       title={title}
-      onApply={onApply}
+      onApply={state ? toggle(state) : toggle(null)}
       totalSelectedItems={totalSelectedHosts}
       searchable
       Search={<HostSearch data={list} onItemClick={toggleState} selectedData={state ?? []} />}

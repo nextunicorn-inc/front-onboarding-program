@@ -9,22 +9,22 @@ import { AgeFilterDetail } from '../FilterDetail';
 
 function AgeFilter() {
   const query = useSupportProgramFilters();
-  const [activeAges, toggle] = useFilterByQueryString<TargetCompanyAge>(
-    query.data?.targetCompanyAges ?? [],
-    'targetCompanyAges',
-    identity,
-  );
+  const [activeAges, toggle] = useFilterByQueryString<TargetCompanyAge>({
+    list: query.data?.targetCompanyAges ?? [],
+    queryKey: 'targetCompanyAges',
+    matcher: identity,
+  });
 
   return (
     <Row
       RowDetail={<AgeFilterDetail title="창업 기간" list={query.data?.targetCompanyAges ?? []} />}
-      resetColumns={toggle('all')}
-      totalSelectedColumns={activeAges.length}
+      resetColumns={toggle(null)}
+      totalSelectedColumns={activeAges?.length ?? 0}
       title="창업 기간"
     >
       {query.data?.targetCompanyAges.map((item) => (
         <li key={item}>
-          <FilterItem onClick={toggle(item)} selected={activeAges.includes(item)}>
+          <FilterItem onClick={toggle(item)} selected={activeAges?.includes(item) ?? false}>
             {TARGET_COMPANY_AGE_TEXTS[item]}
           </FilterItem>
         </li>

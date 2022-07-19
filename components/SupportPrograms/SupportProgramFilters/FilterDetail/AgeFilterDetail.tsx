@@ -10,20 +10,20 @@ type Props = {
 };
 
 function AgeFilterDetail({ title, list }: Props) {
-  const [activeAges, toggle] = useFilterByQueryString<TargetCompanyAge>(
+  const [activeAges, toggle] = useFilterByQueryString<TargetCompanyAge>({
     list,
-    'targetCompanyAges',
-    identity,
-  );
+    queryKey: 'targetCompanyAges',
+    matcher: identity,
+  });
 
-  const { state, toggle: toggleState } = useClientFilter<TargetCompanyAge>(activeAges);
+  const { state, toggle: toggleState } = useClientFilter<TargetCompanyAge>(activeAges ?? []);
   const totalSelectedAges = state?.length || 0;
 
   return (
     <FilterDetailModal
       resetItems={toggleState(null)}
       title={title}
-      onApply={state ? toggle(state.filter(Boolean)) : toggle('all')}
+      onApply={state ? toggle(state.filter(Boolean)) : toggle(null)}
       totalSelectedItems={totalSelectedAges}
     >
       {list.map((item) => (

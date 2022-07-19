@@ -6,30 +6,35 @@ import { SupportProgramTypeEnum } from '@/graphql';
 import * as Styled from './TypeFilters.styled';
 
 import { Responsive } from '../SupportProgramFilters.styled';
-import { DEFAULT } from '../SupportProgramFilters.constants';
 import { Type } from '../SupportProgramFilters.types';
-import { useFilterByQueryString, useSupportProgramFilters } from '../SupportProgramFilters.hooks';
+import { useSupportProgramFilters, useFilterByQueryString } from '../SupportProgramFilters.hooks';
 import { identity } from '../../SupportPrograms.utils';
 
 function TypeFilters() {
   const query = useSupportProgramFilters();
-  const [activeTypes, _, chooseForce] = useFilterByQueryString<Type>(
-    query.data?.types ?? [],
-    'type',
-    identity,
-  );
+  const [activeTypes, toggle] = useFilterByQueryString<Type>({
+    list: query.data?.types ?? [],
+    queryKey: 'type',
+    matcher: identity,
+    onlySingleValue: true,
+  });
   const isMobile = useMediaQuery('(max-width: 767px)');
 
   return (
     <Responsive>
       <Styled.TypeFilterList role="list">
-        {[...DEFAULT, ...(query.data?.types ?? [])].map((type, index) => {
-          const isAllButton = type === 'all';
-          const isActive = isAllButton ? activeTypes.length === 0 : activeTypes.includes(type);
+        <Styled.TypeFilterItem $active={!activeTypes} key="all">
+          <button type="button" onClick={toggle(null)}>
+            {SUPPORT_PROGRAM_TYPE_TEXTS.all}
+          </button>
+          <Styled.TypeFilterNoticeLine $active={!activeTypes} />
+        </Styled.TypeFilterItem>
+        {query.data?.types.map((type, index) => {
+          const isActive = !!activeTypes && activeTypes.map(identity).includes(type);
 
           return (
             <Styled.TypeFilterItem $active={isActive} key={type}>
-              <button type="button" onClick={chooseForce(isAllButton ? 'all' : type)}>
+              <button type="button" onClick={toggle(type)}>
                 {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
                 {type === SupportProgramTypeEnum.Snl &&
                   (isMobile ? <Thunder size={15} /> : <Thunder size={26} />)}
