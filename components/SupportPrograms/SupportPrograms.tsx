@@ -22,7 +22,7 @@ import { PageNavigation } from './PageNavigation';
 import { getQueryStringValues } from '../../lib';
 
 function SupportPrograms() {
-  const wrapper = useRef<HTMLTableSectionElement | null>(null);
+  const wrapper = useRef<HTMLLIElement | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const {
     query: { areas, targetCompanyAges, type, hosts },
