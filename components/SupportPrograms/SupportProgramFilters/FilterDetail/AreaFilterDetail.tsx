@@ -1,4 +1,5 @@
-import { Area, TargetCompanyAge } from '../SupportProgramFilters.types';
+import { AREA_TEXTS } from 'constants/supportPrograms';
+import { Area } from '../SupportProgramFilters.types';
 import { useFilterByQueryString, useClientFilter } from '../SupportProgramFilters.hooks';
 import { identity } from '../../SupportPrograms.utils';
 import FilterDetailModal from './FilterDetailModal';
@@ -24,7 +25,7 @@ function AreaFilterDetail({ title, list }: Props) {
       {list.map((item) => (
         <li key={item}>
           <FilterItem onClick={toggleState(item)} selected={state?.includes(item) ?? false}>
-            {item}
+            {AREA_TEXTS[item]}
           </FilterItem>
         </li>
       ))}

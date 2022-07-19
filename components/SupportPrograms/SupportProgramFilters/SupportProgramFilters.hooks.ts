@@ -75,7 +75,7 @@ export function useFilterByQueryString<T>(
   const toggle = (nextQueryValue: string | string[]) => () => {
     if (nextQueryValue === 'all') {
       delete router.query[queryKey];
-      router.replace(
+      return router.replace(
         {
           pathname: router.pathname,
           // query: router.query,
@@ -84,11 +84,10 @@ export function useFilterByQueryString<T>(
         undefined,
         { shallow: true, scroll: false },
       );
-      return;
     }
 
     if (!queryValue) {
-      router.replace(
+      return router.replace(
         {
           pathname: router.pathname,
           query: { ...router.query, [queryKey]: nextQueryValue },
@@ -96,12 +95,10 @@ export function useFilterByQueryString<T>(
         undefined,
         { shallow: true, scroll: false },
       );
-
-      return;
     }
 
     if (Array.isArray(nextQueryValue)) {
-      router.replace(
+      return router.replace(
         {
           pathname: router.pathname,
           query: { ...router.query, [queryKey]: nextQueryValue },
@@ -112,7 +109,6 @@ export function useFilterByQueryString<T>(
           scroll: false,
         },
       );
-      return;
     }
 
     const shouldDelete =
