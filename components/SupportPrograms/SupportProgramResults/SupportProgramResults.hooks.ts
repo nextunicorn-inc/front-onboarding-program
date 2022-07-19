@@ -10,6 +10,7 @@ export default function useSupportProgramResults(option: SupportProgramsQueryVar
     () => useSupportProgramResults.fetcher(option),
     {
       select: (data) => data.supportPrograms,
+      keepPreviousData: true,
     },
   );
 }
