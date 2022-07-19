@@ -14,7 +14,7 @@ function HostFilterDetail({ title, list }: Props) {
   const [activeHosts, toggle] = useFilterByQueryString<Host>({
     list,
     queryKey: 'hosts',
-    matcher: (data) => data.meta.name,
+    matcher: (data) => data.id,
   });
 
   const { state, toggle: toggleState } = useClientFilter<Host>(activeHosts ?? []);

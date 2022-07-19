@@ -9,7 +9,7 @@ function HostFilter() {
   const [activeHostInfo, toggle] = useFilterByQueryString<Host>({
     list: query.data?.hosts ?? [],
     queryKey: 'hosts',
-    matcher: (data) => data.meta.name,
+    matcher: (data) => data.id,
   });
 
   return (
