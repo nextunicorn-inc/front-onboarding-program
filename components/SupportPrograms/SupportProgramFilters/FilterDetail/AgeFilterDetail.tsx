@@ -15,29 +15,20 @@ function AgeFilterDetail({ title, list }: Props) {
     'targetCompanyAges',
     identity,
   );
-  const [state, toggleState] = useClientFilter<TargetCompanyAge>({
-    multiple: true,
-    defaultValue: activeAges,
-  });
 
-  const totalActiveState = state.length === 1 && state[0] === 'all' ? 0 : state.length;
-  const onApply = () => {
-    if (state.includes('all')) {
-      return toggle('all')();
-    }
-    return toggle(state.filter((v) => v !== 'all'))();
-  };
+  const { state, toggle: toggleState } = useClientFilter<TargetCompanyAge>(activeAges);
+  const totalSelectedAges = state?.length || 0;
 
   return (
     <FilterDetailModal
-      resetItems={toggleState('all')}
+      resetItems={toggleState(null)}
       title={title}
-      onApply={onApply}
-      totalSelectedItems={totalActiveState}
+      onApply={state ? toggle(state.filter(Boolean)) : toggle('all')}
+      totalSelectedItems={totalSelectedAges}
     >
       {list.map((item) => (
         <li key={item}>
-          <FilterItem onClick={toggleState(item)} selected={state.includes(item)}>
+          <FilterItem onClick={toggleState(item)} selected={state?.includes(item) ?? false}>
             {item}
           </FilterItem>
         </li>

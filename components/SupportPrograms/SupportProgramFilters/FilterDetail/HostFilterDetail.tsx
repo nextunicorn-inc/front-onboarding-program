@@ -1,5 +1,5 @@
-import { Host } from '../SupportProgramFilters.types';
-import { useClientFilter, useFilterByQueryString } from '../SupportProgramFilters.hooks';
+import { Host, TargetCompanyAge } from '../SupportProgramFilters.types';
+import { useFilterByQueryString, useClientFilter } from '../SupportProgramFilters.hooks';
 import { contain } from '../../SupportPrograms.utils';
 import FilterDetailModal from './FilterDetailModal';
 import FilterItem from '../FilterItem';
@@ -17,37 +17,29 @@ function HostFilterDetail({ title, list }: Props) {
     (data) => data.meta.name,
   );
 
-  const [state, toggleState] = useClientFilter<Host>({
-    multiple: true,
-    defaultValue: activeHosts,
-  });
-  const totalActiveState = state.length === 1 && state[0] === 'all' ? 0 : state.length;
+  const { state, toggle: toggleState } = useClientFilter<Host>(activeHosts);
+  const totalSelectedHosts = state?.length || 0;
 
   const onApply = () => {
-    if (state.includes('all')) {
+    if (!state) {
       return toggle('all')();
     }
 
-    // TODO: Refactor to enforce type safety
-
-    const filteredValues = state.filter((item) => item !== 'all') as Host[];
-    const mappedValues = filteredValues.map((item) => item.meta.name);
-
-    return toggle(mappedValues)();
+    return toggle(state.map((item) => item.meta.name))();
   };
 
   return (
     <FilterDetailModal
-      resetItems={toggleState('all')}
+      resetItems={toggleState(null)}
       title={title}
       onApply={onApply}
-      totalSelectedItems={totalActiveState}
+      totalSelectedItems={totalSelectedHosts}
       searchable
-      Search={<HostSearch data={list} onItemClick={toggleState} selectedData={state} />}
+      Search={<HostSearch data={list} onItemClick={toggleState} selectedData={state ?? []} />}
     >
       {list.map((item) => (
         <li key={item.id}>
-          <FilterItem onClick={toggleState(item)} selected={contain(state, item)}>
+          <FilterItem onClick={toggleState(item)} selected={contain(state ?? [], item)}>
             {item.meta.name}
           </FilterItem>
         </li>

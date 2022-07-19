@@ -1,5 +1,5 @@
-import { Area } from '../SupportProgramFilters.types';
-import { useClientFilter, useFilterByQueryString } from '../SupportProgramFilters.hooks';
+import { Area, TargetCompanyAge } from '../SupportProgramFilters.types';
+import { useFilterByQueryString, useClientFilter } from '../SupportProgramFilters.hooks';
 import { identity } from '../../SupportPrograms.utils';
 import FilterDetailModal from './FilterDetailModal';
 import FilterItem from '../FilterItem';
@@ -11,29 +11,19 @@ type Props = {
 
 function AreaFilterDetail({ title, list }: Props) {
   const [activeAreas, toggle] = useFilterByQueryString<Area>(list, 'areas', identity);
-  const [state, toggleState] = useClientFilter<Area>({
-    multiple: true,
-    defaultValue: activeAreas,
-  });
-
-  const totalActiveState = state.length === 1 && state[0] === 'all' ? 0 : state.length;
-  const onApply = () => {
-    if (state.includes('all')) {
-      return toggle('all')();
-    }
-    return toggle(state.filter((v) => v !== 'all'))();
-  };
+  const { state, toggle: toggleState } = useClientFilter<Area>(activeAreas);
+  const totalSelectedAreas = state?.length || 0;
 
   return (
     <FilterDetailModal
-      resetItems={toggleState('all')}
+      resetItems={toggleState(null)}
       title={title}
-      onApply={onApply}
-      totalSelectedItems={totalActiveState}
+      onApply={state ? toggle(state.filter(Boolean)) : toggle('all')}
+      totalSelectedItems={totalSelectedAreas}
     >
       {list.map((item) => (
         <li key={item}>
-          <FilterItem onClick={toggleState(item)} selected={state.includes(item)}>
+          <FilterItem onClick={toggleState(item)} selected={state?.includes(item) ?? false}>
             {item}
           </FilterItem>
         </li>
