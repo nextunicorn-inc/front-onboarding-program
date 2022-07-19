@@ -27,6 +27,7 @@ function SupportPrograms() {
   const {
     query: { areas, targetCompanyAges, type, hosts },
   } = useRouter();
+
   const gqlAreas = getQueryStringValues<Area>(areas);
   const gqlTargetCompanyAges = getQueryStringValues<TargetCompanyAge>(targetCompanyAges);
   const gqlType = getQueryStringValues<Type>(type);

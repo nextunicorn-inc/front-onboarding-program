@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Chevron } from 'commonUi/Icons';
 import * as Styled from './SupportProgramBanners.styled';
 
 import { useInterval } from './SupportProgramBanners.hooks';
+import { INTERVAL_DELAY, MAXIMUM_PROGRESS, TIMEOUT_DELAY } from './SupportProgramBanners.constants';
 
 type Props = {
   currentIndex: number;
@@ -22,7 +23,7 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
     setProgress(0);
   };
 
-  const move = (type: 'prev' | 'next', delay = 500) => {
+  const move = (type: 'prev' | 'next', delay = TIMEOUT_DELAY) => {
     resetProgress();
     setTimeout(() => {
       onClick(type);
@@ -31,13 +32,13 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
 
   useInterval(
     () => {
-      if (progress === 100) {
+      if (progress === MAXIMUM_PROGRESS) {
         move('next');
         return;
       }
       setProgress((prev) => prev + 1);
     },
-    stop ? null : 50,
+    stop ? null : INTERVAL_DELAY,
   );
 
   useEffect(() => {
@@ -46,7 +47,7 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
       resetProgress();
       setTimeout(() => {
         setStart(true);
-      }, 500);
+      }, TIMEOUT_DELAY);
     }
   }, [progress, currentIndex]);
 

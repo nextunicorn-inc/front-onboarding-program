@@ -5,12 +5,12 @@ import * as Styled from './HostSearch.styled';
 
 import { contain } from '../../SupportPrograms.utils';
 
-import type { Host, WithAll } from '../SupportProgramFilters.types';
+import type { Host } from '../SupportProgramFilters.types';
 
 type Props = {
   data: Host[];
-  onItemClick: (val: Host) => () => void;
-  selectedData: WithAll<Host>[];
+  onItemClick: (val: Host | Host[] | null) => () => void;
+  selectedData: Host[];
 };
 
 function HostSearch({ data, selectedData = [], onItemClick }: Props) {

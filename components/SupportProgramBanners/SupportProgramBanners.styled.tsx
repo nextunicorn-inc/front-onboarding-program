@@ -114,6 +114,12 @@ export const ButtonWrapper = styled.div`
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
+  & > button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+
   & > svg {
     cursor: pointer;
   }
