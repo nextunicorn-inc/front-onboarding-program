@@ -50,7 +50,6 @@ function SupportPrograms() {
   } as unknown as SupportProgramsQueryVariables;
 
   const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
-
   return (
     <Styled.Wrapper ref={wrapper}>
       {filterQuery.isSuccess && (

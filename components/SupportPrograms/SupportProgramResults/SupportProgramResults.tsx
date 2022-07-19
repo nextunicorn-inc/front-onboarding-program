@@ -1,7 +1,7 @@
 import React from 'react';
+import { SupportProgramsQuery } from '@/graphql';
 import { PC } from './PC';
 import { TabletMobile } from './TabletMobile';
-import { SupportProgramsQuery } from '@/graphql';
 
 function SupportProgramResults({ data }: { data: SupportProgramsQuery['supportPrograms'] }) {
   return (

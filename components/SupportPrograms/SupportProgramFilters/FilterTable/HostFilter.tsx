@@ -9,7 +9,7 @@ function HostFilter() {
   const [activeHostInfo, toggle] = useFilterByQueryString<Host>(
     query.data?.hosts ?? [],
     'hosts',
-    (data) => data.meta.name,
+    (data) => data.id,
   );
 
   const activeHostNames = activeHostInfo.map((v) => v.meta.name);
@@ -23,7 +23,7 @@ function HostFilter() {
     >
       {query.data?.hosts.map(({ id, meta: { name } }) => (
         <li key={id}>
-          <FilterItem onClick={toggle(name)} selected={activeHostNames.includes(name)}>
+          <FilterItem onClick={toggle(id)} selected={activeHostNames.includes(name)}>
             {name}
           </FilterItem>
         </li>
