@@ -39,6 +39,7 @@ export const Navigation = styled.nav`
   border-bottom: 1px solid var(--color-naturalgray2);
 
   ${MediaQuery.mobile} {
+    justify-content: center;
     padding-bottom: 24px;
     margin-bottom: 0;
     border-bottom: none;
@@ -76,7 +77,7 @@ export const MenuTitle = styled.h2`
   margin-bottom: 10px;
 `;
 
-export const Link = styled.a`
+export const MenuLink = styled.a`
   display: block;
   width: max-content;
   ${FontSize.size14};
@@ -87,22 +88,25 @@ export const CompanyInformation = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  margin-bottom: 16px;
+
   ${FontSize.size12};
 
   ${MediaQuery.mobile} {
+    margin-bottom: 25.5px;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 25.5px;
   }
 `;
 
 export const Contact = styled.address`
   font-style: normal;
-  margin-bottom: 16px;
 
   ${MediaQuery.mobile} {
     display: flex;
     margin-bottom: 17.5px;
+
     & > div {
       display: flex;
       flex-direction: column;
@@ -126,11 +130,19 @@ export const ContactSeparator = styled.span`
 
 export const SocialNetworks = styled.nav`
   display: inline-flex;
-  gap: 11px;
   align-items: center;
 
   ${MediaQuery.mobile} {
     gap: 15px;
+  }
+`;
+
+export const SocialNetworkLink = styled.a`
+  width: 24px;
+  height: 24px;
+  display: block;
+  &:not(:first-of-type) {
+    margin-left: 11px;
   }
 `;
 
@@ -169,11 +181,14 @@ export const Notice = styled.p`
   width: 675px;
   ${FontSize.size14};
   color: var(--color-naturalgray5);
+  white-space: pre-wrap;
 
   ${MediaQuery.mobile} {
     width: 100%;
-    padding-top: 16px;
+
+    padding: 16px 13px 0 13px;
+    ${FontSize.size12};
     text-align: center;
-    border-top: 1px solid var(--color-naturalgray2);
+    border-top: 1px solid var(--color-naturalgray3);
   }
 `;

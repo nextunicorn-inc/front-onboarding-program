@@ -8,6 +8,6 @@ export const Backdrop = styled.div`
   height: 100vh;
   position: fixed;
   inset: 0;
-  z-index: 8;
+  z-index: 11;
   background-color: hsla(0, 0%, 0%, 0.4);
 `;

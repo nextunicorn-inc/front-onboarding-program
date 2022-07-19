@@ -28,7 +28,11 @@ function AreaFilterDetail({ title, list }: Props) {
     >
       {list.map((item) => (
         <li key={item}>
-          <FilterItem onClick={toggleState(item)} selected={state?.includes(item) ?? false}>
+          <FilterItem
+            opacity={0.6}
+            onClick={toggleState(item)}
+            selected={state?.includes(item) ?? false}
+          >
             {AREA_TEXTS[item]}
           </FilterItem>
         </li>

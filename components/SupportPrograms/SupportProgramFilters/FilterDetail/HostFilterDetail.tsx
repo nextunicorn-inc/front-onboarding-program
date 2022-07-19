@@ -31,7 +31,11 @@ function HostFilterDetail({ title, list }: Props) {
     >
       {list.map((item) => (
         <li key={item.id}>
-          <FilterItem onClick={toggleState(item)} selected={contain(state ?? [], item)}>
+          <FilterItem
+            opacity={0.6}
+            onClick={toggleState(item)}
+            selected={contain(state ?? [], item)}
+          >
             {item.meta.name}
           </FilterItem>
         </li>

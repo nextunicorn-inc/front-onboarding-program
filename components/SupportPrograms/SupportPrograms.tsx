@@ -55,14 +55,14 @@ function SupportPrograms() {
   return (
     <Styled.Wrapper ref={wrapper}>
       {filterQuery.isSuccess && (
-        <Styled.Wrapper>
+        <>
           <TypeFilters />
           <FilterTable>
             <AgeFilter />
             <AreaFilter />
             <HostFilter />
           </FilterTable>
-        </Styled.Wrapper>
+        </>
       )}
       <ResultSupportPrograms data={selectedSupportProgramsResultData} />
       <PageNavigation data={selectedSupportProgramsResultData} onClick={handleClickPageNumber} />

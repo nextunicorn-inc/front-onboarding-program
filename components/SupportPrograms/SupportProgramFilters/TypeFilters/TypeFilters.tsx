@@ -12,13 +12,15 @@ import { identity } from '../../SupportPrograms.utils';
 
 function TypeFilters() {
   const query = useSupportProgramFilters();
+
   const [activeTypes, toggle] = useFilterByQueryString<Type>({
     list: query.data?.types ?? [],
     queryKey: 'type',
     matcher: identity,
     onlySingleValue: true,
   });
-  const isMobile = useMediaQuery('(max-width: 767px)');
+
+  const isMobile = useMediaQuery('(max-width: 1023px)');
 
   return (
     <Responsive>
@@ -31,13 +33,18 @@ function TypeFilters() {
         </Styled.TypeFilterItem>
         {query.data?.types.map((type, index) => {
           const isActive = !!activeTypes && activeTypes.map(identity).includes(type);
+          const opacity = isActive ? 1 : 0.4;
 
           return (
             <Styled.TypeFilterItem $active={isActive} key={type}>
               <button type="button" onClick={toggle(type)}>
                 {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
                 {type === SupportProgramTypeEnum.Snl &&
-                  (isMobile ? <Thunder size={15} /> : <Thunder size={26} />)}
+                  (isMobile ? (
+                    <Thunder size={15} opacity={opacity} />
+                  ) : (
+                    <Thunder size={26} opacity={opacity} />
+                  ))}
               </button>
               <Styled.TypeFilterNoticeLine $active={isActive} />
             </Styled.TypeFilterItem>

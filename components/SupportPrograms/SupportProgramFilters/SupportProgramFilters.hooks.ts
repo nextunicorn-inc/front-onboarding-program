@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { dequal } from 'dequal';
 
 import { client, FILTER_OPTIONS } from '@/graphql';
 
-import type { WithAll, FilterOptionsQuery } from './SupportProgramFilters.types';
-import { contain } from '../SupportPrograms.utils';
+import type { FilterOptionsQuery } from './SupportProgramFilters.types';
 
 export function useSupportProgramFilters() {
   return useQuery<FilterOptionsQuery, Error, FilterOptionsQuery['filterOptions']>(
@@ -72,30 +71,27 @@ export function useFilterByQueryString<T>({
 }: Params<T>) {
   const router = useRouter();
   const queryValue = router.query[queryKey];
-  const isMountedRef = useRef(false);
 
   const [state, setState] = useState<T[] | null>(() => {
     if (!queryValue) {
       return null;
     }
 
-    return list.filter((item) => {
-      if (typeof item === 'string') {
-        return matcher(item) === queryValue;
-      }
-      return queryValue.includes(matcher(item));
-    });
+    return list.filter((item) => queryValue.includes(matcher(item)));
   });
 
   useEffect(() => {
-    if (!router.isReady || isMountedRef.current) {
+    if (!router.isReady) {
       return;
     }
-    isMountedRef.current = true;
 
     setState(() => {
       if (!queryValue) {
         return null;
+      }
+
+      if (typeof queryValue === 'string') {
+        return list.filter((item) => matcher(item) === queryValue);
       }
 
       return list.filter((item) => queryValue.includes(matcher(item)));
@@ -105,10 +101,6 @@ export function useFilterByQueryString<T>({
   const toggle = (nextQueryValue: T | T[] | null) => () => {
     if (nextQueryValue === null) {
       delete router.query[queryKey];
-      if (state === null) {
-        return;
-      }
-
       setState(null);
       return router.replace(
         {

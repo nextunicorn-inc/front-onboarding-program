@@ -2,8 +2,6 @@ import { AreaEnum, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '@/graphq
 
 export type WithAll<T> = T | 'all';
 
-export type SupportProgramTypes = WithAll<SupportProgramTypeEnum>[];
-
 export type FilterOptionsQuery = {
   filterOptions: {
     areas: Array<AreaEnum>;

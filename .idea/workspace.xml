@@ -3,15 +3,38 @@
   <component name="ChangeListManager">
     <list default="true" id="875d75cc-3de5-47e4-91f1-fa2bb25df868" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonUi/Icons/Chevron/Chervon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/Chevron/Chervon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonUi/Icons/Chevron/down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/Chevron/24/down.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonUi/Icons/Chevron/left.svg" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/Chevron/24/left.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonUi/Icons/Chevron/right.svg" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/Chevron/24/right.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonUi/Icons/Chevron/up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/Chevron/24/up.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportProgramBanners/Indicator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportProgramBanners/Indicator/Indicator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.styled.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Icons/Check/Check.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/Check/Check.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Icons/Check/active.svg" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/Check/active.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Icons/Check/inactive.svg" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/Check/inactive.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Icons/NextUnicorn/NextUnicorn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/NextUnicorn/NextUnicorn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Icons/Thunder/Thunder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Icons/Thunder/Thunder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commonUi/Modal/Modal.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/commonUi/Modal/Modal.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CTASection/CTASection.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CTASection/CTASection.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CTASection/CTASection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CTASection/CTASection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer/Footer.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer/Footer.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/AgeFilterDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/AgeFilterDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/AreaFilterDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/AreaFilterDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetailModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetailModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/HostFilterDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/HostFilterDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/AgeFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/AgeFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/AreaFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/AreaFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/FilterTable.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/FilterTable.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/HostFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/HostFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/Row.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/Row.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.constants.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.hooks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.hooks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/TypeFilters/TypeFilters.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/TypeFilters/TypeFilters.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/TypeFilters/TypeFilters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/TypeFilters/TypeFilters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/supportPrograms.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/supportPrograms.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/validateFilterOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/validateFilterOptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/MediaQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/MediaQuery.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +132,7 @@
       <workItem from="1658029660400" duration="17009000" />
       <workItem from="1658106750086" duration="22918000" />
       <workItem from="1658193090299" duration="11816000" />
-      <workItem from="1658207665296" duration="5376000" />
+      <workItem from="1658207665296" duration="21000000" />
     </task>
     <servers />
   </component>
@@ -162,10 +185,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/FilterTableRow.tsx</url>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.styled.tsx</url>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

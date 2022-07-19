@@ -8,21 +8,23 @@ function Footer() {
     <Styled.Layout>
       <Styled.ResponsiveSection>
         <Styled.Navigation>
-          <NextUnicornLogo primary={false} />
+          <a href="https://www.nextunicorn.kr" target="_blank" rel="noreferrer">
+            <NextUnicornLogo primary={false} color="var(--color-unicorngray6)" />
+          </a>
           <Styled.MenuList>
             {NAVIGATIONS.map((navigation) => (
               <li key={navigation.title}>
                 <Styled.MenuTitle>{navigation.title}</Styled.MenuTitle>
                 <ul>
                   {navigation.routes.map((route) => (
-                    <Styled.Link
+                    <Styled.MenuLink
                       href={route.href}
                       target="_blank"
                       rel="noreferrer"
                       key={route.title}
                     >
                       {route.title}
-                    </Styled.Link>
+                    </Styled.MenuLink>
                   ))}
                 </ul>
               </li>
@@ -49,14 +51,14 @@ function Footer() {
             {SOCIAL_NETWORKS.map((socialNetwork) => {
               const { Icon } = socialNetwork;
               return (
-                <a
+                <Styled.SocialNetworkLink
                   key={socialNetwork.title}
                   href={socialNetwork.href}
                   target="_blank"
                   rel="noreferrer"
                 >
                   <Icon width={24} height={24} color="var(--color-naturalgray4)" />
-                </a>
+                </Styled.SocialNetworkLink>
               );
             })}
           </Styled.SocialNetworks>

@@ -3,7 +3,7 @@ import { MediaQuery } from '../../utils';
 
 export const Wrapper = styled.section`
   width: 100%;
-  padding-top: 60px;
+  padding-top: 68px;
   background-color: var(--color-bluegray0);
 
   ${MediaQuery.tablet} {

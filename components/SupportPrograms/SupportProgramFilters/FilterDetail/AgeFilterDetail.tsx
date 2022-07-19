@@ -1,6 +1,8 @@
+import { TARGET_COMPANY_AGE_TEXTS } from 'constants/supportPrograms';
 import { TargetCompanyAge } from '../SupportProgramFilters.types';
 import { useClientFilter, useFilterByQueryString } from '../SupportProgramFilters.hooks';
 import { identity } from '../../SupportPrograms.utils';
+
 import FilterDetailModal from './FilterDetailModal';
 import FilterItem from '../FilterItem';
 
@@ -17,6 +19,7 @@ function AgeFilterDetail({ title, list }: Props) {
   });
 
   const { state, toggle: toggleState } = useClientFilter<TargetCompanyAge>(activeAges ?? []);
+
   const totalSelectedAges = state?.length || 0;
 
   return (
@@ -28,8 +31,12 @@ function AgeFilterDetail({ title, list }: Props) {
     >
       {list.map((item) => (
         <li key={item}>
-          <FilterItem onClick={toggleState(item)} selected={state?.includes(item) ?? false}>
-            {item}
+          <FilterItem
+            opacity={0.6}
+            onClick={toggleState(item)}
+            selected={state?.includes(item) ?? false}
+          >
+            {TARGET_COMPANY_AGE_TEXTS[item]}
           </FilterItem>
         </li>
       ))}
