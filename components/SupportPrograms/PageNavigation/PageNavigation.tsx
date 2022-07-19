@@ -1,11 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import * as Styled from './PageNavigation.styled';
 import { Chevron } from '../../../commonUi/Icons';
 
 function PageNavigation({ data, onClick }) {
+  const router = useRouter();
+
   const totalDataCount = data?.paging.totalElements;
   const lastPageNumber = data?.paging.totalPages;
-  const currentPageNumber = data?.paging.current ?? 1;
+  const currentPageNumber = parseInt(router.query.page ?? 1, 10);
 
   const totalPages = data?.paging.totalPages;
 

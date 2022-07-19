@@ -4,7 +4,7 @@ import client from '../../../graphql/client';
 import { SUPPORT_PROGRAMS } from '../../../graphql/queries/supportPrograms';
 import { SupportProgramsQuery } from './SupportProgramResults.type';
 
-export default function useSupportProgramResults(option: SupportProgramsQueryVariables) {
+export function useSupportProgramResults(option: SupportProgramsQueryVariables) {
   return useQuery<SupportProgramsQuery, Error, SupportProgramsQuery['supportPrograms']>(
     useSupportProgramResults.getKeys(option.filter),
     () => useSupportProgramResults.fetcher(option),

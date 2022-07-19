@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="875d75cc-3de5-47e4-91f1-fa2bb25df868" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/HostFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/HostFilter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/PageNavigation/PageNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/PageNavigation/PageNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/validateFilterOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/validateFilterOptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +105,7 @@
       <workItem from="1658029660400" duration="17009000" />
       <workItem from="1658106750086" duration="22918000" />
       <workItem from="1658138885595" duration="743000" />
-      <workItem from="1658193428344" duration="9027000" />
+      <workItem from="1658193428344" duration="24056000" />
     </task>
     <servers />
   </component>
