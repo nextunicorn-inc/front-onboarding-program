@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="875d75cc-3de5-47e4-91f1-fa2bb25df868" name="Changes" comment="">
+    <list default="true" id="7a3571d6-d949-4cd1-82eb-059f25e96a64" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/PageNavigation/PageNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/PageNavigation/PageNavigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportPrograms.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/validateFilterOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/validateFilterOptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportProgramBanners/Indicator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportProgramBanners/Indicator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportProgramBanners/SupportProgramBanners.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/AgeFilterDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/AgeFilterDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/AreaFilterDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/AreaFilterDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/HostFilterDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/HostFilterDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/AgeFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/AgeFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/AreaFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/AreaFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/HostFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/HostFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/HostSearch/HostSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/HostSearch/HostSearch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.hooks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/SupportProgramFilters.hooks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/TypeFilters/TypeFilters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/TypeFilters/TypeFilters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useMediaQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useMediaQuery.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +171,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks.ts</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>

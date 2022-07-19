@@ -9,7 +9,7 @@ import {
   FeaturedSupportPrograms,
   SupportPrograms,
   Header,
-} from 'components/';
+} from 'components';
 
 import { useSupportProgramResults } from '../components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks';
 
