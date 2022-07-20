@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { MediaQuery, FontSize, FontWeight } from 'utils';
+import { MediaQuery, FontSize, FontWeight, LineClamp } from 'utils';
 
 export const Container = styled.section`
   margin-bottom: 48px;
@@ -44,7 +44,7 @@ export const Description = styled.div`
   padding-top: 56px;
   text-align: left;
 
-  @media screen and (max-width: 1023px) {
+  ${MediaQuery.tablet} {
     padding-top: 60px;
   }
 
@@ -56,22 +56,27 @@ export const Description = styled.div`
 export const SubTitle = styled.p<{ $color: string }>`
   margin-bottom: 8px;
   color: ${({ $color }) => $color};
-  ${FontWeight.medium};
+  ${FontWeight.regular};
   ${FontSize.size18};
 
-  @media screen and (max-width: 1023px) {
+  ${MediaQuery.tablet} {
+    ${FontWeight.medium};
     ${FontSize.size14};
     margin-bottom: 4px;
   }
 `;
 
 export const Title = styled.p<{ $color: string }>`
+  max-width: 347px;
   color: ${({ $color }) => $color};
   letter-spacing: -0.002em;
   ${FontWeight.bold};
   ${FontSize.size24};
+  ${LineClamp(2)};
+  word-break: keep-all;
 
-  @media screen and (max-width: 1023px) {
+  ${MediaQuery.tablet} {
+    max-width: 224px;
     ${FontSize.size18};
   }
 `;

@@ -13,14 +13,14 @@ export const IndicatorOuter = styled.div`
     padding: 0 32px;
   }
 
-  @media screen and (max-width: 1023px) {
+  ${MediaQuery.tablet} {
     height: 21px;
     /*buttonHeight(21px) bottomPadding(20px)*/
     bottom: 41px;
   }
 
   ${MediaQuery.mobile} {
-    padding-left: 20px;
+    padding: 0 20px;
   }
 `;
 
@@ -35,44 +35,42 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
 
   background-color: white;
   border-radius: 2px 2px 0 0;
 
-  @media screen and (max-width: 1023px) {
-    gap: 0;
+  ${MediaQuery.tablet} {
+    padding: 3px 8px;
     background-color: hsla(var(--base-naturalgray9), 0.5);
     border-radius: 1px 1px 0 0;
-    padding: 3px 8px;
   }
 
   & > button {
-    padding: 0;
-    border: none;
-    background-color: transparent;
     cursor: pointer;
     height: 20px;
 
-    @media screen and (max-width: 1023px) {
+    ${MediaQuery.tablet} {
       display: none;
     }
   }
 
   & > span {
+    display: block;
+    margin: 0 12px;
     ${FontSize.size12};
     ${FontWeight.regular};
     color: var(--color-naturalgray7);
 
-    @media screen and (max-width: 1023px) {
-      color: #fefefe;
+    ${MediaQuery.tablet} {
+      margin: 0;
+      color: var(--color-naturalgray0);
       font-size: 8px;
       line-height: 14px;
     }
 
     & > b {
       ${FontWeight.medium};
-      @media screen and (max-width: 1023px) {
+      ${MediaQuery.tablet} {
         ${FontWeight.bold};
       }
     }
@@ -87,22 +85,21 @@ export const ProgressbarWrapper = styled.div`
   border-radius: 0 0 5px 5px;
   overflow: hidden;
 
-  @media screen and (max-width: 1023px) {
+  ${MediaQuery.tablet} {
     background-color: hsla(var(--base-naturalgray9), 0.7);
     border-radius: 0 0 2px 2px;
   }
 `;
 
-export const ProgressBar = styled.div<{ progress: number }>`
+export const ProgressBar = styled.div`
   position: absolute;
   inset: 0;
   background-color: var(--color-bluegray7);
   border-radius: 0 0 0 5px;
 
   transition: all 250ms linear;
-  transform: translateX(${({ progress }) => -100 + progress}%);
 
-  @media screen and (max-width: 1023px) {
+  ${MediaQuery.tablet} {
     background-color: #ffffff;
     border-radius: 0 0 0 2px;
   }

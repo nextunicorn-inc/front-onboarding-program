@@ -41,7 +41,7 @@ function SupportProgramBanners() {
                   {supportProgramBanner.subTitle}
                 </Styled.SubTitle>
                 <Styled.Title $color={supportProgramBanner.titleColor}>
-                  {supportProgramBanner.title}
+                  {`${supportProgramBanner.title} ${supportProgramBanner.title} ${supportProgramBanner.title}`}
                 </Styled.Title>
               </Styled.Description>
               <Styled.BannerImage

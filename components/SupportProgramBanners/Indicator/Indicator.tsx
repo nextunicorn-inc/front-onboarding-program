@@ -75,7 +75,11 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
           </button>
         </Styled.ButtonWrapper>
         <Styled.ProgressbarWrapper>
-          <Styled.ProgressBar progress={progress} />
+          <Styled.ProgressBar
+            style={{
+              transform: `translateX(${-100 + progress}%)`,
+            }}
+          />
         </Styled.ProgressbarWrapper>
       </Styled.IndicatorInner>
     </Styled.IndicatorOuter>
