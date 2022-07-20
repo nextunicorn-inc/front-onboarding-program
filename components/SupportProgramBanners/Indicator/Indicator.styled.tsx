@@ -9,8 +9,8 @@ export const IndicatorOuter = styled.div`
   max-width: 1240px;
   margin: 0 auto;
 
-  ${MediaQuery.tablet} {
-    padding-left: 32px;
+  @media screen and (max-width: 1239px) {
+    padding: 0 32px;
   }
 
   @media screen and (max-width: 1023px) {

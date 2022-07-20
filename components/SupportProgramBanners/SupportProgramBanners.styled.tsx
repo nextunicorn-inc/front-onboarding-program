@@ -25,13 +25,12 @@ export const ResponsiveSection = styled.div`
   display: flex;
   justify-content: space-between;
 
-  ${MediaQuery.tablet} {
-    padding-left: 32px;
+  @media screen and (max-width: 1239px) {
+    padding: 0 32px;
   }
 
-  @media screen and (max-width: 1023px) {
+  ${MediaQuery.tablet} {
     height: 202px;
-    padding-right: 32px;
   }
 
   ${MediaQuery.mobile} {

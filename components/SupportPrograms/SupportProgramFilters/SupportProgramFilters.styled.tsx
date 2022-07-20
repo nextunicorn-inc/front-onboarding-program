@@ -4,11 +4,12 @@ import { FontSize, FontWeight, MediaQuery } from 'utils';
 export const Responsive = styled.div`
   max-width: 1240px;
   margin: 0 auto;
-  ${MediaQuery.tablet} {
+
+  @media screen and (max-width: 1239px) {
     padding: 0 32px;
   }
 
-  @media screen and (max-width: 500px) {
+  ${MediaQuery.mobile} {
     padding: 0 20px;
   }
 `;

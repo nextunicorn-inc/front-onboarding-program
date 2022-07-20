@@ -3,9 +3,30 @@ import styled from '@emotion/styled';
 
 import { FontWeight, FontSize, MediaQuery } from 'utils';
 
+export const Container = styled.div`
+  background-color: var(--color-bluegray0);
+
+  ${MediaQuery.tablet} {
+    background-color: var(--color-naturalgray0);
+  }
+
+  padding-bottom: 92px;
+`;
+
 export const ResposiveContainer = styled.div`
   max-width: 1240px;
+
   margin: 0 auto;
+
+  @media screen and (max-width: 1239px) {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 32px;
+  }
+
+  ${MediaQuery.mobile} {
+    padding: 0 20px;
+  }
 `;
 
 export const Wrapper = styled.article`
