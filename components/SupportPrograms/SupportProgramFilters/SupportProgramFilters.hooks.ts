@@ -5,8 +5,7 @@ import { dequal } from 'dequal';
 
 import { client, FILTER_OPTIONS } from '@/graphql';
 
-import type { WithAll, FilterOptionsQuery } from './SupportProgramFilters.types';
-import { contain } from '../SupportPrograms.utils';
+import type { FilterOptionsQuery } from './SupportProgramFilters.types';
 
 export function useSupportProgramFilters() {
   return useQuery<FilterOptionsQuery, Error, FilterOptionsQuery['filterOptions']>(

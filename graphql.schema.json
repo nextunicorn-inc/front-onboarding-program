@@ -5240,11 +5240,11 @@
             "deprecationReason": null
           },
           {
-            "name": "operatingProfit",
-            "description": "영업이익 : 지정된 범위",
+            "name": "paging",
+            "description": " pageable",
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "NumberRangeFilterType",
+              "name": "PageableFilterType",
               "ofType": null
             },
             "defaultValue": null,
@@ -5252,11 +5252,11 @@
             "deprecationReason": null
           },
           {
-            "name": "paging",
-            "description": " pageable",
+            "name": "profitAmount",
+            "description": "영업이익 : 지정된 범위",
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "PageableFilterType",
+              "name": "NumberRangeFilterType",
               "ofType": null
             },
             "defaultValue": null,
@@ -5276,7 +5276,7 @@
             "deprecationReason": null
           },
           {
-            "name": "salesRevenue",
+            "name": "salesAmount",
             "description": "매출액 : 지정된 범위",
             "type": {
               "kind": "INPUT_OBJECT",

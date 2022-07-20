@@ -1,7 +1,7 @@
 import React from 'react';
+import { AreaEnum } from 'graphql';
+import { AREA_TEXTS } from 'constants/supportPrograms';
 import * as Styled from './ApplyAreas.styled';
-import { AREA_TEXTS } from '../../../../../../constants/supportPrograms';
-import { AreaEnum } from '../../../../../../graphql';
 
 function ApplyAreas({ applyAreasData }: { applyAreasData: Array<AreaEnum> }) {
   return (

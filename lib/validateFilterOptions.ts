@@ -26,7 +26,7 @@ export default async function validateFilterOptions(request: NextRequest) {
         if (typeof value !== 'object') {
           return value;
         }
-        return value.meta.name;
+        return value.id;
       });
 
       let hasInvalidValue = false;

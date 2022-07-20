@@ -4,8 +4,9 @@ import { ApplyAreas } from './ApplyAreas';
 import { CompanyAgeTitle } from './CompanyAgeTitle';
 import { EndDate } from '../../utils/EndDate';
 import { ApplyWays } from '../../utils/ApplyWays';
+import { SupportProgramsQuery } from '../../SupportProgramResults.type';
 
-function Result({ data }) {
+function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | undefined }) {
   if (!data) {
     return <b>아직 데이터를 불러오고 있어요</b>;
   }

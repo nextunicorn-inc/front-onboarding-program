@@ -1,6 +1,6 @@
 import React from 'react';
+import { Thunder } from 'commonUi/Icons';
 import * as Styled from './Apply.styled';
-import { Thunder } from '../../Icons';
 
 function ApplyTag({ applyText }: { applyText: string }) {
   let applyResultText;

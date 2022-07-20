@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight, MediaQuery } from '../../../utils';
+import { FontSize, FontWeight, MediaQuery } from 'utils';
 
 export const TagWrapper = styled.div`
   display: flex;

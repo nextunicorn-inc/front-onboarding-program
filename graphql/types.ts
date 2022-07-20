@@ -385,14 +385,14 @@ export type NuProStartupCompanyFilterType = {
   lastInvestmentPhases: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 지역: 범위 */
   locations: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  /** 영업이익 : 지정된 범위 */
-  operatingProfit: InputMaybe<NumberRangeFilterType>;
   /**  pageable */
   paging: InputMaybe<PageableFilterType>;
+  /** 영업이익 : 지정된 범위 */
+  profitAmount: InputMaybe<NumberRangeFilterType>;
   /**  queryString -> 기업이름/기업요약소개/서비스명/서비스요약소개/서비스소개 */
   q: InputMaybe<Scalars['String']>;
   /** 매출액 : 지정된 범위 */
-  salesRevenue: InputMaybe<NumberRangeFilterType>;
+  salesAmount: InputMaybe<NumberRangeFilterType>;
   /**  sort */
   sorting: InputMaybe<SortingType>;
   /** 활용기술 */
