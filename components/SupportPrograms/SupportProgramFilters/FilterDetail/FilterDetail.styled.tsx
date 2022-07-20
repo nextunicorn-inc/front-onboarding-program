@@ -116,6 +116,7 @@ export const ApplyButton = styled.button`
 `;
 
 export const ResetButton = styled.button`
+  cursor: pointer;
   border: none;
   padding: 4px 8px;
   border-radius: 5px;

@@ -24,10 +24,17 @@ function HostFilterDetail({ title, list }: Props) {
     <FilterDetailModal
       resetItems={toggleState(null)}
       title={title}
-      onApply={state ? toggle(state) : toggle(null)}
+      onApply={state ? toggle(state.map((data) => data.id)) : toggle(null)}
       totalSelectedItems={totalSelectedHosts}
       searchable
-      Search={<HostSearch data={list} onItemClick={toggleState} selectedData={state ?? []} />}
+      Search={
+        <HostSearch
+          key={state?.toString() ?? "We don't have data"}
+          data={list}
+          onItemClick={toggleState}
+          selectedData={state ?? []}
+        />
+      }
     >
       {list.map((item) => (
         <li key={item.id}>
