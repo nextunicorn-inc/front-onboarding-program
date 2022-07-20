@@ -5,12 +5,19 @@ import { FontWeight, FontSize, MediaQuery } from 'utils';
 
 export const Container = styled.div`
   background-color: var(--color-bluegray0);
+  padding-bottom: 100px;
 
-  ${MediaQuery.tablet} {
+  @media screen and (max-width: 1239px) {
     background-color: var(--color-naturalgray0);
   }
 
-  padding-bottom: 92px;
+  ${MediaQuery.tablet} {
+    padding-bottom: 80px;
+  }
+
+  ${MediaQuery.mobile} {
+    padding-bottom: 24px;
+  }
 `;
 
 export const ResposiveContainer = styled.div`
@@ -32,7 +39,7 @@ export const ResposiveContainer = styled.div`
 export const Wrapper = styled.article`
   position: relative;
   width: 100%;
-  height: auto;
+  height: 88px;
   padding: 20px 36px;
 
   display: flex;
@@ -44,14 +51,14 @@ export const Wrapper = styled.article`
   overflow: hidden;
 
   ${MediaQuery.tablet} {
-    margin: 0 auto;
     justify-content: space-between;
   }
 
   ${MediaQuery.mobile} {
+    height: auto;
+    padding: 20px 0;
     flex-direction: column;
     align-items: center;
-    border-radius: 3px;
   }
 `;
 
