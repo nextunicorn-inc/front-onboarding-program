@@ -5,7 +5,11 @@ export const Container = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 68px;
+  padding-bottom: 60px;
+
+  ${MediaQuery.tablet} {
+    padding-bottom: 0;
+  }
 `;
 
 export const Wrapper = styled.div`

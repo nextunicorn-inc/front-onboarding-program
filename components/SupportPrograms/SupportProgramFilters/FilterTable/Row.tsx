@@ -87,9 +87,11 @@ function Row({ title, children, totalSelectedColumns, resetColumns, RowDetail }:
       <Styled.RowTitle>{title}</Styled.RowTitle>
       <Styled.Separator aria-hidden />
       <FilterList>
-        <FilterItem opacity={0.4} onClick={resetColumns} selected={isAnyColumnNotSelected}>
-          전체
-        </FilterItem>
+        <li style={{ marginLeft: 0 }}>
+          <FilterItem opacity={0.6} onClick={resetColumns} selected={isAnyColumnNotSelected}>
+            전체
+          </FilterItem>
+        </li>
         {childrenWithRef}
         <Styled.MoreButtonWrapper>
           <Styled.MoreButton role="button" onClick={showWithBackdrop(RowDetail)} />

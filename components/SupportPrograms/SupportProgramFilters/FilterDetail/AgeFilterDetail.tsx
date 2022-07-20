@@ -32,7 +32,7 @@ function AgeFilterDetail({ title, list }: Props) {
       {list.map((item) => (
         <li key={item}>
           <FilterItem
-            opacity={0.6}
+            opacity={0.4}
             onClick={toggleState(item)}
             selected={state?.includes(item) ?? false}
           >

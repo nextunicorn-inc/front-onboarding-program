@@ -20,7 +20,7 @@ export const IndicatorOuter = styled.div`
   }
 
   ${MediaQuery.mobile} {
-    padding: 0 20px;
+    paddingm: 0 20px;
   }
 `;
 

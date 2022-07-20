@@ -79,7 +79,7 @@ export function useFilterByQueryString<T>({
       return router.replace(
         {
           pathname: router.pathname,
-          query: { ...router.query, [queryKey]: undefined },
+          query: { ...router.query },
         },
         undefined,
         OPTIONS,
@@ -102,13 +102,14 @@ export function useFilterByQueryString<T>({
 
     // if Two values are primitive
     if (!isQueryValueArray && !isNextQueryValueArray) {
+      const nextQuery =
+        queryValue === nextQueryValue
+          ? router.query
+          : Object.assign(router.query, { [queryKey]: [queryValue, nextQueryValue] });
       return router.replace(
         {
           pathname: router.pathname,
-          query: {
-            ...router.query,
-            [queryKey]: queryValue === nextQueryValue ? undefined : [queryValue, nextQueryValue],
-          },
+          query: nextQuery,
         },
         undefined,
         OPTIONS,
@@ -130,12 +131,16 @@ export function useFilterByQueryString<T>({
     }
 
     if (isQueryValueArray && !isNextQueryValueArray) {
+      const filteredValue = queryValue.filter((item) => item !== nextQueryValue);
       return router.replace(
         {
           pathname: router.pathname,
           query: {
             ...router.query,
-            [queryKey]: Array.from(new Set<string>(queryValue.concat(nextQueryValue))),
+            [queryKey]:
+              filteredValue.length === queryValue.length
+                ? filteredValue.concat(nextQueryValue)
+                : filteredValue,
           },
         },
         undefined,
@@ -144,12 +149,16 @@ export function useFilterByQueryString<T>({
     }
 
     if (!isQueryValueArray && isNextQueryValueArray) {
+      const filteredValue = nextQueryValue.filter((item) => item !== queryValue);
       return router.replace(
         {
           pathname: router.pathname,
           query: {
             ...router.query,
-            [queryKey]: Array.from(new Set<string>(nextQueryValue.concat(queryValue))),
+            [queryKey]:
+              filteredValue.length === nextQueryValue.length
+                ? filteredValue.concat(queryValue)
+                : filteredValue,
           },
         },
         undefined,

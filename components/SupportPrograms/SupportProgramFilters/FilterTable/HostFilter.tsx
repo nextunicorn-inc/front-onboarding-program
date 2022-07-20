@@ -22,8 +22,8 @@ function HostFilter() {
       {query.data?.hosts.map((item) => (
         <li key={item.id}>
           <FilterItem
-            opacity={0.4}
-            onClick={toggle(item)}
+            opacity={0.6}
+            onClick={toggle(item.id)}
             selected={activeHostInfo?.map((d) => d.meta.name)?.includes(item.meta.name) || false}
           >
             {item.meta.name}

@@ -20,7 +20,7 @@ function TypeFilters() {
     onlySingleValue: true,
   });
 
-  const isMobile = useMediaQuery('(max-width: 1023px)');
+  const isTablet = useMediaQuery('(max-width: 1023px)');
 
   return (
     <Responsive>
@@ -40,13 +40,13 @@ function TypeFilters() {
               <button type="button" onClick={toggle(type)}>
                 {SUPPORT_PROGRAM_TYPE_TEXTS[type]}
                 {type === SupportProgramTypeEnum.Snl &&
-                  (isMobile ? (
+                  (isTablet ? (
                     <Thunder size={15} opacity={opacity} />
                   ) : (
                     <Thunder size={26} opacity={opacity} />
                   ))}
               </button>
-              <Styled.TypeFilterNoticeLine $active={isActive} />
+              <Styled.TypeFilterNoticeLine aria-hidden $active={isActive} />
             </Styled.TypeFilterItem>
           );
         })}
