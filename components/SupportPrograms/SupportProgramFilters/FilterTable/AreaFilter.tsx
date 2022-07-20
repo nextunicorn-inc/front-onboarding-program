@@ -24,7 +24,11 @@ function AreaFilter() {
     >
       {query.data?.areas.map((item) => (
         <li key={item}>
-          <FilterItem onClick={toggle(item)} selected={activeAreas?.includes(item) ?? false}>
+          <FilterItem
+            opacity={0.4}
+            onClick={toggle(item)}
+            selected={activeAreas?.includes(item) ?? false}
+          >
             {AREA_TEXTS[item]}
           </FilterItem>
         </li>

@@ -3,11 +3,12 @@ import { DEFAULT_COLOR } from '../Icons.constants';
 
 type Props = {
   primary?: boolean;
+  color?: string;
 };
 
-function NextUnicornLogo({ primary = true }: Props) {
-  const color = primary ? 'var(--color-unicornblue7)' : DEFAULT_COLOR;
-  return <NextUnicornSVG color={color} />;
+function NextUnicornLogo({ primary = true, color = DEFAULT_COLOR }: Props) {
+  const iconColor = primary ? 'var(--color-unicornblue7)' : color;
+  return <NextUnicornSVG color={iconColor} />;
 }
 
 export default NextUnicornLogo;

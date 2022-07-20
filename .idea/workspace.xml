@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="875d75cc-3de5-47e4-91f1-fa2bb25df868" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/HostSearch/HostSearch.utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/HostFilterDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/HostFilterDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/HostSearch/HostSearch.styled.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/HostSearch/HostSearch.styled.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/HostSearch/HostSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/HostSearch/HostSearch.tsx" afterDir="false" />
+=======
     <list default="true" id="7a3571d6-d949-4cd1-82eb-059f25e96a64" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -29,6 +38,7 @@
       <change beforePath="$PROJECT_DIR$/graphql.schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/graphql.schema.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+>>>>>>> sk-dev
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +80,11 @@
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+<<<<<<< HEAD
+    &quot;node.js.selected.package.eslint&quot;: &quot;/Users/osemyeong/.nvm/versions/node/v16.15.1/lib/node_modules/eslint&quot;,
+=======
     &quot;node.js.selected.package.eslint&quot;: &quot;/Users/kay/.nvm/versions/node/v16.13.0/lib/node_modules/eslint&quot;,
+>>>>>>> sk-dev
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
@@ -83,11 +97,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/SupportProgramBanners/Indicator" />
+      <recent name="$PROJECT_DIR$/commonUi/Icons/Chevron/20" />
+      <recent name="$PROJECT_DIR$/commonUi/Icons/Chevron/24" />
       <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/utils" />
       <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/TabletMobile/Result" />
-      <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC" />
-      <recent name="$PROJECT_DIR$/components/SupportPrograms/SupportProgramResults/PC/Result" />
-      <recent name="$PROJECT_DIR$/commonUi/Badges" />
     </key>
   </component>
   <component name="RunManager" selected="npm.lint">
@@ -139,9 +153,16 @@
       <workItem from="1657948536041" duration="5511000" />
       <workItem from="1658029660400" duration="17009000" />
       <workItem from="1658106750086" duration="22918000" />
+<<<<<<< HEAD
+      <workItem from="1658193090299" duration="11816000" />
+      <workItem from="1658207665296" duration="21484000" />
+      <workItem from="1658279277989" duration="119000" />
+      <workItem from="1658279431228" duration="14269000" />
+=======
       <workItem from="1658138885595" duration="743000" />
       <workItem from="1658193428344" duration="24056000" />
       <workItem from="1658279163068" duration="11030000" />
+>>>>>>> sk-dev
     </task>
     <servers />
   </component>
@@ -192,6 +213,10 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
+<<<<<<< HEAD
+          <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterTable/FilterTableRow.tsx</url>
+          <option name="timeStamp" value="13" />
+=======
           <url>file://$PROJECT_DIR$/components/SupportPrograms/SupportProgramFilters/FilterDetail/FilterDetail.styled.tsx</url>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -208,6 +233,7 @@
           <line>84</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="18" />
+>>>>>>> sk-dev
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

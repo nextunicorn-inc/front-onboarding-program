@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CloseButton = styled.button`
+  padding: 0;
   cursor: pointer;
   position: relative;
   display: flex;
@@ -32,7 +33,7 @@ export const ContentsWrapper = styled.article`
 
   background-color: var(--color-naturalgray0);
   border-radius: 5px;
-  box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.03);
 
   ${MediaQuery.mobile} {
     width: 100%;
@@ -82,6 +83,14 @@ export const FilterListWrapper = styled.div`
   }
 `;
 
+export const ApplyButtonWrapper = styled(Xpadding)`
+  padding-top: 12px;
+  padding-bottom: 24px;
+  ${MediaQuery.mobile} {
+    padding-bottom: 24px;
+  }
+`;
+
 export const ApplyButton = styled.button`
   cursor: pointer;
   margin-top: auto;
@@ -90,11 +99,12 @@ export const ApplyButton = styled.button`
   align-items: center;
   width: 100%;
   min-height: 48px;
-  margin-bottom: 20px;
+
   ${FontSize.size14};
   ${FontWeight.regular};
   color: var(--color-naturalgray0);
   background-color: var(--color-unicornblue6);
+
   border: none;
   border-radius: 5px;
 
@@ -106,6 +116,7 @@ export const ApplyButton = styled.button`
 `;
 
 export const ResetButton = styled.button`
+  cursor: pointer;
   border: none;
   padding: 4px 8px;
   border-radius: 5px;

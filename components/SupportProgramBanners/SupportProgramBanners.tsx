@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Slider from 'react-slick';
 
-import Indicator from './Indicator';
+import { Indicator } from './Indicator';
 import * as Styled from './SupportProgramBanners.styled';
 import useSupportProgramBanners from './SupportProgramBanners.hooks';
 
@@ -25,13 +25,15 @@ function SupportProgramBanners() {
   };
 
   return (
-    <Styled.Contatiner>
+    <Styled.Container>
       <Slider ref={sliderRef} {...SLIDER_SETTINGS} afterChange={onSlide}>
         {query.data?.map((supportProgramBanner) => (
           <Styled.InnerContainerLink
             key={supportProgramBanner.title}
             $backgroundColor={supportProgramBanner.backgroundColor}
             href={supportProgramBanner.link ?? '#'}
+            target="_blank"
+            rel="noreferrer"
           >
             <Styled.ResponsiveSection>
               <Styled.Description>
@@ -55,7 +57,7 @@ function SupportProgramBanners() {
         onClick={onClick}
         totalSlides={query.data?.length ?? 0}
       />
-    </Styled.Contatiner>
+    </Styled.Container>
   );
 }
 

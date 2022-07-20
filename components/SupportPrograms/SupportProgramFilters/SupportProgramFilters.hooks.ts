@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { dequal } from 'dequal';
 
@@ -71,108 +71,102 @@ export function useFilterByQueryString<T>({
 }: Params<T>) {
   const router = useRouter();
   const queryValue = router.query[queryKey];
-  const isMountedRef = useRef(false);
 
-  const [state, setState] = useState<T[] | null>(() => {
-    if (!queryValue) {
-      return null;
-    }
+  const toggle = (nextQueryValue: string | string[] | null) => () => {
+    delete router.query[queryKey];
 
-    return list.filter((item) => {
-      if (typeof item === 'string') {
-        return matcher(item) === queryValue;
-      }
-      return queryValue.includes(matcher(item));
-    });
-  });
-
-  useEffect(() => {
-    if (!router.isReady || isMountedRef.current) {
-      return;
-    }
-    isMountedRef.current = true;
-
-    setState(() => {
-      if (!queryValue) {
-        return null;
-      }
-
-      return list.filter((item) => queryValue.includes(matcher(item)));
-    });
-  }, [queryValue, list, matcher, router.isReady]);
-
-  const toggle = (nextQueryValue: T | T[] | null) => () => {
     if (nextQueryValue === null) {
-      delete router.query[queryKey];
-      if (state === null) {
-        return;
-      }
-
-      setState(null);
       return router.replace(
         {
           pathname: router.pathname,
-          query: { ...router.query },
+          query: { ...router.query, [queryKey]: undefined },
         },
         undefined,
         OPTIONS,
       );
     }
 
-    const isNextValueArray = Array.isArray(nextQueryValue);
-
-    const mappedQueryStringList = isNextValueArray
-      ? nextQueryValue.map(matcher)
-      : [matcher(nextQueryValue)];
-
-    if (onlySingleValue || state === null) {
-      setState(Array.isArray(nextQueryValue) ? nextQueryValue : [nextQueryValue]);
+    if (queryValue === undefined || onlySingleValue) {
       return router.replace(
         {
           pathname: router.pathname,
-          query: { ...router.query, [queryKey]: mappedQueryStringList },
+          query: { ...router.query, [queryKey]: nextQueryValue },
         },
         undefined,
         OPTIONS,
       );
     }
 
-    if (isNextValueArray) {
-      const filteredState = state.filter((item) => !mappedQueryStringList.includes(matcher(item)));
-      const filteredNextValue = nextQueryValue.filter(
-        (item) => !state.map(matcher).includes(matcher(item)),
-      );
+    const isQueryValueArray = Array.isArray(queryValue);
+    const isNextQueryValueArray = Array.isArray(nextQueryValue);
 
-      const nextState = filteredState.concat(filteredNextValue);
-      setState(nextState);
+    // if Two values are primitive
+    if (!isQueryValueArray && !isNextQueryValueArray) {
       return router.replace(
         {
           pathname: router.pathname,
-          query: { ...router.query, [queryKey]: nextState.map(matcher) },
+          query: {
+            ...router.query,
+            [queryKey]: queryValue === nextQueryValue ? undefined : [queryValue, nextQueryValue],
+          },
         },
         undefined,
         OPTIONS,
       );
     }
 
-    const filteredState = state.filter((item) => matcher(item) !== matcher(nextQueryValue));
-    let nextState: T[];
-    if (state.length === filteredState.length) {
-      nextState = state.concat(nextQueryValue);
-    } else {
-      nextState = filteredState;
+    if (isQueryValueArray && isNextQueryValueArray) {
+      return router.replace(
+        {
+          pathname: router.pathname,
+          query: {
+            ...router.query,
+            [queryKey]: Array.from(new Set<string>(queryValue.concat(nextQueryValue))),
+          },
+        },
+        undefined,
+        OPTIONS,
+      );
     }
 
-    setState(nextState);
-    return router.replace(
-      {
-        pathname: router.pathname,
-        query: { ...router.query, [queryKey]: nextState.map(matcher) },
-      },
-      undefined,
-      OPTIONS,
-    );
+    if (isQueryValueArray && !isNextQueryValueArray) {
+      return router.replace(
+        {
+          pathname: router.pathname,
+          query: {
+            ...router.query,
+            [queryKey]: Array.from(new Set<string>(queryValue.concat(nextQueryValue))),
+          },
+        },
+        undefined,
+        OPTIONS,
+      );
+    }
+
+    if (!isQueryValueArray && isNextQueryValueArray) {
+      return router.replace(
+        {
+          pathname: router.pathname,
+          query: {
+            ...router.query,
+            [queryKey]: Array.from(new Set<string>(nextQueryValue.concat(queryValue))),
+          },
+        },
+        undefined,
+        OPTIONS,
+      );
+    }
   };
 
-  return [state, toggle] as const;
+  let activeState: T[] | null;
+
+  if (!queryValue) {
+    activeState = null;
+  } else if (typeof queryValue === 'string') {
+    activeState = list.filter((item) => matcher(item) === queryValue);
+  } else {
+    activeState = list.filter((item) => queryValue.includes(matcher(item)));
+  }
+
+  return [activeState, toggle] as const;
 }

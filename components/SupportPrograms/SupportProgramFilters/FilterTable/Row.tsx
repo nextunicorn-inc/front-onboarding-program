@@ -85,9 +85,9 @@ function Row({ title, children, totalSelectedColumns, resetColumns, RowDetail }:
   ) : (
     <Styled.RowWrapper>
       <Styled.RowTitle>{title}</Styled.RowTitle>
-      <Styled.Separator />
+      <Styled.Separator aria-hidden />
       <FilterList>
-        <FilterItem onClick={resetColumns} selected={isAnyColumnNotSelected}>
+        <FilterItem opacity={0.4} onClick={resetColumns} selected={isAnyColumnNotSelected}>
           전체
         </FilterItem>
         {childrenWithRef}

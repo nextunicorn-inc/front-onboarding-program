@@ -86,11 +86,6 @@ export const Checkbox = styled.input`
   height: 13px;
 `;
 
-export const SearchResultTitle = styled.p`
-  ${FontSize.size14};
-  color: rgb(89, 89, 89);
-`;
-
 export const MatchedKeyword = styled.span`
   color: var(--color-unicornblue6);
   ${FontWeight.medium};

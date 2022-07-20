@@ -6,6 +6,7 @@ import { useMediaQuery } from 'hooks';
 import * as Styled from './FilterDetail.styled';
 import { FilterList } from '../SupportProgramFilters.styled';
 import FilterItem from '../FilterItem';
+import { ApplyButtonWrapper } from './FilterDetail.styled';
 
 type Props = {
   title: string;
@@ -27,6 +28,7 @@ function FilterDetailModal({
   Search = null,
 }: Props) {
   const isDesktop = useMediaQuery('(min-width: 1025px)');
+
   const { hide } = useModal();
   const handleApplyButtonClick = () => {
     onApply();
@@ -42,7 +44,7 @@ function FilterDetailModal({
             <Styled.Heading>{`${title} 선택`}</Styled.Heading>
             {!isDesktop && (
               <Styled.CloseButton onClick={hide}>
-                <Close size={24} color="var(--color-naturalgray7)" />
+                <Close size={24} />
               </Styled.CloseButton>
             )}
           </Styled.HeadingSection>
@@ -51,16 +53,16 @@ function FilterDetailModal({
         <Styled.FilterListWrapper>
           <FilterList $wrap>
             <li>
-              <FilterItem onClick={resetItems} selected={totalSelectedItems === 0}>
+              <FilterItem opacity={0.6} onClick={resetItems} selected={totalSelectedItems === 0}>
                 전체
               </FilterItem>
             </li>
             {children}
           </FilterList>
         </Styled.FilterListWrapper>
-        <Styled.Xpadding>
+        <Styled.ApplyButtonWrapper>
           <Styled.ApplyButton onClick={handleApplyButtonClick}>필터 적용</Styled.ApplyButton>
-        </Styled.Xpadding>
+        </Styled.ApplyButtonWrapper>
       </Styled.ContentsWrapper>
       {isDesktop && (
         <Styled.CloseButton onClick={hide}>

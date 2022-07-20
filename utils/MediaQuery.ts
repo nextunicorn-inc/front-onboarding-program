@@ -1,6 +1,6 @@
 const sizes = {
   mobile: 767,
-  tablet: 1239,
+  tablet: 1023,
 };
 
 type MediaQuery = Record<keyof typeof sizes, string>;

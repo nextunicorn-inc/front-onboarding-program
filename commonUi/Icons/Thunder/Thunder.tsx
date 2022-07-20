@@ -15,11 +15,12 @@ const Icons = {
 type Size = keyof typeof Icons;
 type Props = {
   size?: Size;
+  opacity?: number;
 };
 
-export function Thunder({ size = 15 }: Props) {
+export function Thunder({ size = 15, opacity = 1 }: Props) {
   const Component = Icons[size];
-  return <Component />;
+  return <Component opacity={opacity} />;
 }
 
 const IconsWithWrapper = {

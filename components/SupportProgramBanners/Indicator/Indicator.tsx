@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { Chevron } from 'commonUi/Icons';
-import * as Styled from './SupportProgramBanners.styled';
+import * as Styled from './Indicator.styled';
 
-import { useInterval } from './SupportProgramBanners.hooks';
-import { INTERVAL_DELAY, MAXIMUM_PROGRESS, TIMEOUT_DELAY } from './SupportProgramBanners.constants';
+import { useInterval } from '../SupportProgramBanners.hooks';
+
+import {
+  INTERVAL_DELAY,
+  MAXIMUM_PROGRESS,
+  TIMEOUT_DELAY,
+} from '../SupportProgramBanners.constants';
 
 type Props = {
   currentIndex: number;
@@ -47,7 +52,7 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
       resetProgress();
       setTimeout(() => {
         setStart(true);
-      }, TIMEOUT_DELAY);
+      }, 0);
     }
   }, [progress, currentIndex]);
 
@@ -59,13 +64,13 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
     <Styled.IndicatorOuter>
       <Styled.IndicatorInner>
         <Styled.ButtonWrapper>
-          <button type="button" onClick={() => move('prev', 0)}>
+          <button type="button" onClick={() => move('prev')}>
             <Chevron direction="Left" size={20} />
           </button>
           <span>
             <b>{currentIndex + 1}</b> / {totalSlides}
           </span>
-          <button type="button" onClick={() => move('next', 0)}>
+          <button type="button" onClick={() => move('next')}>
             <Chevron direction="Right" size={20} />
           </button>
         </Styled.ButtonWrapper>

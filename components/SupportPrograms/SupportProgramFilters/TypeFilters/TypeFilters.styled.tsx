@@ -3,10 +3,11 @@ import { FontSize, FontWeight, MediaQuery } from 'utils';
 
 export const TypeFilterList = styled.ul`
   display: flex;
-  gap: 28px;
-  margin-bottom: 28px;
+  margin-bottom: 38px;
+  ${MediaQuery.tablet} {
+    margin-bottom: 24px;
+  }
   ${MediaQuery.mobile} {
-    gap: 16px;
     margin-bottom: 16px;
   }
 `;
@@ -18,20 +19,36 @@ export const TypeFilterItem = styled.li<{ $active: boolean }>`
   align-items: center;
   overflow-x: hidden;
 
+  &:not(:first-of-type) {
+    margin-left: 28px;
+    ${MediaQuery.tablet} {
+      margin-left: 16px;
+    }
+  }
+
   & > button {
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;
     cursor: pointer;
     border: none;
-    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
     padding: 0;
+    background-color: transparent;
     color: hsla(var(--base-naturalgray9), ${({ $active }) => ($active ? 1 : 0.4)});
-    ${FontWeight.bold};
-    ${FontSize.size24};
-    letter-spacing: 0.2px;
+    mix-blend-mode: normal;
 
-    ${MediaQuery.mobile} {
+    ${FontSize.size24};
+    ${FontWeight.bold};
+    letter-spacing: -0.2px;
+
+    & > svg {
+      margin-left: 2px;
+    }
+
+    &:hover svg {
+      opacity: 1;
+    }
+
+    ${MediaQuery.tablet} {
       ${FontSize.size16};
     }
   }
@@ -57,7 +74,7 @@ export const TypeFilterNoticeLine = styled.div<{ $active: boolean }>`
   transition: all 250ms linear;
   transform: translateX(${({ $active }) => ($active ? 0 : -101)}%);
 
-  ${MediaQuery.mobile} {
+  ${MediaQuery.tablet} {
     margin-top: 6px;
   }
 `;
