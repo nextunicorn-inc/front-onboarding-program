@@ -24,7 +24,7 @@ import { PageNavigation } from './PageNavigation';
 import { getQueryStringValues } from '../../lib';
 
 function SupportPrograms() {
-  const wrapper = useRef<HTMLLIElement | null>(null);
+  const wrapper = useRef<HTMLElement | null>(null);
 
   const router = useRouter();
   const {
