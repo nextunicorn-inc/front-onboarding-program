@@ -34,5 +34,7 @@ module.exports = {
     'react/jsx-wrap-multilines': ['off'],
     'implicit-arrow-linebreak': ['off'],
     'no-confusing-arrow': ['off'],
+    'function-paren-newline': ['off'],
+    'arrow-body-style': ['off'],
   },
 };

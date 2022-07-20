@@ -1,7 +1,9 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { useRouter } from 'next/router';
 
 import { SupportProgramsQueryVariables } from '@/graphql';
+import { SupportProgramsQuery } from './SupportProgramResults/SupportProgramResults.type';
+
 import {
   useSupportProgramFilters,
   TypeFilters,
@@ -15,17 +17,18 @@ import * as Styled from './SupportPrograms.styled';
 
 import type { Area, TargetCompanyAge, Type } from './SupportProgramFilters';
 
-import useSupportProgramResults from './SupportProgramResults/SupportProgramResults.hooks';
+import { useSupportProgramResults } from './SupportProgramResults/SupportProgramResults.hooks';
 import { ResultSupportPrograms } from './SupportProgramResults';
 
 import { PageNavigation } from './PageNavigation';
 import { getQueryStringValues } from '../../lib';
 
 function SupportPrograms() {
-  const wrapper = useRef<HTMLTableSectionElement | null>(null);
-  const [pageNumber, setPageNumber] = useState(1);
+  const wrapper = useRef<HTMLLIElement | null>(null);
+
+  const router = useRouter();
   const {
-    query: { areas, targetCompanyAges, type, hosts },
+    query: { areas, targetCompanyAges, type, hosts, page },
   } = useRouter();
 
   const gqlAreas = getQueryStringValues<Area>(areas);
@@ -33,9 +36,20 @@ function SupportPrograms() {
   const gqlType = getQueryStringValues<Type>(type);
   const gqlHosts = getQueryStringValues<string>(hosts);
 
+  const selectedPage = (page ?? '1') as string;
+  const gqlPage = parseInt(selectedPage, 10);
+
   const handleClickPageNumber = (pageNumber: number) => {
-    setPageNumber(pageNumber);
     wrapper.current?.scrollIntoView({ behavior: 'smooth' });
+
+    return router.replace(
+      {
+        pathname: router.pathname,
+        query: { ...router.query, page: pageNumber },
+      },
+      undefined,
+      { shallow: true, scroll: false },
+    );
   };
 
   const filterQuery = useSupportProgramFilters();
@@ -46,7 +60,7 @@ function SupportPrograms() {
       targetCompanyAges: gqlTargetCompanyAges,
       areas: gqlAreas,
       hosts: gqlHosts,
-      page: pageNumber,
+      page: gqlPage,
     },
   } as unknown as SupportProgramsQueryVariables;
 

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../../../../utils';
-import { TARGET_COMPANY_AGE_TEXTS } from '../../../../../../constants/supportPrograms';
-import { TargetCompanyAgeEnum } from '../../../../../../graphql';
+import { FontSize, FontWeight } from 'utils';
+import { TARGET_COMPANY_AGE_TEXTS } from 'constants/supportPrograms';
+import { TargetCompanyAgeEnum } from 'graphql';
 
 const TitleWrapper = styled.div`
   display: flex;

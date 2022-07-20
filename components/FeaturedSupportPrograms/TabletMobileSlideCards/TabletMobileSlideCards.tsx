@@ -1,10 +1,8 @@
-import * as Styled from './TabletMobileSlideCards.styled';
-
-import { Apply } from '../../../commonUi/Badges/Apply';
-import { CompanyAge } from '../../../commonUi/Badges/CompanyAge';
+import { Apply } from 'commonUi/Badges/Apply';
+import { CompanyAge } from 'commonUi/Badges/CompanyAge';
 import { EndDate } from '../utils/EndDate';
-
 import useFeaturedSupportPrograms from '../FeaturedSupportPrograms.hooks';
+import * as Styled from './TabletMobileSlideCards.styled';
 
 function TabletMobileSlideCards() {
   const query = useFeaturedSupportPrograms();

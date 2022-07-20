@@ -1,9 +1,14 @@
 import React from 'react';
+import { SupportProgramsQuery } from './SupportProgramResults.type';
+
 import { PC } from './PC';
 import { TabletMobile } from './TabletMobile';
-import { SupportProgramsQuery } from '@/graphql';
 
-function SupportProgramResults({ data }: { data: SupportProgramsQuery['supportPrograms'] }) {
+function SupportProgramResults({
+  data,
+}: {
+  data: SupportProgramsQuery['supportPrograms'] | undefined;
+}) {
   return (
     <div>
       <PC data={data} />

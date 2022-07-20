@@ -1,9 +1,9 @@
 import React from 'react';
 import * as Styled from './TabletMobile.styled';
-import { SupportProgramsQuery } from '@/graphql';
+import { SupportProgramsQuery } from '../SupportProgramResults.type';
 import { Result } from './Result';
 
-function TabletMobile({ data }: { data: SupportProgramsQuery['supportPrograms'] }) {
+function TabletMobile({ data }: { data: SupportProgramsQuery['supportPrograms'] | undefined }) {
   const possibleApplyCount = data?.paging.openedElements;
 
   return (
