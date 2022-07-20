@@ -11,9 +11,21 @@ import {
   Header,
 } from 'components';
 
+import { AreaEnum, Scalars, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '@/graphql';
+
 import { useSupportProgramResults } from '../components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks';
 
-export async function getServerSideProps(context) {
+type queryStringType = {
+  query: {
+    type: SupportProgramTypeEnum;
+    targetCompanyAges: Array<TargetCompanyAgeEnum>;
+    areas: Array<AreaEnum>;
+    hosts: Array<Scalars['String']>;
+    page: Scalars['String'];
+  };
+};
+
+export async function getServerSideProps(context: queryStringType) {
   const {
     query: { type, targetCompanyAges, areas, hosts, page },
   } = context;

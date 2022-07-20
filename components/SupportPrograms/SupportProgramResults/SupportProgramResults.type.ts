@@ -4,12 +4,13 @@ export type SupportProgramsQuery = {
   supportPrograms: {
     data: Array<{
       startAt: string;
-      endAta: string;
+      endAt: string | undefined;
       areas: Array<AreaEnum>;
       name: string;
-      TargetCompanyAges: Array<TargetCompanyAgeEnum>;
+      targetCompanyAges: Array<TargetCompanyAgeEnum>;
       type: SupportProgramTypeEnum;
-      outerApplyLink: string | null;
+      outerApplyLink: string | undefined;
+      supportProgramCompany: { name: string };
     }>;
     paging: {
       limit: number;
@@ -19,4 +20,15 @@ export type SupportProgramsQuery = {
       current: number;
     };
   };
+};
+
+export type SupportProgramDataType = {
+  startAt: string;
+  endAt: string | undefined;
+  areas: Array<AreaEnum>;
+  name: string;
+  targetCompanyAges: Array<TargetCompanyAgeEnum>;
+  type: SupportProgramTypeEnum;
+  outerApplyLink: string | undefined;
+  supportProgramCompany: { name: string };
 };

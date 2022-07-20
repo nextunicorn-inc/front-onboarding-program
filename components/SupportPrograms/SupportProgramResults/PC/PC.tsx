@@ -2,9 +2,9 @@ import React from 'react';
 import * as Styled from './PC.styled';
 import { HeaderMenu } from './HeaderMenu';
 import { Result } from './Result';
-import { SupportProgramsQuery } from '@/graphql';
+import { SupportProgramsQuery } from '../SupportProgramResults.type';
 
-function PC({ data }: { data: SupportProgramsQuery['supportPrograms'] }) {
+function PC({ data }: { data: SupportProgramsQuery['supportPrograms'] | undefined }) {
   const possibleApplyCount = data?.paging.openedElements;
 
   return (

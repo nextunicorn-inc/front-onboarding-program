@@ -2,6 +2,8 @@ import { useRef } from 'react';
 import { useRouter } from 'next/router';
 
 import { SupportProgramsQueryVariables } from '@/graphql';
+import { SupportProgramsQuery } from './SupportProgramResults/SupportProgramResults.type';
+
 import {
   useSupportProgramFilters,
   TypeFilters,
@@ -33,12 +35,14 @@ function SupportPrograms() {
   const gqlTargetCompanyAges = getQueryStringValues<TargetCompanyAge>(targetCompanyAges);
   const gqlType = getQueryStringValues<Type>(type);
   const gqlHosts = getQueryStringValues<string>(hosts);
-  const gqlPage = !page ? 1 : parseInt(page, 10);
+
+  const selectedPage = (page ?? '1') as string;
+  const gqlPage = parseInt(selectedPage, 10);
 
   const handleClickPageNumber = (pageNumber: number) => {
     wrapper.current?.scrollIntoView({ behavior: 'smooth' });
 
-    router.replace(
+    return router.replace(
       {
         pathname: router.pathname,
         query: { ...router.query, page: pageNumber },

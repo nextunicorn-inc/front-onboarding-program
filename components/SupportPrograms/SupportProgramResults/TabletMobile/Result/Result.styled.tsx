@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../../../utils';
+import { FontSize, FontWeight } from 'utils';
 
 export const Container = styled.div`
   border-top: 1px solid rgb(165, 171, 191);
