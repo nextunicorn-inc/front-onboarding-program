@@ -6,8 +6,6 @@ export const Layout = styled.header`
   height: 60px;
 `;
 
-export const ResponsiveSection = styled.div``;
-
 export const Navigation = styled.nav`
   position: fixed;
   width: 100%;
@@ -32,11 +30,7 @@ export const MenuList = styled.ul`
   display: flex;
   align-items: center;
 
-  ${MediaQuery.mobile} {
-    display: none;
-  }
-
-  ${MediaQuery.tablet} {
+  @media screen and (max-width: 1080px) {
     display: none;
   }
 `;
@@ -48,14 +42,7 @@ export const ResponsiveMenuList = styled.ul`
     cursor: pointer;
   }
 
-  ${MediaQuery.mobile} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-  }
-
-  ${MediaQuery.tablet} {
+  @media screen and (max-width: 1080px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,6 +137,10 @@ export const SearchInputLayout = styled.div`
   transition: width 0.2s ease-in-out 0s;
   background-color: var(--color-naturalgray0);
 
+  @media screen and (max-width: 1080px) {
+    display: flex;
+  }
+
   ${MediaQuery.mobile} {
     height: 97px;
     padding-top: 26px;
@@ -188,6 +179,14 @@ export const SearchInput = styled.input`
   ::placeholder {
     color: #656565;
     opacity: 0.2;
+  }
+
+  ${MediaQuery.mobile} {
+    ::placeholder {
+      color: #656565;
+      opacity: 0.2;
+      font-size: 24px;
+    }
   }
 `;
 
@@ -263,15 +262,6 @@ export const SideMenuWrapper = styled.div`
   ${MediaQuery.mobile} {
     &.open {
       width: 220px;
-      right: 0;
-    }
-    &.close {
-      right: -300px;
-    }
-  }
-
-  ${MediaQuery.tablet} {
-    &.open {
       right: 0;
     }
     &.close {

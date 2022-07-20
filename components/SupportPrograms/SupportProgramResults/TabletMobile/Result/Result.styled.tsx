@@ -17,12 +17,6 @@ export const Wrapper = styled.a`
 export const StatusAndApplyAreasWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
-  overflow: scroll;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 export const Title = styled.h3`

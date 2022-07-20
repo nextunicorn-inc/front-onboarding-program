@@ -7,6 +7,7 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Title = styled.span`
+  display: block;
   ${FontSize.size16};
   ${FontWeight.medium};
   margin-bottom: 4px;

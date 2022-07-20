@@ -15,7 +15,9 @@ const EndDateText = styled.h5`
     color: var(--color-naturalgray7);
 
     ::after {
+      margin-left: 4px;
       content: '|';
+      color: var(--color-naturalgray7);
     }
   }
 `;

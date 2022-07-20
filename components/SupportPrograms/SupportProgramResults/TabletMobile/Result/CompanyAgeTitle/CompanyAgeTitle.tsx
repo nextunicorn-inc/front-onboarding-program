@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../../../../utils';
-import { TARGET_COMPANY_AGE_TEXTS } from '../../../../../../constants/supportPrograms';
-import { TargetCompanyAgeEnum } from '../../../../../../graphql';
+import { FontSize, FontWeight } from 'utils';
+import { TARGET_COMPANY_AGE_TEXTS } from 'constants/supportPrograms';
+import { TargetCompanyAgeEnum } from 'graphql';
 
 const Title = styled.h5`
   ${FontSize.size12};
@@ -12,6 +12,7 @@ const Title = styled.h5`
   ::after {
     margin-left: 4px;
     content: '|';
+    color: var(--color-naturalgray7);
   }
 `;
 

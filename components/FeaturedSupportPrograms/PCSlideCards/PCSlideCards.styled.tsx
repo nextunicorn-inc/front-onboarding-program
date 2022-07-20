@@ -16,11 +16,12 @@ export const SlideCardWrapper = styled.div`
   }
 
   .slick-track {
-    width: 100% !important;
     display: flex;
   }
 
   .slick-slide {
+    width: 100% !important;
+    box-sizing: border-box;
     padding: 0 10px;
   }
 
@@ -49,7 +50,8 @@ export const SlideCard = styled.article`
 `;
 
 export const SlideCardImg = styled.img`
-  width: 295px;
+  width: 100%;
+  max-width: 295px;
   height: 417px;
   border-radius: 5px;
   display: block;

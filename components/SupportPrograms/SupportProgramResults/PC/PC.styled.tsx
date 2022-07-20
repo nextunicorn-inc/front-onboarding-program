@@ -2,11 +2,12 @@ import styled from '@emotion/styled';
 import { MediaQuery, FontSize, FontWeight } from 'utils';
 
 export const Wrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   max-width: 1240px;
+  padding: 0 20px;
   margin: 0 auto;
-  width: 100%;
 
   ${MediaQuery.tablet} {
     display: none;
