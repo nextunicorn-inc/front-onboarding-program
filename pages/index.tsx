@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { QueryClient, dehydrate } from 'react-query';
 import Head from 'next/head';
 
@@ -16,7 +17,6 @@ import {
 import { AreaEnum, Scalars, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '@/graphql';
 
 import { useSupportProgramResults } from '../components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks';
-import styled from '@emotion/styled';
 import { MediaQuery } from '../utils';
 
 type queryStringType = {
