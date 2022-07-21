@@ -64,13 +64,21 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
     <Styled.IndicatorOuter>
       <Styled.IndicatorInner>
         <Styled.ButtonWrapper>
-          <button type="button" onClick={() => move('prev')}>
+          <button
+            aria-label="이전 지원프로그램 배너 보기"
+            type="button"
+            onClick={() => move('prev')}
+          >
             <Chevron direction="Left" size={20} />
           </button>
           <span>
             <b>{currentIndex + 1}</b> / {totalSlides}
           </span>
-          <button type="button" onClick={() => move('next')}>
+          <button
+            aria-label="다음 지원프로그램 배너 보기"
+            type="button"
+            onClick={() => move('next')}
+          >
             <Chevron direction="Right" size={20} />
           </button>
         </Styled.ButtonWrapper>

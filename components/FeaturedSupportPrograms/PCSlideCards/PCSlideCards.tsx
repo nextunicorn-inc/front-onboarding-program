@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+
 import Slider from 'react-slick';
 import { Chevron } from 'commonUi/Icons';
 import { Apply } from 'commonUi/Badges/Apply';
@@ -47,7 +48,6 @@ function PCSlideCards() {
               src={featuredSupportProgram.bannerImgUrl}
               alt={featuredSupportProgram.name}
             />
-
             <Styled.SlideTagWrapper>
               <Apply applyText={featuredSupportProgram.type} />
               <CompanyAge targetCompanyAges={featuredSupportProgram.targetCompanyAges} />

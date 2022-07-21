@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import Slider from 'react-slick';
 
 import { Indicator } from './Indicator';
@@ -44,10 +45,16 @@ function SupportProgramBanners() {
                   {`${supportProgramBanner.title} ${supportProgramBanner.title} ${supportProgramBanner.title}`}
                 </Styled.Title>
               </Styled.Description>
-              <Styled.BannerImage
-                src={supportProgramBanner.desktopImageUrl}
-                alt={supportProgramBanner.title}
-              />
+              <Styled.ImageWrapper>
+                <Image
+                  src={supportProgramBanner.desktopImageUrl}
+                  alt={supportProgramBanner.title}
+                  quality={100}
+                  priority
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </Styled.ImageWrapper>
             </Styled.ResponsiveSection>
           </Styled.InnerContainerLink>
         ))}
