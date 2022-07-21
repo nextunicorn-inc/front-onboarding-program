@@ -44,12 +44,15 @@ function ModalProvider({ children }: Props) {
     }
 
     document.body.style.overflow = 'hidden';
+    const root = document.getElementById('__next')!;
+    root.setAttribute('inert', 'true');
 
     return () => {
       if (!open) {
         return;
       }
       document.body.style.overflow = 'unset';
+      root.removeAttribute('inert');
     };
   }, [open]);
 
