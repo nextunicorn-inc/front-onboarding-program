@@ -1,5 +1,5 @@
-import * as Styled from './Result.styled';
 import { ProgressStatus } from 'commonUi/Badges/ProgressStatus';
+import * as Styled from './Result.styled';
 import { ApplyAreas } from './ApplyAreas';
 import { CompanyAgeTitle } from './CompanyAgeTitle';
 import { EndDate } from '../../utils/EndDate';

@@ -31,7 +31,7 @@ function TypeFilters() {
           </button>
           <Styled.TypeFilterNoticeLine $active={!activeTypes} />
         </Styled.TypeFilterItem>
-        {query.data?.types.map((type, index) => {
+        {query.data?.types.map((type) => {
           const isActive = !!activeTypes && activeTypes.map(identity).includes(type);
           const opacity = isActive ? 1 : 0.4;
 
