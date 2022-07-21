@@ -10,6 +10,13 @@ const nextConfig = {
   },
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: [
+      'contents.nextunicorn.kr',
+      'contents-beta.nextunicorn.kr',
+      'contents-alpha.nextunicorn.kr',
+    ],
+  },
 };
 
 module.exports = nextConfig;

@@ -105,7 +105,11 @@ function Row({ title, children, totalSelectedColumns, resetColumns, RowDetail }:
         {childrenWithRef}
         {showMoreButton && (
           <Styled.MoreButtonWrapper>
-            <Styled.MoreButton role="button" onClick={showWithBackdrop(RowDetail)} />
+            <Styled.MoreButton
+              aria-label="지원프로그램 필터 열기"
+              role="button"
+              onClick={showWithBackdrop(RowDetail)}
+            />
           </Styled.MoreButtonWrapper>
         )}
       </FilterList>

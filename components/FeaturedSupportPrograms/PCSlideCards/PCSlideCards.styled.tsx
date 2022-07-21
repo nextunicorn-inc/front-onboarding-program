@@ -77,7 +77,7 @@ export const SlideCardTitle = styled.h3`
   cursor: pointer;
 `;
 
-export const SlideCardCompanyName = styled.h5`
+export const SlideCardCompanyName = styled.h4`
   display: block;
   margin-top: 4px;
   ${FontSize.size14};

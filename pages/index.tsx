@@ -7,6 +7,7 @@ import {
   SupportProgramBanners,
   useSupportProgramBanners,
   useSupportProgramFilters,
+  useFeaturedSupportPrograms,
   FeaturedSupportPrograms,
   SupportPrograms,
   Header,
@@ -50,6 +51,10 @@ export async function getServerSideProps(context: queryStringType) {
   const queryClient = new QueryClient();
 
   await Promise.all([
+    queryClient.prefetchQuery(
+      useFeaturedSupportPrograms.getKeys(),
+      useFeaturedSupportPrograms.fetcher,
+    ),
     queryClient.prefetchQuery(useSupportProgramBanners.getKeys(), useSupportProgramBanners.fetcher),
     queryClient.prefetchQuery(useSupportProgramFilters.getKeys(), useSupportProgramFilters.fetcher),
     queryClient.prefetchQuery(useSupportProgramResults.getKeys(selectedFilter.filter), () =>

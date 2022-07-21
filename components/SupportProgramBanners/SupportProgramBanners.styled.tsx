@@ -81,13 +81,13 @@ export const Title = styled.p<{ $color: string }>`
   }
 `;
 
-export const BannerImage = styled.img`
-  display: block;
+export const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
   max-width: 610px;
   height: 306px;
-  object-fit: cover;
 
-  @media screen and (max-width: 1023px) {
+  ${MediaQuery.tablet} {
     max-width: 402px;
     height: 202px;
   }

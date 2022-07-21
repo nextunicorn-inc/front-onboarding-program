@@ -24,7 +24,7 @@ export const TitleWrapper = styled.div`
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.p`
   ${FontSize.size12};
   ${FontWeight.medium};
   color: rgb(89, 89, 89);

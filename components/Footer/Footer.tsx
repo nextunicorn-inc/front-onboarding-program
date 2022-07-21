@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { NextUnicornLogo } from 'commonUi/Icons';
+import { SROnly } from 'commonUi/SROnly';
 import * as Styled from './Footer.styled';
 import { NAVIGATIONS, SOCIAL_NETWORKS, POLICIES_OF_SERVICES } from './Footer.constants';
 
@@ -9,6 +10,7 @@ function Footer() {
       <Styled.ResponsiveSection>
         <Styled.Navigation>
           <a href="https://www.nextunicorn.kr" target="_blank" rel="noreferrer">
+            <SROnly>넥스트 유니콘 홈페이지 바로가기</SROnly>
             <NextUnicornLogo primary={false} color="var(--color-unicorngray6)" />
           </a>
           <Styled.MenuList>
@@ -17,14 +19,11 @@ function Footer() {
                 <Styled.MenuTitle>{navigation.title}</Styled.MenuTitle>
                 <ul>
                   {navigation.routes.map((route) => (
-                    <Styled.MenuLink
-                      href={route.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      key={route.title}
-                    >
-                      {route.title}
-                    </Styled.MenuLink>
+                    <li key={route.title}>
+                      <Styled.MenuLink href={route.href} target="_blank" rel="noreferrer">
+                        {route.title}
+                      </Styled.MenuLink>
+                    </li>
                   ))}
                 </ul>
               </li>
@@ -57,7 +56,13 @@ function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Icon width={24} height={24} color="var(--color-naturalgray4)" />
+                  <SROnly>{`소셜네트워크 - ${socialNetwork.title}`}</SROnly>
+                  <Icon
+                    aria-label={`소셜네트워크 - ${socialNetwork.title}`}
+                    width={24}
+                    height={24}
+                    color="var(--color-naturalgray4)"
+                  />
                 </Styled.SocialNetworkLink>
               );
             })}

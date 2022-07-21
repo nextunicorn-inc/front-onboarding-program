@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FontSize, FontWeight } from 'utils';
 
-export const Title = styled.h3`
+export const Title = styled.p`
   width: 100%;
   max-height: 24px;
   ${FontSize.size16};
@@ -17,7 +17,7 @@ export const Title = styled.h3`
   text-overflow: ellipsis;
 `;
 
-export const CompanyName = styled.h5`
+export const CompanyName = styled.p`
   ${FontSize.size14};
   ${FontWeight.regular};
   color: var(--color-naturalgray6);
