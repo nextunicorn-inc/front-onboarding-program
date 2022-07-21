@@ -1,27 +1,34 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { FontSize } from 'utils';
+import { FontSize, FontWeight, MediaQuery } from 'utils';
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding-top: 60px;
-  padding-bottom: 78px;
+  padding: 60px 32px 78px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${MediaQuery.mobile} {
+    padding: 60px 20px 78px;
+  }
 `;
 
 export const PageButton = styled.button<{ $isActive: boolean }>`
-  ${FontSize.size14}
+  ${FontSize.size14};
+  ${FontWeight.regular};
   border: none;
   outline: none;
   background: none;
   cursor: pointer;
-  margin: 0 8px;
+  margin: 0 15px;
   ${({ $isActive }) =>
     $isActive
       ? css`
-          color: var(--color-naturalgray9);
+          padding: 6px 12px;
+          color: var(--color-bluegray0);
+          background-color: #005edf;
+          border-radius: 5px;
         `
       : css`
           color: var(--color-naturalgray3);

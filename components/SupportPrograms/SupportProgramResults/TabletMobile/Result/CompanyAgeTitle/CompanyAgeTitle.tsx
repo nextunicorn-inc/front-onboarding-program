@@ -7,12 +7,12 @@ const Title = styled.p`
   ${FontSize.size12};
   ${FontWeight.regular};
   line-height: 18px;
-  color: var(--color-naturalgray7);
+  color: var(--color-naturalgray6);
 
   ::after {
     margin-left: 4px;
     content: '|';
-    color: var(--color-naturalgray7);
+    color: var(--color-naturalgray6);
   }
 `;
 

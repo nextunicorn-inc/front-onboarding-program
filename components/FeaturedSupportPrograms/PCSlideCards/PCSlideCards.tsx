@@ -8,6 +8,7 @@ import { EndDate } from '../utils/EndDate';
 import useFeaturedSupportPrograms from '../FeaturedSupportPrograms.hooks';
 import { SLIDER_SETTINGS } from '../FeaturedSupportPrograms.constants';
 import * as Styled from './PCSlideCards.styled';
+import { SROnly } from '../../../commonUi/SROnly';
 
 function PCSlideCards() {
   const query = useFeaturedSupportPrograms();
@@ -33,11 +34,23 @@ function PCSlideCards() {
 
   return (
     <Styled.SlideCardWrapper>
-      <Styled.SlideButtonWrapper $isLeftDirection role="button" onClick={prevBtn}>
+      <Styled.SlideButtonWrapper
+        aria-label="이전 지원프로그램 추천 보기"
+        $isLeftDirection
+        role="button"
+        onClick={prevBtn}
+      >
+        <SROnly>이전 지원프로그램 추천 보기</SROnly>
         <Chevron direction="Left" size={20} />
       </Styled.SlideButtonWrapper>
 
-      <Styled.SlideButtonWrapper $isLeftDirection={false} role="button" onClick={nextBtn}>
+      <Styled.SlideButtonWrapper
+        aria-label="다음 지원프로그램 추천 보기"
+        $isLeftDirection={false}
+        role="button"
+        onClick={nextBtn}
+      >
+        <SROnly>다음 지원프로그램 추천 보기</SROnly>
         <Chevron direction="Right" size={20} />
       </Styled.SlideButtonWrapper>
 

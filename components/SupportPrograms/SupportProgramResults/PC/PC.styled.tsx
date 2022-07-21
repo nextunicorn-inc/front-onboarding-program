@@ -23,6 +23,7 @@ export const Title = styled.p`
   ${FontSize.size18};
   ${FontWeight.medium};
   color: #3a4a4a;
+  margin-left: 20px;
 `;
 
 export const ResultWrapper = styled.div`

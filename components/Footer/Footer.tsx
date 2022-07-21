@@ -19,14 +19,11 @@ function Footer() {
                 <Styled.MenuTitle>{navigation.title}</Styled.MenuTitle>
                 <ul>
                   {navigation.routes.map((route) => (
-                    <Styled.MenuLink
-                      href={route.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      key={route.title}
-                    >
-                      {route.title}
-                    </Styled.MenuLink>
+                    <li key={route.title}>
+                      <Styled.MenuLink href={route.href} target="_blank" rel="noreferrer">
+                        {route.title}
+                      </Styled.MenuLink>
+                    </li>
                   ))}
                 </ul>
               </li>
