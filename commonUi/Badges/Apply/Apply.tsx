@@ -23,7 +23,7 @@ function ApplyTag({ applyText }: { applyText: string }) {
 
   return (
     <Styled.TagWrapper>
-      <Styled.TagText color="#595959">{applyResultText}</Styled.TagText>
+      <Styled.TagText color="var(--color-naturalgray7)">{applyResultText}</Styled.TagText>
     </Styled.TagWrapper>
   );
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ProgressStatus } from 'commonUi/Badges/ProgressStatus';
 import { ApplyAreas } from './ApplyAreas';
 import { CompanyAgeTitle } from './CompanyAgeTitle';
