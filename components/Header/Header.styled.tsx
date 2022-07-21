@@ -13,11 +13,14 @@ export const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 0 40px;
   border-bottom: 1px solid rgb(209, 209, 209);
   z-index: 10;
   background-color: var(--color-naturalgray0);
+
+  @media screen and (max-width: 1239px) {
+    padding: 0 20px;
+  }
 `;
 
 export const MenuWrapper = styled.div`

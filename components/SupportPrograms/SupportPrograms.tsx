@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useRouter } from 'next/router';
 
 import { SupportProgramsQueryVariables } from '@/graphql';
-
+import styled from '@emotion/styled';
 import {
   useSupportProgramFilters,
   TypeFilters,
@@ -22,8 +22,12 @@ import { ResultSupportPrograms } from './SupportProgramResults';
 import { PageNavigation } from './PageNavigation';
 import { getQueryStringValues } from '../../lib';
 
+const ScrollIntoViewElement = styled.div`
+  position: absolute;
+  top: -68px;
+`;
 function SupportPrograms() {
-  const wrapper = useRef<HTMLElement | null>(null);
+  const wrapper = useRef<HTMLDivElement | null>(null);
 
   const router = useRouter();
   const {
@@ -66,7 +70,8 @@ function SupportPrograms() {
   const { data: selectedSupportProgramsResultData } = useSupportProgramResults(selectedFilter);
 
   return (
-    <Styled.Wrapper ref={wrapper}>
+    <Styled.Wrapper>
+      <ScrollIntoViewElement ref={wrapper} />
       {filterQuery.isSuccess && (
         <>
           <TypeFilters />

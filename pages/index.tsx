@@ -16,6 +16,8 @@ import {
 import { AreaEnum, Scalars, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '@/graphql';
 
 import { useSupportProgramResults } from '../components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks';
+import styled from '@emotion/styled';
+import { MediaQuery } from '../utils';
 
 type queryStringType = {
   query: {
@@ -69,6 +71,15 @@ export async function getServerSideProps(context: queryStringType) {
   };
 }
 
+const Between = styled.div`
+  padding-top: 68px;
+  background-color: var(--color-bluegray0);
+
+  ${MediaQuery.tablet} {
+    padding-top: 48px;
+    background-color: var(--color-naturalgray0);
+  }
+`;
 function Home() {
   return (
     <>
@@ -84,6 +95,7 @@ function Home() {
       <Header />
       <SupportProgramBanners />
       <FeaturedSupportPrograms />
+      <Between />
       <SupportPrograms />
       <CTASection />
       <Footer />
