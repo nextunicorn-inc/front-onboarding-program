@@ -1,5 +1,5 @@
 import * as Styled from './Result.styled';
-import { ProgressStatus } from '../../../../../commonUi/Badges/ProgressStatus';
+import { ProgressStatus } from 'commonUi/Badges/ProgressStatus';
 import { ApplyAreas } from './ApplyAreas';
 import { CompanyAgeTitle } from './CompanyAgeTitle';
 import { EndDate } from '../../utils/EndDate';
@@ -16,7 +16,7 @@ function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | unde
       {data.data.map((supportProgram) => (
         <Styled.Wrapper href={supportProgram.outerApplyLink} key={supportProgram.name}>
           <Styled.StatusAndApplyAreasWrapper>
-            <ProgressStatus dateData={{ endAt: supportProgram.endAt }} />
+            <ProgressStatus endAtData={supportProgram.endAt} />
             <ApplyAreas applyAreasData={supportProgram.areas} />
           </Styled.StatusAndApplyAreasWrapper>
 
