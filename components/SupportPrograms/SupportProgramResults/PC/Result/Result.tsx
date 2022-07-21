@@ -16,7 +16,7 @@ function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | unde
   return (
     <>
       {data.data.map((supportProgram: SupportProgramDataType) => (
-        <Styled.TestWrapper href={supportProgram.outerApplyLink} key={supportProgram.name}>
+        <Styled.TestWrapper href={supportProgram.outerApplyLink ?? '#'} key={supportProgram.name}>
           <Styled.TestLeftContentsWrapper>
             <Styled.TestStatusWrapper>
               <ProgressStatus endAtData={supportProgram.endAt} />

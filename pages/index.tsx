@@ -1,4 +1,5 @@
 import { QueryClient, dehydrate } from 'react-query';
+import Head from 'next/head';
 
 import {
   CTASection,
@@ -66,6 +67,15 @@ export async function getServerSideProps(context: queryStringType) {
 function Home() {
   return (
     <>
+      <Head>
+        <title>지원 프로그램</title>
+        <meta name="keywords" content="지원프로그램, 스타트업지원, 정부지원사업" />
+        <meta
+          name="description"
+          content="스타트업을 위한 지원사업부터 데모데이 신청까지! 지원 프로그램 확인하기"
+        />
+        <meta name="author" content="주식회사 넥스트 유니콘" />
+      </Head>
       <Header />
       <SupportProgramBanners />
       <FeaturedSupportPrograms />
