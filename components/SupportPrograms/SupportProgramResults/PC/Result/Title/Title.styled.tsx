@@ -6,19 +6,31 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const Title = styled.span`
-  display: block;
+export const Title = styled.h3`
+  width: 100%;
+  max-height: 24px;
   ${FontSize.size16};
   ${FontWeight.medium};
   margin-bottom: 4px;
   padding-right: 28px;
   color: var(--color-naturalgray7);
+
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export const TestWrapper = styled.p`
+  width: 100%;
+  -webkit-line-clamp: 1;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
 
-export const CompanyName = styled.span`
+export const CompanyName = styled.h5`
   ${FontSize.size14};
   ${FontWeight.regular};
   color: var(--color-naturalgray6);

@@ -17,7 +17,6 @@ export const Wrapper = styled.div`
 export const TitleWrapper = styled.div`
   display: flex;
   width: 100%;
-  margin-bottom: 20px;
 `;
 
 export const Title = styled.h1`
@@ -27,6 +26,12 @@ export const Title = styled.h1`
 `;
 
 export const ResultWrapper = styled.div`
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(232, 236, 242);
+  border-radius: 5px;
   background-color: var(--color-naturalgray0);
 `;
 
