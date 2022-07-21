@@ -142,6 +142,13 @@ a:visited {
   color: inherit;
 }
 
+button {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
 
 /* colors */
 :root {

@@ -6,7 +6,6 @@ import { useMediaQuery } from 'hooks';
 import * as Styled from './FilterDetail.styled';
 import { FilterList } from '../SupportProgramFilters.styled';
 import FilterItem from '../FilterItem';
-import { ApplyButtonWrapper } from './FilterDetail.styled';
 
 type Props = {
   title: string;

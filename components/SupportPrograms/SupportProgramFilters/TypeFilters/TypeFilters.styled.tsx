@@ -3,7 +3,7 @@ import { FontSize, FontWeight, MediaQuery } from 'utils';
 
 export const TypeFilterList = styled.ul`
   display: flex;
-  margin-bottom: 38px;
+  margin-bottom: 28px;
   ${MediaQuery.tablet} {
     margin-bottom: 24px;
   }
@@ -32,6 +32,7 @@ export const TypeFilterItem = styled.li<{ $active: boolean }>`
     display: inline-flex;
     align-items: center;
     padding: 0;
+
     background-color: transparent;
     color: hsla(var(--base-naturalgray9), ${({ $active }) => ($active ? 1 : 0.4)});
     mix-blend-mode: normal;
@@ -44,8 +45,10 @@ export const TypeFilterItem = styled.li<{ $active: boolean }>`
       margin-left: 2px;
     }
 
-    &:hover svg {
-      opacity: 1;
+    &:hover {
+      & > svg {
+        opacity: 1;
+      }
     }
 
     ${MediaQuery.tablet} {

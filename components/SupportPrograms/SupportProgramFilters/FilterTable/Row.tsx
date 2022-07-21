@@ -11,9 +11,10 @@ import { useMediaQuery } from 'hooks';
 import { Backdrop, useModal } from 'commonUi/Modal';
 import { Plus } from 'commonUi/Icons';
 
-import * as Styled from './FilterTable.styled';
-import { FilterList } from '../SupportProgramFilters.styled';
 import FilterItem from '../FilterItem';
+import * as Styled from './FilterTable.styled';
+import { useThrottle } from './FilterTable.hooks';
+import { FilterList } from '../SupportProgramFilters.styled';
 
 type Props = {
   title: string;
@@ -53,25 +54,34 @@ function Row({ title, children, totalSelectedColumns, resetColumns, RowDetail }:
     return child;
   });
 
-  useEffect(() => {
-    if (isMobile) {
-      return;
-    }
+  function isRowOverflowed() {
     const { current: lastItem } = lastItemRef;
     const wrapper = document.querySelector('.main-filter');
 
     if (!lastItem || !wrapper) {
-      return undefined;
+      return false;
     }
 
     const wrapperRight = wrapper.getBoundingClientRect().right;
     const lastItemRight = lastItem.getBoundingClientRect().right;
     const OFFSET = 20;
+    return wrapperRight - OFFSET < lastItemRight;
+  }
 
-    if (wrapperRight - OFFSET < lastItemRight) {
-      setShowMoreButton(true);
+  const changeShowMoreButton = useThrottle(() => {
+    if (isMobile) {
+      return;
     }
-  }, [isMobile]);
+    setShowMoreButton(isRowOverflowed());
+  }, 200);
+
+  useEffect(() => {
+    changeShowMoreButton();
+    window.addEventListener('resize', changeShowMoreButton);
+    return () => {
+      window.removeEventListener('resize', changeShowMoreButton);
+    };
+  }, [changeShowMoreButton]);
 
   return isMobile ? (
     <Styled.MobileToggleButton onClick={showWithBackdrop(RowDetail)}>
@@ -87,18 +97,17 @@ function Row({ title, children, totalSelectedColumns, resetColumns, RowDetail }:
       <Styled.RowTitle>{title}</Styled.RowTitle>
       <Styled.Separator aria-hidden />
       <FilterList>
-        <FilterItem opacity={0.4} onClick={resetColumns} selected={isAnyColumnNotSelected}>
-          전체
-        </FilterItem>
+        <li style={{ marginLeft: 0 }}>
+          <FilterItem opacity={0.6} onClick={resetColumns} selected={isAnyColumnNotSelected}>
+            전체
+          </FilterItem>
+        </li>
         {childrenWithRef}
-        <Styled.MoreButtonWrapper>
-          <Styled.MoreButton role="button" onClick={showWithBackdrop(RowDetail)} />
-        </Styled.MoreButtonWrapper>
-        {/*{showMoreButton && (*/}
-        {/*  <Styled.MoreButtonWrapper>*/}
-        {/*    <Styled.MoreButton role="button" onClick={showWithBackdrop(RowDetail)} />*/}
-        {/*  </Styled.MoreButtonWrapper>*/}
-        {/*)}*/}
+        {showMoreButton && (
+          <Styled.MoreButtonWrapper>
+            <Styled.MoreButton role="button" onClick={showWithBackdrop(RowDetail)} />
+          </Styled.MoreButtonWrapper>
+        )}
       </FilterList>
     </Styled.RowWrapper>
   );

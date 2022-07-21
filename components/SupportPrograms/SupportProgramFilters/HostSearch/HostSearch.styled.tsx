@@ -15,14 +15,17 @@ export const InputContainer = styled.div`
 export const Input = styled.input`
   width: 100%;
   height: 100%;
+
   padding-left: 12px;
+  // including search icon's padding.
   padding-right: 42px;
 
+  background-color: var(--color-naturalgray0);
+  color: hsla(var(--base-naturalgray), 0.4);
   ${FontSize.size14};
 
   border: 1px solid #d6dae3;
   border-radius: 5px;
-  color: hsla(var(--base-naturalgray), 40%);
 
   &:focus {
     outline: 1px solid var(--color-unicornblue6);
@@ -80,10 +83,26 @@ export const CheckboxContainer = styled.div`
 `;
 
 export const Checkbox = styled.input`
+  position: relative;
   margin: 0;
   padding: 0;
   width: 13px;
   height: 13px;
+
+  &:focus {
+    outline: none;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      opacity: 0.4;
+      width: 28px;
+      height: 28px;
+      background-color: rgb(217, 233, 255);
+      border-radius: 9999px;
+    }
+  }
 `;
 
 export const MatchedKeyword = styled.span`
@@ -98,6 +117,8 @@ export const NotFoundWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
   color: var(--color-unicorngray7);
   ${FontSize.size14}
 

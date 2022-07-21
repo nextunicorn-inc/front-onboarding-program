@@ -4,11 +4,12 @@ import { FontSize, FontWeight, MediaQuery } from 'utils';
 export const Responsive = styled.div`
   max-width: 1240px;
   margin: 0 auto;
-  ${MediaQuery.tablet} {
+
+  @media screen and (max-width: 1239px) {
     padding: 0 32px;
   }
 
-  @media screen and (max-width: 500px) {
+  ${MediaQuery.mobile} {
     padding: 0 20px;
   }
 `;
@@ -30,13 +31,20 @@ export const FilterList = styled.ul<{ $wrap?: boolean }>`
     border: none;
   }
 
-  ${MediaQuery.mobile} {
-    justify-content: center;
-  }
+  ${({ $wrap }) => {
+    return $wrap
+      ? `
+          ${MediaQuery.tablet} {
+            justify-content: center;
+            overflow-x: unset;
+          }
+        `
+      : '';
+  }};
 `;
 
 export const FilterItem = styled.button<{ selected: boolean; opacity: number }>`
-  cursor: pointer;
+  min-width: 62px;
   position: relative;
   padding: 10px 16px;
 
@@ -48,12 +56,11 @@ export const FilterItem = styled.button<{ selected: boolean; opacity: number }>`
     if (selected) {
       return 'background-color: var(--color-unicornblue1);';
     }
-    return 'background-color: var(--color-bluegray0);';
+    return 'background-color: var(--color-naturalgray1);';
   }};
 
   opacity: ${({ opacity }) => opacity};
 
-  border: none;
   border-radius: 25px;
   transition: all 150ms linear;
 
@@ -76,10 +83,7 @@ export const FilterItem = styled.button<{ selected: boolean; opacity: number }>`
 
   ${MediaQuery.tablet} {
     padding: 8px 12px;
-    ${FontSize.size14};
-  }
-
-  ${MediaQuery.mobile} {
+    min-width: 52px;
     ${FontSize.size14};
   }
 `;

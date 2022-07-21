@@ -25,7 +25,7 @@ function AgeFilter() {
       {query.data?.targetCompanyAges.map((item) => (
         <li key={item}>
           <FilterItem
-            opacity={0.4}
+            opacity={0.6}
             onClick={toggle(item)}
             selected={activeAges?.includes(item) ?? false}
           >
