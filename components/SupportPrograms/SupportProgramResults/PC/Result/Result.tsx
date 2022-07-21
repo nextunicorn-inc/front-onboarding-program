@@ -16,20 +16,51 @@ function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | unde
   return (
     <>
       {data.data.map((supportProgram: SupportProgramDataType) => (
-        <Styled.ResultWrapper href={supportProgram.outerApplyLink} key={supportProgram.name}>
-          <ProgressStatus endAtData={supportProgram.endAt} />
-          <ApplyAreas applyAreasData={supportProgram.areas} />
-          <Title
-            titleData={{
-              title: supportProgram.name,
-              companyName: supportProgram.supportProgramCompany.name,
-            }}
-          />
+        <Styled.TestWrapper href={supportProgram.outerApplyLink} key={supportProgram.name}>
+          <Styled.TestLeftContentsWrapper>
+            <Styled.TestStatusWrapper>
+              <ProgressStatus endAtData={supportProgram.endAt} />
+            </Styled.TestStatusWrapper>
 
-          <CompanyAgeTitle companyAgeTitleData={supportProgram.targetCompanyAges} />
-          <EndDate endDate={supportProgram.endAt} />
-          <ApplyWays applyWaysData={supportProgram.type} />
-        </Styled.ResultWrapper>
+            <Styled.ApplyAreasWrapper>
+              <ApplyAreas applyAreasData={supportProgram.areas} />
+            </Styled.ApplyAreasWrapper>
+          </Styled.TestLeftContentsWrapper>
+
+          <Styled.TestRightContentsWrapper>
+            <Styled.ProgramNameWrapper>
+              <Title
+                titleData={{
+                  title: supportProgram.name,
+                  companyName: supportProgram.supportProgramCompany.name,
+                }}
+              />
+            </Styled.ProgramNameWrapper>
+
+            <Styled.DetailWrapper>
+              <Styled.DetailInfoWrapper>
+                <CompanyAgeTitle companyAgeTitleData={supportProgram.targetCompanyAges} />
+                <EndDate endDate={supportProgram.endAt} />
+                <ApplyWays applyWaysData={supportProgram.type} />
+              </Styled.DetailInfoWrapper>
+            </Styled.DetailWrapper>
+          </Styled.TestRightContentsWrapper>
+        </Styled.TestWrapper>
+
+        // <Styled.ResultWrapper href={supportProgram.outerApplyLink} key={supportProgram.name}>
+        //   <ProgressStatus endAtData={supportProgram.endAt} />
+        //   <ApplyAreas applyAreasData={supportProgram.areas} />
+        //   <Title
+        //     titleData={{
+        //       title: supportProgram.name,
+        //       companyName: supportProgram.supportProgramCompany.name,
+        //     }}
+        //   />
+        //
+        //   <CompanyAgeTitle companyAgeTitleData={supportProgram.targetCompanyAges} />
+        //   <EndDate endDate={supportProgram.endAt} />
+        //   <ApplyWays applyWaysData={supportProgram.type} />
+        // </Styled.ResultWrapper>
       ))}
     </>
   );

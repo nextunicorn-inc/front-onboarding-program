@@ -2,11 +2,12 @@ import styled from '@emotion/styled';
 import { MediaQuery, FontSize, FontWeight } from 'utils';
 
 export const Wrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   max-width: 1240px;
+  padding: 0 20px;
   margin: 0 auto;
-  width: 100%;
 
   ${MediaQuery.tablet} {
     display: none;
@@ -16,7 +17,6 @@ export const Wrapper = styled.div`
 export const TitleWrapper = styled.div`
   display: flex;
   width: 100%;
-  margin-bottom: 20px;
 `;
 
 export const Title = styled.h1`
@@ -26,6 +26,12 @@ export const Title = styled.h1`
 `;
 
 export const ResultWrapper = styled.div`
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(232, 236, 242);
+  border-radius: 5px;
   background-color: var(--color-naturalgray0);
 `;
 
