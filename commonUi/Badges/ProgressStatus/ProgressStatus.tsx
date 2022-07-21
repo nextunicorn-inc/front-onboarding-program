@@ -6,11 +6,7 @@ function ProgressStatus({ endAtData }: { endAtData: string | undefined }) {
     const color = '#3389FF';
     const message = '상시 모집';
 
-    return (
-      <Styled.TextWrapper $color={color}>
-        <Styled.Text>{message}</Styled.Text>
-      </Styled.TextWrapper>
-    );
+    return <Styled.Text $color={color}>{message}</Styled.Text>;
   }
 
   const [_, endMonthString, endDayList] = endAtData.split('-');
@@ -28,7 +24,8 @@ function ProgressStatus({ endAtData }: { endAtData: string | undefined }) {
 
   // 오늘 마감
   if (todayMonth === endMonth && todayDay === endDay) {
-    color = 'var(--color-coral5)';
+    // color/ui/coral 색이 다릅니다.
+    color = '#FF5859';
     message = '오늘 마감';
   }
 
@@ -38,32 +35,31 @@ function ProgressStatus({ endAtData }: { endAtData: string | undefined }) {
 
     if (dDay > 8) {
       // 진행 중
-      color = '#0057CE';
+      color = 'var(--color-bluegray7)';
       message = '진행중';
     } else if (dDay === 0) {
       // 오늘 마감
-      color = 'var(--color-coral5)';
+      // color/ui/coral 색이 다릅니다.
+      color = '#FF5859';
       message = '오늘 마감';
     } else {
       // D-Day
+      // color/ui/yellow 가 디자인 시스템에 없습니다.
       color = '#FFBE49';
       message = `D-${dDay}`;
     }
   } else if (endMonth > todayMonth) {
     // 진행 중
-    color = '#0057CE';
+    color = 'var(--color-bluegray7)';
     message = '진행중';
   } else {
     // 마감
-    color = '#C3C8D2';
+    // color = '#C3C8D2';
+    color = 'var(--color-bluegray3)';
     message = '마감';
   }
 
-  return (
-    <Styled.TextWrapper $color={color}>
-      <Styled.Text>{message}</Styled.Text>
-    </Styled.TextWrapper>
-  );
+  return <Styled.Text $color={color}>{message}</Styled.Text>;
 }
 
 export default ProgressStatus;

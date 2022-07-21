@@ -2,12 +2,6 @@ import styled from '@emotion/styled';
 import { FontSize, FontWeight } from 'utils';
 
 export const MenuTitleWrapper = styled.div`
-  //display: grid;
-  //grid-template-columns: 105px 128px auto 93px 112px 130px;
-  //width: 100%;
-  //min-height: 64px;
-  //padding: 24px 20px;
-
   width: 100%;
   min-height: 64px;
   padding: 24px 20px;
@@ -34,17 +28,12 @@ export const ApplyAreasTitle = styled.div`
 `;
 
 export const ProgramTitle = styled.div`
-  // ${FontSize.size14}
-  // ${FontWeight.medium}
-  // color: rgb(51, 51, 51);
-  // flex: 1 1 0;
-
   margin-left: 28px;
   ${FontSize.size14};
   ${FontWeight.medium};
   line-height: 20px;
   color: #333333;
-  flex: 1 1 0;
+  flex: 1;
 `;
 
 export const CompanyAgeTitle = styled.div`

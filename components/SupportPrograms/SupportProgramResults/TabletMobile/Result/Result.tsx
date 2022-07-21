@@ -1,10 +1,10 @@
 import { ProgressStatus } from 'commonUi/Badges/ProgressStatus';
-import * as Styled from './Result.styled';
 import { ApplyAreas } from './ApplyAreas';
 import { CompanyAgeTitle } from './CompanyAgeTitle';
 import { EndDate } from '../../utils/EndDate';
 import { ApplyWays } from '../../utils/ApplyWays';
 import { SupportProgramsQuery } from '../../SupportProgramResults.type';
+import * as Styled from './Result.styled';
 
 function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | undefined }) {
   if (!data) {
@@ -27,7 +27,7 @@ function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | unde
           <Styled.DetailInfoWrapper>
             <CompanyAgeTitle companyAgeTitleData={supportProgram.targetCompanyAges} />
             <EndDate endDate={supportProgram.endAt} />
-            <ApplyWays applyWaysData={supportProgram.type} />
+            <ApplyWays applyWaysData={supportProgram.type} endDate={supportProgram.endAt} />
           </Styled.DetailInfoWrapper>
         </Styled.Wrapper>
       ))}

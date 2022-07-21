@@ -16,18 +16,18 @@ function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | unde
   return (
     <>
       {data.data.map((supportProgram: SupportProgramDataType) => (
-        <Styled.TestWrapper href={supportProgram.outerApplyLink ?? '#'} key={supportProgram.name}>
-          <Styled.TestLeftContentsWrapper>
-            <Styled.TestStatusWrapper>
+        <Styled.Wrapper href={supportProgram.outerApplyLink ?? '#'} key={supportProgram.name}>
+          <Styled.LeftContentsWrapper>
+            <Styled.StatusWrapper>
               <ProgressStatus endAtData={supportProgram.endAt} />
-            </Styled.TestStatusWrapper>
+            </Styled.StatusWrapper>
 
             <Styled.ApplyAreasWrapper>
               <ApplyAreas applyAreasData={supportProgram.areas} />
             </Styled.ApplyAreasWrapper>
-          </Styled.TestLeftContentsWrapper>
+          </Styled.LeftContentsWrapper>
 
-          <Styled.TestRightContentsWrapper>
+          <Styled.RightContentsWrapper>
             <Styled.ProgramNameWrapper>
               <Title
                 titleData={{
@@ -41,26 +41,11 @@ function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | unde
               <Styled.DetailInfoWrapper>
                 <CompanyAgeTitle companyAgeTitleData={supportProgram.targetCompanyAges} />
                 <EndDate endDate={supportProgram.endAt} />
-                <ApplyWays applyWaysData={supportProgram.type} />
+                <ApplyWays applyWaysData={supportProgram.type} endDate={supportProgram.endAt} />
               </Styled.DetailInfoWrapper>
             </Styled.DetailWrapper>
-          </Styled.TestRightContentsWrapper>
-        </Styled.TestWrapper>
-
-        // <Styled.ResultWrapper href={supportProgram.outerApplyLink} key={supportProgram.name}>
-        //   <ProgressStatus endAtData={supportProgram.endAt} />
-        //   <ApplyAreas applyAreasData={supportProgram.areas} />
-        //   <Title
-        //     titleData={{
-        //       title: supportProgram.name,
-        //       companyName: supportProgram.supportProgramCompany.name,
-        //     }}
-        //   />
-        //
-        //   <CompanyAgeTitle companyAgeTitleData={supportProgram.targetCompanyAges} />
-        //   <EndDate endDate={supportProgram.endAt} />
-        //   <ApplyWays applyWaysData={supportProgram.type} />
-        // </Styled.ResultWrapper>
+          </Styled.RightContentsWrapper>
+        </Styled.Wrapper>
       ))}
     </>
   );
