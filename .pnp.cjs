@@ -2980,6 +2980,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.0.0"\
       ],\
       [\
+        "wicg-inert",\
+        "npm:3.1.2"\
+      ],\
+      [\
         "wide-align",\
         "npm:1.1.5"\
       ],\
@@ -3081,7 +3085,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-query", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:3.39.1"],\
             ["react-slick", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:0.29.0"],\
             ["slick-carousel", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:1.8.1"],\
-            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"]\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"],\
+            ["wicg-inert", "npm:3.1.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -11203,7 +11208,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-query", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:3.39.1"],\
             ["react-slick", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:0.29.0"],\
             ["slick-carousel", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:1.8.1"],\
-            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"]\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"],\
+            ["wicg-inert", "npm:3.1.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -15912,6 +15918,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/which-module-npm-2.0.0-daf3daa08d-809f7fd3df.zip/node_modules/which-module/",\
           "packageDependencies": [\
             ["which-module", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["wicg-inert", [\
+        ["npm:3.1.2", {\
+          "packageLocation": "./.yarn/cache/wicg-inert-npm-3.1.2-786d525c4e-538c5cb7f2.zip/node_modules/wicg-inert/",\
+          "packageDependencies": [\
+            ["wicg-inert", "npm:3.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\

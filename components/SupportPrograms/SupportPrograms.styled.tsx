@@ -7,6 +7,7 @@ export const Wrapper = styled.section`
   background-color: var(--color-bluegray0);
 
   ${MediaQuery.tablet} {
+    padding-top: 48px;
     background-color: var(--color-naturalgray0);
   }
 `;

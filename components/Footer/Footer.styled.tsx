@@ -9,15 +9,11 @@ export const Layout = styled.footer`
   & a:hover {
     color: var(--color-naturalgray7);
   }
-
   ${MediaQuery.tablet} {
-    padding-left: 32px;
-    padding-right: 33px;
+    border-top: 1px solid var(--color-naturalgray2);
   }
 
   ${MediaQuery.mobile} {
-    padding-left: 20px;
-    padding-right: 20px;
     padding-bottom: 32px;
   }
 `;
@@ -25,6 +21,14 @@ export const Layout = styled.footer`
 export const ResponsiveSection = styled.div`
   max-width: 1240px;
   margin: 0 auto;
+
+  @media screen and (max-width: 1239px) {
+    padding: 0 32px;
+  }
+
+  ${MediaQuery.mobile} {
+    padding: 0 20px;
+  }
 `;
 
 export const Navigation = styled.nav`
@@ -32,7 +36,7 @@ export const Navigation = styled.nav`
   justify-content: space-between;
   align-items: flex-start;
 
-  padding-top: 35px;
+  padding-top: 36px;
   padding-bottom: 40px;
   margin-bottom: 32px;
 
@@ -94,7 +98,7 @@ export const CompanyInformation = styled.section`
   ${FontSize.size12};
 
   ${MediaQuery.mobile} {
-    margin-bottom: 25.5px;
+    margin-bottom: 24px;
     flex-direction: column;
     align-items: center;
   }
@@ -143,6 +147,11 @@ export const SocialNetworkLink = styled.a`
   display: block;
   &:not(:first-of-type) {
     margin-left: 11px;
+  }
+  ${MediaQuery.mobile} {
+    &:not(:first-of-type) {
+      margin-left: 0;
+    }
   }
 `;
 

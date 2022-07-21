@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { MediaQuery } from '../../../../../utils';
 
 export const Wrapper = styled.a`
   width: 100%;
@@ -7,7 +6,7 @@ export const Wrapper = styled.a`
   flex-direction: row;
   min-height: 64px;
   padding: 24px 20px;
-  border-bottom: 1px solid var(--color-bluegray0);
+  border-bottom: 1px solid var(--color-bluegray1);
   cursor: pointer;
 
   &:hover {

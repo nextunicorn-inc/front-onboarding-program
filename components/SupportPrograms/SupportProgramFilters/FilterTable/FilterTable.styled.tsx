@@ -109,7 +109,6 @@ export const MoreButton = styled.div`
 `;
 
 export const MobileToggleButton = styled.button`
-  border: none;
   padding: 8px 12px;
   display: flex;
   align-items: center;

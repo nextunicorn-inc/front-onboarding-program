@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 import '../styles/globals.css';
 import 'slick-carousel/slick/slick.css';
+import 'wicg-inert';
 
 import { ModalProvider } from '../commonUi/Modal';
 

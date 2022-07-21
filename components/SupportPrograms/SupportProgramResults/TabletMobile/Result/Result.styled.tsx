@@ -19,7 +19,7 @@ export const Wrapper = styled.a`
   flex-direction: column;
   padding-top: 17px;
   cursor: pointer;
-  border-bottom: 1px solid rgb(209, 209, 209);
+  border-bottom: 1px solid var(--color-bluegray1);
 
   &:last-child {
     border-bottom: unset;

@@ -14,7 +14,7 @@ function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | unde
   return (
     <Styled.Container>
       {data.data.map((supportProgram) => (
-        <Styled.Wrapper href={supportProgram.outerApplyLink} key={supportProgram.name}>
+        <Styled.Wrapper href={supportProgram.outerApplyLink ?? '#'} key={supportProgram.name}>
           <Styled.StatusAndApplyAreasWrapper>
             <ProgressStatus endAtData={supportProgram.endAt} />
             <ApplyAreas applyAreasData={supportProgram.areas} />
@@ -27,7 +27,7 @@ function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | unde
           <Styled.DetailInfoWrapper>
             <CompanyAgeTitle companyAgeTitleData={supportProgram.targetCompanyAges} />
             <EndDate endDate={supportProgram.endAt} />
-            <ApplyWays applyWaysData={supportProgram.type} />
+            <ApplyWays applyWaysData={supportProgram.type} endDate={supportProgram.endAt} />
           </Styled.DetailInfoWrapper>
         </Styled.Wrapper>
       ))}

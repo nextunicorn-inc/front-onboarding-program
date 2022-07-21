@@ -39,17 +39,20 @@ function ModalProvider({ children }: Props) {
   const contextValue = useMemo(() => ({ show, hide }), [show, hide]);
 
   useEffect(() => {
-    if (!open) {
+    const root = document.getElementById('__next');
+    if (!open || !root) {
       return;
     }
 
     document.body.style.overflow = 'hidden';
+    root.setAttribute('inert', 'true');
 
     return () => {
       if (!open) {
         return;
       }
       document.body.style.overflow = 'unset';
+      root.removeAttribute('inert');
     };
   }, [open]);
 

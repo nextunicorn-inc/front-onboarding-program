@@ -35,6 +35,12 @@ export const ContentsWrapper = styled.article`
   border-radius: 5px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.03);
 
+  ${MediaQuery.tablet} {
+    padding-top: 15px;
+    margin-bottom: 23px;
+    height: 720px;
+  }
+
   ${MediaQuery.mobile} {
     width: 100%;
     height: 100%;
@@ -48,9 +54,13 @@ export const HeadingSection = styled.section`
   align-items: center;
   margin-bottom: 20px;
 
-  @media screen and (max-width: 1024px) {
+  ${MediaQuery.tablet} {
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  ${MediaQuery.mobile} {
+    margin-bottom: 20px;
   }
 `;
 
@@ -60,7 +70,7 @@ export const Heading = styled.h2`
   color: #3a3a3a;
   letter-spacing: -0.002em;
 
-  ${MediaQuery.mobile} {
+  ${MediaQuery.tablet} {
     ${FontSize.size16}
   }
 `;
@@ -113,11 +123,18 @@ export const ApplyButton = styled.button`
   &:hover {
     background-color: var(--color-unicornblue7);
   }
+
+  ${MediaQuery.tablet} {
+    width: 220px;
+    margin: 0 auto;
+  }
+
+  ${MediaQuery.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ResetButton = styled.button`
-  cursor: pointer;
-  border: none;
   padding: 4px 8px;
   border-radius: 5px;
   color: var(--color-naturalgray7);
