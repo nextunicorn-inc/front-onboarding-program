@@ -7,6 +7,11 @@ import { SupportProgramTypeEnum } from '@/graphql';
 const TextWrapper = styled.div`
   width: 102px;
   margin-left: 28px;
+
+  ${MediaQuery.tablet} {
+    width: auto;
+    margin-left: 0;
+  }
 `;
 
 const Text = styled.span`

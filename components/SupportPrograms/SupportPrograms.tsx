@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import { useRouter } from 'next/router';
 
 import { SupportProgramsQueryVariables } from '@/graphql';
-import { SupportProgramsQuery } from './SupportProgramResults/SupportProgramResults.type';
 
 import {
   useSupportProgramFilters,

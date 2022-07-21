@@ -8,24 +8,29 @@ const EndDateTextWrapper = styled.div`
   flex-direction: row;
   margin-left: 28px;
   width: 84px;
+
+  ${MediaQuery.tablet} {
+    width: auto;
+    margin-left: 0;
+  }
 `;
 
 const EndDateText = styled.h5`
   ${FontSize.size16}
   ${FontWeight.regular}
   line-height: 24px;
-  color: var(--color-naturalgray7);
+  color: var(--color-naturalgray6);
 
   ${MediaQuery.tablet} {
     ${FontSize.size12}
     ${FontWeight.regular}
     line-height: 18px;
-    color: var(--color-naturalgray7);
+    color: var(--color-naturalgray6);
 
     ::after {
       margin-left: 4px;
       content: '|';
-      color: var(--color-naturalgray7);
+      color: var(--color-naturalgray6);
     }
   }
 `;

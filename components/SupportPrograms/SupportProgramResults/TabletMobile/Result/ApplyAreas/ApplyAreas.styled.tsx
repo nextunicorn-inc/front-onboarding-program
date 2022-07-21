@@ -1,14 +1,18 @@
 import styled from '@emotion/styled';
-import { FontSize, FontWeight } from '../../../../../../utils';
+import { FontSize, FontWeight, MediaQuery } from 'utils';
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${MediaQuery.mobile} {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Text = styled.span`
-  margin-left: 8px;
+  margin-right: 8px;
   ${FontSize.size12}
   ${FontWeight.regular}
   line-height: 18px;

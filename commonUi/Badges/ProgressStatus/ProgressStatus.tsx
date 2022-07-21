@@ -6,11 +6,7 @@ function ProgressStatus({ endAtData }: { endAtData: string | undefined }) {
     const color = '#3389FF';
     const message = '상시 모집';
 
-    return (
-      <Styled.TextWrapper $color={color}>
-        <Styled.Text>{message}</Styled.Text>
-      </Styled.TextWrapper>
-    );
+    return <Styled.Text $color={color}>{message}</Styled.Text>;
   }
 
   const [_, endMonthString, endDayList] = endAtData.split('-');
@@ -59,11 +55,7 @@ function ProgressStatus({ endAtData }: { endAtData: string | undefined }) {
     message = '마감';
   }
 
-  return (
-    <Styled.TextWrapper $color={color}>
-      <Styled.Text>{message}</Styled.Text>
-    </Styled.TextWrapper>
-  );
+  return <Styled.Text $color={color}>{message}</Styled.Text>;
 }
 
 export default ProgressStatus;

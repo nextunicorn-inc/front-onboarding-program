@@ -1,20 +1,7 @@
 import styled from '@emotion/styled';
+import { MediaQuery } from '../../../../../utils';
 
-export const ResultWrapper = styled.a`
-  width: 100%;
-  display: grid;
-  align-items: baseline;
-  grid-template-columns: 105px 128px auto 93px 112px 63px;
-  padding: 24px 20px;
-  border-bottom: 1px solid var(--color-bluegray0);
-
-  &:hover {
-    border-radius: 5px;
-    background-color: rgba(244, 245, 247, 0.6);
-  }
-`;
-
-export const TestWrapper = styled.a`
+export const Wrapper = styled.a`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -27,14 +14,18 @@ export const TestWrapper = styled.a`
     border-radius: 5px;
     background-color: rgba(244, 245, 247, 0.6);
   }
+
+  &:last-child {
+    border-bottom: unset;
+  }
 `;
 
-export const TestLeftContentsWrapper = styled.div`
+export const LeftContentsWrapper = styled.div`
   display: flex;
 `;
 
-export const TestStatusWrapper = styled.div`
-  width: 50px;
+export const StatusWrapper = styled.div`
+  width: 55px;
 `;
 
 export const ApplyAreasWrapper = styled.div`
@@ -43,8 +34,8 @@ export const ApplyAreasWrapper = styled.div`
   margin-left: 28px;
 `;
 
-export const TestRightContentsWrapper = styled.div`
-  flex: 1 1 0;
+export const RightContentsWrapper = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: row;
 `;
