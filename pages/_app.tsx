@@ -12,6 +12,7 @@ import { ModalProvider } from '../commonUi/Modal';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [client] = useState(() => new QueryClient());
+
   return (
     <QueryClientProvider client={client}>
       <Hydrate state={pageProps.reactQueryData}>

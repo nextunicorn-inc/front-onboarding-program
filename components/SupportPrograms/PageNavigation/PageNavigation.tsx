@@ -30,7 +30,11 @@ function PageNavigation({
   return (
     <Styled.Wrapper>
       {currentPageNumber !== 1 && (
-        <Styled.ArrowButtonWrapper role="button" onClick={() => onClick(currentPageNumber - 1)}>
+        <Styled.ArrowButtonWrapper
+          aria-label="이전 지원프로그램 결과 보기"
+          role="button"
+          onClick={() => onClick(currentPageNumber - 1)}
+        >
           <Chevron direction="Left" size={24} />
         </Styled.ArrowButtonWrapper>
       )}
@@ -46,7 +50,11 @@ function PageNavigation({
       ))}
 
       {totalDataCount && lastPageNumber !== currentPageNumber && (
-        <Styled.ArrowButtonWrapper role="button" onClick={() => onClick(currentPageNumber + 1)}>
+        <Styled.ArrowButtonWrapper
+          aria-label="다음 지원프로그램 결과 보기"
+          role="button"
+          onClick={() => onClick(currentPageNumber + 1)}
+        >
           <Chevron direction="Right" size={24} />
         </Styled.ArrowButtonWrapper>
       )}

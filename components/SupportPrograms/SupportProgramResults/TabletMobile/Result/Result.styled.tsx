@@ -19,7 +19,7 @@ export const StatusAndApplyAreasWrapper = styled.div`
   align-items: center;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.p`
   display: block;
   width: 100%;
   margin-top: 8px;
@@ -32,7 +32,7 @@ export const Title = styled.h3`
   line-height: 20px;
 `;
 
-export const CompanyName = styled.h5`
+export const CompanyName = styled.p`
   margin-top: 12px;
   ${FontSize.size12};
   ${FontWeight.regular};

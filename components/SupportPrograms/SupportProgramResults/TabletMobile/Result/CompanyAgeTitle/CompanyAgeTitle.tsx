@@ -3,7 +3,7 @@ import { FontSize, FontWeight } from 'utils';
 import { TARGET_COMPANY_AGE_TEXTS } from 'constants/supportPrograms';
 import { TargetCompanyAgeEnum } from 'graphql';
 
-const Title = styled.h5`
+const Title = styled.p`
   ${FontSize.size12};
   ${FontWeight.regular};
   line-height: 18px;

@@ -19,7 +19,7 @@ export const TitleWrapper = styled.div`
   width: 100%;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.p`
   ${FontSize.size18};
   ${FontWeight.medium};
   color: #3a4a4a;

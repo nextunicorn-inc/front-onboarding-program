@@ -119,8 +119,12 @@ function Header() {
         </Styled.MenuWrapper>
 
         <Styled.ResponsiveMenuList>
-          <IconBox IconElement={Search} onClick={handleClickSearch} />
-          <IconBox IconElement={Hamburger} onClick={handleClickSideMenu} />
+          <li>
+            <IconBox IconElement={Search} onClick={handleClickSearch} />
+          </li>
+          <li>
+            <IconBox IconElement={Hamburger} onClick={handleClickSideMenu} />
+          </li>
           {isClickSearch && (
             <Styled.SearchLayout>
               <Styled.SearchInputLayout>
@@ -182,17 +186,19 @@ function Header() {
           </Styled.SideServiceIntroduceWrapper>
 
           {isClickSideDetailMenu && (
-            <Styled.SideDetailMenu>
-              {INTRODUCE_OF_SERVICES.routes.map(({ title, href }) => (
-                <li key={title}>
-                  <Styled.SideDetailMenuTitle>
-                    <a key={title} href={href}>
-                      {title}
-                    </a>
-                  </Styled.SideDetailMenuTitle>
-                </li>
-              ))}
-            </Styled.SideDetailMenu>
+            <li>
+              <Styled.SideDetailMenu>
+                {INTRODUCE_OF_SERVICES.routes.map(({ title, href }) => (
+                  <li key={title}>
+                    <Styled.SideDetailMenuTitle>
+                      <a key={title} href={href}>
+                        {title}
+                      </a>
+                    </Styled.SideDetailMenuTitle>
+                  </li>
+                ))}
+              </Styled.SideDetailMenu>
+            </li>
           )}
         </Styled.SideMenuList>
       </Styled.SideMenuWrapper>

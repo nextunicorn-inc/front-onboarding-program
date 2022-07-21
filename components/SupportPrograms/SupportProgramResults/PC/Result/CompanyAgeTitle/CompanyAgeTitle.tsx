@@ -10,7 +10,7 @@ const TitleWrapper = styled.div`
   margin-left: 28px;
 `;
 
-const Title = styled.h3`
+const Title = styled.p`
   ${FontSize.size16};
   ${FontWeight.regular};
   line-height: 24px;
