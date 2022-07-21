@@ -16,11 +16,13 @@ type Size = keyof typeof Icons;
 type Props = {
   size?: Size;
   opacity?: number;
+  active?: boolean;
 };
 
-export function Thunder({ size = 15, opacity = 1 }: Props) {
+export function Thunder({ size = 15, opacity = 1, active = true }: Props) {
   const Component = Icons[size];
-  return <Component opacity={opacity} />;
+  const color = active ? '#FFB633' : 'var(--color-bluegray2)';
+  return <Component opacity={opacity} color={color} />;
 }
 
 const IconsWithWrapper = {

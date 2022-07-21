@@ -14,7 +14,7 @@ function Result({ data }: { data: SupportProgramsQuery['supportPrograms'] | unde
   return (
     <Styled.Container>
       {data.data.map((supportProgram) => (
-        <Styled.Wrapper href={supportProgram.outerApplyLink} key={supportProgram.name}>
+        <Styled.Wrapper href={supportProgram.outerApplyLink ?? '#'} key={supportProgram.name}>
           <Styled.StatusAndApplyAreasWrapper>
             <ProgressStatus endAtData={supportProgram.endAt} />
             <ApplyAreas applyAreasData={supportProgram.areas} />
