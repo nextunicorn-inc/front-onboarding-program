@@ -19,7 +19,8 @@
     "jsx": "preserve",
     "incremental": true,
     "types": [
-      "next"
+      "next",
+      "@types/jest"
     ],
     "downlevelIteration": true,
     "baseUrl": ".",
@@ -35,6 +36,6 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
   ]
 }
