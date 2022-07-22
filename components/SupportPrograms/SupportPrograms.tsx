@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
+import { getQueryStringValues } from 'lib';
 
 import { SupportProgramsQueryVariables } from '@/graphql';
 import styled from '@emotion/styled';
@@ -20,12 +21,12 @@ import { useSupportProgramResults } from './SupportProgramResults/SupportProgram
 import { ResultSupportPrograms } from './SupportProgramResults';
 
 import { PageNavigation } from './PageNavigation';
-import { getQueryStringValues } from '../../lib';
 
 const ScrollIntoViewElement = styled.div`
   position: absolute;
   top: -68px;
 `;
+
 function SupportPrograms() {
   const wrapper = useRef<HTMLDivElement | null>(null);
 

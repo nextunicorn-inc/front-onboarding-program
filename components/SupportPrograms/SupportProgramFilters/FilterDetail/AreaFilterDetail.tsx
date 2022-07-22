@@ -1,9 +1,11 @@
 import { AREA_TEXTS } from 'constants/supportPrograms';
+import * as Styled from './FilterDetail.styled';
 import { Area } from '../SupportProgramFilters.types';
 import { useFilterByQueryString, useClientFilter } from '../SupportProgramFilters.hooks';
 import { identity } from '../../SupportPrograms.utils';
 import FilterDetailModal from './FilterDetailModal';
 import FilterItem from '../FilterItem';
+import { FilterList } from '../SupportProgramFilters.styled';
 
 type Props = {
   title: string;
@@ -24,19 +26,31 @@ function AreaFilterDetail({ title, list }: Props) {
       resetItems={toggleState(null)}
       title={title}
       onApply={state ? toggle(state.filter(Boolean)) : toggle(null)}
-      totalSelectedItems={totalSelectedAreas}
     >
-      {list.map((item) => (
-        <li key={item}>
-          <FilterItem
-            opacity={0.4}
-            onClick={toggleState(item)}
-            selected={state?.includes(item) ?? false}
-          >
-            {AREA_TEXTS[item]}
-          </FilterItem>
-        </li>
-      ))}
+      <Styled.FilterListWrapper>
+        <FilterList $wrap>
+          <li>
+            <FilterItem
+              opacity={0.6}
+              onClick={toggleState(null)}
+              selected={totalSelectedAreas === 0}
+            >
+              전체
+            </FilterItem>
+          </li>
+          {list.map((item) => (
+            <li key={item}>
+              <FilterItem
+                opacity={0.4}
+                onClick={toggleState(item)}
+                selected={state?.includes(item) ?? false}
+              >
+                {AREA_TEXTS[item]}
+              </FilterItem>
+            </li>
+          ))}
+        </FilterList>
+      </Styled.FilterListWrapper>
     </FilterDetailModal>
   );
 }

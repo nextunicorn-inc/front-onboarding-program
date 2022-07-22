@@ -1,31 +1,18 @@
-import { isValidElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Close } from 'commonUi/Icons';
 import { useModal } from 'commonUi/Modal';
-
 import { useMediaQuery } from 'hooks';
+
 import * as Styled from './FilterDetail.styled';
-import { FilterList } from '../SupportProgramFilters.styled';
-import FilterItem from '../FilterItem';
 
 type Props = {
   title: string;
   onApply: () => void;
   children: ReactNode;
-  resetItems: () => void;
-  totalSelectedItems: number;
-  searchable?: boolean;
-  Search?: ReactNode;
+  resetItems?: () => void;
 };
 
-function FilterDetailModal({
-  title,
-  onApply,
-  resetItems,
-  totalSelectedItems,
-  children,
-  searchable = false,
-  Search = null,
-}: Props) {
+function FilterDetailModal({ title, onApply, resetItems, children }: Props) {
   const isDesktop = useMediaQuery('(min-width: 1025px)');
 
   const { hide } = useModal();
@@ -48,17 +35,7 @@ function FilterDetailModal({
             )}
           </Styled.HeadingSection>
         </Styled.Xpadding>
-        <Styled.Xpadding>{searchable && isValidElement(Search) && Search}</Styled.Xpadding>
-        <Styled.FilterListWrapper>
-          <FilterList $wrap>
-            <li>
-              <FilterItem opacity={0.6} onClick={resetItems} selected={totalSelectedItems === 0}>
-                전체
-              </FilterItem>
-            </li>
-            {children}
-          </FilterList>
-        </Styled.FilterListWrapper>
+        {children}
         <Styled.ApplyButtonWrapper>
           <Styled.ApplyButton onClick={handleApplyButtonClick}>필터 적용</Styled.ApplyButton>
         </Styled.ApplyButtonWrapper>
@@ -73,3 +50,15 @@ function FilterDetailModal({
 }
 
 export default FilterDetailModal;
+
+// <Styled.Xpadding>{searchable && isValidElement(Search) && Search}</Styled.Xpadding>
+// <Styled.FilterListWrapper>
+//   <FilterList $wrap>
+//     <li>
+//       <FilterItem opacity={0.6} onClick={resetItems} selected={totalSelectedItems === 0}>
+//         전체
+//       </FilterItem>
+//     </li>
+//     {children}
+//   </FilterList>
+// </Styled.FilterListWrapper>

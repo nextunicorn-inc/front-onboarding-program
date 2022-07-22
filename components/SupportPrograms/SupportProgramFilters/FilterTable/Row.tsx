@@ -6,6 +6,7 @@ import {
   Children,
   isValidElement,
   cloneElement,
+  KeyboardEventHandler,
 } from 'react';
 import { useMediaQuery } from 'hooks';
 import { Backdrop, useModal } from 'commonUi/Modal';
@@ -52,6 +53,12 @@ function Row({ title, children, totalSelectedColumns, RowDetail }: Props) {
     }
     return child;
   });
+
+  const onKeyUp: KeyboardEventHandler = (e) => {
+    if (e.key === 'Enter') {
+      showWithBackdrop(RowDetail)();
+    }
+  };
 
   function isRowOverflowed() {
     const { current: lastItem } = lastItemRef;
@@ -100,8 +107,10 @@ function Row({ title, children, totalSelectedColumns, RowDetail }: Props) {
         {showMoreButton && (
           <Styled.MoreButtonWrapper>
             <Styled.MoreButton
+              onKeyUp={onKeyUp}
               aria-label="지원프로그램 필터 열기"
               role="button"
+              tabIndex={0}
               onClick={showWithBackdrop(RowDetail)}
             />
           </Styled.MoreButtonWrapper>
