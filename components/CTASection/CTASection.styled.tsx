@@ -69,11 +69,11 @@ export const Description = styled.section`
   & > p {
     ${FontSize.size18};
     ${FontWeight.medium};
-  }
 
-  & > span {
-    ${FontSize.size14};
-    ${FontWeight.regular};
+    &:last-of-type {
+      ${FontSize.size14};
+      ${FontWeight.regular};
+    }
   }
 
   ${MediaQuery.mobile} {

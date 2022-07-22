@@ -1,5 +1,5 @@
 import * as Styled from './CTASection.styled';
-import { HREF } from './CTASection.constants';
+import { DESCRIPTIONS, HREF, CTA_TEXT } from './CTASection.constants';
 
 function CTASection() {
   return (
@@ -7,11 +7,12 @@ function CTASection() {
       <Styled.ResposiveContainer>
         <Styled.Wrapper>
           <Styled.Description>
-            <p>스타트업 모집과 홍보가 필요하신가요?</p>
-            <span>지원프로그램 등록 문의를 남겨주세요.</span>
+            {DESCRIPTIONS.map((description) => (
+              <p key={description}>{description}</p>
+            ))}
           </Styled.Description>
           <Styled.CTA href={HREF} target="_blank" rel="noreferrer">
-            지원프로그램 등록 신청
+            {CTA_TEXT}
           </Styled.CTA>
           <Styled.SemiCircle $upward={false} />
           <Styled.SemiCircle $upward />

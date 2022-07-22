@@ -3,5 +3,4 @@ import Footer from './Footer';
 
 test('hi', () => {
   render(<Footer />);
-  screen.debug();
 });
