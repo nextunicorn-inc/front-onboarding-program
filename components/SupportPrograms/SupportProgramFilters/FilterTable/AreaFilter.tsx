@@ -15,13 +15,19 @@ function AreaFilter() {
     matcher: identity,
   });
 
+  const totalSelectedAreas = activeAreas?.length ?? 0;
+
   return (
     <Row
+      totalSelectedColumns={totalSelectedAreas}
       RowDetail={<AreaFilterDetail title="지원 분야" list={query.data?.areas ?? []} />}
-      resetColumns={toggle(null)}
-      totalSelectedColumns={activeAreas?.length || 0}
       title="지원 분야"
     >
+      <li style={{ marginLeft: 0 }}>
+        <FilterItem opacity={0.6} onClick={toggle(null)} selected={totalSelectedAreas === 0}>
+          전체
+        </FilterItem>
+      </li>
       {query.data?.areas.map((item) => (
         <li key={item}>
           <FilterItem

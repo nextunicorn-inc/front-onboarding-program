@@ -10,7 +10,7 @@ type Props = {
 function FilterTable({ children }: Props) {
   return (
     <Responsive>
-      <Styled.TableWrapper className="main-filter">{children}</Styled.TableWrapper>
+      <Styled.TableWrapper>{children}</Styled.TableWrapper>
     </Responsive>
   );
 }

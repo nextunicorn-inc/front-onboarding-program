@@ -12,13 +12,19 @@ function HostFilter() {
     matcher: (data) => data.id,
   });
 
+  const totalSelectedHost = activeHostInfo?.length ?? 0;
+
   return (
     <Row
       RowDetail={<HostFilterDetail title="주관 기관" list={query.data?.hosts ?? []} />}
-      resetColumns={toggle(null)}
-      totalSelectedColumns={activeHostInfo?.length || 0}
+      totalSelectedColumns={totalSelectedHost}
       title="주관 기관"
     >
+      <li style={{ marginLeft: 0 }}>
+        <FilterItem opacity={0.6} onClick={toggle(null)} selected={totalSelectedHost === 0}>
+          전체
+        </FilterItem>
+      </li>
       {query.data?.hosts.map((item) => (
         <li key={item.id}>
           <FilterItem

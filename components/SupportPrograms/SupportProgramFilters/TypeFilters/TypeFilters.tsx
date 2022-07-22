@@ -29,10 +29,10 @@ function TypeFilters() {
           <button type="button" onClick={toggle(null)}>
             {SUPPORT_PROGRAM_TYPE_TEXTS.all}
           </button>
-          <Styled.TypeFilterNoticeLine $active={!activeTypes} />
+          <Styled.TypeFilterNoticeLine $active={activeTypes === null} />
         </Styled.TypeFilterItem>
         {query.data?.types.map((type) => {
-          const isActive = !!activeTypes && activeTypes.map(identity).includes(type);
+          const isActive = activeTypes?.includes(type) ?? false;
           const opacity = isActive ? 1 : 0.4;
 
           return (

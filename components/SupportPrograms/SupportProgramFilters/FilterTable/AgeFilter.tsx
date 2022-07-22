@@ -15,13 +15,19 @@ function AgeFilter() {
     matcher: identity,
   });
 
+  const totalSelectedAges = activeAges?.length ?? 0;
+
   return (
     <Row
       RowDetail={<AgeFilterDetail title="창업 기간" list={query.data?.targetCompanyAges ?? []} />}
-      resetColumns={toggle(null)}
-      totalSelectedColumns={activeAges?.length ?? 0}
       title="창업 기간"
+      totalSelectedColumns={totalSelectedAges}
     >
+      <li style={{ marginLeft: 0 }}>
+        <FilterItem opacity={0.6} onClick={toggle(null)} selected={totalSelectedAges === 0}>
+          전체
+        </FilterItem>
+      </li>
       {query.data?.targetCompanyAges.map((item) => (
         <li key={item}>
           <FilterItem

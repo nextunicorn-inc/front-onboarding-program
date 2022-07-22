@@ -11,7 +11,6 @@ import { useMediaQuery } from 'hooks';
 import { Backdrop, useModal } from 'commonUi/Modal';
 import { Plus } from 'commonUi/Icons';
 
-import FilterItem from '../FilterItem';
 import * as Styled from './FilterTable.styled';
 import { useThrottle } from './FilterTable.hooks';
 import { FilterList } from '../SupportProgramFilters.styled';
@@ -20,13 +19,13 @@ type Props = {
   title: string;
   children: ReactNode;
   totalSelectedColumns: number;
-  resetColumns: () => void;
   RowDetail: ReactNode;
 };
 
-function Row({ title, children, totalSelectedColumns, resetColumns, RowDetail }: Props) {
+function Row({ title, children, totalSelectedColumns, RowDetail }: Props) {
   const [showMoreButton, setShowMoreButton] = useState(false);
   const isMobile = useMediaQuery('(max-width: 767px)');
+  const listRef = useRef<HTMLUListElement>(null);
   const lastItemRef = useRef<HTMLLIElement>(null);
 
   const { show, hide } = useModal();
@@ -56,13 +55,13 @@ function Row({ title, children, totalSelectedColumns, resetColumns, RowDetail }:
 
   function isRowOverflowed() {
     const { current: lastItem } = lastItemRef;
-    const wrapper = document.querySelector('.main-filter');
+    const { current: container } = listRef;
 
-    if (!lastItem || !wrapper) {
+    if (!lastItem || !container) {
       return false;
     }
 
-    const wrapperRight = wrapper.getBoundingClientRect().right;
+    const wrapperRight = container.getBoundingClientRect().right;
     const lastItemRight = lastItem.getBoundingClientRect().right;
     const OFFSET = 20;
     return wrapperRight - OFFSET < lastItemRight;
@@ -96,12 +95,7 @@ function Row({ title, children, totalSelectedColumns, resetColumns, RowDetail }:
     <Styled.RowWrapper>
       <Styled.RowTitle>{title}</Styled.RowTitle>
       <Styled.Separator aria-hidden />
-      <FilterList>
-        <li style={{ marginLeft: 0 }}>
-          <FilterItem opacity={0.6} onClick={resetColumns} selected={isAnyColumnNotSelected}>
-            전체
-          </FilterItem>
-        </li>
+      <FilterList role="list" ref={listRef}>
         {childrenWithRef}
         {showMoreButton && (
           <Styled.MoreButtonWrapper>
