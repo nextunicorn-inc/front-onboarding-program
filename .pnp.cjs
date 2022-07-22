@@ -3649,7 +3649,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react-hooks", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:8.0.1"],\
             ["@testing-library/user-event", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:14.3.0"],\
             ["@types/babel__core", "npm:7.1.19"],\
-            ["@types/jest", "npm:28.1.6"],\
             ["@types/node", "npm:18.0.0"],\
             ["@types/react", "npm:18.0.14"],\
             ["@types/react-dom", "npm:18.0.5"],\
@@ -13305,7 +13304,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react-hooks", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:8.0.1"],\
             ["@testing-library/user-event", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:14.3.0"],\
             ["@types/babel__core", "npm:7.1.19"],\
-            ["@types/jest", "npm:28.1.6"],\
             ["@types/node", "npm:18.0.0"],\
             ["@types/react", "npm:18.0.14"],\
             ["@types/react-dom", "npm:18.0.5"],\
