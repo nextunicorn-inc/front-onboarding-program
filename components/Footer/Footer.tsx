@@ -2,24 +2,29 @@ import { Fragment } from 'react';
 import { NextUnicornLogo } from 'commonUi/Icons';
 import { SROnly } from 'commonUi/SROnly';
 import * as Styled from './Footer.styled';
-import { NAVIGATIONS, SOCIAL_NETWORKS, POLICIES_OF_SERVICES } from './Footer.constants';
+import { NAVIGATIONS, SOCIAL_NETWORKS, POLICIES_OF_SERVICES, LOGO_LABEL } from './Footer.constants';
 
 function Footer() {
   return (
     <Styled.Layout>
       <Styled.ResponsiveSection>
         <Styled.Navigation>
-          <a href="https://www.nextunicorn.kr" target="_blank" rel="noreferrer">
-            <SROnly>넥스트 유니콘 홈페이지 바로가기</SROnly>
+          <a
+            aria-label={LOGO_LABEL}
+            href="https://www.nextunicorn.kr"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <SROnly>{LOGO_LABEL}</SROnly>
             <NextUnicornLogo primary={false} color="var(--color-unicorngray6)" />
           </a>
-          <Styled.MenuList>
+          <Styled.MenuList role="list">
             {NAVIGATIONS.map((navigation) => (
-              <li key={navigation.title}>
+              <li aria-label={navigation.title} role="presentation" key={navigation.title}>
                 <Styled.MenuTitle>{navigation.title}</Styled.MenuTitle>
-                <ul>
+                <ul role="menu">
                   {navigation.routes.map((route) => (
-                    <li key={route.title}>
+                    <li role="menuitem" key={route.title}>
                       <Styled.MenuLink href={route.href} target="_blank" rel="noreferrer">
                         {route.title}
                       </Styled.MenuLink>
@@ -57,12 +62,7 @@ function Footer() {
                   rel="noreferrer"
                 >
                   <SROnly>{`소셜네트워크 - ${socialNetwork.title}`}</SROnly>
-                  <Icon
-                    aria-label={`소셜네트워크 - ${socialNetwork.title}`}
-                    width={24}
-                    height={24}
-                    color="var(--color-naturalgray4)"
-                  />
+                  <Icon width={24} height={24} color="var(--color-naturalgray4)" />
                 </Styled.SocialNetworkLink>
               );
             })}

@@ -1,5 +1,7 @@
 import { SocialNetworks } from 'commonUi/Icons';
 
+export const LOGO_LABEL = '넥스트 유니콘 공식 홈페이지 바로가기';
+
 export const NAVIGATIONS = [
   {
     title: '회사',
