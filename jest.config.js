@@ -6,10 +6,11 @@ const createJestConfig = nextJest({
 
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  moduleDirectories: ['node_modules', '<rootDir>/'],
+  moduleDirectories: ['node_modules', '<rootDir>'],
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
-    '^@/graphql/(.*)$': '<rootDir>/graphql/$1',
+    // '^@/graphql/(.*)$': '<rootDir>/graphql/$1',
+    '^@/graphql': '<rootDir>/graphql/',
   },
 };
 
@@ -19,6 +20,7 @@ const jestConfig = async () => {
     ...nextJestConfig,
     moduleNameMapper: {
       '\\.svg': '<rootDir>/__mocks__/svg.js',
+
       ...nextJestConfig.moduleNameMapper,
     },
   };
