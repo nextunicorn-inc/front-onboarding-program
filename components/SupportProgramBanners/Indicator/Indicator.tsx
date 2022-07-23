@@ -63,7 +63,7 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
   return (
     <Styled.IndicatorOuter>
       <Styled.IndicatorInner>
-        <Styled.ButtonWrapper>
+        <Styled.ButtonWrapper aria-label="지원프로그램 배너 현황">
           <button
             aria-label="이전 지원프로그램 배너 보기"
             type="button"

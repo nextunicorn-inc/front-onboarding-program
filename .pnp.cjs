@@ -9153,11 +9153,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@testing-library-user-event-virtual-07d4469235/0/cache/@testing-library-user-event-npm-14.3.0-570c508fee-cbd5954460.zip/node_modules/@testing-library/user-event/",\
           "packageDependencies": [\
             ["@testing-library/user-event", "virtual:209efde182dbfd275a7fa65fcf13da558bdb2873f9f442410cc89fdf4cba3d131722b49fb0e53c60286ebb461a2aca603104327fc1abcc1adebac2f4e6fb3192#npm:14.3.0"],\
-            ["@testing-library/dom", null],\
+            ["@testing-library/dom", "npm:8.16.0"],\
             ["@types/testing-library__dom", null]\
           ],\
           "packagePeers": [\
-            "@testing-library/dom",\
             "@types/testing-library__dom"\
           ],\
           "linkType": "HARD"\
