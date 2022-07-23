@@ -1,0 +1,24 @@
+[
+  {
+    "amplitudeEvent": "asdasdasd",
+    "backgroundColor": "#6bc282",
+    "desktopImageUrl": "https://contents-beta.nextunicorn.kr/supportProgramBanner/b8c418040cc6852d81a33a914da58c13f5e5.png?s=THUMBNAIL&t=COVER",
+    "link": "https://asdasd.com",
+    "mobileImageUrl": null,
+    "subTitle": "지원프로그램 상단 테스트",
+    "subTitleColor": "#fefefe",
+    "title": "지원프로그램 상단 테스트",
+    "titleColor": "#fefefe"
+  },
+  {
+    "amplitudeEvent": "banner_littie",
+    "backgroundColor": "#b0cbf5",
+    "desktopImageUrl": "https://contents-beta.nextunicorn.kr/supportProgramBanner/648d181419d069bh1516f9faa2fd5787442e.jpg?s=THUMBNAIL&t=COVER",
+    "link": null,
+    "mobileImageUrl": null,
+    "subTitle": "배너 소제목",
+    "subTitleColor": "#033a91",
+    "title": "이런 배너가",
+    "titleColor": "#4287f5"
+  }
+]

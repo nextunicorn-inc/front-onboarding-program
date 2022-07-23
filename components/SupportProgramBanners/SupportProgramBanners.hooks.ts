@@ -8,7 +8,7 @@ import {
   SupportProgramBannersQuery,
 } from '@/graphql';
 
-type BeforeRefactoredType = RecursivelyExcludeNull<
+export type BeforeRefactoredType = RecursivelyExcludeNull<
   SupportProgramBannersQuery,
   'link' | 'mobileImageUrl'
 >;

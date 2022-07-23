@@ -13,3 +13,4 @@ node_modules
 !.pnp.loader.mjs
 !.storybook
 jest.config.js
+jest.setup.js
