@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { screen, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { screen, render, waitFor, act } from '@testing-library/react';
 
 import { Indicator } from '../Indicator';
 
@@ -21,6 +21,14 @@ function Comp() {
 
   return <Indicator currentIndex={index} totalSlides={totalCount} onClick={move} />;
 }
+
+beforeAll(() => {
+  jest.useFakeTimers();
+});
+
+afterAll(() => {
+  jest.useRealTimers();
+});
 
 describe('<Indicator />', () => {
   const user = userEvent.setup({ delay: null });

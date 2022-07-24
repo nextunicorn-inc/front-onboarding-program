@@ -41,8 +41,11 @@ function SupportProgramBanners() {
                 <Styled.SubTitle $color={supportProgramBanner.subTitleColor}>
                   {supportProgramBanner.subTitle}
                 </Styled.SubTitle>
-                <Styled.Title $color={supportProgramBanner.titleColor}>
-                  {`${supportProgramBanner.title} ${supportProgramBanner.title} ${supportProgramBanner.title}`}
+                <Styled.Title
+                  aria-label="지원프로그램 배너 타이틀"
+                  $color={supportProgramBanner.titleColor}
+                >
+                  {supportProgramBanner.title}
                 </Styled.Title>
               </Styled.Description>
               <Styled.ImageWrapper>
