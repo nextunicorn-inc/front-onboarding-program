@@ -359,31 +359,31 @@ export type NuProStartupCompanyFilterType = {
   benchmarkScore: InputMaybe<NumberRangeFilterType>;
   /** 비즈니스분야 */
   businesses: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  /** 대표자의 학력: 최종학력 -> 최대 다섯, ex - `G000101` 7자 */
+  /** 대표자의 학력: ex - `G000101` */
   ceoEducations: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** 대표자의 성별 */
   ceoGenders: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 스타트업 인증 */
   certifications: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  /** 업력: 범위 */
+  /** 업력 */
   companyHistory: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 기업가치 : 지정된 범위 */
   companyValuation: InputMaybe<NumberRangeFilterType>;
-  /** 법인구분 : 범위 */
+  /** 법인구분 */
   corporations: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 팀원수 */
   employees: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /** 휴폐업여부 */
   isClosing: InputMaybe<Scalars['Boolean']>;
-  /** 참여투자기관 : 불러온 값 선택 => 최대 다섯, ex - `18c59625edd08173` 16자 */
+  /** 참여투자기관 : ex - `18c59625edd08173` 16자 */
   joinedInvestmentCompanies: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** 최근투자유치금액 : 지정된 범위(gte, lte) */
+  /** 최근투자유치금액 : 지정된 범위 */
   lastInvestmentAmount: InputMaybe<NumberRangeFilterType>;
   /** 최근투자유치일자 : 지정된 범위 / 직접입력 */
   lastInvestmentDate: InputMaybe<DateFilterType>;
-  /** 최근투자단계 : 범위 */
+  /** 최근투자단계 */
   lastInvestmentPhases: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  /** 지역: 범위 */
+  /** 지역 */
   locations: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
   /**  pageable */
   paging: InputMaybe<PageableFilterType>;
@@ -397,7 +397,7 @@ export type NuProStartupCompanyFilterType = {
   sorting: InputMaybe<SortingType>;
   /** 활용기술 */
   technologies: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  /** 총투자유치금액 : 지정된 범위(gte, lte) */
+  /** 총투자유치금액 : 지정된 범위 */
   totalInvestmentAmount: InputMaybe<NumberRangeFilterType>;
 };
 
