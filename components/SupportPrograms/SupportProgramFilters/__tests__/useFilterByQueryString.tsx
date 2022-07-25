@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 import { useRouter } from 'next/router';
-import { createTinyReplaceRouter } from 'test-utils/createMockRouter';
+import { createTinyReplaceRouter } from 'test-utils';
 import { useFilterByQueryString } from '../SupportProgramFilters.hooks';
 import { identity } from '../../SupportPrograms.utils';
 

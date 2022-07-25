@@ -13,29 +13,41 @@
     ],
     "hosts": [
       {
-        "companyId": "7595f2ed0e48c3e8",
+        "id": "7595f2ed0e48c3e8",
         "meta": {
           "name": "AM0705"
         }
       },
       {
-        "companyId": "598d8da20f86c137",
+        "id": "598d8da20f86c137",
         "meta": {
           "name": "한국관광공사테스트"
         }
       },
       {
-        "companyId": "76a83155b1c71149",
+        "id": "76a83155b1c71149",
         "meta": {
           "name": "(사)서울온라인비즈니스협회"
         }
       },
       {
-        "companyId": "828cdc25794191b2",
+        "id": "828cdc25794191b2",
         "meta": {
           "name": "넥시드테스트"
         }
       }
+    ],
+    "targetCompanyAges": [
+      "NM",
+      "PS",
+      "U3",
+      "U7",
+      "M8"
+    ],
+    "types": [
+      "SL",
+      "SNL",
+      "SNLP"
     ]
   }
 }

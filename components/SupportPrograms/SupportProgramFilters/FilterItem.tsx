@@ -15,7 +15,12 @@ function FilterItem({ children, onClick, selected, opacity = 0.4 }: Props) {
   const isTablet = useMediaQuery('(max-width: 1023px)');
   const iconOpacity = selected ? 1 : opacity;
   return (
-    <Styled.FilterItem opacity={iconOpacity} onClick={handleClick} selected={selected}>
+    <Styled.FilterItem
+      aria-pressed={selected ? 'true' : 'false'}
+      opacity={iconOpacity}
+      onClick={handleClick}
+      selected={selected}
+    >
       <Check active color="var(--color-unicornblue7)" size={isTablet ? 16 : 20} />
       {children}
     </Styled.FilterItem>

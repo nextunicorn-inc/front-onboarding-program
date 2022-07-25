@@ -8,7 +8,6 @@ export const SUPPORT_PROGRAM_TYPE_TEXTS = {
 } as const;
 
 export const TARGET_COMPANY_AGE_TEXTS = {
-  all: '전체',
   [TargetCompanyAgeEnum.Nm]: '무관',
   [TargetCompanyAgeEnum.Ps]: '예비창업자',
   [TargetCompanyAgeEnum.U3]: '3년차 이하',
