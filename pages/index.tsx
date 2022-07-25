@@ -8,6 +8,7 @@ import {
   SupportProgramBanners,
   useSupportProgramBanners,
   useSupportProgramFilters,
+  useSupportProgramResults,
   useFeaturedSupportPrograms,
   FeaturedSupportPrograms,
   SupportPrograms,
@@ -16,7 +17,6 @@ import {
 
 import { AreaEnum, Scalars, SupportProgramTypeEnum, TargetCompanyAgeEnum } from '@/graphql';
 
-import { useSupportProgramResults } from '../components/SupportPrograms/SupportProgramResults/SupportProgramResults.hooks';
 import { MediaQuery } from '../utils';
 
 type queryStringType = {

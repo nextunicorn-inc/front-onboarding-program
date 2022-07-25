@@ -16,8 +16,7 @@ import * as Styled from './SupportPrograms.styled';
 
 import type { Area, TargetCompanyAge, Type } from './SupportProgramFilters';
 
-import { useSupportProgramResults } from './SupportProgramResults/SupportProgramResults.hooks';
-import { ResultSupportPrograms } from './SupportProgramResults';
+import { ResultSupportPrograms, useSupportProgramResults } from './SupportProgramResults';
 
 import { PageNavigation } from './PageNavigation';
 import { getQueryStringValues } from '../../lib';

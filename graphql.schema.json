@@ -5049,7 +5049,7 @@
           },
           {
             "name": "ceoEducations",
-            "description": "대표자의 학력: 최종학력 -> 최대 다섯, ex - `G000101` 7자",
+            "description": "대표자의 학력: ex - `G000101`",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -5097,7 +5097,7 @@
           },
           {
             "name": "companyHistory",
-            "description": "업력: 범위",
+            "description": "업력",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -5125,7 +5125,7 @@
           },
           {
             "name": "corporations",
-            "description": "법인구분 : 범위",
+            "description": "법인구분",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -5169,7 +5169,7 @@
           },
           {
             "name": "joinedInvestmentCompanies",
-            "description": "참여투자기관 : 불러온 값 선택 => 최대 다섯, ex - `18c59625edd08173` 16자",
+            "description": "참여투자기관 : ex - `18c59625edd08173` 16자",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -5185,7 +5185,7 @@
           },
           {
             "name": "lastInvestmentAmount",
-            "description": "최근투자유치금액 : 지정된 범위(gte, lte)",
+            "description": "최근투자유치금액 : 지정된 범위",
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "NumberRangeFilterType",
@@ -5209,7 +5209,7 @@
           },
           {
             "name": "lastInvestmentPhases",
-            "description": "최근투자단계 : 범위",
+            "description": "최근투자단계",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -5225,7 +5225,7 @@
           },
           {
             "name": "locations",
-            "description": "지역: 범위",
+            "description": "지역",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -5317,7 +5317,7 @@
           },
           {
             "name": "totalInvestmentAmount",
-            "description": "총투자유치금액 : 지정된 범위(gte, lte)",
+            "description": "총투자유치금액 : 지정된 범위",
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "NumberRangeFilterType",
@@ -6182,7 +6182,7 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "BaseSearchResultField",
+              "name": "SchoolSearchResultField",
               "ofType": null
             },
             "isDeprecated": false,
@@ -6193,19 +6193,15 @@
             "description": null,
             "args": [
               {
-                "name": "ids",
+                "name": "id",
                 "description": null,
                 "type": {
-                  "kind": "LIST",
+                  "kind": "NON_NULL",
                   "name": null,
                   "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null
-                    }
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
                   }
                 },
                 "defaultValue": null,
@@ -6693,6 +6689,120 @@
       },
       {
         "kind": "OBJECT",
+        "name": "SchoolMetaDataField",
+        "description": null,
+        "fields": [
+          {
+            "name": "id",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "name",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SchoolSearchResultField",
+        "description": null,
+        "fields": [
+          {
+            "name": "data",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "SchoolMetaDataField",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "page",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pageCount",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "size",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "total",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
         "name": "SessionDurationField",
         "description": null,
         "fields": [
@@ -6756,36 +6866,12 @@
             "deprecationReason": null
           },
           {
-            "name": "createdAt",
-            "description": null,
+            "name": "similarStartupId",
+            "description": "    order: Int",
             "args": [],
             "type": {
               "kind": "SCALAR",
-              "name": "LocalDateTime",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "order",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "updatedAt",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "LocalDateTime",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
