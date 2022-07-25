@@ -22,7 +22,7 @@ export function useSupportProgramFilters() {
 useSupportProgramFilters.getKeys = () => ['supportProgramFilters'];
 useSupportProgramFilters.fetcher = () => client.request<FilterOptionsQuery>(FILTER_OPTIONS);
 
-export function useClientFilter<T>(defaultValues: T[]) {
+export function useClientFilter<T>(defaultValues?: T[]) {
   const [state, setState] = useState<T[] | null>(() => {
     if (defaultValues !== undefined && defaultValues.length > 0) {
       return defaultValues;
@@ -58,7 +58,7 @@ type Params<T> = {
   list: T[];
   queryKey: string;
   matcher: (val: T) => string;
-  onlySingleValue?: boolean;
+  forceToMerge?: boolean;
 };
 
 const OPTIONS = { shallow: true, scroll: false };
@@ -67,26 +67,38 @@ export function useFilterByQueryString<T>({
   list,
   queryKey,
   matcher,
-  onlySingleValue = false,
+  forceToMerge = false,
 }: Params<T>) {
   const router = useRouter();
   const queryValue = router.query[queryKey];
 
   const toggle = (nextQueryValue: string | string[] | null) => () => {
+    const isQueryValueArray = Array.isArray(queryValue);
+    const isNextQueryValueArray = Array.isArray(nextQueryValue);
+    const mappedList = list.map(matcher);
+
+    const shouldInvokeReplace = isNextQueryValueArray
+      ? nextQueryValue.every((v) => mappedList.includes(v))
+      : nextQueryValue === null || mappedList.includes(nextQueryValue);
+
+    if (!shouldInvokeReplace) {
+      return;
+    }
+
     delete router.query[queryKey];
 
     if (nextQueryValue === null) {
       return router.replace(
         {
           pathname: router.pathname,
-          query: { ...router.query },
+          query: router.query,
         },
         undefined,
         OPTIONS,
       );
     }
 
-    if (queryValue === undefined || onlySingleValue) {
+    if (queryValue === undefined || forceToMerge) {
       return router.replace(
         {
           pathname: router.pathname,
@@ -97,14 +109,11 @@ export function useFilterByQueryString<T>({
       );
     }
 
-    const isQueryValueArray = Array.isArray(queryValue);
-    const isNextQueryValueArray = Array.isArray(nextQueryValue);
-
     // if Two values are primitive
     if (!isQueryValueArray && !isNextQueryValueArray) {
       const nextQuery =
         queryValue === nextQueryValue
-          ? router.query
+          ? router.query // the query object deleted value
           : Object.assign(router.query, { [queryKey]: [queryValue, nextQueryValue] });
       return router.replace(
         {
@@ -169,7 +178,7 @@ export function useFilterByQueryString<T>({
 
   let activeState: T[] | null;
 
-  if (!queryValue) {
+  if (!queryValue || list.length === 0) {
     activeState = null;
   } else if (typeof queryValue === 'string') {
     activeState = list.filter((item) => matcher(item) === queryValue);

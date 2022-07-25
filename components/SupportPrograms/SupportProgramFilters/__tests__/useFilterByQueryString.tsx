@@ -13,7 +13,6 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 
-const EMPTY_ARRAY: never[] = [];
 const PRIMITIVE_SERVER_VALUES = [1, 2, 3].map(String);
 const SERVER_VALUES = [
   {
@@ -62,6 +61,7 @@ const SERVER_VALUES = [
     },
   },
 ];
+
 const QUERY_KEY = 'values';
 type ServerValue = typeof SERVER_VALUES[number];
 const OBJECT_MATCHER = (data: ServerValue) => data.foo.bar.baz.id;
@@ -82,7 +82,7 @@ describe('useFilterByQueryString initialization', () => {
     expect(result.current[0]).toBeNull();
   });
 
-  it('should return empty array when the list property is empty array', () => {
+  it('should return null when the list property is empty array', () => {
     const mockRouter = createTinyReplaceRouter({ [QUERY_KEY]: 'good' });
     (useRouter as jest.Mock).mockReturnValue(mockRouter);
 
@@ -94,7 +94,7 @@ describe('useFilterByQueryString initialization', () => {
       }),
     );
 
-    expect(result.current[0]).toEqual(EMPTY_ARRAY);
+    expect(result.current[0]).toBeNull();
   });
 
   it('should return FILTERED querystring values', () => {
@@ -167,14 +167,8 @@ describe('useFilterByQueryString toggle', () => {
 
     act(() => result.current[1](THE_VALUE_NOT_INCLUDED_IN_REMOTE_SERVER)() as void);
     rerender();
-    expect(mockRouter.query[QUERY_KEY]).toEqual(
-      PRIMITIVE_SERVER_VALUES.concat(THE_VALUE_NOT_INCLUDED_IN_REMOTE_SERVER),
-    );
-    // it does not return array which contains '4'.
-    // This hook highly depends on server List. The base factor is ALWAYS server data.
-    expect(result.current[0]).not.toEqual(
-      PRIMITIVE_SERVER_VALUES.concat(THE_VALUE_NOT_INCLUDED_IN_REMOTE_SERVER),
-    );
+    expect(mockRouter.query[QUERY_KEY]).toEqual(PRIMITIVE_SERVER_VALUES);
+    expect(result.current[0]).toEqual(PRIMITIVE_SERVER_VALUES);
   });
 
   it('should append querystring - objects', () => {
@@ -203,9 +197,7 @@ describe('useFilterByQueryString toggle', () => {
     };
     act(() => result.current[1](nextValue.foo.bar.baz.id)() as void);
     rerender();
-    expect(mockRouter.query[QUERY_KEY]).toEqual(
-      SERVER_VALUES.slice(0, 3).map(OBJECT_MATCHER).concat(nextValue.foo.bar.baz.id),
-    );
+    expect(mockRouter.query[QUERY_KEY]).toEqual(SERVER_VALUES.slice(0, 3).map(OBJECT_MATCHER));
     expect(result.current[0]).toEqual(SERVER_VALUES.slice(0, 3));
   });
 

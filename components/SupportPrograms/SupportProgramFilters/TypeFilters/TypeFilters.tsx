@@ -17,7 +17,7 @@ function TypeFilters() {
     list: query.data?.types ?? [],
     queryKey: 'type',
     matcher: identity,
-    onlySingleValue: true,
+    forceToMerge: true,
   });
 
   const isTablet = useMediaQuery('(max-width: 1023px)');
