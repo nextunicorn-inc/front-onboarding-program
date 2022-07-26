@@ -1,15 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 import { Chevron } from 'commonUi/Icons';
 import * as Styled from './Indicator.styled';
 
 import { useInterval } from '../SupportProgramBanners.hooks';
 
-import {
-  INTERVAL_DELAY,
-  MAXIMUM_PROGRESS,
-  TIMEOUT_DELAY,
-} from '../SupportProgramBanners.constants';
+import { INTERVAL_DELAY, MAXIMUM_PROGRESS } from '../SupportProgramBanners.constants';
 
 type Props = {
   currentIndex: number;
@@ -18,43 +14,29 @@ type Props = {
 };
 
 function Indicator({ currentIndex, onClick, totalSlides }: Props) {
-  const previousIndexRef = useRef(currentIndex);
   const [progress, setProgress] = useState(0);
-  const [start, setStart] = useState(true);
-  const stop = totalSlides === 0 || !start;
-
-  const resetProgress = () => {
-    setStart(false);
-    setProgress(0);
-  };
-
-  const move = (type: 'prev' | 'next', delay = TIMEOUT_DELAY) => {
-    resetProgress();
-    setTimeout(() => {
-      onClick(type);
-    }, delay);
-  };
-
-  useInterval(
-    () => {
-      if (progress === MAXIMUM_PROGRESS) {
-        move('next');
-        return;
-      }
-      setProgress((prev) => prev + 1);
-    },
-    stop ? null : INTERVAL_DELAY,
-  );
+  const previousIndexRef = useRef(currentIndex);
+  const [stop, setStop] = useState(false);
 
   useEffect(() => {
     if (previousIndexRef.current !== currentIndex) {
       previousIndexRef.current = currentIndex;
-      resetProgress();
-      setTimeout(() => {
-        setStart(true);
-      }, 0);
+      setStop(false);
     }
-  }, [progress, currentIndex]);
+  }, [currentIndex]);
+
+  useInterval(
+    () => {
+      if (progress === MAXIMUM_PROGRESS) {
+        setStop(true);
+        setProgress(0);
+        onClick('next');
+      } else {
+        setProgress((prev) => prev + 1);
+      }
+    },
+    stop ? null : INTERVAL_DELAY,
+  );
 
   if (totalSlides === 0) {
     return null;
@@ -67,7 +49,7 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
           <button
             aria-label="이전 지원프로그램 배너 보기"
             type="button"
-            onClick={() => move('prev')}
+            onClick={() => onClick('prev')}
           >
             <Chevron direction="Left" size={20} />
           </button>
@@ -77,7 +59,7 @@ function Indicator({ currentIndex, onClick, totalSlides }: Props) {
           <button
             aria-label="다음 지원프로그램 배너 보기"
             type="button"
-            onClick={() => move('next')}
+            onClick={() => onClick('next')}
           >
             <Chevron direction="Right" size={20} />
           </button>

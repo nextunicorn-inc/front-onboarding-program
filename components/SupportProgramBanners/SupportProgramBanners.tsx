@@ -13,9 +13,6 @@ function SupportProgramBanners() {
   const sliderRef = useRef<Slider | null>(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const onSlide = (nextIndex: number) => {
-    setCurrentIndex(nextIndex);
-  };
 
   const onClick = (type: 'next' | 'prev') => {
     if (type === 'next') {
@@ -23,6 +20,10 @@ function SupportProgramBanners() {
     } else {
       sliderRef.current?.slickPrev();
     }
+  };
+
+  const onSlide = (nextIndex: number) => {
+    setCurrentIndex(nextIndex);
   };
 
   return (

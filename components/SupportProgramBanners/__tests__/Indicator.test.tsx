@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { screen, render, waitFor, act } from '@testing-library/react';
 
 import { Indicator } from '../Indicator';
+import { INTERVAL_DELAY } from '../SupportProgramBanners.constants';
 
 function Comp() {
   const [index, setIndex] = useState(0);
@@ -34,6 +35,12 @@ describe('<Indicator />', () => {
   const user = userEvent.setup({ delay: null });
   const clickAndWait = async (element: HTMLElement, cb: () => void) => {
     await user.click(element);
+    await waitFor(cb);
+  };
+  const advanceTimeAndAssertion = async (delay: number, cb: () => void) => {
+    act(() => {
+      jest.advanceTimersByTime(delay);
+    });
     await waitFor(cb);
   };
 
@@ -68,5 +75,25 @@ describe('<Indicator />', () => {
     await clickAndWait(leftButton, () => expect(container).toHaveTextContent('3 / 5'));
     await clickAndWait(leftButton, () => expect(container).toHaveTextContent('2 / 5'));
     await clickAndWait(leftButton, () => expect(container).toHaveTextContent('1 / 5'));
+  });
+
+  it('should automatically show next slide', async () => {
+    const FINISH_DELAY = INTERVAL_DELAY * 100;
+    render(<Comp />);
+    await advanceTimeAndAssertion(FINISH_DELAY, () =>
+      expect(screen.getByLabelText('지원프로그램 배너 현황')).toHaveTextContent('2 / 5'),
+    );
+    await advanceTimeAndAssertion(FINISH_DELAY, () =>
+      expect(screen.getByLabelText('지원프로그램 배너 현황')).toHaveTextContent('3 / 5'),
+    );
+    await advanceTimeAndAssertion(FINISH_DELAY, () =>
+      expect(screen.getByLabelText('지원프로그램 배너 현황')).toHaveTextContent('4 / 5'),
+    );
+    await advanceTimeAndAssertion(FINISH_DELAY, () =>
+      expect(screen.getByLabelText('지원프로그램 배너 현황')).toHaveTextContent('5 / 5'),
+    );
+    await advanceTimeAndAssertion(FINISH_DELAY, () =>
+      expect(screen.getByLabelText('지원프로그램 배너 현황')).toHaveTextContent('1 / 5'),
+    );
   });
 });
